@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CADASTRO | EXITO-TECH</title>
+    <link rel="shortcut icon" href="img/pet-shop.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="shortcut icon" href="img/flaticon.PNG" type="image/x-icon">
+    <script src="js/cepSrc.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="group">
+        <div class="DivA">
+            <img src="img/logo_transparent.png" alt="">
+        </div>
+        <div class="DivLateral">
+            <form>
+                <div class="container">
+                    <h1>Cadastro</h1>
+                    <label for="">
+                        <input type="text" placeholder="Nome da empresa" required>
+                    </label>
+                    <label for="">
+                        <input onkeyup="buscarCep()" id="inputCep" type="text" placeholder="CEP" required>
+                    </label>
+                    <label for="">
+                        <input class="disabledHover" id="inputLogradouro" type="text" disabled placeholder="Logradouro" required>
+                    </label>
+                    <label for="">
+                        <input class="disabledHover" id="inputUf" type="text" disabled placeholder="UF" required>
+                    </label>
+                    <label for="">
+                        <input type="number" placeholder="CNPJ" required>
+                    </label>
+                    <button type="submit">
+                        Enviar
+                    </button>
+                    <p>Ja tem conta? Faça o <a href="login.html">login.</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
