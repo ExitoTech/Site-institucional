@@ -80,7 +80,7 @@ form {
 .container button {
     padding: 10px;
     background-color: #000633;
-    color: #ebefc9;
+    color: #caf0f8;
     border: none;
     border-radius: 3px;
     width: 300px;
@@ -88,6 +88,12 @@ form {
     font-size: 1.5rem;
     margin: auto;
     cursor: pointer;
+    transition: .3s;
+}
+
+.container button:hover {
+    transition: .3s;
+    color: #c1d3fe;
 }
 
 .container p {
