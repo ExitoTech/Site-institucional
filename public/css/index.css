@@ -26,7 +26,7 @@ body {
   font-family: 'Roboto';
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 80px 1fr 300px 150px;
+  grid-template-rows: 80px 600px 300px 1fr 150px;
 
   grid-template-areas:
     'head head'
@@ -48,7 +48,7 @@ header h1 {
 }
 
 header img {
-height: 40px;
+  height: 40px;
 }
 
 header .container .logo {
@@ -56,8 +56,6 @@ header .container .logo {
   align-items: center;
   gap: 10px;
 }
-
-
 
 .navBar ul,
 a {
@@ -139,7 +137,6 @@ input::placeholder {
   color: #fff;
 }
 
-
 .content {
   grid-area: cont;
 
@@ -158,9 +155,8 @@ input::placeholder {
   margin-top: 20px;
   width: 900px;
   text-align: justify;
-  
-  color: #a5a5a5;
 
+  color: #a5a5a5;
 }
 
 .content span {
@@ -184,28 +180,78 @@ article img {
   position: relative;
   top: -20px;
   height: 550px;
-  animation: float 3.5s ease-in-out infinite ;
+  animation: float 3.5s ease-in-out infinite;
 }
 
 @keyframes float {
-
   0% {
-    transform: translateY(0px)
-  } 
+    transform: translateY(0px);
+  }
   50% {
-
-    transform: translateY(15px)
+    transform: translateY(15px);
   }
   100% {
-    transform: translateY(0px)
+    transform: translateY(0px);
   }
-  
 }
 
 .feature {
-grid-area: feat;
-display: flex;
-align-items: center;
-justify-content: center;
+  margin-top: 100px;
+  grid-area: feat;
+  display: flex;
+  flex-direction: column;
+}
+.feature .titleFeature {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  gap: 20px;
+  margin-bottom: 50px;
+}
 
+.titleFeature .title {
+  font-weight: lighter;
+  margin: 0 auto;
+}
+
+.titleFeature p {
+  color: #a5a5a5;
+  width: 550px;
+}
+
+.featureCollection {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.featureCollection img {
+  height: 400px;
+}
+
+.change {
+  display: flex;
+  flex-direction: column;
+}
+
+.change .cardFeature {
+  margin-top: 10px;
+  line-height: 30px;
+}
+
+.change .cardFeature p {
+  color: #a5a5a5;
+  width: 350px;
+}
+
+.change .cardFeature .iconTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.change .cardFeature .iconTitle .title {
+  font-weight: lighter;
+  font-size: 1.5rem;
 }
