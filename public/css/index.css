@@ -26,11 +26,13 @@ body {
   font-family: 'Roboto';
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 80px 1fr 150px;
+  grid-template-rows: 80px 1fr 300px 150px;
 
   grid-template-areas:
     'head head'
     'main main'
+    'cont cont'
+    'feat feat'
     'foot foot';
 }
 
@@ -39,6 +41,23 @@ header {
   display: flex;
   grid-area: head;
 }
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: lighter;
+}
+
+header img {
+height: 40px;
+}
+
+header .container .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
 
 .navBar ul,
 a {
@@ -49,7 +68,10 @@ a {
 }
 
 .navBar ul a:nth-child(2) {
+  padding: 7px 9px;
+  border: 1px solid #9829dd;
   color: #fff;
+  border-radius: 5px;
 }
 
 main {
@@ -94,10 +116,12 @@ form [type='submit'] {
   transition: 0.6s;
   text-align: center;
 }
+
 form [type='submit']:hover {
   cursor: pointer;
   background-color: #4217ff;
 }
+
 input {
   margin-top: 20px;
   height: 40px;
@@ -114,6 +138,35 @@ input {
 input::placeholder {
   color: #fff;
 }
+
+
+.content {
+  grid-area: cont;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+}
+
+.content .title {
+  font-weight: lighter;
+}
+
+.content p {
+  margin-top: 20px;
+  width: 900px;
+  text-align: justify;
+  
+  color: #a5a5a5;
+
+}
+
+.content span {
+  color: #9829dd;
+}
+
 footer {
   grid-area: foot;
   display: flex;
@@ -128,5 +181,31 @@ footer h1 {
 }
 
 article img {
+  position: relative;
+  top: -20px;
   height: 550px;
+  animation: float 3.5s ease-in-out infinite ;
+}
+
+@keyframes float {
+
+  0% {
+    transform: translateY(0px)
+  } 
+  50% {
+
+    transform: translateY(15px)
+  }
+  100% {
+    transform: translateY(0px)
+  }
+  
+}
+
+.feature {
+grid-area: feat;
+display: flex;
+align-items: center;
+justify-content: center;
+
 }
