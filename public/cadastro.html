@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="img/flaticon.PNG" type="image/x-icon">
     <script src="js/cepSrc.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -23,7 +24,7 @@
                 <div class="container">
                     <h1>Cadastro</h1>
                     <label for="">
-                        <input type="text" onkeyup="validarNome()" id="nomeDaEmpresa" placeholder="Nome da empresa" >
+                        <input type="text" id="nomeDaEmpresa" placeholder="Nome da empresa">
                     </label>
                     <label for="">
                         <input onkeyup="buscarCep()" id="inputCep" type="text" placeholder="CEP">
@@ -32,10 +33,10 @@
                         <input class="disabledHover" id="inputLogradouro" type="text" disabled placeholder="Logradouro">
                     </label>
                     <label for="">
-                        <input class="disabledHover" id="inputUf" type="text" disabled placeholder="UF" >
+                        <input class="disabledHover" id="inputUf" type="text" disabled placeholder="UF">
                     </label>
                     <label for="">
-                        <input type="text" placeholder="CNPJ"  maxlength="18" id="inputCnpj">
+                        <input type="text" placeholder="CNPJ" maxlength="18" id="inputCnpj">
                     </label>
                     <label for="" placeholder="">
                         <p>Porte Empresa</p>
