@@ -104,6 +104,16 @@ label {
     width: 300px;
     font-size: 1rem;
 }
+select {
+    width: 300px;
+    font-size: 1rem;
+    margin: 10px 0px 20px 0px;
+    background-color: #edf2fb;
+    border: 2px solid #000633;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
 
 #h1 {
     margin-bottom: 25px;

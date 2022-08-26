@@ -23,21 +23,30 @@
                 <div class="container">
                     <h1>Cadastro</h1>
                     <label for="">
-                        <input type="text" placeholder="Nome da empresa" required>
+                        <input type="text" onkeyup="validarNome()" id="nomeDaEmpresa" placeholder="Nome da empresa" >
                     </label>
                     <label for="">
-                        <input onkeyup="buscarCep()" id="inputCep" type="text" placeholder="CEP" required>
+                        <input onkeyup="buscarCep()" id="inputCep" type="text" placeholder="CEP">
                     </label>
                     <label for="">
-                        <input class="disabledHover" id="inputLogradouro" type="text" disabled placeholder="Logradouro" required>
+                        <input class="disabledHover" id="inputLogradouro" type="text" disabled placeholder="Logradouro">
                     </label>
                     <label for="">
-                        <input class="disabledHover" id="inputUf" type="text" disabled placeholder="UF" required>
+                        <input class="disabledHover" id="inputUf" type="text" disabled placeholder="UF" >
                     </label>
                     <label for="">
-                        <input type="text" placeholder="CNPJ" required  maxlength="18" id="inputCnpj">
+                        <input type="text" placeholder="CNPJ"  maxlength="18" id="inputCnpj">
                     </label>
-                    <button type="submit">
+                    <label for="" placeholder="">
+                        <p>Porte Empresa</p>
+                        <select name="" id="">
+                            <option value=""></option>
+                            <option value="">Grande porte</option>
+                            <option value="">Médio porte</option>
+                            <option value="">Pequeno porte</option>
+                        </select>
+                    </label>
+                    <button onclick="nextSignUp()" type="button">
                         Próximo
                     </button>
                     <p>Ja tem conta? Faça o <a href="login.html">login.</a></p>
@@ -49,3 +58,4 @@
 
 </html>
 <script src="js/cnpj.js"></script>
+<script src="js/SignUp.js"></script>
