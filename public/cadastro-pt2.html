@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="img/flaticon.PNG" type="image/x-icon">
     <script src="js/cepSrc.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -24,12 +25,14 @@
                     <h1 id="h1">Cadastro</h1>
                     <label for="inputSenha">
                         <input id="inputSenha" type="password" placeholder="Insira uma senha" required>
+                        <small id="validacao_senha"></small>
                     </label>
 
                     <label for="inputRepetirSenha">
                         <input id="inputRepetirSenha" type="password" placeholder="Repita a senha" required>
+                        <small id="validacao_senhaREP"></small>
                     </label>
-                    <button type="button">
+                    <button type="button" onclick="valide()">
                         Enviar
                     </button>
                     <p>Ja tem conta? Faça o <a href="login.html">login.</a></p>
@@ -41,3 +44,4 @@
 
 </html>
 <script src="js/cnpj.js"></script>
+<script src="js/SignUp.js"></script>
