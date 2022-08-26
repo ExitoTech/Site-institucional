@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN | EXITO-TECH</title>
+    <title>CADASTRO | EXITO-TECH</title>
     <link rel="shortcut icon" href="img/pet-shop.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style2.css">
     <link rel="shortcut icon" href="img/flaticon.PNG" type="image/x-icon">
+    <script src="js/cepSrc.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -19,18 +21,23 @@
         <div class="DivLateral">
             <form>
                 <div class="container">
-                    <h1>LOGIN</h1>
+                    <h1 id="h1">Cadastro</h1>
+                    <label for="inputCnpj">
+                        <input type="text" placeholder="CNPJ" required id="inputCnpj" maxlength="18">
+                    </label>
 
-                    <label for="">
-                        <input type="text" placeholder="CNPJ" required id="inputCnpj" maxlength="18"> 
+                    <label for="inputSenha">
+                        <input id="inputSenha" type="password" placeholder="Insira uma senha" required>
                     </label>
-                    <label for="">
-                        <input type="password" placeholder="Senha" required>
+
+                    <label for="inputRepetirSenha">
+                        <input id="inputRepetirSenha" type="password" placeholder="Repita a senha" required>
                     </label>
+                    
                     <button type="submit">
-                        ENTRAR
+                        Enviar
                     </button>
-                    <p>Não tem conta? Faça o <a href="cadastro.html">cadastro</a></p>
+                    <p>Ja tem conta? Faça o <a href="login.html">login.</a></p>
                 </div>
             </form>
         </div>
