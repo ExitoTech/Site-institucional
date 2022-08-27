@@ -1,45 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400;1,500&display=swap');
+:root{
+  --grey: #b4bec9;
+  --blue-light: #3627d9;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Mono', monospace;
   text-decoration: none;
 }
 
-.container {
+.containerHeader{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
-  margin-left: 10%;
+  width: 100%;
+}
+
+.containerInicio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 70vh;
 }
 
 body {
-  background: linear-gradient(125deg, #140450 17%, #12054d 50%, #09062c 100%);
-  background-repeat: no-repeat;
+  background: linear-gradient(125deg, #00041f 17%, #00094c 50%, #3627d9 100%);
+  /* background-repeat: no-repeat; */
   background-size: cover;
   max-width: 1920px;
   min-height: 100vh;
   color: #fff;
   font-family: 'Roboto';
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 80px 600px 300px 1fr 600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
 
-  grid-template-areas:
-    'head head'
-    'main main'
-    'cont cont'
-    'feat feat'
-    'foot foot';
+
+.center{
+  width: 80%;
+  margin: auto;
 }
 
 header {
   width: 100%;
   display: flex;
-  grid-area: head;
+  justify-content: space-around;
+  align-items: center;
 }
 
 header h1 {
@@ -49,6 +61,10 @@ header h1 {
 
 header img {
   height: 40px;
+}
+
+header .container{
+  width: 100%;
 }
 
 header .container .logo {
@@ -64,17 +80,21 @@ a {
   margin: 20px;
   color: #fff;
   transition: all 0.6s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
 
 .navBar ul a:nth-child(2) {
   padding: 7px 9px;
-  border: 1px solid #4217ff;
+  border: 2px solid var(--blue-light);
   color: #fff;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .navBar ul a:hover:nth-child(2) {
-  background-color: #4217ff;
+  background-color: var(--blue-light);
 }
 
 main {
@@ -84,20 +104,24 @@ main {
 main aside {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  justify-content: center;
 }
 
 aside .title {
-  color: #e2e2e2;
-  font-size: 2.5rem;
-  width: 450px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: lighter;
+  color: #ffffff;
+  font-size: 52px;
+  width: 70%;
+  margin-bottom: 5%;
 }
 
 aside p {
   margin-top: 20px;
-  width: 450px;
-  color: #a5a5a5;
+  width: 50%;
+  font-size: 24px;
+  color: var(--grey);
+  font-weight: light;
+  margin-bottom: 5%;
 }
 
 form {
@@ -118,11 +142,12 @@ form [type='submit'] {
   font-weight: bold;
   transition: all 0.6s;
   text-align: center;
+  border-radius: 20px;
 }
 
 form [type='submit']:hover {
   cursor: pointer;
-  background-color: #4217ff;
+  background-color: var(--blue-light);
 }
 
 input {
@@ -130,7 +155,7 @@ input {
   height: 40px;
   width: 600px;
   padding: 0.93rem;
-  border-radius: 5px;
+  border-radius: 20px;
   border: none;
   font-size: 15px;
   outline: none;
@@ -145,33 +170,47 @@ input::placeholder {
 .content {
   grid-area: cont;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+   display: flex;
+  /*align-items: center;
+  justify-content: center; */
 
   flex-direction: column;
 }
+.titleHeader{
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 5px;
+}
 
 .content .title {
-  font-weight: lighter;
+  font-weight: bold;
+  font-size: 36px;
+  text-align: left;
+  width: 70%;
+  margin-bottom: 3%;
+  font-family: 'Roboto';
 }
 
 .content p {
   margin-top: 20px;
-  width: 900px;
   text-align: justify;
-
-  color: #a5a5a5;
+  color: var(--grey);
+  font-size: 25px;
+  font-weight: light;
+  font-family: 'Roboto'
 }
 
 .content span {
-  color: #9829dd;
+  color: #3627D9;
 }
 
 article img {
   position: relative;
   top: -20px;
-  height: 550px;
+  height: 400px;
   animation: float 3.5s ease-in-out infinite;
 }
 
@@ -196,19 +235,20 @@ article img {
 .feature .titleFeature {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
   gap: 20px;
   margin-bottom: 50px;
 }
 
 .titleFeature .title {
-  font-weight: lighter;
-  margin: 0 auto;
+  font-weight: bold;
+  font-size: 32px;
+  font-family: 'Roboto';
 }
 
 .titleFeature p {
-  color: #a5a5a5;
-  width: 550px;
+  color: var(--grey);
+  font-size: 25px;
+  font-family: 'Roboto';
 }
 
 .featureCollection {
@@ -225,6 +265,8 @@ article img {
 .change {
   display: flex;
   flex-direction: column;
+  font-weight: medium;
+  font-family: 'Roboto'
 }
 
 .change .cardFeature {
@@ -233,7 +275,7 @@ article img {
 }
 
 .change .cardFeature p {
-  color: #a5a5a5;
+  color: var(--grey);
   width: 350px;
 }
 
@@ -254,9 +296,10 @@ footer {
   align-items: center;
   justify-content: space-around;
   background: linear-gradient(125deg, #373738 17%, #232324 50%, #111111 100%);
-  margin-top: 300px;
+  margin-top: 10%;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    width: 100%;
 }
 
 footer h1 {
@@ -301,81 +344,165 @@ footer .links .iconLinks a {
   font-size: 1.7rem;
 }
 
-@media screen and (max-width: 1400px) {
-  body {
-    overflow-x: hidden;
+@media screen and (max-width: 1440px){
+  .content{
+    margin-top: 40px;
   }
-  article img {
-    position: relative;
-    left: -40px;
-    height: 550px;
-  }
+}
 
-  @media screen and (max-width: 920px) {
-    article img {
-      position: relative;
-      left: -300px;
-    }
-
-    .content .title {
-      word-spacing: 20px;
-      font-size: 2.5rem;
-      width: 80%;
-    }
-    .content p {
-      font-size: 1.5rem;
-      width: 80%;
-    }
+@media screen and (max-width: 1362px){
+  .featureCollection{
+    flex-direction: column;
   }
 
-  @media screen and (max-width: 799px) {
-    article img {
-      position: relative;
-      left: -400px;
-      z-index: -1;
-    }
-
-    .content p {
-      font-size: 1.5rem;
-      width: 80%;
-    }
+  .change{
+    margin-top: 7%;
+  }
+  .change .cardFeature p{
+    width: 100%;
   }
 
-  @media screen and (max-width: 600px) {
-    .content p {
+  @media screen and (max-width: 1164px){
+    article img{
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
+
+    main aside{
+      z-index: 999;
+    }
+
+    aside .title{
       width: 100%;
     }
-    .feature {
-      margin-top: 50%;
-    }
-    .feature p,
-    .title {
-      margin-left: 20%;
-      width: 60%;
-    }
-    article {
-      display: none;
+
+    aside p{
+      width: 100;
     }
 
-    .content {
-      margin-left: 50px;
-      width: 70%;
-    }
+}
 
-    .navBar ul {
-      display: none;
-    }
+@media screen and (max-width: 755px){
+  .featureCollection img{
+    width: 0;
+    height: 0;
+    visibility: hidden;
   }
 
-  @media screen and (max-width: 499px) {
-    aside {
-      margin-left: -10%;
-    }
-    aside .title {
-      width: 70%;
-    }
-    aside p {
-      font-size: 1.2rem;
-    }
+  aside{
+    width: 100%;
   }
+
+
+
+}
+
+@media screen and (max-width: 472px){
+  .titleHeader{
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+  .containerInicio{
+    height: 60vh;
+  }
+
+  aside .title{
+    font-size: 26px;
+  }
+
+  aside p{
+    font-size: 18px;
+    width: 85%;
+  }
+
+  form{
+    width: 100%;
+  }
+
+  .featureCollection img{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+
+  .change{
+    margin-top: 2px;
+  }
+
+  main aside{
+    width: 100%;
+  }
+
+  .content .title{
+    font-size: 26px;
+    width: 90%;
+  }
+
+  .content p{
+    font-size: 20px;
+  }
+
+  .feature{
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 420px){
+  .navBar ul, a{
+    width: 50%;
+  }
+  
+  .containerHeader{
+    height: 20%;
+    width: 80%;
+    margin: auto;
+}
+
+header img{
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+#navigator{
+  width: 80%;
+}
+
+.navBar ul a:nth-child(2){
+  width: 100%;
+}
+
+li{
+  font-size: 15px;
+}
+}
+@media screen and (max-width: 375px){
+  body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+}
+
+@media screen and (max-width: 320px){
+  .navBar{
+    width: 60%;
+    margin:auto;
+  }
+
+  form input{
+    width: 80%;
+  }
+
+  header{
+    flex-direction: column;
+  }
+
+  li{
+    font-size: 10px;
+  }
+}
 }
