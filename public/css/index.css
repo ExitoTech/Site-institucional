@@ -300,3 +300,82 @@ footer .links .iconLinks a {
   background-size: cover;
   font-size: 1.7rem;
 }
+
+@media screen and (max-width: 1400px) {
+  body {
+    overflow-x: hidden;
+  }
+  article img {
+    position: relative;
+    left: -40px;
+    height: 550px;
+  }
+
+  @media screen and (max-width: 920px) {
+    article img {
+      position: relative;
+      left: -300px;
+    }
+
+    .content .title {
+      word-spacing: 20px;
+      font-size: 2.5rem;
+      width: 80%;
+    }
+    .content p {
+      font-size: 1.5rem;
+      width: 80%;
+    }
+  }
+
+  @media screen and (max-width: 799px) {
+    article img {
+      position: relative;
+      left: -400px;
+      z-index: -1;
+    }
+
+    .content p {
+      font-size: 1.5rem;
+      width: 80%;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .content p {
+      width: 100%;
+    }
+    .feature {
+      margin-top: 50%;
+    }
+    .feature p,
+    .title {
+      margin-left: 20%;
+      width: 60%;
+    }
+    article {
+      display: none;
+    }
+
+    .content {
+      margin-left: 50px;
+      width: 70%;
+    }
+
+    .navBar ul {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 499px) {
+    aside {
+      margin-left: -10%;
+    }
+    aside .title {
+      width: 70%;
+    }
+    aside p {
+      font-size: 1.2rem;
+    }
+  }
+}
