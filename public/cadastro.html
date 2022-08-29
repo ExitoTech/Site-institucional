@@ -23,30 +23,36 @@
             <form>
                 <div class="container">
                     <h1>Cadastro</h1>
-                    <label for="">
-                        <input type="text" id="nomeDaEmpresa" placeholder="Nome da empresa">
-                    </label>
-                    <label for="">
-                        <input onkeyup="buscarCep()" id="inputCep" type="text" placeholder="CEP">
-                    </label>
-                    <label for="">
-                        <input class="disabledHover" id="inputLogradouro" type="text" disabled placeholder="Logradouro">
-                    </label>
-                    <label for="">
-                        <input class="disabledHover" id="inputUf" type="text" disabled placeholder="UF">
-                    </label>
-                    <label for="">
-                        <input type="text" placeholder="CNPJ" maxlength="18" id="inputCnpj">
-                    </label>
-                    <label for="" placeholder="">
-                        <p>Porte Empresa</p>
-                        <select name="" id="">
-                            <option value=""></option>
-                            <option value="">Grande porte</option>
-                            <option value="">Médio porte</option>
-                            <option value="">Pequeno porte</option>
-                        </select>
-                    </label>
+                    <div class="cardCadastro">
+                        <div class="cadastroEsq">
+                            <label for="">
+                                <input type="text" id="nomeDaEmpresa" placeholder="Nome da empresa">
+                            </label>
+                            <label for="">
+                                <input onkeyup="buscarCep()" id="inputCep" type="text" placeholder="CEP">
+                            </label>
+                            <label for="">
+                                <input class="disabledHover" id="inputLogradouro" type="text" disabled placeholder="Logradouro">
+                            </label>
+                        </div>
+                        <div class="cadastroDir">
+                            <label for="">
+                                <input class="disabledHover" id="inputUf" type="text" disabled placeholder="UF">
+                            </label>
+                            <label for="">
+                                <input type="text" placeholder="CNPJ" maxlength="18" id="inputCnpj">
+                            </label>
+                            <label for="" placeholder="">
+                                <select name="" id="">
+                                    <option selected disabled>Selecione o porte da empresa:</option>
+                                    <option value="">Grande porte</option>
+                                    <option value="">Médio porte</option>
+                                    <option value="">Pequeno porte</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+
                     <button onclick="nextSignUp()" type="button">
                         Próximo
                     </button>
