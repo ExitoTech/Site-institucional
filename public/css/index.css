@@ -155,7 +155,7 @@ input {
   height: 40px;
   width: 600px;
   padding: 0.93rem;
-  border-radius: 20px;
+  border-radius: 5px;
   border: none;
   font-size: 15px;
   outline: none;
@@ -175,6 +175,7 @@ input::placeholder {
   justify-content: center; */
 
   flex-direction: column;
+  margin-top: 6rem;
 }
 .titleHeader{
   font-weight: bold;
