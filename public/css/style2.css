@@ -11,7 +11,8 @@ body {
     background-color: #ebefc9;
 }
 
-.DivLateral, .DivLateralLogin {
+.DivLateral,
+.DivLateralLogin {
     border-width: 2px;
     width: 50%;
     height: 100vh;
@@ -76,7 +77,8 @@ form {
     outline: none;
 }
 
-.container .inputLogin, .container .inputCadastroPt2 {
+.container .inputLogin,
+.container .inputCadastroPt2 {
     align-self: center;
     padding: 3px;
     height: 2.5rem;
@@ -90,7 +92,8 @@ form {
     outline: none;
 }
 
-.container .labelLogin, .container .labelCadastroPt2 {
+.container .labelLogin,
+.container .labelCadastroPt2 {
     width: 300px;
     margin-top: 1.5rem;
 }
@@ -116,6 +119,15 @@ form {
 .container button:hover {
     transition: .3s;
     color: #c1d3fe;
+}
+
+.container .safePassword {
+    width: 120px;
+    height: 30px;
+    font-size: 0.7rem;
+    border-radius: 10px;
+    text-align: center;
+    text-align: center;
 }
 
 .container p {
@@ -155,7 +167,8 @@ select {
     margin-bottom: 1rem;
 }
 
-.cadastroEsq, .cadastroDir {
+.cadastroEsq,
+.cadastroDir {
     width: 45%;
     height: 100%;
     display: flex;
@@ -200,8 +213,9 @@ select {
         flex-direction: column;
         align-items: center;
     }
-    
-    .cadastroEsq, .cadastroDir {
+
+    .cadastroEsq,
+    .cadastroDir {
         width: 95%;
         height: 70%;
         display: flex;

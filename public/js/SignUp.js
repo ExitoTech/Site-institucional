@@ -68,5 +68,8 @@ function Valide() {
 function GerarSenhaSegura() {
     var safePassword = Math.random().toString(36).slice(-10)
     console.log(safePassword)
-    return safePassword;
+    Swal.fire({
+        title:`Copie a senha: ${safePassword}`,
+        toast:true
+    })
 }
