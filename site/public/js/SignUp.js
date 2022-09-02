@@ -16,9 +16,9 @@ function validarNomeEmpresa() {
 }
 
 function verificarCep() {
-    var testeCep = inputCep.value
+    var Cep = inputCep.value
 
-    if (testeCep.length == 8) {
+    if (Cep.length == 8) {
         inputCep.style.color = "#80b918";
         inputCep.style.borderLeft = "none";
         inputCep.style.borderTop = "none";
@@ -97,6 +97,37 @@ function nextSignUp() {
             title: '<h3>Dados enviados com sucesso</h3> <br> Indo para a proxima etapa.',
             showConfirmButton: false
         })
+        fetch("/usuarios/guard", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/usuario.js
+            nomeServer: document.getElementById("inputNomeDaEmpresa").value,
+            cepServer: document.getElementById("inputCep").value,
+            cnpjServer: document.getElementById("inputCnpj").value,
+            porteServer: document.getElementById("selectPorte").value,
+            logradouroServer: document.getElementById("inputLogradouro").value,
+            ufServer: document.getElementById("inputUf").value,
+
+          })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
     }
     else {
         Swal.fire({

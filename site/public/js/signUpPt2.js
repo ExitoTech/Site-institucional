@@ -90,6 +90,7 @@ function nextSignUp() {
     if(inputRepetirSenha.style.borderBottom != "2px solid green"){
 
         errosValidação++
+
     }
     else if(inputSenha.style.borderBottom != "2px solid green"){
 
@@ -103,16 +104,44 @@ function nextSignUp() {
 
 
      if (errosValidação == 0  ) {
-        setTimeout(() => {
-            window.location.assign("login.html");
-        }, "2500")
+        // setTimeout(() => {
+        //     window.location.assign("login.html");
+        // }, "2500")
 
-        Swal.fire({
-            icon: 'success',
-            title: '<h3>Cadastro Confirmado!!</h3> <br> Indo para a tela de login.',
-            showConfirmButton: false
-        })
-    }
+        // Swal.fire({
+        //     icon: 'success',
+        //     title: '<h3>Cadastro Confirmado!!</h3> <br> Indo para a tela de login.',
+        //     showConfirmButton: false
+        // })
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                emailServer: document.getElementById("inputEmail").value,
+                senhaServer: document.getElementById("inputSenha").value,
+
+              })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+    
+                if (resposta.ok) {
+    
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+    
+            return false;
+        }
+
+    
     else {
         Swal.fire({
             icon: 'error',
