@@ -161,6 +161,7 @@ form {
 .container button:hover {
     transition: .3s;
     color: #c1d3fe;
+    cursor: pointer;
 }
 
 .container .safePassword {
@@ -170,7 +171,7 @@ form {
     border-radius: 5px;
     text-align: center;
     text-align: center;
-    margin-top: 1%;
+    margin:10px;
 }
 
 .container p {
