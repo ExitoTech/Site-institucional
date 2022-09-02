@@ -1,3 +1,5 @@
+var porte = ""
+
 function validarNomeEmpresa() {
     var nomeEmpresa = inputNomeDaEmpresa.value;
 
@@ -53,13 +55,29 @@ function verificarCnpj() {
 }
 
 function validarPorte(){
-    var porte = selectPorte;
 
-    if(porte == 1 || porte == 2 || porte == 3){
+    if(selectPorte == 1 ||selectPorte == 2 || selectPorte == 3){
         selectPorte.style.color = "green"
     } else {
         selectPorte.style.color = "#d90429"
     }
+
+   if(selectPorte == 1){
+
+    porte = "Grande Porte"
+   }
+   else if(selectPorte == 2){
+
+    porte =  "Médio Porte"
+
+   }
+   else{
+
+    porte = "Pequeno Porte"
+     
+   }
+    
+
 }
 
 
@@ -108,7 +126,7 @@ function nextSignUp() {
             nomeServer: document.getElementById("inputNomeDaEmpresa").value,
             cepServer: document.getElementById("inputCep").value,
             cnpjServer: document.getElementById("inputCnpj").value,
-            porteServer: document.getElementById("selectPorte").value,
+            porteServer: porte,
             logradouroServer: document.getElementById("inputLogradouro").value,
             ufServer: document.getElementById("inputUf").value,
 
