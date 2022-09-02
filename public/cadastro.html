@@ -26,36 +26,33 @@
                     <div class="cardCadastro">
                         <div class="cadastroEsq">
                             <div class="formControl">
-                                <input type="text" id="nomeDaEmpresa" required>
+                                <input type="text" onkeyup="validarNomeEmpresa()" id="inputNomeDaEmpresa" required>
                                 <label>Nome da empresa:</label>
                             </div>
-
                             <div class="formControl">
-                                <input onkeyup="buscarCep()" id="inputCep" type="text" required>
+                                <input onkeyup="buscarCep(), verificarCep()" id="inputCep" max="8" type="number" required>
                                 <label>CEP:</label>
                             </div>
 
                             <div class="formControl">
-                                <input class="disabledHover" id="inputLogradouro" type="text" required>
-                                <label>Logradouro:</label>
+                                <input id="inputLogradouro" type="text" placeholder="Logradouro" disabled required>
                             </div>
                         </div>
                         <div class="cadastroDir">
                             <div class="formControl">
-                                <input class="disabledHover" id="inputUf" type="text" required>
-                                <label>UF:</label>
+                                <input id="inputUf" type="text" placeholder="UF" disabled required>
                             </div>
 
                             <div class="formControl">
                                 <input type="text" maxlength="18" id="inputCnpj" required>
                                 <label>CNPJ:</label>
                             </div>
-                                <select name="" id="">
-                                    <option selected disabled hidden>Selecione o porte da empresa:</option>
-                                    <option value="">Grande porte</option>
-                                    <option value="">Médio porte</option>
-                                    <option value="">Pequeno porte</option>
-                                </select>
+                            <select name="" id="">
+                                <option selected disabled hidden>Selecione o porte da empresa:</option>
+                                <option value="">Grande porte</option>
+                                <option value="">Médio porte</option>
+                                <option value="">Pequeno porte</option>
+                            </select>
                         </div>
                     </div>
 

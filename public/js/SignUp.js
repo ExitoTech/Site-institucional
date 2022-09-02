@@ -1,21 +1,126 @@
+var errosValidação = 0;
 
-var errosValidacao = 0;
+function validarNomeEmpresa(){
+    var nomeEmpresa = inputNomeDaEmpresa.value;
+    if(nomeEmpresa.length>=3){
+        inputNomeDaEmpresa.style.border = "2px solid green";
+        inputNomeDaEmpresa.style.borderLeft = "none";
+        inputNomeDaEmpresa.style.borderTop = "none";
+        inputNomeDaEmpresa.style.borderRight = "none";
+    }
+    else if(nomeEmpresa == ""){
+        inputNomeDaEmpresa.style.border = "2px solid #b8860b";
+        inputNomeDaEmpresa.style.borderLeft = "none";
+        inputNomeDaEmpresa.style.borderTop = "none";
+        inputNomeDaEmpresa.style.borderRight = "none";  
+    }
+    else{
+        inputNomeDaEmpresa.style.border = "2px solid red";
+        inputNomeDaEmpresa.style.borderLeft = "none";
+        inputNomeDaEmpresa.style.borderTop = "none";
+        inputNomeDaEmpresa.style.borderRight = "none";  
+    }
+}
 
+function verificarEmail() {
+    var testeMail = inputEmail.value
 
-function nextSignUp() {
-
-    var nome = nomeDaEmpresa.value;
-
-    if (nome.length < 3) {
-        console.log('xpto');
-        errosValidacao++;
+    if (testeMail.indexOf(".") > -1 && testeMail.indexOf("@") > -1) {
+        inputEmail.style.border = "2px solid green";
+        inputEmail.style.borderLeft = "none";
+        inputEmail.style.borderTop = "none";
+        inputEmail.style.borderRight = "none";
+    }
+    else if (testeMail == '') {
+        inputEmail.style.border = "2px solid #b8860b";
+        inputEmail.style.borderLeft = "none";
+        inputEmail.style.borderTop = "none";
+        inputEmail.style.borderRight = "none";
     }
 
+    else {
+        inputEmail.style.border = "2px solid red";
+        inputEmail.style.borderLeft = "none";
+        inputEmail.style.borderTop = "none";
+        inputEmail.style.borderRight = "none";
+    }
+}
 
-    //Essa parte do código é a em teoria a Principal, após fazer as validações ela decide se passa para a próxima página ou não,
-    // mas no caso de não passar na validação a Variavel tem que voltar a valer 0 ou você prende o usuario.
+function verificarCep() {
+    var testeCep = inputCep.value
 
-    if (errosValidacao == 0) {
+    if (testeCep.length == 8) {
+        inputCep.style.border = "2px solid green";
+        inputCep.style.borderLeft = "none";
+        inputCep.style.borderTop = "none";
+        inputCep.style.borderRight = "none";
+    }
+    else if (testeCep == '') {
+        inputCep.style.border = "2px solid #b8860b";
+        inputCep.style.borderLeft = "none";
+        inputCep.style.borderTop = "none";
+        inputCep.style.borderRight = "none";
+    }
+
+    else {
+        inputCep.style.border = "2px solid red";
+        inputCep.style.borderLeft = "none";
+        inputCep.style.borderTop = "none";
+        inputCep.style.borderRight = "none";
+    }
+}
+
+function ValidaSenha() {
+    var testeSenha = inputSenha.value
+
+    if (testeSenha.length >= 8) {
+        inputSenha.style.border = "2px solid green";
+        inputSenha.style.borderLeft = "none";
+        inputSenha.style.borderTop = "none";
+        inputSenha.style.borderRight = "none";
+    }
+    else if (testeSenha == '') {
+        inputSenha.style.border = "2px solid #b8860b";
+        inputSenha.style.borderLeft = "none";
+        inputSenha.style.borderTop = "none";
+        inputSenha.style.borderRight = "none";
+    }
+
+    else {
+        inputSenha.style.border = "2px solid red";
+        inputSenha.style.borderLeft = "none";
+        inputSenha.style.borderTop = "none";
+        inputSenha.style.borderRight = "none";
+    }
+}
+
+function ValidaConfirmarSenha(){
+    
+        var testeConfirmarSenha = inputRepetirSenha.value
+        var testeSenha = inputSenha.value
+    
+        if (testeConfirmarSenha  == testeSenha) {
+            inputRepetirSenha.style.border = "2px solid green";
+            inputRepetirSenha.style.borderLeft = "none";
+            inputRepetirSenha.style.borderTop = "none";
+            inputRepetirSenha.style.borderRight = "none";
+        }
+        else if (testeConfirmarSenha == '') {
+            inputRepetirSenha.style.border = "2px solid #b8860b";
+            inputRepetirSenha.style.borderLeft = "none";
+            inputRepetirSenha.style.borderTop = "none";
+            inputRepetirSenha.style.borderRight = "none";
+        }
+    
+        else {
+            inputRepetirSenha.style.border = "2px solid red";
+            inputRepetirSenha.style.borderLeft = "none";
+            inputRepetirSenha.style.borderTop = "none";
+            inputRepetirSenha.style.borderRight = "none";
+        }
+}
+
+function nextSignUp() {
         setTimeout(() => {
             window.location.assign("cadastro-pt2.html");
         }, "2500")
@@ -25,51 +130,13 @@ function nextSignUp() {
             title: '<h3>Dados enviados com sucesso</h3> <br> Indo para a proxima etapa.',
             showConfirmButton: false
         })
-    }
-    else {
-        errosValidacao = 0
-    }
 }
 
-function Valide() {
-    var senha = inputSenha.value
-    var senhaREP = inputRepetirSenha.value
-
-    var valido = 0
-    if (senha == "") {
-        validacao_senha.innerHTML = `<span style="color: red">Campo de senha não pode estar vazio.</span>`
-    }
-    else if (senha.length <= 7)
-        validacao_senha.innerHTML = `<span style="color: red">Campo de senha precisa ter no mínimo 8 caracteres.</span>`
-    else {
-        validacao_senha.innerHTML = `<span style="color: green">Válido</span>`
-        valido++
-    }
-    if (senhaREP != senha || senhaREP == "") {
-        validacao_senhaREP.innerHTML = `<span style="color: red">Senhas não conferem</span>`
-    }
-    else {
-        validacao_senhaREP.innerHTML = `<span style="color: green">Válido</span>`
-        valido++
-    }
-
-    if (valido == 2) {
-        setTimeout(() => {
-            window.location.assign("index.html");
-        }, "2500")
-
-        Swal.fire({
-            icon: 'success',
-            title: '<h3>Dados enviados com sucesso</h3> <br> Indo para a proxima etapa.',
-            showConfirmButton: false
-        })
-    }
-}
 function GerarSenhaSegura() {
     var safePassword = Math.random().toString(36).slice(-10)
     console.log(safePassword)
     Swal.fire({
-        title:`Copie a senha: ${safePassword}`,
-        toast:true
+        title: `Copie a senha: ${safePassword}`,
+        toast: true
     })
 }
