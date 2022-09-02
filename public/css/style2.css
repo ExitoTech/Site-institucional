@@ -63,7 +63,7 @@ form {
     display: block;
     width: 100%;
     padding: 15px 0;
-    font-size: 1rem;
+    font-size: 18px;
     padding: 3px;
     height: 2rem;
     margin: 10px 0px 0px 0px;
@@ -73,10 +73,15 @@ form {
     border-right: 2px;
 }
 
+.formControl input::placeholder {
+    color: #adb5bd;
+}
+
 .formControl input:focus,
 .formControl input:valid {
     outline: 0;
     border-bottom-color: black;
+    
 }
 
 .formControl label {
@@ -151,7 +156,6 @@ form {
     font-size: 1.5rem;
     cursor: pointer;
     transition: .3s;
-    margin-top: 5%;
 }
 
 .container button:hover {

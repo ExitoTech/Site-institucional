@@ -30,7 +30,7 @@
                                 <label>Nome da empresa:</label>
                             </div>
                             <div class="formControl">
-                                <input onkeyup="buscarCep(), verificarCep()" id="inputCep" max="8" type="number" required>
+                                <input onkeyup="buscarCep(), verificarCep()" id="inputCep" maxlength="8" type="text" required>
                                 <label>CEP:</label>
                             </div>
 
@@ -44,14 +44,14 @@
                             </div>
 
                             <div class="formControl">
-                                <input type="text" maxlength="18" id="inputCnpj" required>
+                                <input type="text" onkeyup="verificarCnpj()" maxlength="18" id="inputCnpj" required>
                                 <label>CNPJ:</label>
                             </div>
-                            <select name="" id="">
+                            <select name="" id="selectPorte" onclick="validarPorte()">
                                 <option selected disabled hidden>Selecione o porte da empresa:</option>
-                                <option value="">Grande porte</option>
-                                <option value="">Médio porte</option>
-                                <option value="">Pequeno porte</option>
+                                <option value="1">Grande porte</option>
+                                <option value="2">Médio porte</option>
+                                <option value="3">Pequeno porte</option>
                             </select>
                         </div>
                     </div>
