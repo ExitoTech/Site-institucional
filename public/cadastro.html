@@ -25,31 +25,37 @@
                     <h1>Cadastro</h1>
                     <div class="cardCadastro">
                         <div class="cadastroEsq">
-                            <label for="">
-                                <input type="text" id="nomeDaEmpresa" placeholder="Nome da empresa">
-                            </label>
-                            <label for="">
-                                <input onkeyup="buscarCep()" id="inputCep" type="text" placeholder="CEP">
-                            </label>
-                            <label for="">
-                                <input class="disabledHover" id="inputLogradouro" type="text" disabled placeholder="Logradouro">
-                            </label>
+                            <div class="formControl">
+                                <input type="text" id="nomeDaEmpresa" required>
+                                <label>Nome da empresa:</label>
+                            </div>
+
+                            <div class="formControl">
+                                <input onkeyup="buscarCep()" id="inputCep" type="text" required>
+                                <label>CEP:</label>
+                            </div>
+
+                            <div class="formControl">
+                                <input class="disabledHover" id="inputLogradouro" type="text" required>
+                                <label>Logradouro:</label>
+                            </div>
                         </div>
                         <div class="cadastroDir">
-                            <label for="">
-                                <input class="disabledHover" id="inputUf" type="text" disabled placeholder="UF">
-                            </label>
-                            <label for="">
-                                <input type="text" placeholder="CNPJ" maxlength="18" id="inputCnpj">
-                            </label>
-                            <label for="" placeholder="">
+                            <div class="formControl">
+                                <input class="disabledHover" id="inputUf" type="text" required>
+                                <label>UF:</label>
+                            </div>
+
+                            <div class="formControl">
+                                <input type="text" maxlength="18" id="inputCnpj" required>
+                                <label>CNPJ:</label>
+                            </div>
                                 <select name="" id="">
-                                    <option selected disabled>Selecione o porte da empresa:</option>
+                                    <option selected disabled hidden>Selecione o porte da empresa:</option>
                                     <option value="">Grande porte</option>
                                     <option value="">Médio porte</option>
                                     <option value="">Pequeno porte</option>
                                 </select>
-                            </label>
                         </div>
                     </div>
 
@@ -64,5 +70,5 @@
 </body>
 
 </html>
-<script src="js/cnpj.js"></script>
+<script src="js/cadastro.js"></script>
 <script src="js/SignUp.js"></script>
