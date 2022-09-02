@@ -1,8 +1,8 @@
-var testeMail = inputEmail.value
-var testeSenha = inputSenha.value
-var testeConfirmarSenha = inputRepetirSenha.value
-
 function verificarEmail() {
+
+    var testeMail = inputEmail.value
+
+
     if (testeMail.indexOf(".") > -1 && testeMail.indexOf("@") > -1) {
         inputEmail.style.color = "#80b918";
         inputEmail.style.borderLeft = "none";
@@ -14,7 +14,6 @@ function verificarEmail() {
         inputEmail.style.borderLeft = "none";
         inputEmail.style.borderTop = "none";
         inputEmail.style.borderRight = "none";
-        errosValidação++;
     }
 
     else {
@@ -23,10 +22,12 @@ function verificarEmail() {
         inputEmail.style.borderLeft = "none";
         inputEmail.style.borderTop = "none";
         inputEmail.style.borderRight = "none";
-        errosValidação++;
     }
 }
+
 function ValidaSenha() {
+
+    var testeSenha = inputSenha.value
 
     if (testeSenha.length >= 8) {
         inputSenha.style.border = "2px solid green";
@@ -39,7 +40,6 @@ function ValidaSenha() {
         inputSenha.style.borderLeft = "none";
         inputSenha.style.borderTop = "none";
         inputSenha.style.borderRight = "none";
-        errosValidação++;
     }
 
     else {
@@ -47,11 +47,15 @@ function ValidaSenha() {
         inputSenha.style.borderLeft = "none";
         inputSenha.style.borderTop = "none";
         inputSenha.style.borderRight = "none";
-        errosValidação++;
     }
 }
 
 function ValidaConfirmarSenha() {
+
+    var testeConfirmarSenha = inputRepetirSenha.value
+    var testeSenha = inputSenha.value
+
+
     if (testeConfirmarSenha == testeSenha) {
         inputRepetirSenha.style.border = "2px solid green";
         inputRepetirSenha.style.borderLeft = "none";
@@ -63,7 +67,6 @@ function ValidaConfirmarSenha() {
         inputRepetirSenha.style.borderLeft = "none";
         inputRepetirSenha.style.borderTop = "none";
         inputRepetirSenha.style.borderRight = "none";
-        errosValidação++;
     }
 
     else {
@@ -71,6 +74,53 @@ function ValidaConfirmarSenha() {
         inputRepetirSenha.style.borderLeft = "none";
         inputRepetirSenha.style.borderTop = "none";
         inputRepetirSenha.style.borderRight = "none";
-        errosValidação++;
+    }
+}
+
+
+
+function nextSignUp() {
+
+    var errosValidação = 0
+
+    var inputRepetirSenha = document.getElementById("inputRepetirSenha")
+    var inputSenha = document.getElementById("inputSenha")
+    var inputEmail = document.getElementById("inputEmail")
+
+    if(inputRepetirSenha.style.borderBottom != "2px solid green"){
+
+        errosValidação++
+    }
+    else if(inputSenha.style.borderBottom != "2px solid green"){
+
+        errosValidação++
+
+    }
+    else if(inputEmail.style.color != "rgb(128, 185, 24)"){
+
+        errosValidação++
+    }
+
+
+     if (errosValidação == 0  ) {
+        setTimeout(() => {
+            window.location.assign("login.html");
+        }, "2500")
+
+        Swal.fire({
+            icon: 'success',
+            title: '<h3>Cadastro Confirmado!!</h3> <br> Indo para a tela de login.',
+            showConfirmButton: false
+        })
+    }
+    else {
+        Swal.fire({
+            icon: 'error',
+            title: '<h3>Dados Invalidos</h3> <br> Verifique se tudo está digitado corretamente.',
+            showConfirmButton: false
+        })
+        setTimeout(() => {
+            window.location.assign("cadastro-pt2.html");
+        }, "2500")
     }
 }
