@@ -104,15 +104,15 @@ function nextSignUp() {
 
 
      if (errosValidação == 0  ) {
-        // setTimeout(() => {
-        //     window.location.assign("login.html");
-        // }, "2500")
+        setTimeout(() => {
+            window.location.assign("login.html");
+        }, "2500")
 
-        // Swal.fire({
-        //     icon: 'success',
-        //     title: '<h3>Cadastro Confirmado!!</h3> <br> Indo para a tela de login.',
-        //     showConfirmButton: false
-        // })
+        Swal.fire({
+            icon: 'success',
+            title: '<h3>Cadastro Confirmado!!</h3> <br> Indo para a tela de login.',
+            showConfirmButton: false
+        })
         fetch("/usuarios/cadastrar", {
             method: "POST",
             headers: {
