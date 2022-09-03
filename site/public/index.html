@@ -7,12 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Institucional | ExitoTech</title>
   <link rel="stylesheet" href="./css/index.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;400;500;700&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" />
 </head>
-<link rel="shortcut icon" href="img/logo_transparent.png" type="image/x-icon">
+<link rel="shortcut icon" href="img/logo_transparent.png" type="image/x-icon" />
 
 <body>
   <div class="center">
@@ -25,10 +25,9 @@
             <p>Exito Tech</p>
           </div>
         </a>
-        <!-- <div class="menu" id="toggle">
-            <ion-icon name="grid-outline" class="gridIcon"></ion-icon>
-          </div> -->
-        <div class="navBar" id="navigator">
+        <div class="toggle"></div>
+
+        <nav class="navBar" id="navigator">
           <ul>
             <a href="login.html">
               <li>Entrar</li>
@@ -37,7 +36,7 @@
               <li><span>Cadastrar</span></li>
             </a>
           </ul>
-        </div>
+        </nav>
       </div>
     </header>
     <main id="home">
@@ -69,20 +68,20 @@
         <span>monitoramento</span>
       </div>
       <p>
-        Você já parou pra pensar em quanto dinheiro está perdendo em relação a 
-        falta do monitoramento de hardware do seu ambiente de operação? 
-        Pesquisas dizem que um dos maiores erros do contact center é não monitorar
-        as máquinas de atendimento de sistemas.
+        Você já parou pra pensar em quanto dinheiro está perdendo em relação a
+        falta do monitoramento de hardware do seu ambiente de operação?
+        Pesquisas dizem que um dos maiores erros do contact center é não
+        monitorar as máquinas de atendimento de sistemas.
       </p>
       <p>
-        A falta de monitoramento permite que os funcionários tenham mais pausas por
-         problemas de máquinas lentas ou travadas. Pode influenciar na produtividade,
-        pelo aumento de máquinas ociosiosas na operação.
+        A falta de monitoramento permite que os funcionários tenham mais
+        pausas por problemas de máquinas lentas ou travadas. Pode influenciar
+        na produtividade, pelo aumento de máquinas ociosiosas na operação.
       </p>
       <p>
-        Nós da ExitoTech estamos aqui para auxiliar na solução desses desafios! Temos
-        um sistema de ponta quando se trata do monitoramento de software, auxiliando
-        diversas empresas de Call Center pelo Brasil!
+        Nós da ExitoTech estamos aqui para auxiliar na solução desses
+        desafios! Temos um sistema de ponta quando se trata do monitoramento
+        de software, auxiliando diversas empresas de Call Center pelo Brasil!
       </p>
     </div>
 
@@ -90,7 +89,8 @@
       <div class="titleFeature">
         <div class="title">Recursos</div>
         <p>
-          O sistema informa em gráficos precisos no monitoramento de recursos da sua máquina!
+          O sistem informa em gráficos precisos no monitoramento de recursos
+          da sua máquina!
         </p>
       </div>
 
@@ -105,8 +105,9 @@
             </div>
 
             <p>
-              É possível monitorar setores inteiros de operações, visualizando todas
-              as máquinas e atividades. Se algo está fora do ar, seu futuro sistema será o primeiro a saber.
+              É possível monitorar setores inteiros de operações, visualizando
+              todas as máquinas e suas atividades. Se algo está fora do ar o
+              seu futuro sistema será o primeiro a saber.
             </p>
           </div>
           <div class="cardFeature">
@@ -148,7 +149,11 @@
         </div>
         <div class="location">
           <ion-icon name="location-outline"></ion-icon>
-          <p><a href="https://www.google.com.br/maps/place/Rua+Haddock+Lobo,+595+-+Cerqueira+C%C3%A9sar,+S%C3%A3o+Paulo+-+SP,+01414-001/@-23.5581662,-46.6637267,17z/data=!3m1!4b1!4m5!3m4!1s0x94ce59d2a5270055:0x3c7ea4f4c7d51fb6!8m2!3d-23.5581662!4d-46.661538"> Rua Haddock Lobo, 595</a></p>
+          <p>
+            <a
+              href="https://www.google.com.br/maps/place/Rua+Haddock+Lobo,+595+-+Cerqueira+C%C3%A9sar,+S%C3%A3o+Paulo+-+SP,+01414-001/@-23.5581662,-46.6637267,17z/data=!3m1!4b1!4m5!3m4!1s0x94ce59d2a5270055:0x3c7ea4f4c7d51fb6!8m2!3d-23.5581662!4d-46.661538">
+              Rua Haddock Lobo, 595</a>
+          </p>
         </div>
       </div>
 
@@ -172,3 +177,11 @@
 </body>
 
 </html>
+
+<script>
+  const navigation = document.querySelector('nav')
+  document.querySelector('.toggle').onclick = function () {
+    this.classList.toggle('active')
+    navigation.classList.toggle('active')
+  }
+</script>
