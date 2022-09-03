@@ -37,7 +37,7 @@ aside {
 }
 
 aside div {
-    width: 450px;
+    width: 470px;
     height: 100px;
     display: flex;
     text-align: center;
@@ -45,48 +45,96 @@ aside div {
     align-items: center;
     font-size: 1.3rem;
     font-weight: 100;
+
 }
 
-aside .mainAside {
+.mommy{
+    width: 80%;
+    height: 90vh;
     display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    height: 200px;
+    margin-top: -40px;
 }
-
-aside .mainAside div {
-    width: 300px;
-    height: 100px;
-    background-color: #00041f;
+.mommy .test01{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #f5f5f5;
-    border-radius: 20px;
-    cursor: pointer;
-    box-shadow: 0 6px 6px rgb(0 0 0 / 16%), 0 1px 2px #aba7a73b;
-    text-align: center;
-}
-
-aside .statusAside {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
+    flex-direction: column;
     height: 400px;
+    justify-content: space-between;
+}
+.mommy .test02{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    justify-content: space-between;
+
 }
 
-aside .statusAside .warningAside {
+.menuPt1{
+    display: flex;
+}
+.menuPt1 div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f5f5f5;
+    background-color: #00041f;
     width: 350px;
-    height: 290px;
-    background-color: #f5f5f5;
-    border-radius: 30px;
-    box-shadow: 0 6px 6px rgb(0 0 0 / 16%), 0 1px 2px #aba7a73b;
+    height: 80px;
+    margin-right: 30px;
+    border-radius: 20px;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
+    font-family: 'Roboto';
+    cursor: pointer;
 }
 
-aside .statusAside .activityAside {
-    width: 630px;
-    height: 290px;
-    background-color: #f5f5f5;
-    border-radius: 30px;
-    box-shadow: 0 6px 6px rgb(0 0 0 / 16%), 0 1px 2px #aba7a73b;
+.menuPt2{
+    display: flex;
 }
+.menuPt2 div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f5f5f5;
+    background-color: #00041f;
+    width: 350px;
+    height: 80px;
+    margin-left: 135px;
+    border-radius: 20px;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
+    cursor: pointer;
+}
+
+.menuPt3{
+    display: flex;
+}
+.menuPt3 div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f5f5f5;
+    background-color: #00041f;
+    width: 350px;
+    height: 80px;
+    margin-left: 20px;
+    border-radius: 20px;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
+    cursor: pointer;
+}
+.ngcBranco{
+    width: 350px;
+    height: 800px;
+    background-color: #f5f5f5;
+    margin-right: 30px;
+    margin-top: 30px;
+    border-radius: 20px;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
+}
+.ngcBranco2{
+    width: 730px;
+    height: 800px;
+    background-color: #f5f5f5;
+    margin-right: -130px;
+    margin-top: 30px;
+    border-radius: 20px;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
+}
+
