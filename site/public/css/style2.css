@@ -26,7 +26,7 @@ body {
     width: 50%;
     height: 100vh;
     left: 0px;
-    background-color: #000633;
+    background: linear-gradient(125deg, #000633 50%, #3627d9 100%);
     float: left;
     display: flex;
 }
@@ -49,6 +49,7 @@ form {
     margin: 70px auto;
     background-color: #edf2fb;
     border-radius: 5px;
+    border-radius: 20px;
 }
 
 .formControl {
@@ -160,7 +161,8 @@ form {
 
 .container button:hover {
     transition: .3s;
-    color: #c1d3fe;
+    color: #b4bec9;
+    background-color: #3627d9;
     cursor: pointer;
 }
 

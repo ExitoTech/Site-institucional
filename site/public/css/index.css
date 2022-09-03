@@ -281,7 +281,8 @@ article img {
 }
 
 .change .cardFeature {
-  margin-top: 10px;
+  margin-top: 15px;
+  width: 60%;
   line-height: 30px;
 }
 
