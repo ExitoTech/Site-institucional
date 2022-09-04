@@ -15,30 +15,35 @@
 <link rel="shortcut icon" href="img/logo_transparent.png" type="image/x-icon" />
 
 <body>
+  <header id="header">
+    <div class="containerHeader">
+      <a href="#home" class="logo">
+        <img src="./img/logo_transparent.png" />
+
+        <div class="titleHeader">
+          <p>Exito Tech</p>
+        </div>
+      </a>
+      <div class="toggle"></div>
+
+      <nav class="navBar" id="navigator">
+        <ul>
+          <a href="login.html">
+            <li>Entrar</li>
+          </a>
+          <a href="cadastro.html">
+            <li><span>Cadastrar</span></li>
+          </a>
+        </ul>
+      </nav>
+    </div>
+    <div class="shadow">
+    </div>
+  </header>
   <div class="center">
-    <header id="header">
-      <div class="containerHeader">
-        <a href="#home" class="logo">
-          <img src="./img/logo_transparent.png" />
+    <div class="space">
 
-          <div class="titleHeader">
-            <p>Exito Tech</p>
-          </div>
-        </a>
-        <div class="toggle"></div>
-
-        <nav class="navBar" id="navigator">
-          <ul>
-            <a href="login.html">
-              <li>Entrar</li>
-            </a>
-            <a href="cadastro.html">
-              <li><span>Cadastrar</span></li>
-            </a>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    </div>
     <main id="home">
       <div class="containerInicio">
         <aside>
@@ -95,8 +100,7 @@
       </div>
 
       <div class="featureCollection">
-        <img src="./img/dashFeature.png" />
-
+        
         <div class="change">
           <div class="cardFeature">
             <div class="iconTitle">
@@ -117,9 +121,9 @@
             </div>
 
             <p>
-                É possível também evitar o congestionamento no sistema através do nosso planejamento DMM.
-                Através dos requisitos coletados pela nossa equipe conseguimos prever o dia de maior movimento (DMM),
-                e com isso otimizar recursos nos momentos de congestionamento.
+              É possível também evitar o congestionamento no sistema através do nosso planejamento DMM.
+              Através dos requisitos coletados pela nossa equipe conseguimos prever o dia de maior movimento (DMM),
+              e com isso otimizar recursos nos momentos de congestionamento.
 
             </p>
           </div>
@@ -136,41 +140,26 @@
             </p>
           </div>
         </div>
+
+        <img src="./img/dashFeature.png" />
       </div>
     </div>
   </div>
 
   <footer>
+    <div class="line"></div>
     <div class="links">
-      <div class="links1">
-        <div class="phone">
-          <ion-icon name="logo-whatsapp"></ion-icon>
-          <p>+55 (11) xxxx-xxxx</p>
-        </div>
-        <div class="location">
-          <ion-icon name="location-outline"></ion-icon>
-          <p>
-            <a
-              href="https://www.google.com.br/maps/place/Rua+Haddock+Lobo,+595+-+Cerqueira+C%C3%A9sar,+S%C3%A3o+Paulo+-+SP,+01414-001/@-23.5581662,-46.6637267,17z/data=!3m1!4b1!4m5!3m4!1s0x94ce59d2a5270055:0x3c7ea4f4c7d51fb6!8m2!3d-23.5581662!4d-46.661538">
-              Rua Haddock Lobo, 595</a>
-          </p>
-        </div>
+            <a href="https://github.com/ExitoTech">
+              <ion-icon name="logo-github"></ion-icon>
+              <p>ExitoTech</p>
+            </a>
+            <h1>&copy; Exito Copyright</h1>
+            <a href="#">
+              <ion-icon name="mail-outline"></ion-icon>
+              <p>exito.tech@gmail.com</p>
+            </a>
       </div>
-
-      <div class="links2">
-        <div class="iconLinks">
-          <a href="https://github.com/ExitoTech">
-            <ion-icon name="logo-github"></ion-icon>
-            <p>ExitoTech</p>
-          </a>
-          <a href="#">
-            <ion-icon name="mail-outline"></ion-icon>
-            <p>exito.tech@gmail.com</p>
-          </a>
-        </div>
-      </div>
-    </div>
-    <h1>&copy; Exito Copyright</h1>
+      
   </footer>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

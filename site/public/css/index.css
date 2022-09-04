@@ -17,7 +17,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 80%;
   margin: 3% 1.5% 3% 1.5%;
 }
 
@@ -30,7 +30,7 @@
 }
 
 body {
-  background: linear-gradient(125deg, #00041f 17%, #00094c 50%, #3627d9 100%);
+  background: linear-gradient(125deg, #00041f 17%, #000633 50%, #051270 100%);
   /* background-repeat: no-repeat; */
   background-size: cover;
   max-width: 1920px;
@@ -48,11 +48,21 @@ body {
   margin: auto;
 }
 
+.space{
+  width: 100%;
+  height: 130px;
+}
+
 header {
+  background: #000633;
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: fixed;
+  top:0;
+  left: 0;
+  z-index:9999;
 }
 
 header h1 {
@@ -103,6 +113,18 @@ a {
 
 .navBar ul a:hover:nth-child(2) {
   background-color: var(--blue-light);
+}
+
+.shadow::after{
+  background-image: linear-gradient(180deg, #000633, hsla(0,0%,7%,0));
+  content: "";
+  height: 200px;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 13.9%;
+  z-index: 999;
 }
 
 main {
@@ -163,7 +185,7 @@ input {
   height: 40px;
   width: 600px;
   padding: 0.93rem;
-  border-radius: 5px;
+  border-radius: 20px;
   border: none;
   font-size: 15px;
   outline: none;
@@ -222,6 +244,7 @@ article img {
   top: -20px;
   height: 400px;
   animation: float 3.5s ease-in-out infinite;
+  z-index: -1;
 }
 
 @keyframes float {
@@ -260,13 +283,13 @@ article img {
 
 .titleFeature p {
   color: var(--grey);
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-family: 'Roboto';
 }
 
 .featureCollection {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin-top: 50px;
 }
@@ -307,18 +330,28 @@ ion-icon {
   font-size: 1.5rem;
 }
 
+.line{
+  opacity: 25%;
+  height: 0.2px;
+  width: 70%;
+  border-radius: 20px;
+  background-color: #b4bec9;
+}
+
 footer {
   grid-area: foot;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background: linear-gradient(125deg, #373738 17%, #232324 50%, #111111 100%);
-  margin-top: 10%;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
-    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  /* background: linear-gradient(125deg, #373738 17%, #232324 50%, #111111 100%); */
+  margin-top: 8%;
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
   width: 100%;
 }
+
+
 
 footer h1 {
   font-size: 1.5rem;
@@ -327,29 +360,14 @@ footer h1 {
   margin-bottom: 0.8%;
 }
 
-footer .links {
+footer .links{
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-around;
-  align-items: flex-start;
-  width: 100%;
-  gap: 20px;
-  margin-top: 1%;
-  font-size: 1.2rem;
-}
-
-footer .links1 {
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-}
-
-footer .links2 {
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  align-items: flex-start;
-  height: 100%;
+  width: 80%;
+  margin: auto;
+  height: 190px;
 }
 
 footer .links .location {
@@ -371,27 +389,22 @@ footer .links .phone>ion-icon {
 }
 
 footer .links .iconLinks {
-  display: flex;
-  flex-direction: column;
   gap: 0.7rem;
-}
-
-footer .links .iconLinks a {
-  margin: 0;
-  padding: 0;
-  background-repeat: no-repeat;
-  background-size: cover;
-  gap: 0.7rem;
-  justify-content: flex-end;
 }
 
 @media screen and (max-width: 1440px) {
-  .content {
+    .content {
     margin-top: 40px;
   }
+
 }
 
 @media screen and (max-width: 1362px) {
+  .shadow{
+    visibility: hidden;
+    position: none;
+  }
+  
   .featureCollection {
     flex-direction: column;
   }
@@ -459,11 +472,11 @@ footer .links .iconLinks a {
       right: 40px;
       width: 50px;
       height: 50px;
-      background: #fff url('../img/menu.png');
+      background: var(--grey) url('../img/menu.png');
       background-size: 30px;
       background-repeat: no-repeat;
       background-position: center;
-      border-radius: 15px;
+      border-radius: 20px;
       box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
         rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
         rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
@@ -489,6 +502,11 @@ footer .links .iconLinks a {
   }
 
   @media screen and (max-width: 755px) {
+    
+    .space{
+      height: 0;
+    }
+
     .featureCollection img {
       width: 0;
       height: 0;
