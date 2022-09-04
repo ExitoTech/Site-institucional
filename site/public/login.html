@@ -8,6 +8,10 @@
     <title>Login | ExitoTech</title>
     <link rel="shortcut icon" href="img/pet-shop.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;400;500;700&display=swap"
+        rel="stylesheet" />
     <link rel="shortcut icon" href="img/logo_transparent.png" type="image/x-icon">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -16,23 +20,30 @@
 <body>
     <div class="group">
         <div class="DivA">
-            <img src="img/logo_transparent.png" alt="">
+            <div class="DivAContent" >
+                <a href="./index.html" class="loginLink" onmouseenter="entrarDivA()" onmouseout="sairDivA()">
+                    <img src="img/logo_transparent.png" alt="" onmouseenter="entrarDivA()" onmouseout="sairDivA()">
+                    <p id="textoLink">
+                        ExitoTech
+                    </p>
+                </a>
+            </div>
         </div>
-        <div class="DivLateralLogin" >
+        <div class="DivLateralLogin">
             <form class="formLogin">
                 <div class="container">
-                    <h1>LOGIN</h1>
+                    <h1>Login</h1>
 
                     <label for="" class="labelLogin">
-                        <input type="text" placeholder="Email" required id="inputEmail"  class="inputLogin"> 
+                        <input type="text" placeholder="Email" required id="inputEmail" class="inputLogin">
                     </label>
                     <label for="" class="labelLogin">
                         <input id="inputSenha" type="password" placeholder="Senha" required class="inputLogin">
                     </label>
                     <button onclick="Entrar()" type="button">
-                        ENTRAR
+                        Entrar
                     </button>
-                    <p>Não tem conta? Faça o <a href="cadastro.html">cadastro.</a></p>
+                    <p>Não tem conta? Faça o <a href="cadastro.html" class="linkCadastro">cadastro.</a></p>
                 </div>
             </form>
         </div>

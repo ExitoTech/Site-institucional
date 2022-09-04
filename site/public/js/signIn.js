@@ -43,3 +43,12 @@ function    Entrar() {
             console.log(erro);
         });
 }
+
+function entrarDivA(){
+    textoLink.innerHTML= `< voltar`
+    
+}
+
+function sairDivA(){
+    textoLink.innerHTML= 'ExitoTech'
+}

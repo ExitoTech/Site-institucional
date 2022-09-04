@@ -1,3 +1,12 @@
+function entrarDivA(){
+    textoLink.innerHTML= `< voltar`
+    
+}
+
+function sairDivA(){
+    textoLink.innerHTML= 'ExitoTech'
+}
+
 var porte = ""
 
 function validarNomeEmpresa() {

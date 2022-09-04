@@ -17,7 +17,7 @@ body {
     border-width: 2px;
     width: 50%;
     height: 100vh;
-    background-color: #c1d3fe;
+    background-color: #b4bec9;
     float: left;
 }
 
@@ -26,13 +26,23 @@ body {
     width: 50%;
     height: 100vh;
     left: 0px;
-    background: linear-gradient(125deg, #000633 50%, #3627d9 100%);
+    background: linear-gradient(90deg, #000633 0%, #000f84 39%, #3627d9 68%, #b4bec9 99%);
+    background-size: 200% 20% 0%;
+    animation: colors 15s ease infinite;
     float: left;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.DivAContent{
+    text-align: center;
+    color: #ffffff;
 }
 
 .DivA img {
-    width: 65%;
+    width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,11 +50,25 @@ body {
     cursor: pointer;
 }
 
+.DivA p{
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+}
+
+
+.loginLink{
+    color: #fff;
+    text-decoration: none;
+}
+.loginLink:hover{
+    text-decoration: none;
+}
+
 form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 90%;
+    width: 80%;
     height: 85vh;
     margin: 70px auto;
     background-color: #edf2fb;
@@ -108,8 +132,8 @@ form {
 }
 
 .container {
-    width: 90%;
-    justify-content: center;
+    width: 80%;
+    justify-content: space-between;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -117,8 +141,9 @@ form {
 }
 
 .container h1 {
-    font-size: 4rem;
+    font-size: 3.9rem;
     color: #000;
+    font-family: 'Roboto Mono', monospace;
 }
 
 .container .inputLogin,
@@ -134,6 +159,8 @@ form {
     border-left: 2px;
     border-right: 2px;
     outline: none;
+    font-family: 'Roboto';
+    font-weight: light;
 }
 
 .container .labelLogin,
@@ -149,27 +176,42 @@ form {
 .container button {
     padding: 10px;
     background-color: #000633;
-    color: #caf0f8;
+    color: #b4bec9;
     border: none;
-    border-radius: 3px;
+    border-radius: 20px;
     width: 300px;
     height: 50px;
     font-size: 1.5rem;
     cursor: pointer;
     transition: .3s;
+    font-family: 'Roboto Mono';
 }
 
 .container button:hover {
     transition: .3s;
-    color: #b4bec9;
+    color: #ffff;
     background-color: #3627d9;
     cursor: pointer;
+}
+
+.linkCadastro:link, .linkCadastro:visited{
+    text-decoration: none;
+    color: #000633;
+}
+
+.linkCadastro:hover{
+    text-decoration: underline;
+    color: #3627d9;
+}
+
+.linkCadastro:active{
+    text-decoration: none;
 }
 
 .container .safePassword {
     width: 120px;
     height: 30px;
-    font-size: 0.7rem;
+    font-size: 0.5rem;
     border-radius: 5px;
     text-align: center;
     text-align: center;
@@ -177,7 +219,8 @@ form {
 }
 
 .container p {
-    margin-top: 50px;
+    margin-top: 20px;
+    font-family: 'Roboto Mono', monospace
 }
 
 label {
@@ -204,7 +247,6 @@ select {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem;
 }
 
 .cadastroEsq {
@@ -234,7 +276,7 @@ select {
     .DivLateral {
         width: 100%;
         height: 160vh;
-        background-color: #c1d3fe;
+        background-color: #b4bec9;
         float: left;
         align-items: center;
     }
@@ -262,7 +304,7 @@ select {
     .DivLateralLogin {
         width: 100%;
         height: 100vh;
-        background-color: #c1d3fe;
+        background-color: #b4bec9;
         float: left;
         align-items: center;
     }

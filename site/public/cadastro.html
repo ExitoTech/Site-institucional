@@ -12,12 +12,23 @@
     <script src="js/cepSrc.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;400;500;700&display=swap"
+        rel="stylesheet" />
 </head>
 
 <body>
     <div class="group">
         <div class="DivA">
-            <img src="img/logo_transparent.png" alt="" onclick="window.location='index.html'">
+            <div class="DivAContent" >
+                <a href="./index.html" class="loginLink" onmouseenter="entrarDivA()" onmouseout="sairDivA()">
+                    <img src="img/logo_transparent.png" alt="" onmouseenter="entrarDivA()" onmouseout="sairDivA()">
+                    <p id="textoLink">
+                        ExitoTech
+                    </p>
+                </a>
+            </div>
         </div>
         <div class="DivLateral">
             <form>

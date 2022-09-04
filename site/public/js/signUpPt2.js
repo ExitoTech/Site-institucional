@@ -1,3 +1,12 @@
+function entrarDivA(){
+    textoLink.innerHTML= `< voltar`
+    
+}
+
+function sairDivA(){
+    textoLink.innerHTML= 'ExitoTech'
+}
+
 function verificarEmail() {
 
     var testeMail = inputEmail.value
