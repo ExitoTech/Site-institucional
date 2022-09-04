@@ -167,12 +167,3 @@ function nextSignUp() {
         }, "2500")
     }
 }
-
-function GerarSenhaSegura() {
-    var safePassword = Math.random().toString(36).slice(-10)
-    console.log(safePassword)
-    Swal.fire({
-        title: `Copie a senha: ${safePassword}`,
-        toast: true
-    })
-}
