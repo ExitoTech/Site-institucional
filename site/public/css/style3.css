@@ -174,6 +174,7 @@ aside div {
     box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
 }
 .ngcBranco2{
+    flex-direction: column;
     width: 730px;
     height: 800px;
     background-color: #f5f5f5;
@@ -181,5 +182,56 @@ aside div {
     margin-top: 30px;
     border-radius: 20px;
     box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
+}
+
+.ngcBranco2 .div01{
+    width: 90%;
+    height: 20px;
+}
+.div01{
+    justify-content: space-between;
+    margin: 35px;
+}
+
+.fontLastActivity{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.imagensDiv{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    justify-content: space-around;
+    width: 98vw;
+    height: 50vh;
+    cursor: pointer;
+}
+
+.imagensDivItem{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 25%;
+    height: 10%;
+    align-items: center;
+}
+
+.imagensDivItem h2{
+    margin-bottom: 30px;
+    color: #00041f;
+    font-size: 35px;
+    margin-top: 10px;
+}
+.imagensDivItem img{
+    width: 110px;
+    margin-bottom: 35px;
+}
+
+.imagensDivItem p{
+    width: 200px;
+    font-size:15px;
+    
 }
 
