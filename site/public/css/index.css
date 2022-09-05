@@ -295,7 +295,7 @@ article img {
 }
 
 .featureCollection img {
-  height: 400px;
+  width: 70%;
 }
 
 .change {
