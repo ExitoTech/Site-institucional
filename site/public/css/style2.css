@@ -17,16 +17,16 @@ body {
     border-width: 2px;
     width: 50%;
     height: 100vh;
-    background-color: #b4bec9;
+    background-color: #bde0fe;
     float: left;
 }
 
-.DivA {
+.DivA, .DivA2 {
     border-width: 2px;
     width: 50%;
     height: 100vh;
     left: 0px;
-    background: linear-gradient(90deg, #000633 0%, #000f84 39%, #3627d9 68%, #b4bec9 99%);
+    background: linear-gradient(90deg, #000633 0%, #000f84 39%, #3627d9 68%, #bde0fe 99%);
     background-size: 200% 20% 0%;
     animation: colors 15s ease infinite;
     float: left;
@@ -41,7 +41,7 @@ body {
     color: #ffffff;
 }
 
-.DivA img {
+.DivA img, .DivA2 img {
     width: 40%;
     display: flex;
     justify-content: center;
@@ -50,7 +50,7 @@ body {
     cursor: pointer;
 }
 
-.DivA p{
+.DivA p, .DivA2 p{
     font-family: 'Roboto Mono', monospace;
     font-weight: bold;
 }
@@ -68,11 +68,10 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 80%;
+    width: 85%;
     height: 85vh;
     margin: 70px auto;
     background-color: #edf2fb;
-    border-radius: 5px;
     border-radius: 20px;
 }
 
@@ -87,11 +86,10 @@ form {
     border: 0;
     display: block;
     width: 100%;
-    padding: 15px 0;
+    padding-bottom: 3px;
     font-size: 18px;
-    padding: 3px;
     height: 2rem;
-    margin: 10px 0px 0px 0px;
+    margin: 13px 0px 0px 0px;
     border: 2px solid #000633;
     border-top: 2px;
     border-left: 2px;
@@ -143,7 +141,16 @@ form {
 .container h1 {
     font-size: 3.9rem;
     color: #000;
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Roboto Mono', monospace; 
+    margin-bottom: 1rem;
+}
+
+.container #h1Pt2 {
+    margin: 0;
+}
+
+.container #h1Login {
+    margin-bottom: 3rem;
 }
 
 .container .inputLogin,
@@ -178,13 +185,20 @@ form {
     background-color: #000633;
     color: #b4bec9;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
     width: 300px;
-    height: 50px;
+    height: 55px;
     font-size: 1.5rem;
     cursor: pointer;
     transition: .3s;
     font-family: 'Roboto Mono';
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+}
+
+.formLogin button {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
 }
 
 .container button:hover {
@@ -194,13 +208,12 @@ form {
     cursor: pointer;
 }
 
-.linkCadastro:link, .linkCadastro:visited{
-    text-decoration: none;
+.linkCadastro:link, .linkCadastro:visited,
+.linkLogin:link, .linkLogin:visited {
     color: #000633;
 }
 
-.linkCadastro:hover{
-    text-decoration: underline;
+.linkCadastro:hover, .linkLogin:hover{
     color: #3627d9;
 }
 
@@ -209,9 +222,9 @@ form {
 }
 
 .container .safePassword {
-    width: 120px;
-    height: 30px;
-    font-size: 0.5rem;
+    width: 130px;
+    height: 35px;
+    font-size: 0.6rem;
     border-radius: 5px;
     text-align: center;
     text-align: center;
@@ -231,8 +244,8 @@ label {
 select {
     width: 100%;
     height: 2.5rem;
-    font-size: 1rem;
-    margin: 22px 0px 20px 0px;
+    font-size: 18px;
+    margin: 25px 0px 20px 0px;
     background-color: #edf2fb;
     border: 2px solid #000633;
     border-top: none;
@@ -264,7 +277,7 @@ select {
     flex-direction: column;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1110px) {
     .DivA {
         display: none;
     }
@@ -273,24 +286,105 @@ select {
         width: 100%;
     }
 
-    .DivLateral {
-        width: 100%;
-        height: 160vh;
-        background-color: #b4bec9;
+    .DivLateralPt2, .DivLateralLogin {
+        border-width: 2px;
+        width: 50%;
+        height: 100vh;
+        background-color: #bde0fe;
         float: left;
-        align-items: center;
     }
 
-    .DivLateralPt2 {
+    .DivLateral {
         width: 100%;
+        height: 100vh;
+        background-color: #bde0fe;
+        float: left;
+        align-items: center;
+    }   
+
+    .container .cardCadastro {
+        justify-content: space-around;
+    }
+
+    .cadastroDir,
+    .cadastroEsq {
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .DivA2 {
+        display: none;
+    }
+
+    .DivLateralPt2, .DivLateralLogin {
+        width: 100%;
+    }
+
+    form {
+        width: 70%;
+    }
+
+    .formLogin {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+
+    .DivLateral {
+        width: 100%;
+        height: 150vh;
+        background-color: #bde0fe;
+        float: left;
+        align-items: center;
+    }  
+
+    .DivLateralPt2 {
         height: 110vh;
         background-color: #c1d3fe;
         float: left;
         align-items: center;
     }
 
-    form {
-        height: 140vh;
+    form, .formLogin {
+        height: 130vh;
+        width: 95%;
+        border-radius: 10px;
+    }
+
+    .container h1 {
+        margin: 0;
+    }
+
+    .container #h1Login {
+        margin-bottom: 1.4rem;
+    }
+
+    .cardCadastro select {
+        width: 85%;
+        align-self: center;
+    }
+
+    .container button {
+        margin-top: 5%;
+    }
+
+    .formLogin button {
+        margin-top: 2rem;
+    }
+
+    .formControl {
+        display: flex;
+        justify-content: center;
+    }
+
+    .cardCadastro label {
+        margin-left: 7.3%;
+    }
+
+    .cardCadastro input {
+        width: 85%;
     }
 
     .formPt2 {
@@ -304,7 +398,6 @@ select {
     .DivLateralLogin {
         width: 100%;
         height: 100vh;
-        background-color: #b4bec9;
         float: left;
         align-items: center;
     }
@@ -312,6 +405,7 @@ select {
     .container .cardCadastro {
         flex-direction: column;
         align-items: center;
+        justify-content: center;
     }
 
     .cadastroEsq,
@@ -320,11 +414,5 @@ select {
         height: 70%;
         display: flex;
         flex-direction: column;
-    }
-
-    @media only screen and (max-width: 380px) {
-        form {
-            width: 95%;
-        }
     }
 }

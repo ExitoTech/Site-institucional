@@ -472,18 +472,11 @@ footer .links .iconLinks {
       right: 40px;
       width: 50px;
       height: 50px;
-      background: var(--grey) url('../img/menu.png');
+      background: url('../img/menu-aberto.png');
       background-size: 30px;
       background-repeat: no-repeat;
       background-position: center;
       border-radius: 20px;
-      box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
-        rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
-        rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
-        rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
-        rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
-        rgba(0, 0, 0, 0.09) 0px 32px 16px;
-
       z-index: 1001;
       transition: 0.36s;
     }
@@ -493,7 +486,7 @@ footer .links .iconLinks {
     }
 
     header .toggle.active {
-      background: #fff url('../img/close.png');
+      background: url('../img/x.png');
       background-size: 30px;
       background-repeat: no-repeat;
       background-position: center;
@@ -515,6 +508,16 @@ footer .links .iconLinks {
 
     aside {
       width: 100%;
+    }
+
+    footer .links {
+      display: flex;
+      flex-direction: column;
+      margin-top: 2%;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+      font-size: 1rem;
     }
   }
 
@@ -571,13 +574,6 @@ footer .links .iconLinks {
 
     .feature {
       font-size: 18px;
-    }
-
-    footer .links {
-      margin-top: 2%;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 2%;
     }
 
     .iconLinks {
