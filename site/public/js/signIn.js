@@ -20,7 +20,7 @@ function    Entrar() {
                     console.log(JSON.stringify(json));
 
                     // sessionStorage.EMAIL_USUARIO = json.email;
-                    // sessionStorage.NOME_USUARIO = json.nome_usuario;
+                    sessionStorage.NOME_USUARIO = json.Nome;
                     // sessionStorage.ID_USUARIO = json.id_usuario;
                     Swal.fire({
                         title: `Entrando..`,
@@ -51,4 +51,9 @@ function entrarDivA(){
 
 function sairDivA(){
     textoLink.innerHTML= 'ExitoTech'
+}
+
+function exibirInfosUser() {
+    var nome = sessionStorage.NOME_USUARIO;
+    NomeUser.innerHTML = nome;
 }

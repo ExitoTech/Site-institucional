@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="css/style3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <script src="js/signIn.js"></script>
 </head>
 
-<body>
+<body onload="exibirInfosUser()">
     <main>
         <article class="MenuLateral">
             <div class="logo">
@@ -32,7 +33,7 @@
 
         <aside>
             <div>
-                <h1>Good Morning, José!</h1>
+                <h1>Good Morning, <span style="color: #5830b7;" id="NomeUser"></span>.</h1>
             </div>
             <div class="mommy">
                 <div class="xpto">
