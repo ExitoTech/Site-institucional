@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DashBoard</title>
+  <link rel="stylesheet" href="./css/dashboard.css">
+  <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+  <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+
+</head>
+
+<body>
+
+  <article class="MenuLateral">
+    <div class="logo">
+      <img src="img/logo_transparent.png" alt="">
+    </div>
+    <div class="imgUsuario">
+      <img src="" alt="">
+    </div>
+    <a href="" class="agora"><i class="fa fa-home"></i>Home</a>
+    <a href=""><i class="fa fa-pie-chart"></i>DashBoard</a>
+    <a href=""><i class="fa fa-address-card-o"></i>Sector</a>
+    <a href=""><i class="fa fa-pencil-square-o"></i>Management</a>
+
+    <div onclick="limparSessao()" class="lastTool">
+      <a href="#"><i class="fa fa-sign-out"></i>Exit</a>
+    </div>
+  </article>
+
+  <aside>
+
+    <div class="monitor">
+
+      <div class="allMonitor"></div>
+      <div class="graphMonitor">
+        <canvas id="myChart" widht="100%" height="100%" padding="10px"></canvas>
+      </div>
+    </div>
+
+
+  </aside>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    const data = {
+      labels: [
+        {}
+      ],
+      datasets: [
+        {
+          label: 'Points',
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.8)',
+            'rgba(54, 162, 235, 0.8)'
+
+          ],
+          data: [10, 50, 40, 15, 65, 85, 40]
+        }
+      ]
+    }
+    const config = {
+      type: 'line',
+      data: data,
+      options: {}
+    }
+
+
+    const myChart = new Chart(document.getElementById('myChart'), config)
+
+  </script>
+
+</body>
+
+
+
+</html>
