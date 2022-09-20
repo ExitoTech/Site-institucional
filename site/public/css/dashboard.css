@@ -102,8 +102,7 @@ aside {
 .monitor {
   display: flex;
   justify-content: space-between;
-  gap: 0.5rem;
-  padding: 20px;
+  gap: 1rem;
 }
 
 .allMonitor {
@@ -111,6 +110,7 @@ aside {
   width: 30%;
   background-color: #e5e5e5;
   border-radius: 10px;
+  background-color: #00041f;
 
 }
 
@@ -120,5 +120,26 @@ aside {
   background-color: #e5e5e5;
   border-radius: 10px;
 
+
+}
+
+.titleDash {
+  font-size: 2em;
+  margin-bottom: 2%;
+  color: #00041f;
+}
+
+.asideMonitor {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+.infoMonitor {
+  margin-top: 1rem;
+  height: 250px;
+  width: 100%;
+  background-color: #e5e5e5;
+  border-radius: 10px;
 
 }
