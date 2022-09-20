@@ -57,25 +57,26 @@
 
   <script>
     const data = {
-      labels: [
-        {}
-      ],
+      labels: ['Janeiro',
+        'Fevereiro',
+        'Março', 'Abril', 'Maio', 'Junho', 'Julho'],
       datasets: [
         {
-          label: 'Points',
+          label: 'Months',
           backgroundColor: [
-            'rgba(255, 99, 132, 0.8)',
-            'rgba(54, 162, 235, 0.8)'
+            'rgb(75, 192, 192)'
 
           ],
-          data: [10, 50, 40, 15, 65, 85, 40]
+          data: [10, 50, 40, 15, 65, 85, 40],
+          fill: false,
+          borderColor: 'rgb(75, 192, 192)',
+          tension: 0.1
         }
       ]
     }
     const config = {
       type: 'line',
-      data: data,
-      options: {}
+      data: data
     }
 
 
