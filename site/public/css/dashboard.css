@@ -97,49 +97,130 @@ aside {
   float: left;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
+  padding: 0 auto;
 }
 
 .monitor {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 3rem;
 }
 
-.allMonitor {
-  height: 300px;
+.allMonitor,
+.swiper-slide {
+  height: 250px;
   width: 30%;
-  background-color: #e5e5e5;
-  border-radius: 10px;
+  border-radius: 25px;
   background-color: #00041f;
-
+  color: #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 5px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 4px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 .graphMonitor {
-  height: 300px;
+  height: 250px;
   width: 70%;
   background-color: #e5e5e5;
-  border-radius: 10px;
-
+  border-radius: 25px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 4px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 
 }
 
 .titleDash {
-  font-size: 2em;
+  font-size: 1.5em;
   margin-bottom: 2%;
   color: #00041f;
 }
 
 .asideMonitor {
   width: 80%;
-  margin-left: 10%;
-  margin-top: 5%;
+  margin: 7% auto;
 }
 
 .infoMonitor {
-  margin-top: 1rem;
-  height: 250px;
+  margin-top: 2.5rem;
+  height: 175px;
   width: 100%;
   background-color: #e5e5e5;
-  border-radius: 10px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 4px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+
+}
+
+.porMetric {
+  display: flex;
+  justify-content: space-around;
+}
+
+.infoMonitor .infoMonitorTitle h1 {
+  margin-left: 4%;
+  font-weight: lighter;
+}
+
+.infoMonitor .infoMonitorDown {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 65%;
+  margin-left: 50px;
+  ;
+
+
+
+}
+
+
+.infoMonitorDown .infoMonitorConfigAll,
+.infoMonitorConfig {
+
+  width: 100%;
+
+}
+
+.infoMonitorDown .infoMonitorConfigAll .configSetor1 {
+  display: flex;
+  gap: 41%;
+  justify-content: space-around;
+
+  border-bottom: 1px solid #888888;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.infoMonitorDown .infoMonitorConfigAll .configMachine2 {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+span {
+  font-weight: lighter;
+}
+
+.infoMonitorDown .infoMonitorConfigAll .configMachine2 .one h2 {
+  font-weight: lighter;
+}
+
+.infoMonitorDown .imgMachine img {
+
+  height: 75px;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper.mySwiper {
+
+  border-radius: 6px;
 }

@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="./css/dashboard.css">
   <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
   <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
 </head>
 
@@ -39,14 +42,66 @@
       <div class="monitor">
 
         <div class="allMonitor">
-          <h2>Machine</h2>
-          <h2>76%</h2>
-          <P>CPU</P>
-          <h2>80%</h2>
-          <P>RAM</P>
 
-          <P>Machine Working</P>
-          <P>CPU utilization</P>
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <h2>Machine</h2>
+                <div class="porMetric">
+                  <div class="porMetric1">
+                    <h2>76%</h2>
+                    <P>CPU</P>
+
+                  </div>
+
+                  <div class="porMetric1">
+                    <h2>80%</h2>
+                    <P>RAM</P>
+
+                  </div>
+                </div>
+                <div style="display:flex;">
+                  <img height="20px" widht="20px" src="./img/icons/check.png" alt="">
+                  <P>Machine Working</P>
+                </div>
+                <div style="display:flex;">
+                  <img height="20px" widht="20px" src="./img/icons/check.png" alt="">
+
+                  <P>CPU utilization</P>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <h2>Machine</h2>
+                <div class="porMetric">
+                  <div class="porMetric1">
+                    <h2>76%</h2>
+                    <P>CPU</P>
+
+                  </div>
+
+                  <div class="porMetric1">
+                    <h2>80%</h2>
+                    <P>RAM</P>
+
+                  </div>
+                </div>
+                <div style="display:flex;">
+                  <img height="27px" widht="27px" src="./img/icons/check.png" alt="">
+                  <P>Machine Working</P>
+                </div>
+                <div style="display:flex;">
+                  <img height="27px" widht="27px" src="./img/icons/check.png" alt="">
+
+                  <P>CPU utilization</P>
+                </div>
+              </div>
+
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+
 
 
         </div>
@@ -56,36 +111,74 @@
       </div>
 
       <div class="infoMonitor">
+        <div class="infoMonitorTitle">
+          <h1>Information of machine</h1>
+        </div>
+        <div class="infoMonitorDown">
+          <div class="imgMachine">
+            <img src="./img/icons/maquina.png" alt="">
+
+          </div>
+
+          <div class="infoMonitorConfig">
+
+            <div class="infoMonitorConfigAll">
+              <div class="configSetor1">
+                <h2>Ubuntu 22.04 LTS</h2>
+                <h2>Setor 1</h2>
+              </div>
+              <div class="configMachine2">
+                <div class="one">
+                  <h3>Porcessador: <span>AMD Ryzen 7</span></h3>
+                  <h3>Largura: <span>64bits</span></h3>
+                </div>
+
+                <div class="two">
+                  <h3>Memória RAM: <span>8.0GB</span></h3>
+                  <h3>Disco: <span>512GB</span></h3>
+                </div>
+
+                <h2>Máquina 4</h2>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
       </div>
     </div>
     </div>
 
   </aside>
-
-
-
-
-
-
-
-
-
-
-
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
   <script>
+
+    var swiper = new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
     const data = {
-      labels: ['Janeiro',
-        'Fevereiro',
-        'Março', 'Abril', 'Maio', 'Junho', 'Julho'],
+      labels: ['Feb 15',
+        'FEB 16',
+        'FEB 17', 'FEB 18', 'FEB 19', 'FEB 20', 'FEB 21'],
       datasets: [
         {
-          label: 'Months',
+          label: 'Day',
           backgroundColor: [
             'rgb(75, 192, 192)'
 
           ],
-          data: [10, 50, 40, 15, 65, 85, 40],
+          data: [15, 40, 24, 28, 30, 25, 40],
           fill: false,
           borderColor: 'rgb(75, 192, 192)',
           tension: 0.1
