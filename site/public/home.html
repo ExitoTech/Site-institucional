@@ -8,46 +8,63 @@
     <title>Home | ExitoTech</title>
     <link rel="stylesheet" href="css/style3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/logo_transparent.png" type="image/x-icon">
     <script src="js/signIn.js"></script>
 </head>
 
 <body onload="exibirInfosUser()">
     <main>
-        <article class="MenuLateral">
-            <div class="logo">
-                <img src="img/logo_transparent.png" alt="">
+        <div class="navBar">
+            <div class="logoNavBar">
+                <img src="./img/logo_transparent.png" alt="" class="logoNavBar">
             </div>
-            <div class="imgUsuario">
-                <img src="" alt="">
-            </div>
-            <a href="" class="agora"><i class="fa fa-home"></i>Home</a>
-            <a href=""><i class="fa fa-pie-chart"></i>DashBoard</a>
-            <a href=""><i class="fa fa-address-card-o"></i>Sector</a>
-            <a href=""><i class="fa fa-pencil-square-o"></i>Management</a>
+            <div class="navBarContent">
+                <div class="fotoPerfil">
+                    <img src="./img/fotoPerfil/perfil.png" alt="">
+                </div>
+                <div class="contentOpcoes">
+                    <div class="opcaoNavBar">
+                        <img src="./img/icons/inicio.png" alt="">
+                        <p>Home</p>
+                    </div>
+                    <div class="opcaoNavBar">
+                        <img src="./img/icons/dashboard.png" alt="">
+                        <p>Dashboard</p>
+                    </div>
+                    <div class="opcaoNavBar">
+                        <img src="./img/icons/setor.png" alt="">
+                        <p>Setor</p>
+                    </div>
+                    <div class="opcaoNavBar">
+                        <img src="./img/icons/processador.png" alt="">
+                        <p>Gerenciamento</p>
+                    </div>
 
-            <div onclick="limparSessao()" class="lastTool">
-                <a href="#"><i class="fa fa-sign-out"></i>Exit</a>
-            </div>
-        </article>
+                </div>
 
+            </div>
+            <div class="opcaoNavBar exit">
+                <img src="./img/icons/sair.png" alt="">
+                <p>Exit</p>
+            </div>
+        </div>
         <aside>
-            <div>
-                <h1>Good Morning, <span style="color: #5830b7;" id="NomeUser"></span>.</h1>
+            <div class="titulo">
+                <p>Bom dia, <span style="color: #3627D9;" id="NomeUser"></span>!</p>
             </div>
             <div class="mommy">
                 <div class="xpto">
                     <div class="test01">
                         <div style="flex-direction: row;">
                             <div class="menuPt1">
-                                <div><i class="fa fa-plus"></i> New Machine</div>
+                                <div class="menuContent"><i class="fa fa-plus"></i><p class="tituloBotao">Nova Máquina</p></div>
                             </div>
                         </div>
                         <div class="ngcBranco">
                             <div class="imagensDivItem">
-                                <h2>Warning</h2>
-                                <img src="img/1441204.png" alt="">
-                                <p>No Warnings yet!</p>
+                                <h2>Avisos</h2>
+                                <img src="img/happy.png" alt=""> 
+                                <p class="informacao">Sem avisos por enquanto!</p>
                             </div>
                         </div>
                     </div>
@@ -55,31 +72,33 @@
                     <div class="test02">
                         <div style="flex-direction: row;">
                             <div class="menuPt2">
-                                <div>
-                                    <i class="fa fa-cog"></i>Config
+                                <div class="menuContent">
+                                    <i class="fa fa-cog"></i><p class="tituloBotao">Ajustes</p>
                                 </div>
                             </div>
                             <div class="menuPt3">
-                                <div>
-                                    <i class="fa fa-user"></i>Support
+                                <div class="menuContent">
+                                    <i class="fa fa-user"></i><p class="tituloBotao">Suporte</p>
                                 </div>
                             </div>
                         </div>
                         <div class="ngcBranco2">
                             <div class="div01">
-                                <p class="fontLastActivity">Last Activity</p>
+                                <p class="fontLastActivity">Últimas atividades</p>
                                 <p><i class="fa fa-chevron-down" aria-hidden="true"></i></p>
                             </div>
                             <div class="div01">
-                                <p><i class="fa fa-desktop" aria-hidden="true"></i> Uma máquina acaba de se conectar</p>
+                                <i class="fa fa-desktop" aria-hidden="true"></i> <p class="informacao">Uma máquina acaba de se conectar</p>
                                 <p>12:34 PM</p>
                                 <p></p>
                             </div>
+                            <div class="line"></div>
                             <div class="div01">
-                                <p><i class="fa fa-desktop" aria-hidden="true"></i> Uma máquina acaba de se conectar</p>
+                                <i class="fa fa-desktop" aria-hidden="true"></i> <p class="informacao">Uma máquina acaba de se conectar</p>
                                 <p>12:34 PM</p>
                                 <p></p>
                             </div>
+                            <div class="line"></div>
                         </div>
                     </div>
 

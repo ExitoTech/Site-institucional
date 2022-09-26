@@ -1,19 +1,91 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     list-style: none;
     border: none;
-    font-family: 'Roboto';
 }
 
 body {
-    background-color: #00041f;
+    background-color: #000633;
 }
 
-i{
+/* Código novo navbar*/
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+.logoNavBar {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.navBar {
+    background-color:#000633;
+    color: #fff;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+    width: 14%;
+    height: 100vh;
+
+    font-family: 'Roboto Mono', monospace;
+}
+
+.navBarContent {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.fotoPerfil {
+    margin-bottom: 20%;
+}
+
+.fotoPerfil img {
+    width: 74px;
+}
+
+.contentOpcoes {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.opcaoNavBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    font-size: 80%;
+}
+
+.opcaoNavBar img {
+    width: 10%;
+    margin-right: 5%;
+}
+
+.exit {
+    font-size: 80%;
+    opacity: 50%;
+    margin-bottom: 10%;
+    display: flex;
+    justify-content: center;
+}
+/*Código novo nav bar */
+
+/*i{
     margin-right: 10px;
     font-family: 'Roboto';
 }
@@ -25,11 +97,11 @@ article {
     border-width: 2px;
     width: 15%;
     height: 100vh;
-    background-color: #00041f;
+    background-color: #000633;
     float: left;
     flex-direction: column;
     overflow: hidden;
-}
+} 
 
 article .logo img{
     width: 60px;
@@ -43,17 +115,15 @@ article .imgUsuario{
     margin-bottom: 25px;
     width: 100px;
     height: 100px;
-    background-color: #f5f5f5;
+    background-color: #fff;
     border-radius: 100px;
 }
-.agora{
-    background-color: #f1eded66;
-}
+
 article a {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #f5f5f5;
+    color: #fff;
     font-size: 20px;
     margin-top: 30px;
     width: 170px;
@@ -62,7 +132,7 @@ article a {
     border-radius: 10px;
     text-decoration: none;
     font-family: 'Roboto';
-}
+} 
 
 .lastTool {
     display: flex;
@@ -70,15 +140,29 @@ article a {
     margin-bottom: 50px;
     flex-direction: column;
 }
+*/
+
+.agora{
+    background-color: #f1eded66;
+}
+
+.titulo {
+    font-family: 'Roboto Mono';
+    font-size: 32px;
+    font-weight: medium;
+}
+
 aside {
     border-width: 2px;
-    width: 85%;
+    width: 100vw;
     height: 100vh;
     left: 0px;
     background-color: #c1d3fe;
     float: left;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
+
+    font-family: 'Roboto';
 }
 
 aside div {
@@ -115,13 +199,10 @@ aside div {
 
 .menuPt1{
     display: flex;
-}
-.menuPt1 div{
-    display: flex;
     align-items: center;
     justify-content: center;
-    color: #f5f5f5;
-    background-color: #00041f;
+    color: #fff;
+    background-color: #000633;
     width: 350px;
     height: 80px;
     margin-right: 30px;
@@ -131,15 +212,18 @@ aside div {
     cursor: pointer;
 }
 
-.menuPt2{
-    display: flex;
+.menuContent{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+
 }
-.menuPt2 div{
+
+.menuPt2{
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #f5f5f5;
-    background-color: #00041f;
+    color: #fff;
+    background-color: #000633;
     width: 350px;
     height: 80px;
     margin-left: 135px;
@@ -150,13 +234,10 @@ aside div {
 
 .menuPt3{
     display: flex;
-}
-.menuPt3 div{
-    display: flex;
     align-items: center;
     justify-content: center;
-    color: #f5f5f5;
-    background-color: #00041f;
+    color: #fff;
+    background-color: #000633;
     width: 350px;
     height: 80px;
     margin-left: 20px;
@@ -167,7 +248,7 @@ aside div {
 .ngcBranco{
     width: 350px;
     height: 800px;
-    background-color: #f5f5f5;
+    background-color: #fff;
     margin-right: 30px;
     margin-top: 30px;
     border-radius: 20px;
@@ -177,7 +258,7 @@ aside div {
     flex-direction: column;
     width: 730px;
     height: 800px;
-    background-color: #f5f5f5;
+    background-color: #fff;
     margin-right: -130px;
     margin-top: 30px;
     border-radius: 20px;
@@ -191,6 +272,21 @@ aside div {
 .div01{
     justify-content: space-between;
     margin: 35px;
+}
+
+.tituloBotao{
+    margin-left: 7px;
+}
+.informacao{
+    color: #7F868C;
+}
+
+.line{
+    width: 100%;
+    height: 0.7px;
+    background-color: #b4bec9;
+    opacity:40%;
+    border-radius: 20px;
 }
 
 .fontLastActivity{
@@ -220,7 +316,7 @@ aside div {
 
 .imagensDivItem h2{
     margin-bottom: 30px;
-    color: #00041f;
+    color: #000633;
     font-size: 35px;
     margin-top: 10px;
 }
