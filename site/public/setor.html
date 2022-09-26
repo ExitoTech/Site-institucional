@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setor | ExitoTech</title>
+    <link rel="stylesheet" href="css/setor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <script src="js/signIn.js"></script>
+</head>
+
+<body onload="exibirInfosUser()">
+    <main>
+        <article class="MenuLateral">
+            <div class="logo">
+                <img src="img/logo_transparent.png" alt="">
+            </div>
+            <div class="imgUsuario">
+                <img src="" alt="">
+            </div>
+            <a href="" class="agora"><i class="fa fa-home"></i>Home</a>
+            <a href=""><i class="fa fa-pie-chart"></i>DashBoard</a>
+            <a href=""><i class="fa fa-address-card-o"></i>Sector</a>
+            <a href=""><i class="fa fa-pencil-square-o"></i>Management</a>
+
+            <div onclick="limparSessao()" class="lastTool">
+                <a href="#"><i class="fa fa-sign-out"></i>Exit</a>
+            </div>
+        </article>
+
+        <aside>
+            <div class="titulo">
+                <h1>Setor</h1>
+            </div>
+            <div class="mommy">
+                <div class="caixaSuperior">
+                    <div class="caixaMaior">
+                        <h1>Informações do Setor</h1>
+
+                        <div class="infos">
+                            <img class="maquina" src="img/icons/maquina.png">
+                            <div class="infoMonitor">
+                                <h2 class="subtitulo">Numero de Maquinas: <span class="informação"></span></h2>
+                                <div class="linha"></div>
+                                <h2 class="subtitulo">Sala: <span class="informação"></span></h2>
+                                <h2 class="subtitulo">Sequencia de maquinas: <span class="informação"></span></h2>
+                            </div>
+                            <div class="selection">
+                                <select id="setores">
+                                    <option value="">Setor 1</option>
+                                    <option value="">Setor 2</option>
+                                    <option value="">Setor 3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="caixaMenor">
+                        <h1>Report</h1>
+                        <div class="estado">
+                            <h2><span>3</span> Maquinas funcionando</h2>
+                            <h2><span>3</span> Maquinas em pause</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="titulo">
+                    <h1>Maquinas</h1>
+                </div>
+
+                <div class="caixaInferior">
+
+                    <div class="caixasAgrupadas">
+                        <div class="caixinhas">
+                            <h1>Maquina 1</h1>
+                            <h2>Trabalhando</h2>
+                            <h2>Sem problemas</h2>
+                        </div>
+                        <div class="caixinhas">
+                            <h1>Maquina 2</h1>
+                            <h2>Em pausa</h2>
+                            <h2>Sem problemas</h2>
+                        </div>
+                        <div class="caixinhas">
+                            <h1>Maquina 3</h1>
+                            <h2>Trabalhando</h2>
+                            <h2>Sem problemas</h2>
+                        </div>
+                        <div class="caixinhas">
+                            <h1>Maquina 4</h1>
+                            <h2>Trabalhando</h2>
+                            <h2>Sem problemas</h2>
+                        </div>
+                    </div>
+                    <div class="caixasAgrupadas">
+                        <div class="caixinhas">
+                            <h1>Maquina 5</h1>
+                            <h2>Trabalhando</h2>
+                            <h2>Sem problemas</h2>
+                        </div>
+                        <div class="caixinhas">
+                            <h1>Maquina 6</h1>
+                            <h2>Trabalhando</h2>
+                            <h2>3 Problemas</h2>
+                        </div>
+                        <div class="caixinhas">
+                            <h1>Maquina 7</h1>
+                            <h2>Trabalhando</h2>
+                            <h2>Sem problemas</h2>
+                        </div>
+                        <div class="caixinhas">
+                            <h1>Maquina 8</h1>
+                            <h2>Trabalhando</h2>
+                            <h2>Sem problemas</h2>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </aside>
+    </main>
+</body>
+
+</html>
