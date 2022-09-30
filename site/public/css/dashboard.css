@@ -11,7 +11,79 @@
 }
 
 body {
-  background-color: #00041f;
+  background-color: #000633;
+}
+
+main{
+  display: flex;
+  flex-direction: row;
+}
+
+.logoNavBar {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.navBar {
+  background-color: var(--roxo-escuro);
+  color: var(--branco);
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+
+  width: 14%;
+  height: 100vh;
+
+  font-family: 'Roboto Mono', monospace;
+}
+
+.navBarContent {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.fotoPerfil {
+  margin-bottom: 20%;
+}
+
+.fotoPerfil img {
+  width: 74px;
+}
+
+.contentOpcoes {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.opcaoNavBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  font-size: 80%;
+}
+
+.opcaoNavBar img {
+  width: 10%;
+  margin-right: 5%;
+}
+
+.exit {
+  font-size: 80%;
+  opacity: 50%;
+  margin-bottom: 10%;
+  display: flex;
+  justify-content: center;
 }
 
 article {
@@ -21,7 +93,7 @@ article {
   border-width: 2px;
   width: 15%;
   height: 100vh;
-  background-color: #00041f;
+  background-color: #000633;
   float: left;
   flex-direction: column;
   overflow: hidden;
@@ -111,7 +183,7 @@ aside {
   height: 250px;
   width: 30%;
   border-radius: 25px;
-  background-color: #00041f;
+  background-color: #000633;
   color: #e5e5e5;
   display: flex;
   flex-direction: column;
@@ -132,7 +204,7 @@ aside {
 .titleDash {
   font-size: 1.5em;
   margin-bottom: 2%;
-  color: #00041f;
+  color: #000633;
 }
 
 .asideMonitor {
