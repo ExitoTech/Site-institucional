@@ -7,10 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DashBoard</title>
   <link rel="stylesheet" href="./css/dashboard.css">
-  <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="./img/logo_transparent.png" type="image/x-icon">
   <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="img/logo_transparent.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
 </head>
@@ -40,7 +40,7 @@
         </div>
         <div class="opcaoNavBar">
           <img src="./img/icons/processador.png" alt="">
-          <p>Gerenciamento</p>
+          <p>Visualização</p>
         </div>
 
       </div>
@@ -55,8 +55,8 @@
 
   <aside>
     <div class="asideMonitor">
-      <div class="titleDash">
-        <h1 class="title">DashBoard</h1>
+      <div>
+        <p class="titulo">DashBoard</p>
       </div>
       <div class="monitor">
 
@@ -65,7 +65,7 @@
           <div class="swiper mySwiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <h2>Machine</h2>
+                <h2>Maquina</h2>
                 <div class="porMetric">
                   <div class="porMetric1">
                     <h2>76%</h2>
@@ -81,16 +81,16 @@
                 </div>
                 <div style="display:flex;">
                   <img height="20px" widht="20px" src="./img/icons/check.png" alt="">
-                  <P>Machine Working</P>
+                  <P>Maquina operando</P>
                 </div>
                 <div style="display:flex;">
                   <img height="20px" widht="20px" src="./img/icons/check.png" alt="">
 
-                  <P>CPU utilization</P>
+                  <P>CPU operando</P>
                 </div>
               </div>
               <div class="swiper-slide">
-                <h2>Machine</h2>
+                <h2>Maquina</h2>
                 <div class="porMetric">
                   <div class="porMetric1">
                     <h2>76%</h2>
@@ -106,12 +106,12 @@
                 </div>
                 <div style="display:flex;">
                   <img height="27px" widht="27px" src="./img/icons/check.png" alt="">
-                  <P>Machine Working</P>
+                  <P>Maquina operando</P>
                 </div>
                 <div style="display:flex;">
                   <img height="27px" widht="27px" src="./img/icons/check.png" alt="">
 
-                  <P>CPU utilization</P>
+                  <P>CPU operando</P>
                 </div>
               </div>
 
@@ -130,8 +130,9 @@
       </div>
 
       <div class="infoMonitor">
-        <div class="infoMonitorTitle">
-          <h1>Information of machine</h1>
+
+        <div>
+          <p class="tituloInformacaoMaquina">Informações da maquina</p>
         </div>
         <div class="infoMonitorDown">
           <div class="imgMachine">
@@ -143,26 +144,25 @@
 
             <div class="infoMonitorConfigAll">
               <div class="configSetor1">
-                <h2>Ubuntu 22.04 LTS</h2>
-                <h2>Setor 1</h2>
+                <p class="tituloInfo">Ubuntu 22.04 LTS</p>
+                <p class="tituloInfo">Setor 1</p>
               </div>
               <div class="configMachine2">
                 <div class="one">
-                  <h3>Porcessador: <span>AMD Ryzen 7</span></h3>
-                  <h3>Largura: <span>64bits</span></h3>
+                  <p><b>Processador</b>: <span>AMD Ryzen 7</span></p>
+                  <p><b>Largura: </b><span>64bits</span></p>
                 </div>
 
                 <div class="two">
-                  <h3>Memória RAM: <span>8.0GB</span></h3>
-                  <h3>Disco: <span>512GB</span></h3>
+                  <p><b>Memória RAM: </b><span>8.0GB</span></p>
+                  <p><b>Disco: </b><span>512GB</span></p>
                 </div>
 
-                <h2>Máquina 4</h2>
+                <p class="tituloInfo">Máquina 4</h2>
 
               </div>
 
             </div>
-
 
           </div>
 
@@ -195,12 +195,12 @@
         {
           label: 'Day',
           backgroundColor: [
-            'rgb(75, 192, 192)'
+            'rgb(0, 6, 51)'
 
           ],
           data: [15, 40, 24, 28, 30, 25, 40],
           fill: false,
-          borderColor: 'rgb(75, 192, 192)',
+          borderColor: 'rgb(0, 6, 51)',
           tension: 0.1
         }
       ]
