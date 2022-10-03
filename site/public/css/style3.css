@@ -71,6 +71,12 @@ main {
     font-size: 80%;
 }
 
+a{
+    color: #fff;
+    outline: none;
+    text-decoration: none;
+  }
+
 .opcaoNavBar img {
     width: 10%;
     margin-right: 5%;
@@ -83,64 +89,7 @@ main {
     display: flex;
     justify-content: center;
 }
-/*Código novo nav bar */
 
-/*i{
-    margin-right: 10px;
-    font-family: 'Roboto';
-}
-
-article {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-width: 2px;
-    width: 15%;
-    height: 100vh;
-    background-color: #000633;
-    float: left;
-    flex-direction: column;
-    overflow: hidden;
-} 
-
-article .logo img{
-    width: 60px;
-    height: 60px;
-    margin-top: 25px;
-
-}
-
-article .imgUsuario{
-    margin-top: 55px;
-    margin-bottom: 25px;
-    width: 100px;
-    height: 100px;
-    background-color: #fff;
-    border-radius: 100px;
-}
-
-article a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 20px;
-    margin-top: 30px;
-    width: 170px;
-    height: 40px;
-    cursor: pointer;
-    border-radius: 10px;
-    text-decoration: none;
-    font-family: 'Roboto';
-} 
-
-.lastTool {
-    display: flex;
-    margin-top: auto;
-    margin-bottom: 50px;
-    flex-direction: column;
-}
-*/
 
 .agora{
     background-color: #f1eded66;
@@ -159,8 +108,8 @@ aside {
     left: 0px;
     background-color: #c1d3fe;
     float: left;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 
     font-family: 'Roboto';
 }
