@@ -82,7 +82,7 @@ a{
     background-color: rgba(255, 255, 255, 0.469);
     height: 100%;
     width:100%;
-    border-radius: 8px;
+    border-radius: 4px;
   }
   
 .opcaoNavBar img {
@@ -102,7 +102,7 @@ a{
 
 .container {
     background-color: #c1d3fe;
-    border-radius: 20px 0px 0px 20px;
+    border-radius: 14px 0px 0px 20px;
     width: 100vw;
 }
 
@@ -114,18 +114,19 @@ a{
     font-family: 'Roboto Mono';
     font-size: 32px;
     font-weight: medium;
+    margin-bottom: 25px;
 }
 
 .informacaoGerenciamento {
     display: flex;
-    justify-content: space-between;
 }
 
 .selecionarMaquina {
-    border-radius: 20px;
+    border-radius: 14px;
     width: 28%;
 
-    background-color: var(--branco);
+    background-color: var(--roxo-escuro);
+    color: #fff;
     font-family: 'Roboto Mono';
 }
 
@@ -146,7 +147,7 @@ a{
 
 .novaMaquina {
     background-color: #b4bec910;
-    border-radius: 0 0 20px 20px;
+    border-radius: 14px 20px 20px;
     height: 17%;
 }
 
@@ -157,9 +158,9 @@ a{
 }
 
 .informacaoMaquina {
-    background-color: var(--roxo-escuro);
-    color: var(--branco);
-    border-radius: 20px;
+    background-color: var(--branco);
+    color: #000;
+    border-radius: 14px;
     width: 63%;
     margin-right: 5%;
 }
@@ -186,7 +187,7 @@ a{
     height: 0.7px;
     background-color: var(--cinza);
     opacity: 40%;
-    border-radius: 20px;
+    border-radius: 14px;
     width: 100%;
 }
 
@@ -208,7 +209,7 @@ a{
 /*Opções de monitoramento*/
 .opcoesMonitoramento {
     background-color: var(--branco);
-    border-radius: 20px;
+    border-radius: 14px;
     width: 95%;
     /*overflow: scroll;*/
     display: flex;

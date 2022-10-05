@@ -1,87 +1,115 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700&display=swap');
+
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     list-style: none;
     border: none;
-    font-family: 'Roboto';
+    
 }
 
 body {
-    background-color: #00041f;
+    background-color: #000633;
 }
 
-i {
-    margin-right: 10px;
-    font-family: 'Roboto';
-}
-
-article {
+main {
     display: flex;
-    align-items: center;
+    flex-direction: row;
+}
+
+/*Novo código navbar*/
+
+.logoNavBar {
+    width: 40%;
+    display: flex;
     justify-content: center;
-    border-width: 2px;
-    width: 15%;
+    margin-top: 10%;
+}
+
+.navBar {
+    background-color: var(--roxo-escuro);
+    color: var(--branco);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+    width: 14%;
     height: 100vh;
-    background-color: #00041f;
-    float: left;
+
+    font-family: 'Roboto Mono', monospace;
+}
+
+.navBarContent {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    overflow: hidden;
 }
 
-article .logo img {
-    width: 60px;
-    height: 60px;
-    margin-top: 25px;
-
+.fotoPerfil {
+    margin-bottom: 20%;
 }
 
-article .imgUsuario {
-    margin-top: 55px;
-    margin-bottom: 25px;
-    width: 100px;
-    height: 100px;
-    background-color: #f5f5f5;
-    border-radius: 100px;
+.fotoPerfil img {
+    width: 74px;
 }
 
-.agora {
-    background-color: #f1eded66;
+.contentOpcoes {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
 }
 
-article a {
+a{
+    color: #fff;
+    outline: none;
+    text-decoration: none;
+}
+
+.opcaoNavBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2px;
+    font-size: 80%;
+}
+
+.opcaoNavBar.agora{
+    background-color: rgba(255, 255, 255, 0.469);
+    height: 100%;
+    width:100%;
+    border-radius: 8px;
+  }
+  
+.opcaoNavBar img {
+    width: 10%;
+    margin-right: 5%;
+}
+
+.exit {
+    font-size: 80%;
+    opacity: 50%;
+    margin-bottom: 10%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    color: #f5f5f5;
-    font-size: 20px;
-    margin-top: 30px;
-    width: 170px;
-    height: 40px;
-    cursor: pointer;
-    border-radius: 10px;
-    text-decoration: none;
-    font-family: 'Roboto';
 }
 
-.lastTool {
-    display: flex;
-    margin-top: auto;
-    margin-bottom: 50px;
-    flex-direction: column;
-}
+/*-------------------------------------*/
 
 aside {
     border-width: 2px;
-    width: 85%;
+    width: 100vw;
     height: 100vh;
-    left: 0px;
     background-color: #c1d3fe;
     float: left;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
+    font-family: 'Roboto';
 }
 
 aside .titulo {
@@ -164,18 +192,18 @@ aside .titulo {
 .linha {
     width: 100%;
     height: 1px;
-    background-color: #00041f;
+    background-color: #000633;
 }
 
 .infoMonitor h2 {
-    color: #00041f;
+    color: #000633;
     font-size: 1rem;
 }
 
 .selection {
     width: 12%;
     margin-top: -2%;
-    color: #00041f;
+    color: #000633;
     font-weight: bold;
 }
 
@@ -196,7 +224,7 @@ select {
     font-size: inherit;
     cursor: inherit;
     line-height: inherit;
-    color: #00041f;
+    color: #000633;
 }
 
 select::-ms-expand {
@@ -204,13 +232,13 @@ select::-ms-expand {
 }
 
 .caixaMaior h1 {
-    color: #00041f;
+    color: #000633;
 }
 
 .caixaMenor {
     width: 38%;
     height: 100%;
-    background-color: #00041f;
+    background-color: #000633;
     display: flex;
     flex-direction: column;
 }
@@ -260,21 +288,18 @@ select::-ms-expand {
     width: 13vw;
     height: 20vh;
     border-radius: 20px;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-
+    justify-content: space-around;
+    font-family: 'Roboto Mono';
+    
 }
 
-.caixinhas h1 {
-    color: black;
-    font-size: 1rem;
-}
-
-.caixinhas h2 {
-    font-size: 0.8rem;
-    text-align: start;
+.box p{
+    font-size: 10px;
+    margin-top: 0;
+    text-align: left;
 }

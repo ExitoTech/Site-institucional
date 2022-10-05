@@ -76,7 +76,7 @@ main{
   background-color: rgba(255, 255, 255, 0.469);
   height: 100%;
   width:100%;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .opcaoNavBar img {
@@ -132,7 +132,7 @@ aside {
 .allMonitor{
   height: 250px;
   width: 30%;
-  border-radius: 25px;
+  border-radius: 14px;
   background-color: #fff;
   color: #000;
   display: flex;
@@ -145,7 +145,7 @@ aside {
 .swiper-slide {
   height: 10px;
   width: 10px;
-  border-radius: 25px;
+  border-radius: 14px;
   background-color: #fff;
   color: #000;
   display: flex;
@@ -159,7 +159,7 @@ aside {
   align-items: center;
   width: 63%;
   background-color: #000633;
-  border-radius: 25px;
+  border-radius: 14px;
   box-shadow: #00063344 0px 4px 4px 0px, #00063344 0px 2px 16px 0px;
 
 }
@@ -180,7 +180,7 @@ aside {
   height: 175px;
   width: 100%;
   background-color: #fff;
-  border-radius: 25px;
+  border-radius: 14px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -297,7 +297,7 @@ span {
 }
 
 .swiper.mySwiper {
-  border-radius: 6px;
+  border-radius: 14x;
 }
 
 .tituloStatusMaquina{
