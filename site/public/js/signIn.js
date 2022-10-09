@@ -17,10 +17,11 @@ function    Entrar() {
 
                 resposta.json().then((json) => {
                     console.log(json);
-                    console.log(JSON.stringify(json));
+                    console.log(JSON.stringify(json) + 'exibindo json stringfy');
 
                     // sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.Nome;
+                    sessionStorage.SENHA_USUARIO = json.SenhaEmpresa;
                     // sessionStorage.ID_USUARIO = json.id_usuario;
                     Swal.fire({
                         title: `Entrando..`,
@@ -56,4 +57,7 @@ function sairDivA(){
 function exibirInfosUser() {
     var nome = sessionStorage.NOME_USUARIO;
     NomeUser.innerHTML = nome;
+
+    var senha = sessionStorage.SENHA_USUARIO;
+
 }

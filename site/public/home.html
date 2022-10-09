@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="img/logo_transparent.png" type="image/x-icon">
     <script src="js/signIn.js"></script>
+    <script src="js/download.js"></script>
 </head>
 
 <body onload="exibirInfosUser()">
@@ -84,8 +85,37 @@
                                     </div>
                                 </div>
                                 <div class="opcoesMenu direito">
-                                    <div class="menuContent">
-                                        <i class="fa fa-user"></i><p class="tituloBotao">Suporte</p>
+                                    <div class="menuContent" onclick="abrirDownload()">
+                                        <!-- <a href="#inserirCaminho do arquivo jar" download>aaaclique</a> -->
+                                        <img src="../public/img/icons/download.png" id="iconDownload">
+
+                                        <div id="progressoDownload">
+                                            <svg>
+                                                <circle cx="4" cy="4" r="5"></circle>
+                                                <circle cx="4" cy="4" r="5" id="circleProgress"></circle>
+                                            </svg>
+                                        </div>
+
+                                        <p class="tituloBotao">Download</p>
+                                    </div>
+                                    <div id="confirmacaoDownload">
+                                        <div id="confirmacaoContent">
+                                            <div class="tituloConfirmacao">
+                                                <p>Autenticação necessária</p>
+                                            </div>
+                                            <div class="infoConfirmacao">
+                                                <p>Autenticação obrigatória para realizar download do JAR</p>
+                                            </div>
+                                            <div class="confirmacaoSenha">
+                                                <input type="password" name="senha" placeholder="Senha" id="inputConfirmacao">
+                                            </div>
+
+                                            <div class="confirmacaoBotao">
+                                                <button onclick="iniciarDownload()">Confirmar</button>
+                                                <button onclick="fecharDownload()">Cancelar</button>
+                                            </div>
+                                            <a id="baixar" href="nome.txt" style="visibility: hidden;" onclick="this.click()" download="umnomediferente.txt">Baixar TXT</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
