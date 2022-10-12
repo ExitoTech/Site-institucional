@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.content{
+    height: 100vh;
+}
+.titulo{
+    font-family: 'Roboto Mono';
+    font-size: 32px;
+    font-weight:500;
+    color: #000633;
+    margin: 0;
+}
+
+.voltar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 5%;
+}
+
+.contentInAjustes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80%;
+    width: 80%;
+    margin: auto;
+}
+.dadosUsuario{
+    display: flex;
+    justify-content: space-between;
+}
+
+form{
+    
+    width: 100%;
+}
+
+.opcaoAlterar p{
+    font-size: 10px;
+    color: #3627d9;
+}
+
+
+.dadosUsuario input{
+    background-color: #c1d3fe;
+    border-radius: 20px;
+    border: none;
+    color: #fff;
+    padding-left: 10px;
+    width: 60%;
+    height: 20%;
+    
+}
+
+.botaoDecisao{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+    width: 40%;
+}
+
+.botaoDecisao a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.botao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    background-color: #000633;
+    border-radius: 20px;
+}
+
