@@ -10,6 +10,8 @@
 
 body {
     background-color: #000633;
+    margin: 0;
+    padding: 0;
 }
 
 main {
@@ -27,8 +29,8 @@ main {
 }
 
 .navBar {
-    background-color: var(--roxo-escuro);
-    color: var(--branco);
+    background-color:#000633;
+    color: #fff;
 
     display: flex;
     justify-content: space-around;
@@ -103,12 +105,13 @@ a{
 
 aside {
     border-width: 2px;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: #c1d3fe;
     float: left;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+
     font-family: 'Roboto';
 }
 
@@ -186,13 +189,15 @@ aside .titulo {
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-    width: 50%;
+    width: 60%;
 }
 
-.linha {
+.line{
     width: 100%;
-    height: 1px;
-    background-color: #000633;
+    height: 0.7px;
+    background-color: #b4bec9;
+    opacity:40%;
+    border-radius: 14px;
 }
 
 .infoMonitor h2 {
@@ -256,6 +261,25 @@ select::-ms-expand {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+}
+
+.funcionando{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.pausado{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.estado img{
+    height: 15px;
+    margin-right: 10px;
 }
 
 .caixaMenor h2 {
