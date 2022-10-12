@@ -11,6 +11,8 @@
     <link rel="shortcut icon" href="img/logo_transparent.png" type="image/x-icon">
     <script src="js/signIn.js"></script>
     <script src="js/download.js"></script>
+    <script src="js/abrirCadastroFuncionario.js"></script>
+    <script src="js/newMachine.js"></script>
 </head>
 
 <body onload="exibirInfosUser()">
@@ -64,24 +66,86 @@
                     <div class="test01">
                         <div>
                             <div class="opcoesMenu">
-                                <div class="menuContent"><p class="tituloBotao">+ Nova Maquina</p></div>
+                                <div class="menuContent">
+                                    <p onclick="newMachineUser()" class="tituloBotao">+ Nova Maquina</p>
+                                </div>
                             </div>
                         </div>
                         <div class="ngcBranco">
                             <div class="imagensDivItem">
                                 <h2>Avisos</h2>
-                                <img src="img/happy.png" alt=""> 
+                                <img src="img/happy.png" alt="">
                                 <p class="informacao">Sem avisos por enquanto!</p>
                             </div>
                         </div>
                     </div>
+                    
+
+
+
+
+                    <div id="confirmacaoNewMachine">
+                        <div id="confirmacaoContentNewMachine">
+                            <div class="tituloConfirmacaoNewMachine">
+                                <p>Autenticação necessária</p>
+                            </div>
+                            <div class="infoConfirmacaoNewMachine">
+                                <p>Autenticação obrigatória para realizar cadastar uma nova máquina</p>
+                            </div>
+                            <div class="confirmacaoSenhaNewMachine">
+                                <input type="password" name="senha" placeholder="Senha"
+                                    id="inputConfirmacao">
+                            </div>
+
+                            <div class="confirmacaoBotaoNewMachine">
+                                <button onclick="sendNewMachine()">Confirmar</button>
+                                <button onclick="fecharNewMachine()">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
 
                     <div class="test02">
                         <div style="flex-direction: row;">
                             <div class="boxMenu">
                                 <div class="opcoesMenu direito">
                                     <div class="menuContent">
-                                        <i class="fa fa-cog"></i><p class="tituloBotao">Ajustes</p>
+                                        <p onclick="abrirCadFunc()" class="tituloBotao">+ Adicionar Usuario</p>
+                                    </div>
+                                </div>
+                                <div id="confirmacaoNewUser">
+                                    <div id="confirmacaoContentNewUser">
+                                        <div class="tituloConfirmacaoNewUser">
+                                            <p>Cadastro Usuario</p>
+                                        </div>
+
+                                        <div class="confirmacaoSenhaNewUser">
+                                            <div class="inputsNewUser">
+                                                <div class="division1">
+                                                    <input type="text" placeholder="NOME">
+                                                    <input type="text" placeholder="CARGO">
+                                                    <input type="text" placeholder="CPF">
+                                                    <input type="text" placeholder="E-MAIL">
+                                                </div>
+                                                <div class="division2">
+                                                    <input type="text" placeholder="SENHA">
+                                                    <input type="text" placeholder="TELEFONE">
+                                                    <input type="text" placeholder="RG">
+                                                    <input type="text" placeholder="CEP">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="confirmacaoBotaoNewUser">
+                                            <button onclick="enviarCadFunc()">Confirmar</button>
+                                            <button onclick="fecharCadFunc()">Cancelar</button>
+                                        </div>
+
                                     </div>
                                 </div>
                                 <div class="opcoesMenu direito">
@@ -107,19 +171,21 @@
                                                 <p>Autenticação obrigatória para realizar download do JAR</p>
                                             </div>
                                             <div class="confirmacaoSenha">
-                                                <input type="password" name="senha" placeholder="Senha" id="inputConfirmacao">
+                                                <input type="password" name="senha" placeholder="Senha"
+                                                    id="inputConfirmacao">
                                             </div>
 
                                             <div class="confirmacaoBotao">
                                                 <button onclick="iniciarDownload()">Confirmar</button>
                                                 <button onclick="fecharDownload()">Cancelar</button>
                                             </div>
-                                            <a id="baixar" href="nome.txt" style="visibility: hidden;" onclick="this.click()" download="umnomediferente.txt">Baixar TXT</a>
+                                            <a id="baixar" href="nome.txt" style="visibility: hidden;"
+                                                onclick="this.click()" download="umnomediferente.txt">Baixar TXT</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                         <div class="ngcBranco2">
                             <div class="div01">
@@ -127,13 +193,15 @@
                                 <p><i class="fa fa-chevron-down" aria-hidden="true"></i></p>
                             </div>
                             <div class="div01 info">
-                                <i class="fa fa-desktop" aria-hidden="true"></i> <p class="informacao">Uma máquina acaba de se conectar</p>
+                                <i class="fa fa-desktop" aria-hidden="true"></i>
+                                <p class="informacao">Uma máquina acaba de se conectar</p>
                                 <p>12:34 PM</p>
                                 <p></p>
                             </div>
                             <div class="line"></div>
                             <div class="div01 info">
-                                <i class="fa fa-desktop" aria-hidden="true"></i> <p class="informacao">Uma máquina acaba de se conectar</p>
+                                <i class="fa fa-desktop" aria-hidden="true"></i>
+                                <p class="informacao">Uma máquina acaba de se conectar</p>
                                 <p>12:34 PM</p>
                                 <p></p>
                             </div>

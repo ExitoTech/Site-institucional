@@ -2,7 +2,7 @@
  USE bdExitoTech;
  
  CREATE TABLE Empresa (
-  id_empresa INT NOT NULL IDENTITY(1,1),
+  id_empresa INT NOT NULL PRIMARY KEY IDENTITY(1,1),
   Nome VARCHAR(45) NOT NULL,
   Cnpj VARCHAR(45) NOT NULL,
   EmailEmpresa VARCHAR(95) NOT NULL,

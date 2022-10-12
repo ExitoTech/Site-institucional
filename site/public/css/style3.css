@@ -18,6 +18,10 @@ main {
     flex-direction: row;
 }
 
+button{
+    cursor: pointer;
+}
+
 .logoNavBar {
     width: 40%;
     display: flex;
@@ -395,5 +399,158 @@ circle:nth-child(2){
     width: 200px;
     font-size:15px;
     
+}
+
+/* css viny */
+
+#confirmacaoNewUser{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.605);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index:9999;
+    top: 0;
+    left: 0;
+}
+
+#confirmacaoContentNewUser{
+    background-color: #fff;
+    color: #000;
+
+    width: 40vw;
+    height: 45vh;
+    border-radius: 14px;
+
+    position: fixed;
+    top: 30%;
+    left: 30%;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.confirmacaoSenhaNewUser{
+    width: 100%;
+    height: 10%;
+    
+    display: flex;
+    justify-content: center;
+
+}
+
+.confirmacaoBotaoNewUser{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+    height: 10%;
+    margin-bottom: 4px;
+}
+.confirmacaoBotaoNewUser button{
+    background-color: #000633;
+    color: #fff;
+    width: 40%;
+    border-radius: 5px;
+
+}
+
+.tituloConfirmacaoNewUser p{
+    font-weight: 500;
+    font-size: 24px;
+    margin-top: -15px;
+}
+
+.inputsNewUser{
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    flex-direction: row;
+    width: 100%;
+    height: 150px;
+    margin-top: -70px;
+}
+
+.division1{
+    width: 45%;
+}
+
+.division2{
+    width: 45%;
+}
+.inputsNewUser input{
+    border: 1px solid #3627d9;
+    margin: 5px;
+    width:97.5%;
+    height: 30px;
+    text-align: center;
+    outline: none;
+}
+
+
+
+
+#confirmacaoNewMachine{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.605);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index:9999;
+    top: 0;
+    left: 0;
+}
+
+#confirmacaoContentNewMachine{
+    background-color: #fff;
+    color: #000;
+
+    width: 40vw;
+    height: 45vh;
+    border-radius: 14px;
+
+    position: fixed;
+    top: 30%;
+    left: 30%;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.confirmacaoSenhaNewMachine{
+    width: 100%;
+    height: 10%;
+    
+    display: flex;
+    justify-content: center;
+
+}
+
+.confirmacaoBotaoNewMachine{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+    height: 10%;
+    margin-bottom: 4px;
+}
+.confirmacaoBotaoNewMachine button{
+    background-color: #000633;
+    color: #fff;
+    width: 40%;
+    border-radius: 5px;
+
+}
+
+.tituloConfirmacaoNewMachine p{
+    font-weight: 500;
+    font-size: 24px;
+    margin-top: -15px;
 }
 
