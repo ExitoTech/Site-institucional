@@ -1,57 +1,60 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajustes Usuário - ExitoTech</title>
     <link rel="stylesheet" href="./css/ajustesUsuario.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
     <div class="content">
         <div class="voltar">
             <img src="./img/icons/leftArrow.png" style="height: 15px; margin-right: 2%" alt="">
-        <div class="titulo"><p>Ajustes de usuário</p></div>
+            <div class="titulo">
+                <p>Ajustes de usuário</p>
+            </div>
         </div>
-        <div class="contentInAjustes">
+        <header>
             <div class="alterarFotoUsuario">
                 <img src="" alt="">
-                <div class="opcaoAlterar">
-                    <p>Alterar foto de perfil...</p>
-                </div>
-            </div>
-    
-            <div class="dadosUsuario">
-                <div class="formEsquerdo">
-                    <form action="">
-                        <input type="text" placeholder="Nome...">
-                        <input type="text" placeholder="Sobrenome...">
-                        <input type="text" placeholder="Telefone...">
-                    </form>
-                </div>
-    
-                <div class="formDireito">
-                    <form action="">
-                        <input type="text" placeholder="Email...">
-                        <input type="text" placeholder="Endereço...">
-                    </form>
-    
-                    <div class="boxInput">
-                        <input type="text" placeholder="Número...">
-                        <input type="text" placeholder="Bairro...">
+                <center>
+                    <div class="imgUser"></div>
+                    <div class="opcaoAlterar">
+                        <p>Alterar foto de perfil <i style="font-size: 20px;cursor: pointer;" class="fa fa-pencil" aria-hidden="true"></i></p>
                     </div>
-                </div>
+                    <div class="inputsButton">
+                        <input type="text" placeholder="Nome.."><button>Alterar</button>
+                    </div>
+                    <div class="inputsButton">
+                        <input type="text" placeholder="Sobrenome.."><button>Alterar</button>
+                    </div>
+                    <div class="inputsButton">
+                        <input type="text" placeholder="Telefone.."><button>Alterar</button>
+                    </div>
+                    <div class="inputsButton">
+                        <input type="text" placeholder="Email.."><button>Alterar</button>
+                    </div>
+                    <div class="inputsButton">
+                        <input type="text" placeholder="Enderço"><button>Alterar</button>
+                    </div>
+                    <div class="inputsButton">
+                        <input type="text" placeholder="Numero"><button>Alterar</button>
+                    </div>                    
+                    <div class="inputsButton">
+                        <input type="text" placeholder="Bairro"><button>Alterar</button>
+                    </div>                    
+                    <div class="buttonSave">
+                        <button>Salvar</button>
+                    </div>
+                </center>
             </div>
-            <div class="botaoDecisao">
-                <div class="botao">
-                    <a href="#" type="submit"><p>Confirmar</p></a>
-                </div>
-                <div class="botao">
-                    <a href="#" type="submit"><p>Cancelar</p></a>
-                </div>
-            </div>
-        </div>
+        </header>
     </div>
-    
 </body>
+
 </html>

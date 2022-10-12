@@ -341,7 +341,7 @@ select::-ms-expand {
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: rgb(159, 172, 205);
+    background: #9faccd;
     border-radius: 20px;
 
   }
