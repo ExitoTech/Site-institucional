@@ -153,7 +153,6 @@ form {
     margin-bottom: 3rem;
 }
 
-.container .inputLogin,
 .container .inputCadastroPt2 {
     align-self: center;
     padding: 3px;
@@ -168,6 +167,22 @@ form {
     outline: none;
     font-family: 'Roboto';
     font-weight: light;
+}
+
+.container .inputLogin {
+    align-self: center;
+    padding: 3px 3px 3px 1.5px;
+    height: 2.5rem;
+    width: 300px;
+    background-color: #edf2fb;
+    border: 2px solid #000633;
+    border-top: 2px;
+    border-left: 2px;
+    border-right: 2px;
+    outline: none;
+    font-family: 'Roboto';
+    font-weight: light;
+    font-size: 1rem;
 }
 
 .container .labelLogin,

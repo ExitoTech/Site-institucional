@@ -1,4 +1,23 @@
-function    Entrar() {
+function validar(){
+    email = document.getElementById('inputEmail').value;
+    senha = document.getElementById('inputSenha').value;
+
+    if(email == ""){
+        inputEmail.style.border = "2px solid red";
+        inputEmail.style.borderRadius = "5px";
+        inputSenha.style.border = "";
+        inputSenha.style.borderRadius = "";
+    }else if(senha == ""){
+        inputSenha.style.border = "2px solid red";
+        inputSenha.style.borderRadius = "5px";
+        inputEmail.style.border = "";
+        inputEmail.style.borderRadius = "";
+    }else{
+        entrar();
+    }
+}
+
+function entrar() {
     fetch("/usuarios/autenticar", {
         method: "POST",
         headers: {
@@ -13,6 +32,10 @@ function    Entrar() {
             console.log("ESTOU NO THEN DO entrar()!");
 
             if (resposta.ok) {
+                inputEmail.style.border = "";
+                inputEmail.style.borderRadius = "";
+                inputSenha.style.border = "";
+                inputSenha.style.borderRadius = "";
                 console.log(resposta);
 
                 resposta.json().then((json) => {

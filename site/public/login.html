@@ -34,13 +34,13 @@
                 <div class="container">
                     <h1 id="h1Login">Login</h1>
 
-                    <label for="" class="labelLogin">
-                        <input type="text" placeholder="Email" required id="inputEmail" class="inputLogin">
-                    </label>
-                    <label for="" class="labelLogin">
-                        <input id="inputSenha" type="password" placeholder="Senha" required class="inputLogin">
-                    </label>
-                    <button onclick="Entrar()" type="button">
+                    <label for="inputEmail" class="labelLogin">Email</label>
+                    <input type="text" placeholder="exemplo@gamil.com" required id="inputEmail" class="inputLogin" onkeyup="validEmail()">
+                    
+                    <label for="inputSenha" class="labelLogin">Senha</label>
+                    <input id="inputSenha" type="password" placeholder="********" required class="inputLogin" onkeyup="validSenha()">
+                    
+                    <button onclick="validar()" type="button">
                         Entrar
                     </button>
                     <p>Não tem conta? Faça o <a href="cadastro.html" class="linkCadastro">cadastro.</a></p>
