@@ -64,18 +64,20 @@ function verificarCnpj() {
 }
 
 function validarPorte(){
+    var porte = document.getElementById('selectPorte');
+    var porteEmpresa = document.getElementById('selectPorte').value;
 
-    if(selectPorte == 1 ||selectPorte == 2 || selectPorte == 3){
-        selectPorte.style.color = "green"
+    if(porteEmpresa == 1 || porteEmpresa == 2 || porteEmpresa == 3){
+        porte.style.color = "green"
     } else {
-        selectPorte.style.color = "#d90429"
+        porte.style.color = "#d90429"
     }
 
-   if(selectPorte == 1){
+   if(porteEmpresa == 1){
 
     porte = "Grande Porte"
    }
-   else if(selectPorte == 2){
+   else if(porteEmpresa == 2){
 
     porte =  "Médio Porte"
 
