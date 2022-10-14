@@ -15,7 +15,7 @@
     <script src="js/newMachine.js"></script>
 </head>
 
-<body onload="exibirInfosUser()">
+<body onload="exibirInfosUser(),exit()">
     <main>
         <div class="navBar">
             <div class="logoNavBar">
@@ -127,16 +127,16 @@
                                         <div class="confirmacaoSenhaNewUser">
                                             <div class="inputsNewUser">
                                                 <div class="division1">
-                                                    <input type="text" placeholder="NOME">
-                                                    <input type="text" placeholder="CARGO">
-                                                    <input type="text" placeholder="CPF">
-                                                    <input type="text" placeholder="E-MAIL">
+                                                    <input type="text" placeholder="NOME" id="nomeCadastro">
+                                                    <!--input type="text" placeholder="CARGO"-->
+                                                    <input type="text" placeholder="CPF" id="cpfCadastro" maxlength="14">
+                                                    <input type="text" placeholder="E-MAIL" id="emailCadastro">
                                                 </div>
                                                 <div class="division2">
-                                                    <input type="text" placeholder="SENHA">
-                                                    <input type="text" placeholder="TELEFONE">
-                                                    <input type="text" placeholder="RG">
-                                                    <input type="text" placeholder="CEP">
+                                                    <input type="password" placeholder="SENHA" id="senhaCadastro">
+                                                    <input type="text" placeholder="TELEFONE" id="telefoneCadastro">
+                                                    <!-- input type="text" placeholder="RG"-->
+                                                    <input type="text" placeholder="CEP" id="cepCadastro">
                                                 </div>
                                             </div>
                                         </div>

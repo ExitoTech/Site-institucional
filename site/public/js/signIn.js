@@ -43,8 +43,9 @@ function entrar() {
                     console.log(JSON.stringify(json) + 'exibindo json stringfy');
 
                     // sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.Nome;
-                    sessionStorage.SENHA_USUARIO = json.SenhaEmpresa;
+                    sessionStorage.NOME_USUARIO = json.nomeFuncionario;
+                    sessionStorage.SENHA_USUARIO = json.senha;
+                    sessionStorage.FK_EMPRESA = json.fk_Empresa;
                     // sessionStorage.ID_USUARIO = json.id_usuario;
                     Swal.fire({
                         title: `Entrando..`,
@@ -83,4 +84,15 @@ function exibirInfosUser() {
 
     var senha = sessionStorage.SENHA_USUARIO;
 
+}
+
+function exit(){
+
+    var divSair = document.getElementsByClassName("opcaoNavBar exit")[0]
+    divSair.style.cursor = "pointer"
+    divSair.onclick = function(){
+        sessionStorage.clear()
+        window.location = "index.html"
+    }
+    
 }
