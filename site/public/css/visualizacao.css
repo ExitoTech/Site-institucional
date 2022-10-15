@@ -63,7 +63,7 @@ body {
     flex-direction: column;
 }
 
-a{
+a {
     color: #fff;
     outline: none;
     text-decoration: none;
@@ -78,13 +78,13 @@ a{
     font-size: 80%;
 }
 
-.opcaoNavBar.agora{
+.opcaoNavBar.agora {
     background-color: rgba(255, 255, 255, 0.469);
     height: 100%;
-    width:100%;
+    width: 100%;
     border-radius: 4px;
-  }
-  
+}
+
 .opcaoNavBar img {
     width: 10%;
     margin-right: 5%;
@@ -224,4 +224,178 @@ a{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+
+
+.toggle {
+    display: none;
+}
+
+.toggle+label {
+
+    width: 32px;
+    height: 20px;
+    background: lightgrey;
+    display: block;
+    position: relative;
+    left: 825px;
+    border-radius: 20px;
+    padding: 2px;
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.toggle+label:before {
+
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    display: block;
+    border-radius: 50%;
+    right: unset;
+    left: 2px;
+    top: 2px;
+    transition: 200ms;
+}
+
+.toggle:checked+label {
+    background: blue;
+}
+
+.toggle:checked+label:before {
+    content: "";
+    left: calc(100% - 22px);
+    box-shadow: 0 4px 4px rgb(0 0 00 / 10%);
+}
+
+.toggle {
+    display: none;
+}
+
+.toggle+label {
+
+    width: 32px;
+    height: 20px;
+    background: lightgrey;
+    display: block;
+    position: relative;
+    left: 825px;
+    border-radius: 20px;
+    padding: 2px;
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.toggle+label:before {
+
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    display: block;
+    border-radius: 50%;
+    right: unset;
+    left: 2px;
+    top: 2px;
+    transition: 200ms;
+}
+
+.toggle:checked+label {
+    background: blue;
+}
+
+.toggle:checked+label:before {
+    content: "";
+    left: calc(100% - 22px);
+    box-shadow: 0 4px 4px rgb(0 0 00 / 10%);
+}
+
+.toggle3 {
+    display: none;
+}
+
+.toggle3+label {
+
+    width: 32px;
+    height: 20px;
+    background: lightgrey;
+    display: block;
+    position: relative;
+    left: 885px;
+    border-radius: 20px;
+    padding: 2px;
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.toggle3+label:before {
+
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    display: block;
+    border-radius: 50%;
+    right: unset;
+    left: 2px;
+    top: 2px;
+    transition: 200ms;
+}
+
+.toggle3:checked+label {
+    background: blue;
+}
+
+.toggle3:checked+label:before {
+    content: "";
+    left: calc(100% - 22px);
+    box-shadow: 0 4px 4px rgb(0 0 00 / 10%);
+}
+
+.toggle2 {
+    display: none;
+}
+
+.toggle2+label {
+
+    width: 32px;
+    height: 20px;
+    background: lightgrey;
+    display: block;
+    position: relative;
+    left: 894px;
+    border-radius: 20px;
+    padding: 2px;
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.toggle2+label:before {
+
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    display: block;
+    border-radius: 50%;
+    right: unset;
+    left: 2px;
+    top: 2px;
+    transition: 200ms;
+}
+
+.toggle2:checked+label {
+    background: blue;
+}
+
+.toggle2:checked+label:before {
+    content: "";
+    left: calc(100% - 22px);
+    box-shadow: 0 4px 4px rgb(0 0 00 / 10%);
 }
