@@ -7,7 +7,79 @@ function sairDivA(){
     textoLink.innerHTML= 'ExitoTech'
 }
 
-function verificarEmail() {
+function validarCargo() {
+    var Cargo = inputCargo.value;
+
+    if (Cargo.length >= 3) {
+        inputCargo.style.color = "#80b918";
+        inputCargo.style.borderLeft = "none";
+        inputCargo.style.borderTop = "none";
+        inputCargo.style.borderRight = "none";
+    }
+    else {
+        inputCargo.style.color = "#d90429";
+        inputCargo.style.borderLeft = "none";
+        inputCargo.style.borderTop = "none";
+        inputCargo.style.borderRight = "none";
+    }
+}
+
+function validarEmail() {
+    var Email = inputEmail.value
+
+    if (Email.length > 5 && Email.indexOf('@') > -1 && testeMail.indexOf(".") > -1) {
+        inputEmail.style.color = "#80b918";
+        inputEmail.style.borderLeft = "none";
+        inputEmail.style.borderTop = "none";
+        inputEmail.style.borderRight = "none";
+    }
+
+    else {
+        inputEmail.style.color = "#d90429";
+        inputEmail.style.border = "2px solid #000633";
+        inputEmail.style.borderLeft = "none";
+        inputEmail.style.borderTop = "none";
+        inputEmail.style.borderRight = "none";
+    }
+}
+
+function validarCpf() {
+    var Cpf = inputCpf.value
+
+    if (Cpf.length == 11) {
+        inputCpf.style.color = "#80b918";
+        inputCpf.style.borderLeft = "none";
+        inputCpf.style.borderTop = "none";
+        inputCpf.style.borderRight = "none";
+    }
+    else {
+        inputCpf.style.color = "#d90429";
+        inputCpf.style.border = "2px solid #000633";
+        inputCpf.style.borderLeft = "none";
+        inputCpf.style.borderTop = "none";
+        inputCpf.style.borderRight = "none";
+    }
+}
+
+function validarTelefone() {
+    var Telefone = inputTelefone.value
+
+    if (Telefone.length >= 10 && Telefone.length <= 11) {
+        inputTelefone.style.color = "#80b918";
+        inputTelefone.style.borderLeft = "none";
+        inputTelefone.style.borderTop = "none";
+        inputTelefone.style.borderRight = "none";
+    }
+    else {
+        inputTelefone.style.color = "#d90429";
+        inputTelefone.style.border = "2px solid #000633";
+        inputTelefone.style.borderLeft = "none";
+        inputTelefone.style.borderTop = "none";
+        inputTelefone.style.borderRight = "none";
+    }
+}
+
+/* function verificarEmail() {
 
     var testeMail = inputEmail.value
 
@@ -32,9 +104,9 @@ function verificarEmail() {
         inputEmail.style.borderTop = "none";
         inputEmail.style.borderRight = "none";
     }
-}
+} */
 
-function ValidaSenha() {
+function ValidarSenha() {
 
     var testeSenha = inputSenha.value
 
@@ -59,30 +131,30 @@ function ValidaSenha() {
     }
 }
 
-function ValidaConfirmarSenha() {
+function ValidarConfirmarSenha() {
 
-    var testeConfirmarSenha = inputRepetirSenha.value
+    var testeConfirmarSenha = inputConfirmarSenha.value
     var testeSenha = inputSenha.value
 
 
     if (testeConfirmarSenha == testeSenha) {
-        inputRepetirSenha.style.border = "2px solid green";
-        inputRepetirSenha.style.borderLeft = "none";
-        inputRepetirSenha.style.borderTop = "none";
-        inputRepetirSenha.style.borderRight = "none";
+        inputConfirmarSenha.style.border = "2px solid green";
+        inputConfirmarSenha.style.borderLeft = "none";
+        inputConfirmarSenha.style.borderTop = "none";
+        inputConfirmarSenha.style.borderRight = "none";
     }
     else if (testeConfirmarSenha == '') {
-        inputRepetirSenha.style.border = "2px solid #b8860b";
-        inputRepetirSenha.style.borderLeft = "none";
-        inputRepetirSenha.style.borderTop = "none";
-        inputRepetirSenha.style.borderRight = "none";
+        inputConfirmarSenha.style.border = "2px solid #b8860b";
+        inputConfirmarSenha.style.borderLeft = "none";
+        inputConfirmarSenha.style.borderTop = "none";
+        inputConfirmarSenha.style.borderRight = "none";
     }
 
     else {
-        inputRepetirSenha.style.border = "2px solid red";
-        inputRepetirSenha.style.borderLeft = "none";
-        inputRepetirSenha.style.borderTop = "none";
-        inputRepetirSenha.style.borderRight = "none";
+        inputConfirmarSenha.style.border = "2px solid red";
+        inputConfirmarSenha.style.borderLeft = "none";
+        inputConfirmarSenha.style.borderTop = "none";
+        inputConfirmarSenha.style.borderRight = "none";
     }
 }
 

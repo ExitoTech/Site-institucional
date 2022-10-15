@@ -34,21 +34,47 @@
             <form class="formPt2">
                 <div class="container">
                     <h1 id="h1Pt2">Cadastro</h1>
-                    <label for="inputEmail" class="labelCadastroPt2">
-                        <input id="inputEmail" onkeyup=" verificarEmail()" type="text" placeholder="Insira um email"
-                            required class="inputCadastroPt2">
-                    </label>
+                    <div class="cardCadastro">
+                        <div class="cadastroEsq">
+                            <div class="formControl">
+                                <input type="text" onkeyup="validarCargo()" id="inputCargo" required>
+                                <label>Cargo:</label>
+                            </div>
+                            <div class="formControl">
+                                <input onkeyup="validarEmail()" id="inputEmail" type="text" required>
+                                <label>Email:</label>
+                            </div>
 
-                    <label for="inputSenha" class="labelCadastroPt2">
-                        <input id="inputSenha" onkeyup="ValidaSenha()" type="password" placeholder="Insira uma senha"
-                            required class="inputCadastroPt2">
-                    </label>
+                            <div class="formControl">
+                                <input onkeyup="validarCpf()" id="inputCpf" maxlength="11" type="text" required>
+                                <label>CPF:</label>
+                            </div>
+                            <div class="formControl">
+                                <input onkeyup="validarUf()" id="inputUf" maxlength="2" type="text" required>
+                                <label>UF:</label>
+                            </div>
+                        </div>
+                        <div class="cadastroDir">
+                            <div class="formControl">
+                                <input onkeyup="validarTelefone()" id="inputTelefone" maxlength="8" type="text" required>
+                                <label>Telefone:</label>
+                            </div>
 
-                    <label for="inputRepetirSenha" class="labelCadastroPt2">
-                        <input id="inputRepetirSenha" onkeyup="ValidaConfirmarSenha()" type="password"
-                            placeholder="Repita a senha" required class="inputCadastroPt2">
-                    </label>
-                    <button class="safePassword" type="button" onclick="GerarSenhaSegura()">Gerar Senha Segura</button>
+                            <div class="formControl">
+                                <input onkeyup="validarSenha()" id="inputSenha" type="text" required>
+                                <label>Senha:</label>
+                            </div>
+                            <div class="formControl">
+                                <input onkeyup="validarConfirmarSenha()" id="inputConfirmarSenha" type="text" required>
+                                <label>Confirmar Senha:</label>
+                            </div>
+
+                            <div class="formControl">
+                            <button class="safePassword" type="button" onclick="GerarSenhaSegura()">Gerar Senha Segura</button>
+                        </div>
+                        </div>
+                    </div>
+
                     <button type="button" onclick="nextSignUp()">
                         Enviar
                     </button>
@@ -60,4 +86,5 @@
 </body>
 
 </html>
+<script src="js/cadastro.js"></script>
 <script src="js/signUpPt2.js"></script>
