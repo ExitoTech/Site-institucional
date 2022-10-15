@@ -1,46 +1,76 @@
- CREATE DATABASE bdExitoTech;
- USE bdExitoTech;
- 
- CREATE TABLE Empresa (
-  id_empresa INT NOT NULL PRIMARY KEY IDENTITY(1,1),
-  Nome VARCHAR(45) NOT NULL,
-  Cnpj VARCHAR(45) NOT NULL,
-  EmailEmpresa VARCHAR(95) NOT NULL,
-  SenhaEmpresa VARCHAR(45) NOT NULL,
-  PorteEmpresa VARCHAR(45) NOT NULL,
-  Logradouro VARCHAR(45) NOT NULL,
-  UF VARCHAR(45) NOT NULL,
-  CEP VARCHAR(99) NOT NULL,
-  PRIMARY KEY (id_empresa)
+ CREATE TABLE empresa(
+  idEmpresa INT NOT NULL identity(1,1),
+  nomeEmpresa VARCHAR(75) NULL,
+  cnpj CHAR(18) NULL,
+  porteEmpresa VARCHAR(50) NULL,
+  logradouro VARCHAR(65) NULL,
+  UF CHAR(2) NULL,
+  CEP CHAR(8) NULL,
+  PRIMARY KEY (idEmpresa)
   );
 
-  CREATE TABLE Funcionario (
-  id_funcionario INT PRIMARY KEY NOT NULL IDENTITY(2000,1),
-  Nome VARCHAR(45) NOT NULL,
-  Cargo VARCHAR(45) NOT NULL,
-  CPF VARCHAR(45) NOT NULL,
-  Email VARCHAR(45) NOT NULL,
-  Telefone VARCHAR(45) NOT NULL,
-  RG VARCHAR(45) NOT NULL,
-  UF VARCHAR(45) NOT NULL,
-  EstadoCivil VARCHAR(45) NOT NULL,
-  FK_encarregado INT NOT NULL,
-  FK_Empresa INT NOT NULL
-);
 
-CREATE TABLE maquinas (
-  id_maquinas INT PRIMARY KEY  NOT NULL IDENTITY(10000,1),
-  nomeMaquina VARCHAR(45)NOT NULL,
-  clockProcessador VARCHAR(45)NOT NULL,
-  memoriaRam VARCHAR(45) NOT NULL,
-  hdOUssd CHAR(3) , check(hdOUssd = 'HDD' or hdOUssd = 'SSD' ),
-  fk_funcionario INT NOT NULL
+CREATE TABLE funcionario(
+  idFuncionario INT NOT NULL identity(1,1000),
+  nomeFuncionario VARCHAR(60) NULL,
+  CPF CHAR(11) NULL,
+  email VARCHAR(155) NULL,
+  senha VARCHAR(25) NULL,
+  ativo TINYINT NULL,
+  telefoneFuncionario CHAR(11) NULL,
+  cep VARCHAR(40) NULL,
+  fk_Empresa INT NOT NULL,
+  isADM TINYINT NULL,
+  PRIMARY KEY (idFuncionario),
+  FOREIGN KEY (fk_empresa)
+  REFERENCES empresa(idEmpresa)
+ );
+
+
+CREATE TABLE setor (
+  idSetor INT NOT NULL identity(1,10000),
+  nomeSetor VARCHAR(25) NULL,
+  descSetor VARCHAR(65) NULL,
+  fk_Empresa INT NOT NULL,
+  PRIMARY KEY (idSetor),
+  FOREIGN KEY (fk_empresa)
+  REFERENCES empresa (idEmpresa)
   );
 
-  CREATE TABLE historico_de_dados (
-  id_historico_de_dados INT PRIMARY KEY NOT NULL IDENTITY(70000,1),
-  Uso_CPU INT NOT NULL,
-  Uso_RAM INT NOT NULL,
-  Uso_Disco INT NOT NULL,
-  fk_maquina INT NOT NULL
-);
+
+CREATE TABLE maquina (
+  idMaquina INT identity(1,20000),
+  nomeMaquina VARCHAR(15),
+  fk_setor INT null,
+  processador VARCHAR(30),
+  memoriaRam VARCHAR(30),
+  memoriaMassa VARCHAR(30),
+  PRIMARY KEY (idMaquina),
+  FOREIGN KEY (fk_setor)
+  REFERENCES setor (idSetor)
+  );
+
+
+CREATE TABLE capturas (
+ idCaptura INT NOT NULL identity(1,120000),
+  usoCPU DECIMAL(3,2) NULL,
+  usoRam DECIMAL(3,2) NULL,
+  dataHora DATETIME default current_timestamp ,
+  PRIMARY KEY (idCaptura),
+  fk_maquina INT NOT NULL,
+  FOREIGN KEY (fk_maquina)
+  REFERENCES maquina (idMaquina)
+  );
+  
+  create table atendimentoMaquina(
+  idAtendimento int primary key identity(1,40000),
+  tituloIncidente varchar (30),
+  descAtendimento varchar(255),
+  horaAtendimento datetime default current_timestamp,
+  fk_maquina int,
+  foreign key(fk_maquina) references maquina(idMaquina),
+  fk_funcionario int,
+  foreign key(fk_funcionario) references funcionario(idFuncionario),
+  fk_setor int,
+  foreign key(fk_setor) references setor(idSetor)
+  );
