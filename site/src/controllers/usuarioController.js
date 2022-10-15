@@ -131,6 +131,7 @@ function cadastrarEmpresa(req,res) {
         res.status(400).send("Seu UF está undefined!");
     } else {
 
+
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         usuarioModel.cadastrarEmpresa(nomeEmpresa, cepEmpresa, cnpj, porte, logradouro, uf)
             .then(
