@@ -10,7 +10,7 @@ function buscarCep() {
         success:function(response){
             console.log(response)
             logradouro.value = response.logradouro;
-            uf.value = response.uf;
+            uf.value = response.uf
         }
     })
 }
