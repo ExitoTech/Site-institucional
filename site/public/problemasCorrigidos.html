@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Problemas corrigidos - ExitoTech</title>
     <link rel="stylesheet" href="css/problemasCorrigidos.css">
+    <script src="js/openNewCorrection.js"></script>
 </head>
+
 <body>
+
     <body onload="exibirInfosUser(),exit()">
         <main>
             <div class="navBar">
@@ -52,15 +56,138 @@
             </div>
             <aside>
                 <div class="titulo">
-                    <p>Problemas Corrigidos</p>
+                    <div>
+                        <p>Problemas Corrigidos</p>
+                        <p onclick="newCorrection()" class="plusIcon">+</p>
+
+                    </div>
+
+
+                    <div id="confirmacaoCorretion">
+                        <div id="confirmacaoContentCorretion">
+                            <div class="tituloConfirmacaoCorretion">
+                                <p>Inserir correção realizada</p>
+                            </div>
+
+                            <input class="mainInput" type="text" placeholder="Problema Encontrado">
+                            <select class="mainSelect" name="" id="" aria-placeholder="">
+                                <option value="">Selecionar Autor</option>
+                                <option value="">Mauro Silva</option>
+                                <option value="">Cleber Pinheiro</option>
+                                <option value="">Ananias Pereira</option>
+                                <option value="">Cristiano Joaquim</option>
+                                <option value="">Vincius A Nunes</option>
+                            </select>
+
+
+                            <div class="confirmacaoBotaoCorretion">
+                                <button onclick="sendCorretion()">Inserir</button>
+                                <button onclick="fecharCorretion()">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 <main>
                     <div class="infoProblemas">
+                        <div class="mainMachines">
+                            <div class="machines">
+                                <div class="imgDiv">
+                                    <img src="img/icons/maquinaLight.png" alt="">
+                                    <div class="infoMachines">
+                                        <div class="divMainItens">
+                                            <div class="infoItens">
+                                                <h2>Maquina 1</h2>
+                                                <p>Problema encontrado: Maquina congelada</p>
+                                                <p>Autor da correção: Vincius A Nunes</p>
+                                                <p>Hora da correção: 13:40</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="machines">
+                                <div class="imgDiv">
+                                    <img src="img/icons/maquinaLight.png" alt="">
+                                    <div class="infoMachines">
+                                        <div class="divMainItens">
+                                            <div class="infoItens">
+                                                <h2>Maquina 2</h2>
+                                                <p>Problema encontrado: Maquina congelada</p>
+                                                <p>Autor da correção: Vincius A Nunes</p>
+                                                <p>Hora da correção: 13:40</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="machines">
+                                <div class="imgDiv">
+                                    <img src="img/icons/maquinaLight.png" alt="">
+                                    <div class="infoMachines">
+                                        <div class="divMainItens">
+                                            <div class="infoItens">
+                                                <h2>Maquina 3</h2>
+                                                <p>Problema encontrado: Maquina congelada</p>
+                                                <p>Autor da correção: Vincius A Nunes</p>
+                                                <p>Hora da correção: 13:40</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="machines">
+                                <div class="imgDiv">
+                                    <img src="img/icons/maquinaLight.png" alt="">
+                                    <div class="infoMachines">
+                                        <div class="divMainItens">
+                                            <div class="infoItens">
+                                                <h2>Maquina 4</h2>
+                                                <p>Problema encontrado: Maquina congelada</p>
+                                                <p>Autor da correção: Vincius A Nunes</p>
+                                                <p>Hora da correção: 13:40</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="machines">
+                                <div class="imgDiv">
+                                    <img src="img/icons/maquinaLight.png" alt="">
+                                    <div class="infoMachines">
+                                        <div class="divMainItens">
+                                            <div class="infoItens">
+                                                <h2>Maquina 5</h2>
+                                                <p>Problema encontrado: Maquina congelada</p>
+                                                <p>Autor da correção: Vincius A Nunes</p>
+                                                <p>Hora da correção: 13:40</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="machines">
+                                <div class="imgDiv">
+                                    <img src="img/icons/maquinaLight.png" alt="">
+                                    <div class="infoMachines">
+                                        <div class="divMainItens">
+                                            <div class="infoItens">
+                                                <h2>Maquina 6</h2>
+                                                <p>Problema encontrado: Maquina congelada</p>
+                                                <p>Autor da correção: Vincius A Nunes</p>
+                                                <p>Hora da correção: 13:40</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
+                        </div>
                     </div>
                 </main>
             </aside>
         </main>
 
-</body>
+    </body>
+
 </html>

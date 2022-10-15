@@ -107,6 +107,17 @@ a{
     font-size: 32px;
     font-weight: 500;
     margin-left: 5%;
+    width: 88%;
+}
+
+.titulo div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.titulo .plusIcon{
+    font-size: 34px;
+    cursor: pointer;
 }
 
 aside {
@@ -135,7 +146,182 @@ main{
 main .infoProblemas{
     width: 90%;
     height: 100%;
-    margin-top: -90px;
     background-color: #000633;
     border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+
 }
+
+.infoProblemas .mainMachines{
+    background-color: #000633;
+    width: 95%;
+    height: 90%;
+    overflow: hidden;
+    overflow-y: scroll;
+    flex-direction: column;
+}
+
+.machines{
+    background-color: #000633;
+    width: 97%;
+    height: 155px;
+    border-bottom: 0.1em solid #f5f5f5;
+}
+
+.machines .imgDiv{
+    width: 40%;
+    background-color: #000633;
+    height: 90%;
+}
+.machines .imgDiv img{
+    margin: auto;
+    float: left;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    margin-top: 23px;
+}
+
+.infoMachines{
+    background-color: #000633;
+    width: 70%;
+    height: 100%;
+    float: right;
+    color: #f5f5f5;
+}
+
+.infoMachines p{
+    width: 700px;
+    font-size: 12px;
+}
+
+
+.divMainItens{
+    display: flex;
+    flex-direction: column;
+}
+
+.infoItens{
+    margin-bottom: -30px;
+}
+
+
+#confirmacaoCorretion{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.605);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index:9999;
+    top: 0;
+    left: 0;
+}
+
+#confirmacaoContentCorretion{
+    background-color: #fff;
+    color: #000;
+
+    width: 40vw;
+    height: 45vh;
+    border-radius: 14px;
+
+    position: fixed;
+    top: 30%;
+    left: 30%;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.mainInput{
+    background-color: #9faccd;
+    width: 90%;
+    height: 30px;
+    border-radius: 5px;
+    text-align: center;
+    color: #f5f5f5;
+    outline: none;
+    border: none;
+}
+
+::placeholder{
+    color: #f5f5f5;
+    outline: none;
+    border: none;
+}
+
+.mainSelect{
+    background-color: #9faccd;
+    width: 90%;
+    height: 30px;
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+    outline: none;
+    color: #f5f5f5;
+}
+
+.confirmacaoBotaoCorretion{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+    height: 10%;
+    margin-bottom: 4px;
+}
+.confirmacaoBotaoCorretion button{
+    background-color: #000633;
+    color: #fff;
+    width: 40%;
+    border-radius: 5px;
+    margin: 10px;
+    height: 40px;
+    margin-top: -5px;
+}
+
+
+
+.tituloConfirmacaoCorretion p{
+    font-weight: 500;
+    font-size: 24px;
+    margin-top: -15px;
+}
+
+
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+    border-radius: 20px;
+
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 20px;
+
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #9faccd;
+    border-radius: 20px;
+    border-radius: 20px;
+
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    border-radius: 20px;
+
+  }
