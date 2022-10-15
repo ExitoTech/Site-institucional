@@ -187,9 +187,9 @@ function nextSignUp() {
     if (errosValidação == 0) {
 
 
-        var fk = cadastreEmpresa()
+        cadastreEmpresa()
 
-        cadastreUsuario(fk)
+        cadastreUsuario()
 
         sessionStorage.clear()
 
@@ -256,7 +256,7 @@ function cadastreEmpresa() {
     });
 }
 
-function cadastreUsuario(fk_empresa) {
+function cadastreUsuario() {
     fetch("/usuarios/cadastrarUsuarioADM", {
         method: "POST",
         headers: {
@@ -271,7 +271,6 @@ function cadastreUsuario(fk_empresa) {
             cpfUsuarioServer: document.getElementById("inputCpf").value,
             cepUsuarioServer: document.getElementById("inputCEP").value,
             telefoneUsuarioServer: document.getElementById("inputTelefone").value,
-            fk_empresaServer: fk_empresa
         })
     }).then(function (resposta) {
 
