@@ -64,13 +64,13 @@ function verificarCnpj() {
 }
 
 function validarPorte(){
-    var porte = document.getElementById('selectPorte');
+    var porteStyle = document.getElementById('selectPorte');
     var porteEmpresa = document.getElementById('selectPorte').value;
 
     if(porteEmpresa == 1 || porteEmpresa == 2 || porteEmpresa == 3){
-        porte.style.color = "green"
+        porteStyle.style.color = "green"
     } else {
-        porte.style.color = "#d90429"
+        porteStyle.style.color = "#d90429"
     }
 
    if(porteEmpresa == 1){
@@ -105,7 +105,7 @@ function nextSignUp() {
         errosValidação++
 
     }
-    else if( selectPorte.style.color != "rgb(217, 4, 41)"){
+    else if( selectPorte.style.color != "green"){
 
         errosValidação++
     }
@@ -126,37 +126,13 @@ function nextSignUp() {
             title: '<h3>Dados enviados com sucesso</h3> <br> Indo para a proxima etapa.',
             showConfirmButton: false
         })
-        fetch("/usuarios/guard", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            // crie um atributo que recebe o valor recuperado aqui
-            // Agora vá para o arquivo routes/usuario.js
-            nomeServer: document.getElementById("inputNomeDaEmpresa").value,
-            cepServer: document.getElementById("inputCep").value,
-            cnpjServer: document.getElementById("inputCnpj").value,
-            porteServer: porte,
-            logradouroServer: document.getElementById("inputLogradouro").value,
-            ufServer: document.getElementById("inputUf").value,
-
-          })
-        }).then(function (resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
-        });
-
-        return false;
+        sessionStorage.setItem("NOME_EMPRESA" ,document.getElementById("inputNomeDaEmpresa").value) 
+        sessionStorage.setItem("CEP_EMPRESA",document.getElementById("inputCep").value) 
+        sessionStorage.setItem("CNPJ_EMPRESA",document.getElementById("inputCnpj").value) 
+        sessionStorage.setItem("PORTE_EMPRESA", porte)
+        sessionStorage.setItem("RUA_EMPRESA",document.getElementById("inputLogradouro").value) 
+        sessionStorage.setItem("UF", document.getElementById("inputUf").value) 
+  
     }
     else {
         Swal.fire({

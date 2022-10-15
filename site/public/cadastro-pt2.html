@@ -37,9 +37,9 @@
                     <div class="cardCadastro">
                         <div class="cadastroEsq">
                             <div class="formControl">
-                                <input type="text" onkeyup="validarCargo()" id="inputCargo" required>
-                                <label>Cargo:</label>
-                            </div>
+                                <input type="text" onkeyup="validarNome()" id="inputNome" required>
+                                <label>Nome:</label>
+                            </div -->
                             <div class="formControl">
                                 <input onkeyup="validarEmail()" id="inputEmail" type="text" required>
                                 <label>Email:</label>
@@ -50,13 +50,16 @@
                                 <label>CPF:</label>
                             </div>
                             <div class="formControl">
-                                <input onkeyup="validarUf()" id="inputUf" maxlength="2" type="text" required>
-                                <label>UF:</label>
+                                <input onkeyup="validarCEP()" id="inputCEP" maxlength="8" type="text" required>
+                                <label>CEP:</label>
+                            </div>
+                            <div class="formControl">
+                                <button class="safePassword" type="button" onclick="GerarSenhaSegura()" style="visibility: hidden;">Gerar Senha Segura</button>
                             </div>
                         </div>
                         <div class="cadastroDir">
                             <div class="formControl">
-                                <input onkeyup="validarTelefone()" id="inputTelefone" maxlength="8" type="text" required>
+                                <input onkeyup="validarTelefone()" id="inputTelefone" maxlength="10" type="text" required>
                                 <label>Telefone:</label>
                             </div>
 
@@ -86,5 +89,4 @@
 </body>
 
 </html>
-<script src="js/cadastro.js"></script>
 <script src="js/signUpPt2.js"></script>

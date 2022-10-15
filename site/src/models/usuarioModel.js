@@ -19,13 +19,24 @@ function entrar(email, senha) {
 }
 
 // Coloque os mesmos parâmetros aqui. Vá para a var instrucao
-function cadastrar(nome,cep,logradouro,uf,cnpj,porte, email, senha) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, email, senha);
+function cadastrarEmpresa(nomeEmpresa,cepEmpresa,cnpj,porte,logradouro,uf) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nomeEmpresa);
     
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO empresa (nome,cep,logradouro,uf,cnpj,porteempresa, emailempresa, senhaempresa) VALUES ('${nome}','${cep}','${logradouro}','${uf}','${cnpj}','${porte}', '${email}', '${senha}');
+        INSERT INTO empresa (nomeEmpresa,cep,logradouro,uf,cnpj,porteempresa) VALUES ('${nomeEmpresa}','${cepEmpresa}','${logradouro}','${uf}','${cnpj}','${porte}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+function cadastrarUsuarioADM(nomeUsuario,email,senha,cpf,cepUsuario,telefoneUsuario,fk_empresa) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nomeUsuario, email, senha);
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    var instrucao = `
+    Insert into Funcionario (nomeFuncionario,cpf,email,senha,ativo,telefoneFuncionario,cep,fk_empresa,isADM) VALUES ('${nomeUsuario}','${cpf}','${email}','${senha}', true ,'${telefoneUsuario}', '${cepUsuario}','${fk_empresa}',true);
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -57,7 +68,8 @@ function cadastrarFuncionario(nome,cpf,email,senha,telefone,cep,fk_empresa) {
 
 module.exports = {
     entrar,
-    cadastrar,
+    cadastrarEmpresa,
+    cadastrarUsuarioADM,
     listar,
     cadastrarMaquina,
     cadastrarFuncionario

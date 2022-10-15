@@ -1,33 +1,33 @@
-function entrarDivA(){
-    textoLink.innerHTML= `< voltar`
-    
+function entrarDivA() {
+    textoLink.innerHTML = `< voltar`
+
 }
 
-function sairDivA(){
-    textoLink.innerHTML= 'ExitoTech'
+function sairDivA() {
+    textoLink.innerHTML = 'ExitoTech'
 }
 
-function validarCargo() {
-    var Cargo = inputCargo.value;
+function validarNome() {
+    var Nome = inputNome.value;
 
-    if (Cargo.length >= 3) {
-        inputCargo.style.color = "#80b918";
-        inputCargo.style.borderLeft = "none";
-        inputCargo.style.borderTop = "none";
-        inputCargo.style.borderRight = "none";
+    if (Nome.length >= 3) {
+        inputNome.style.color = "#80b918";
+        inputNome.style.borderLeft = "none";
+        inputNome.style.borderTop = "none";
+        inputNome.style.borderRight = "none";
     }
     else {
-        inputCargo.style.color = "#d90429";
-        inputCargo.style.borderLeft = "none";
-        inputCargo.style.borderTop = "none";
-        inputCargo.style.borderRight = "none";
+        inputNome.style.color = "#d90429";
+        inputNome.style.borderLeft = "none";
+        inputNome.style.borderTop = "none";
+        inputNome.style.borderRight = "none";
     }
 }
 
 function validarEmail() {
     var Email = inputEmail.value
 
-    if (Email.length > 5 && Email.indexOf('@') > -1 && testeMail.indexOf(".") > -1) {
+    if (Email.length > 5 && Email.indexOf('@') > -1 && Email.indexOf(".") > -1) {
         inputEmail.style.color = "#80b918";
         inputEmail.style.borderLeft = "none";
         inputEmail.style.borderTop = "none";
@@ -106,7 +106,7 @@ function validarTelefone() {
     }
 } */
 
-function ValidarSenha() {
+function validarSenha() {
 
     var testeSenha = inputSenha.value
 
@@ -131,7 +131,7 @@ function ValidarSenha() {
     }
 }
 
-function ValidarConfirmarSenha() {
+function validarConfirmarSenha() {
 
     var testeConfirmarSenha = inputConfirmarSenha.value
     var testeSenha = inputSenha.value
@@ -164,27 +164,35 @@ function nextSignUp() {
 
     var errosValidação = 0
 
-    var inputRepetirSenha = document.getElementById("inputRepetirSenha")
+    var inputRepetirSenha = document.getElementById("inputConfirmarSenha")
     var inputSenha = document.getElementById("inputSenha")
     var inputEmail = document.getElementById("inputEmail")
 
-    if(inputRepetirSenha.style.borderBottom != "2px solid green"){
+    if (inputRepetirSenha.style.borderBottom != "2px solid green") {
 
         errosValidação++
 
     }
-    else if(inputSenha.style.borderBottom != "2px solid green"){
+    else if (inputSenha.style.borderBottom != "2px solid green") {
 
         errosValidação++
 
     }
-    else if(inputEmail.style.color != "rgb(128, 185, 24)"){
+    else if (inputEmail.style.color != "rgb(128, 185, 24)") {
 
         errosValidação++
     }
 
 
-     if (errosValidação == 0  ) {
+    if (errosValidação == 0) {
+
+
+        var fk = cadastreEmpresa()
+
+        cadastreUsuario(fk)
+
+        sessionStorage.clear()
+
         setTimeout(() => {
             window.location.assign("login.html");
         }, "2500")
@@ -194,35 +202,9 @@ function nextSignUp() {
             title: '<h3>Cadastro Confirmado!!</h3> <br> Indo para a tela de login.',
             showConfirmButton: false
         })
-        fetch("/usuarios/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
-                emailServer: document.getElementById("inputEmail").value,
-                senhaServer: document.getElementById("inputSenha").value,
+    }
 
-              })
-            }).then(function (resposta) {
 
-                console.log("resposta: ", resposta);
-    
-                if (resposta.ok) {
-    
-                } else {
-                    throw ("Houve um erro ao tentar realizar o cadastro!");
-                }
-            }).catch(function (resposta) {
-                console.log(`#ERRO: ${resposta}`);
-            });
-    
-            return false;
-        }
-
-    
     else {
         Swal.fire({
             icon: 'error',
@@ -242,3 +224,67 @@ function GerarSenhaSegura() {
         toast: true
     })
 }
+
+
+function cadastreEmpresa() {
+    fetch("/usuarios/cadastrarEmpresa", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/usuario.js
+            nomeEmpresaServer: sessionStorage.NOME_EMPRESA,
+            cepEmpresaServer: sessionStorage.CEP_EMPRESA,
+            cnpjEmpresaServer: sessionStorage.CNPJ_EMPRESA,
+            porteEmpresaServer: sessionStorage.PORTE_EMPRESA,
+            ruaEmpresaServer: sessionStorage.RUA_EMPRESA,
+            ufEmpresaServer: sessionStorage.UF,
+        })
+    }).then(function (resposta) {
+
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+            return true
+        } else {
+            throw ("Houve um erro ao tentar realizar o cadastro!");
+        }
+    }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    });
+}
+
+function cadastreUsuario(fk_empresa) {
+    fetch("/usuarios/cadastrarUsuarioADM", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/usuario.js
+            nomeServer: document.getElementById("inputNome").value,
+            emailServer: document.getElementById("inputEmail").value,
+            senhaServer: document.getElementById("inputSenha").value,
+            cpfUsuarioServer: document.getElementById("inputCpf").value,
+            cepUsuarioServer: document.getElementById("inputCEP").value,
+            telefoneUsuarioServer: document.getElementById("inputTelefone").value,
+            fk_empresaServer: fk_empresa
+        })
+    }).then(function (resposta) {
+
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+            return true
+        } else {
+            throw ("Houve um erro ao tentar realizar o cadastro!");
+        }
+    }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    });
+
+}
+
