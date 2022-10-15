@@ -36,6 +36,7 @@ function sendNewMachine(){
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
+                alert("Maquina Cadastrada com sucesso!")
                 
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");

@@ -48,6 +48,7 @@ function enviarCadFunc(){
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
+                alert("Usuario Cadastrado com sucesso!")
                 
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
