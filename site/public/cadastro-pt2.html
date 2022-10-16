@@ -39,7 +39,7 @@
                             <div class="formControl">
                                 <input type="text" onkeyup="validarNome()" id="inputNome" required>
                                 <label>Nome:</label>
-                            </div -->
+                            </div>
                             <div class="formControl">
                                 <input onkeyup="validarEmail()" id="inputEmail" type="text" required>
                                 <label>Email:</label>
@@ -53,10 +53,11 @@
                                 <input onkeyup="validarCEP()" id="inputCEP" maxlength="8" type="text" required>
                                 <label>CEP:</label>
                             </div>
-                            <div class="formControl">
+                            <!-- <div class="formControl">
                                 <button class="safePassword" type="button" onclick="GerarSenhaSegura()" style="visibility: hidden;">Gerar Senha Segura</button>
-                            </div>
+                            </div> -->
                         </div>
+                        
                         <div class="cadastroDir">
                             <div class="formControl">
                                 <input onkeyup="validarTelefone()" id="inputTelefone" maxlength="10" type="text" required>
@@ -72,16 +73,16 @@
                                 <label>Confirmar Senha:</label>
                             </div>
 
-                            <div class="formControl">
+                            
                             <button class="safePassword" type="button" onclick="GerarSenhaSegura()">Gerar Senha Segura</button>
+                            
                         </div>
-                        </div>
+                        
                     </div>
-
-                    <button type="button" onclick="nextSignUp()">
-                        Enviar
-                    </button>
-                    <p>Ja tem conta? Faça o <a href="login.html" class="linkLogin">login.</a></p>
+                        <button type="button" onclick="nextSignUp()">
+                            Enviar
+                        </button>
+                        <p>Ja tem conta? Faça o <a href="login.html" class="linkLogin">login.</a></p>
                 </div>
             </form>
         </div>
@@ -90,3 +91,4 @@
 
 </html>
 <script src="js/signUpPt2.js"></script>
+<script src="js/cadastro.js"></script>

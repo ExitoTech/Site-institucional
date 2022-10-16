@@ -79,6 +79,7 @@ form {
     position: relative;
     margin: 20px 0 40px;
     width: 100%;
+    margin-bottom: 26px;
 }
 
 .formControl input {
@@ -131,6 +132,7 @@ form {
 
 .container {
     width: 80%;
+    height: 100%;
     justify-content: space-between;
     display: flex;
     align-items: center;
@@ -247,7 +249,6 @@ form {
 }
 
 .container p {
-    margin-top: 20px;
     font-family: 'Roboto Mono', monospace
 }
 
