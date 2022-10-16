@@ -49,6 +49,7 @@ function enviarCadFunc(){
 
             if (resposta.ok) {
                 alert("Usuario Cadastrado com sucesso!")
+                fecharCadFunc()
                 
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");

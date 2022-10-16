@@ -18,6 +18,24 @@ function entrar(email, senha) {
     return database.executar(instrucao);
 }
 
+function getLastMaquinaId() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ")
+    var instrucao = `
+    SELECT idMaquina FROM maquina ORDER BY idMaquina DESC LIMIT 1;`;
+
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function getLastEmpresaId() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ")
+    var instrucao = `
+    Select idempresa from empresa order by idEmpresa desc Limit 1;`;
+
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 // Coloque os mesmos parâmetros aqui. Vá para a var instrucao
 function cadastrarEmpresa(nomeEmpresa,cepEmpresa,cnpj,porte,logradouro,uf) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nomeEmpresa);
@@ -70,6 +88,8 @@ module.exports = {
     entrar,
     cadastrarEmpresa,
     cadastrarUsuarioADM,
+    getLastEmpresaId,
+    getLastMaquinaId,
     listar,
     cadastrarMaquina,
     cadastrarFuncionario

@@ -32,4 +32,12 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
+router.post("/getLastMaquinaId", function (req, res) {
+    usuarioController.getLastMaquinaId(req, res);
+});
+
+router.post("/getLastEmpresaId", function (req, res) {
+    usuarioController.getLastEmpresaId(req, res);
+});
+
 module.exports = router;

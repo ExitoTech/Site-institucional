@@ -37,7 +37,7 @@ function sendNewMachine(){
 
             if (resposta.ok) {
                 alert("Maquina Cadastrada com sucesso!")
-                
+                 getFK_maquina()
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
@@ -51,4 +51,37 @@ function sendNewMachine(){
     }
 }
 
+function getFK_maquina(){
+    fetch("/usuarios/getLastMaquinaId", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
 
+        }),
+    })
+        .then(function (resposta) {
+            if (resposta.ok) {
+
+                resposta.json().then((json) => {
+                    console.log(json);
+                    console.log(JSON.stringify(json) + 'exibindo json stringfy');
+                    alert("seu id é " + json.idMaquina)
+                    fecharNewMachine()
+
+                });
+                
+            } else {
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then((texto) => {
+                    console.error(texto);
+                });
+            }
+        })
+        .catch(function (erro) {
+            console.log(erro);
+        });
+
+}

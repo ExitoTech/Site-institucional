@@ -185,12 +185,7 @@ function nextSignUp() {
 
 
     if (errosValidação == 0) {
-
-
-        cadastreEmpresa()
-
-        cadastreUsuario()
-
+       cadastreEmpresa()
         sessionStorage.clear()
 
         setTimeout(() => {
@@ -247,7 +242,8 @@ function cadastreEmpresa() {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-            return true
+          
+            getFK_empresa()
         } else {
             throw ("Houve um erro ao tentar realizar o cadastro!");
         }
@@ -256,7 +252,7 @@ function cadastreEmpresa() {
     });
 }
 
-function cadastreUsuario() {
+function cadastreUsuario(idempresa) {
     fetch("/usuarios/cadastrarUsuarioADM", {
         method: "POST",
         headers: {
@@ -271,19 +267,54 @@ function cadastreUsuario() {
             cpfUsuarioServer: document.getElementById("inputCpf").value,
             cepUsuarioServer: document.getElementById("inputCEP").value,
             telefoneUsuarioServer: document.getElementById("inputTelefone").value,
+            fk_empresaServer: idempresa,
         })
     }).then(function (resposta) {
 
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-            return true
+            
         } else {
             throw ("Houve um erro ao tentar realizar o cadastro!");
         }
     }).catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
     });
+
+}
+
+function getFK_empresa(){
+    fetch("/usuarios/getLastEmpresaId", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+
+        }),
+    })
+        .then(function (resposta) {
+            if (resposta.ok) {
+
+                resposta.json().then((json) => {
+                    console.log(json);
+                    console.log(JSON.stringify(json) + 'exibindo json stringfy');
+                    cadastreUsuario(json.idempresa)
+                });
+                
+            } else {
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then((texto) => {
+                    console.error(texto);
+                });
+            }
+        })
+        .catch(function (erro) {
+            console.log(erro);
+        });
+
 
 }
 

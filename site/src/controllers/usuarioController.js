@@ -60,6 +60,49 @@ function entrar(req, res) {
 
 }
 
+function getLastMaquinaId(req, res) {
+
+        usuarioModel.getLastMaquinaId()
+            .then(
+                function (resultado) {
+                    console.log(`\nResultados encontrados: ${resultado.length}`);
+                    console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                        res.json(resultado[0]);
+                    
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao pegar o ID Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+}
+
+function getLastEmpresaId(req, res) {
+
+    usuarioModel.getLastEmpresaId()
+        .then(
+            function (resultado) {
+                console.log(`\nResultados encontrados: ${resultado.length}`);
+                console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                    res.json(resultado[0]);
+                
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao pegar o ID Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+
+
+
 function cadastrarUsuarioADM(req, res) {
     var nomeUsuario = req.body.nomeServer
     var email = req.body.emailServer
@@ -67,7 +110,7 @@ function cadastrarUsuarioADM(req, res) {
     var cpf = req.body.cpfUsuarioServer
     var cepUsuario = req.body.cepUsuarioServer
     var telefoneUsuario = req.body.telefoneUsuarioServer
-    var fk_empresa = 1
+    var fk_empresa = req.body.fk_empresaServer
 
 
     if (nomeUsuario == undefined) {
@@ -225,6 +268,8 @@ module.exports = {
     entrar,
     cadastrarUsuarioADM,
     cadastrarEmpresa,
+    getLastEmpresaId,
+    getLastMaquinaId,
     listar,
     testar,
     cadastrarMaquina,
