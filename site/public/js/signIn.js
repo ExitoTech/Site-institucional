@@ -42,11 +42,11 @@ function entrar() {
                     console.log(json);
                     console.log(JSON.stringify(json) + 'exibindo json stringfy');
 
-                    // sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nomeFuncionario;
                     sessionStorage.SENHA_USUARIO = json.senha;
                     sessionStorage.FK_EMPRESA = json.fk_Empresa;
-                    // sessionStorage.ID_USUARIO = json.id_usuario;
+                    /* sessionStorage.ID_USUARIO = json.id_usuario; */
                     Swal.fire({
                         title: `Entrando..`,
                         toast: true,
@@ -78,16 +78,39 @@ function sairDivA(){
     textoLink.innerHTML= 'ExitoTech'
 }
 
-function exibirInfosUser() {
+function validarSessao() {
+
+    var email = sessionStorage.EMAIL_USUARIO;
+    var nome = sessionStorage.NOME_USUARIO;
+    var idUsuario = sessionStorage.ID_USUARIO;
+    var fkEmpresa = sessionStorage.FK_EMPRESA;
+
+    var h1LoginUsuario = document.getElementById("h1_login_usuario");
+
+    if (email != null && fkEmpresa != null) {
+        if (h1LoginUsuario != undefined) {
+            h1LoginUsuario.innerHTML = email;
+        }
+        
+        if(window.location.href.split('/')[3] == "home.html"){
+            NomeUser.innerHTML = nome;
+        }
+    } else {
+        window.location = "./login.html";
+    }
+
+    var senha = sessionStorage.SENHA_USUARIO;
+}
+
+/* function exibirInfosUser() {
     var nome = sessionStorage.NOME_USUARIO;
     NomeUser.innerHTML = nome;
 
     var senha = sessionStorage.SENHA_USUARIO;
 
-}
+} */
 
 function exit(){
-
     var divSair = document.getElementsByClassName("opcaoNavBar exit")[0]
     divSair.style.cursor = "pointer"
     divSair.onclick = function(){

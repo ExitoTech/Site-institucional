@@ -130,6 +130,15 @@ form {
     transform: translateY(-30px);
 }
 
+.containerLogin {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+}
+
 .container {
     width: 80%;
     height: 100%;
@@ -140,7 +149,7 @@ form {
     margin: auto;
 }
 
-.container h1 {
+.container h1, .containerLogin h1{
     font-size: 3.9rem;
     color: #000;
     font-family: 'Roboto Mono', monospace; 
@@ -151,8 +160,8 @@ form {
     margin: 0;
 }
 
-.container #h1Login {
-    margin-bottom: 3rem;
+.containerLogin #h1Login {
+    margin-top: 5rem;
 }
 
 .container .inputCadastroPt2 {
@@ -171,7 +180,7 @@ form {
     font-weight: light;
 }
 
-.container .inputLogin {
+.containerLogin .inputLogin {
     align-self: center;
     padding: 3px 3px 3px 1.5px;
     height: 2.5rem;
@@ -187,7 +196,10 @@ form {
     font-size: 1rem;
 }
 
-.container .labelLogin,
+.containerLogin .labelLogin {
+    width: 300px;
+    margin-top: 1.5rem;
+}
 .container .labelCadastroPt2 {
     width: 300px;
     margin-top: 1.5rem;
@@ -197,7 +209,7 @@ form {
     cursor: no-drop;
 }
 
-.container button {
+.container button, .containerLogin button {
     padding: 10px;
     background-color: #000633;
     color: #b4bec9;
@@ -218,7 +230,7 @@ form {
     margin-bottom: 1rem;
 }
 
-.container button:hover {
+.containerLogin button:hover {
     transition: .3s;
     color: #ffff;
     background-color: #3627d9;
@@ -250,6 +262,11 @@ form {
 
 .container p {
     font-family: 'Roboto Mono', monospace
+}
+
+.containerLogin p {
+    font-family: 'Roboto Mono', monospace;
+    margin-top: 1.5rem;
 }
 
 label {
@@ -298,7 +315,7 @@ select {
         display: none;
     }
 
-    .container {
+    .container, .containerLogin {
         width: 100%;
     }
 
@@ -373,7 +390,7 @@ select {
         margin: 0;
     }
 
-    .container #h1Login {
+    .containerLogin #h1Login {
         margin-bottom: 1.4rem;
     }
 
@@ -382,7 +399,7 @@ select {
         align-self: center;
     }
 
-    .container button {
+    .container button, .containerLogin button {
         margin-top: 5%;
     }
 
