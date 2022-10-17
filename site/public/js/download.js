@@ -19,7 +19,7 @@ function fecharDownload() {
 }
 
 function iniciarDownload() {
-    senhaInserida = document.getElementById('inputConfirmacao').value
+    senhaInserida = document.getElementById('inputSenhaBaixar').value
     senha = sessionStorage.SENHA_USUARIO
 
     if (senhaInserida != senha) {
