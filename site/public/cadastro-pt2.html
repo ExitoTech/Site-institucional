@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro | ExitoTech</title>
     <link rel="shortcut icon" href="img/pet-shop.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/cadastros-login.css">
     <link rel="shortcut icon" href="img/logo_transparent.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -60,12 +60,12 @@
 
                                 <label for="inputSenha">Senha</label>
                                 <input placeholder="********" onkeyup="validarSenha()" id="inputSenha" type="password" required>
+                                <button class="safePassword" type="button" onclick="GerarSenhaSegura()">?</button>
                                 <span id="spanSenha" class="spanAviso"></span>
 
                                 <label for="inputConfirmarSenha">Confirmar senha</label>
                                 <input placeholder="********" onkeyup="validarConfirmarSenha()" id="inputConfirmarSenha" type="password" required>
                                 <span id="spanConfirmarSenha" class="spanAviso"></span>
-                            <!-- <button class="safePassword" type="button" onclick="GerarSenhaSegura()">Gerar Senha Segura</button> -->
                             <button id="buttonCad" type="button" onclick="nextSignUp()">
                                 Enviar
                             </button>

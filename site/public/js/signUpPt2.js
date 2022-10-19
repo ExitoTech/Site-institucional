@@ -98,7 +98,7 @@ function validarCep() {
 function validarTelefone() {
     var Telefone = inputTelefone.value
 
-    buttonCad.style.marginTop = "1.2rem"
+    buttonCad.style.marginTop = "2rem"
 
     if (Telefone.length === 13) {
         inputTelefone.style.color = "#80b918";

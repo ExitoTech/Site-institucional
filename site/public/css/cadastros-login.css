@@ -97,7 +97,7 @@ form {
     font-size: 3.5rem;
     color: #000;
     font-family: 'Roboto Mono', monospace;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 .containerLogin h1{
     font-size: 3.5rem;
@@ -118,7 +118,7 @@ form {
 }
 
 .cardCadastro label {
-    margin-top: 1.5rem;
+    margin-top: 3rem;
 }
 
 .cardCadastro input {
@@ -133,11 +133,11 @@ form {
 }
 
 #selectPorte {
-    margin-top: 2.2rem;
+    margin-top: 3.7rem;
 }
 
 .spanAviso {
-    font-size: .7rem;
+    font-size: .89rem;
     margin-top: 3px;
 }
 
@@ -203,11 +203,14 @@ form {
     align-items: center;
     margin-top: 3rem;
     margin-bottom: 1rem;
+    margin-left: 1.5rem;
 }
 
+
+
 .acessoLogin {
-    margin-top: .5rem;
-    margin-left: 14.5rem;
+    margin-top: 1rem;
+    margin-left: 18.5rem;
 }
 
 .containerLogin button {
@@ -232,7 +235,7 @@ form {
 }
 
 .containerLogin button:hover,
-.DivLateralPt2 .container .buttonCad:hover,
+.DivLateralPt2 .container #buttonCad:hover,
 .container button:hover {
     transition: .3s;
     color: #ffff;
@@ -254,13 +257,20 @@ form {
 }
 
 .container .safePassword {
-    width: 130px;
-    height: 35px;
-    font-size: 0.6rem;
-    border-radius: 5px;
-    text-align: center;
-    text-align: center;
-    margin:10px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: transparent;
+    border: 1.5px solid #6c757d;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin-top: 10.5rem;
+    margin-left: 12.5rem;
 }
 
 .DivLateral .container p {
@@ -370,21 +380,21 @@ select {
 
     .DivLateral {
         width: 100%;
-        height: 150vh;
+        height: 160vh;
         background-color: #bde0fe;
         float: left;
         align-items: center;
     }  
 
     .DivLateralPt2 {
-        height: 110vh;
+        height: 175vh;
         background-color: #c1d3fe;
         float: left;
         align-items: center;
     }
 
     form, .formLogin {
-        height: 130vh;
+        height: 140vh;
         width: 95%;
         border-radius: 10px;
     }
@@ -411,7 +421,7 @@ select {
     }
 
     .cardCadastro label {
-        margin-left: 7.3%;
+        margin-left: 3.2rem;
     }
 
     .cardCadastro input {
@@ -419,7 +429,7 @@ select {
     }
 
     .formPt2 {
-        height: 90vh;
+        height: 163vh;
     }
 
     .formLogin {
@@ -445,5 +455,16 @@ select {
         height: 70%;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center ;
+    }
+
+    .acessoLogin {
+        margin-left: 1rem;
+    }
+
+    .container .safePassword {
+        margin-top: -2.3rem;
+        margin-left: 15.5rem;
     }
 }
