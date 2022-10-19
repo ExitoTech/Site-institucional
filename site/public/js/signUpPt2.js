@@ -46,7 +46,7 @@ function validarEmail() {
 function validarCpf() {
     var Cpf = inputCpf.value
 
-    if (Cpf.length == 11) {
+    if (Cpf.length == 14) {
         inputCpf.style.color = "#80b918";
         inputCpf.style.borderLeft = "none";
         inputCpf.style.borderTop = "none";
@@ -64,7 +64,7 @@ function validarCpf() {
 function validarTelefone() {
     var Telefone = inputTelefone.value
 
-    if (Telefone.length >= 10 && Telefone.length <= 11) {
+    if (Telefone.length === 13) {
         inputTelefone.style.color = "#80b918";
         inputTelefone.style.borderLeft = "none";
         inputTelefone.style.borderTop = "none";

@@ -149,15 +149,24 @@ form {
     margin: auto;
 }
 
-.container h1, .containerLogin h1{
-    font-size: 3.9rem;
+.DivLateral .container h1{
+    font-size: 3.5rem;
+    color: #000;
+    font-family: 'Roboto Mono', monospace;
+    margin-top: 1rem;
+}
+.containerLogin h1{
+    font-size: 3.5rem;
     color: #000;
     font-family: 'Roboto Mono', monospace; 
     margin-bottom: 1rem;
 }
 
 .container #h1Pt2 {
-    margin: 0;
+    margin-top: 1.5rem;
+    font-size: 3rem;
+    color: #000;
+    font-family: 'Roboto Mono', monospace;
 }
 
 .containerLogin #h1Login {
@@ -209,7 +218,39 @@ form {
     cursor: no-drop;
 }
 
-.container button, .containerLogin button {
+.container button {
+    padding: 10px;
+    background-color: #000633;
+    color: #b4bec9;
+    border: none;
+    border-radius: 10px;
+    width: 300px;
+    height: 55px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: .3s;
+    font-family: 'Roboto Mono';
+}
+
+.DivLateralPt2 .container .buttonCad {
+    padding: 10px;
+    background-color: #000633;
+    color: #b4bec9;
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    height: 45px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: .3s;
+    font-family: 'Roboto Mono';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.containerLogin button {
     padding: 10px;
     background-color: #000633;
     color: #b4bec9;
@@ -230,7 +271,9 @@ form {
     margin-bottom: 1rem;
 }
 
-.containerLogin button:hover {
+.containerLogin button:hover,
+.DivLateralPt2 .container .buttonCad:hover,
+.container button:hover {
     transition: .3s;
     color: #ffff;
     background-color: #3627d9;
@@ -260,8 +303,9 @@ form {
     margin:10px;
 }
 
-.container p {
-    font-family: 'Roboto Mono', monospace
+.DivLateral .container p {
+    font-family: 'Roboto Mono', monospace;
+    margin-bottom: 1rem;
 }
 
 .containerLogin p {
@@ -308,6 +352,14 @@ select {
     height: 100%;
     display: flex;
     flex-direction: column;
+}
+
+.endCard {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
 }
 
 @media only screen and (max-width: 1110px) {

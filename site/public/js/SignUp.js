@@ -29,7 +29,7 @@ function validarNomeEmpresa() {
 function verificarCep() {
     var Cep = inputCep.value
 
-    if (Cep.length == 8) {
+    if (Cep.length == 9) {
         inputCep.style.color = "#80b918";
         inputCep.style.borderLeft = "none";
         inputCep.style.borderTop = "none";
@@ -68,7 +68,7 @@ function validarPorte(){
     var porteEmpresa = document.getElementById('selectPorte').value;
 
     if(porteEmpresa == 1 || porteEmpresa == 2 || porteEmpresa == 3){
-        porteStyle.style.color = "green"
+        porteStyle.style.color = "#80b918"
     } else {
         porteStyle.style.color = "#d90429"
     }

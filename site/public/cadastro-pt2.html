@@ -46,7 +46,7 @@
                             </div>
 
                             <div class="formControl">
-                                <input placeholder="Cpf:" onkeyup="validarCpf()" id="inputCpf" maxlength="11" type="text" required>
+                                <input placeholder="Cpf:" onkeyup="validarCpf()" id="inputCpf" maxlength="14" type="text" required>
                                 <!-- <label>CPF:</label> -->
                             </div>
                             <div class="formControl">
@@ -60,7 +60,7 @@
                         
                         <div class="cadastroDir">
                             <div class="formControl">
-                                <input placeholder="Telefone:" onkeyup="validarTelefone()" id="inputTelefone" maxlength="10" type="text" required>
+                                <input placeholder="Telefone:" onkeyup="validarTelefone()" id="inputTelefone" maxlength="13" type="text" required>
                                 <!-- <label>Telefone:</label> -->
                             </div>
 
@@ -79,10 +79,12 @@
                         </div>
                         
                     </div>
-                        <button type="button" onclick="nextSignUp()">
+                    <div class="endCard">
+                        <button class="buttonCad" type="button" onclick="nextSignUp()">
                             Enviar
                         </button>
                         <p>Ja tem conta? Faça o <a href="login.html" class="linkLogin">login.</a></p>
+                    </div>
                 </div>
             </form>
         </div>
