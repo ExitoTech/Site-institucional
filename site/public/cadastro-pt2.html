@@ -36,55 +36,44 @@
                     <h1 id="h1Pt2">Cadastro</h1>
                     <div class="cardCadastro">
                         <div class="cadastroEsq">
-                            <div class="formControl">
-                                <input placeholder="Nome:" type="text" onkeyup="validarNome()" id="inputNome" required>
-                                <!-- <label>Nome:</label> -->
-                            </div>
-                            <div class="formControl">
-                                <input placeholder="Email:" onkeyup="validarEmail()" id="inputEmail" type="text" required>
-                                <!-- <label>Email:</label> -->
-                            </div>
+                                <label for="inputNome">Nome</label>
+                                <input placeholder="Nome" type="text" onkeyup="validarNome()" id="inputNome" required>
+                                <span id="spanNome" class="spanAviso"></span>
 
-                            <div class="formControl">
-                                <input placeholder="Cpf:" onkeyup="validarCpf()" id="inputCpf" maxlength="14" type="text" required>
-                                <!-- <label>CPF:</label> -->
-                            </div>
-                            <div class="formControl">
-                                <input placeholder="CEP:" onkeyup="validarCEP()" id="inputCEP" maxlength="8" type="text" required>
-                                <!-- <label>CEP:</label> -->
-                            </div>
-                            <!-- <div class="formControl">
-                                <button class="safePassword" type="button" onclick="GerarSenhaSegura()" style="visibility: hidden;">Gerar Senha Segura</button>
-                            </div> -->
+                                <label for="inputEmail">Email</label>
+                                <input placeholder="exemplo@gmail.com" onkeyup="validarEmail()" id="inputEmail" type="text" required>
+                                <span id="spanEmail" class="spanAviso"></span>
+
+                                <label for="inputCpf">CPF</label>
+                                <input placeholder="000.000.000-00" onkeyup="validarCpf()" id="inputCpf" maxlength="14" type="text" required>
+                                <span id="spanCpf" class="spanAviso"></span>
+
+                                <label for="inputCep">CEP</label>
+                                <input placeholder="00000-000" onkeyup="validarCep()" id="inputCep" maxlength="9" type="text" required>
+                                <span id="spanCep" class="spanAviso"></span>
                         </div>
                         
                         <div class="cadastroDir">
-                            <div class="formControl">
-                                <input placeholder="Telefone:" onkeyup="validarTelefone()" id="inputTelefone" maxlength="13" type="text" required>
-                                <!-- <label>Telefone:</label> -->
-                            </div>
+                                <label for="inputTelefone">Telefone</label>
+                                <input placeholder="99 999999999" onkeyup="validarTelefone()" id="inputTelefone" maxlength="13" type="text" required>
+                                <span id="spanTelefone" class="spanAviso"></span>
 
-                            <div class="formControl">
-                                <input placeholder="Senha:" onkeyup="validarSenha()" id="inputSenha" type="password" required>
-                                <!-- <label>Senha:</label> -->
-                            </div>
-                            <div class="formControl">
-                                <input placeholder="Confirmar Senha:" onkeyup="validarConfirmarSenha()" id="inputConfirmarSenha" type="password" required>
-                                <!-- <label>Confirmar Senha:</label> -->
-                            </div>
+                                <label for="inputSenha">Senha</label>
+                                <input placeholder="********" onkeyup="validarSenha()" id="inputSenha" type="password" required>
+                                <span id="spanSenha" class="spanAviso"></span>
 
-                            
-                            <button class="safePassword" type="button" onclick="GerarSenhaSegura()">Gerar Senha Segura</button>
-                            
+                                <label for="inputConfirmarSenha">Confirmar senha</label>
+                                <input placeholder="********" onkeyup="validarConfirmarSenha()" id="inputConfirmarSenha" type="password" required>
+                                <span id="spanConfirmarSenha" class="spanAviso"></span>
+                            <!-- <button class="safePassword" type="button" onclick="GerarSenhaSegura()">Gerar Senha Segura</button> -->
+                            <button id="buttonCad" type="button" onclick="nextSignUp()">
+                                Enviar
+                            </button>
+
                         </div>
                         
                     </div>
-                    <div class="endCard">
-                        <button class="buttonCad" type="button" onclick="nextSignUp()">
-                            Enviar
-                        </button>
-                        <p>Ja tem conta? Faça o <a href="login.html" class="linkLogin">login.</a></p>
-                    </div>
+                    <p class="acessoLogin">Ja tem conta? Faça o <a href="login.html" class="linkLogin">login.</a></p>
                 </div>
             </form>
         </div>
@@ -92,5 +81,5 @@
 </body>
 
 </html>
-<script src="js/cadastro.js"></script>
+<script src="js/mascCadastro2.js"></script>
 <script src="js/signUpPt2.js"></script>

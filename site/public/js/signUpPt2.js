@@ -15,12 +15,16 @@ function validarNome() {
         inputNome.style.borderLeft = "none";
         inputNome.style.borderTop = "none";
         inputNome.style.borderRight = "none";
+        spanNome.innerHTML = "O nome está dentro do padrão"
+        spanNome.style.color = "#80b918"
     }
     else {
         inputNome.style.color = "#d90429";
         inputNome.style.borderLeft = "none";
         inputNome.style.borderTop = "none";
         inputNome.style.borderRight = "none";
+        spanNome.innerHTML = "O nome deve conter ao menos 3 caracteres";
+        spanNome.style.color = "#d90429";
     }
 }
 
@@ -32,6 +36,8 @@ function validarEmail() {
         inputEmail.style.borderLeft = "none";
         inputEmail.style.borderTop = "none";
         inputEmail.style.borderRight = "none";
+        spanEmail.innerHTML = "O email está dentro do padrão";
+        spanEmail.style.color = "#80b918";
     }
 
     else {
@@ -40,6 +46,8 @@ function validarEmail() {
         inputEmail.style.borderLeft = "none";
         inputEmail.style.borderTop = "none";
         inputEmail.style.borderRight = "none";
+        spanEmail.innerHTML = "O email deve conter @";
+        spanEmail.style.color = "#d90429";
     }
 }
 
@@ -51,6 +59,8 @@ function validarCpf() {
         inputCpf.style.borderLeft = "none";
         inputCpf.style.borderTop = "none";
         inputCpf.style.borderRight = "none";
+        spanCpf.innerHTML = "O CPF está dentro do padrão";
+        spanCpf.style.color = "#80b918";
     }
     else {
         inputCpf.style.color = "#d90429";
@@ -58,17 +68,45 @@ function validarCpf() {
         inputCpf.style.borderLeft = "none";
         inputCpf.style.borderTop = "none";
         inputCpf.style.borderRight = "none";
+        spanCpf.innerHTML = "O CPF deve conter 11 dígitos";
+        spanCpf.style.color = "#d90429";
+    }
+}
+
+function validarCep() {
+    var cep = inputCep.value;
+
+    if(cep.length === 9) {
+        inputCep.style.color = "#80b918";
+        inputCep.style.borderLeft = "none";
+        inputCep.style.borderTop = "none";
+        inputCep.style.borderRight = "none";
+        spanCep.innerHTML = "O CEP está dentro do padrão";
+        spanCep.style.color = "#80b918";
+    }
+    else {
+        inputCep.style.color = "#d90429";
+        inputCep.style.border = "2px solid #000633";
+        inputCep.style.borderLeft = "none";
+        inputCep.style.borderTop = "none";
+        inputCep.style.borderRight = "none";
+        spanCep.innerHTML = "O CEP deve conter 8 dígitos";
+        spanCep.style.color = "#d90429";
     }
 }
 
 function validarTelefone() {
     var Telefone = inputTelefone.value
 
+    buttonCad.style.marginTop = "1.2rem"
+
     if (Telefone.length === 13) {
         inputTelefone.style.color = "#80b918";
         inputTelefone.style.borderLeft = "none";
         inputTelefone.style.borderTop = "none";
         inputTelefone.style.borderRight = "none";
+        spanTelefone.innerHTML = "O telefone está dentro do padrão";
+        spanTelefone.style.color = "#80b918";
     }
     else {
         inputTelefone.style.color = "#d90429";
@@ -76,6 +114,8 @@ function validarTelefone() {
         inputTelefone.style.borderLeft = "none";
         inputTelefone.style.borderTop = "none";
         inputTelefone.style.borderRight = "none";
+        spanTelefone.innerHTML = "O telefone conter o 11 dígitos, incluindo o DDD";
+        spanTelefone.style.color = "#d90429";
     }
 }
 
@@ -111,23 +151,29 @@ function validarSenha() {
     var testeSenha = inputSenha.value
 
     if (testeSenha.length >= 8) {
-        inputSenha.style.border = "2px solid green";
+        inputSenha.style.border = "2px solid #80b918";
         inputSenha.style.borderLeft = "none";
         inputSenha.style.borderTop = "none";
         inputSenha.style.borderRight = "none";
+        spanSenha.innerHTML = "A senha está dentro do padrão";
+        spanSenha.style.color = "#80b918";
     }
     else if (testeSenha == '') {
-        inputSenha.style.border = "2px solid #b8860b";
+        inputSenha.style.border = "2px solid #d90429";
         inputSenha.style.borderLeft = "none";
         inputSenha.style.borderTop = "none";
         inputSenha.style.borderRight = "none";
+        spanSenha.innerHTML = "Este campo não pode ficar vazio";
+        spanSenha.style.color = "#d90429";
     }
 
     else {
-        inputSenha.style.border = "2px solid red";
+        inputSenha.style.border = "2px solid #d90429";
         inputSenha.style.borderLeft = "none";
         inputSenha.style.borderTop = "none";
         inputSenha.style.borderRight = "none";
+        spanSenha.innerHTML = "A senha  deve conter no mínimo 8 digítos e um caracter especial";
+        spanSenha.style.color = "#d90429";
     }
 }
 
@@ -138,23 +184,29 @@ function validarConfirmarSenha() {
 
 
     if (testeConfirmarSenha == testeSenha) {
-        inputConfirmarSenha.style.border = "2px solid green";
+        inputConfirmarSenha.style.border = "2px solid #80b918";
         inputConfirmarSenha.style.borderLeft = "none";
         inputConfirmarSenha.style.borderTop = "none";
         inputConfirmarSenha.style.borderRight = "none";
+        spanConfirmarSenha.innerHTML = "As senhas conferem";
+        spanConfirmarSenha.style.color = "#80b918";
     }
     else if (testeConfirmarSenha == '') {
-        inputConfirmarSenha.style.border = "2px solid #b8860b";
+        inputConfirmarSenha.style.border = "2px solid #d90429";
         inputConfirmarSenha.style.borderLeft = "none";
         inputConfirmarSenha.style.borderTop = "none";
         inputConfirmarSenha.style.borderRight = "none";
+        spanConfirmarSenha.innerHTML = "Este campo não pode ficar vazio";
+        spanConfirmarSenha.style.color = "#d90429";
     }
 
     else {
-        inputConfirmarSenha.style.border = "2px solid red";
+        inputConfirmarSenha.style.border = "2px solid #d90429";
         inputConfirmarSenha.style.borderLeft = "none";
         inputConfirmarSenha.style.borderTop = "none";
         inputConfirmarSenha.style.borderRight = "none";
+        spanConfirmarSenha.innerHTML = "As senhas devem ser iguais";
+        spanConfirmarSenha.style.color = "#d90429";
     }
 }
 

@@ -36,28 +36,26 @@
                     <h1>Cadastro</h1>
                     <div class="cardCadastro">
                         <div class="cadastroEsq">
-                            <div class="formControl">
-                                <input type="text" onkeyup="validarNomeEmpresa()" id="inputNomeDaEmpresa" required>
-                                <label>Nome da empresa:</label>
-                            </div>
-                            <div class="formControl">
-                                <input onkeyup="buscarCep(), verificarCep()" id="inputCep" maxlength="9" type="text" required>
-                                <label>CEP:</label>
-                            </div>
+                                <label for="inputNomeDaEmpresa" id="labelEmpresa">Nome da empresa</label>
+                                <input type="text" onkeyup="validarNomeEmpresa()" id="inputNomeDaEmpresa" placeholder="Nome empresa" required>
+                                <span id="spanEmpresa" class="spanAviso"></span>
 
-                            <div class="formControl">
+                                <label for="inputCep">CEP</label>
+                                <input onkeyup="buscarCep(), verificarCep()" id="inputCep" maxlength="9" type="text" placeholder="00000-000" required>
+                                <span id="spanCep" class="spanAviso"></span>
+
+                                <label for="inputLogradouro">Logradouro</label>
                                 <input id="inputLogradouro" type="text" placeholder="Logradouro" disabled required>
+                                <span id="spanLogradouro" class="spanAviso"></span>
                             </div>
-                        </div>
                         <div class="cadastroDir">
-                            <div class="formControl">
+                                <label for="inputUf" id="labelUf">UF</label>
                                 <input id="inputUf" type="text" placeholder="UF" disabled required>
-                            </div>
+                                <span id="spanUf" class="spanAviso"></span>
 
-                            <div class="formControl">
-                                <input type="text" onkeyup="verificarCnpj()" maxlength="18" id="inputCnpj" required>
-                                <label>CNPJ:</label>
-                            </div>
+                                <label for="inputCnpj" id="labelCnpj">CNPJ</label>
+                                <input type="text" onkeyup="verificarCnpj()" maxlength="18" id="inputCnpj" placeholder="XX. XXX. XXX/0001-XX" required>
+                                <span id="spanCnpj" class="spanAviso"></span>
                             <select name="" id="selectPorte" onchange="validarPorte()">
                                 <option selected disabled hidden>Porte da empresa:</option>
                                 <option value="1">Grande porte</option>
@@ -78,5 +76,5 @@
 </body>
 
 </html>
-<script src="js/cadastro.js"></script>
+<script src="js/mascCadastro.js"></script>
 <script src="js/SignUp.js"></script>

@@ -75,61 +75,6 @@ form {
     border-radius: 20px;
 }
 
-.formControl {
-    position: relative;
-    margin: 20px 0 40px;
-    width: 100%;
-    margin-bottom: 26px;
-}
-
-.formControl input {
-    background-color: transparent;
-    border: 0;
-    display: block;
-    width: 100%;
-    padding-bottom: 3px;
-    font-size: 18px;
-    height: 2rem;
-    margin: 13px 0px 0px 0px;
-    border: 2px solid #000633;
-    border-top: 2px;
-    border-left: 2px;
-    border-right: 2px;
-}
-
-.formControl input::placeholder {
-    color: #adb5bd;
-}
-
-.formControl input:focus,
-.formControl input:valid {
-    outline: 0;
-    border-bottom-color: black;
-    
-}
-
-.formControl label {
-    position: absolute;
-    top: 15px;
-    left: 0;
-    pointer-events: none;
-    color: #adb5bd;
-}
-
-.formControl label span {
-    display: inline-block;
-    font-size: 18px;
-    min-width: 5px;
-    transition: .3s cubic-bezier(0.68, -0.55, 0.265, 
-1.55);
-}
-
-.formControl input:focus + label span,
-.formControl input:valid + label span {
-    color: black;
-    transform: translateY(-30px);
-}
-
 .containerLogin {
     width: 80%;
     height: 100%;
@@ -142,7 +87,6 @@ form {
 .container {
     width: 80%;
     height: 100%;
-    justify-content: space-between;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -173,20 +117,28 @@ form {
     margin-top: 5rem;
 }
 
-.container .inputCadastroPt2 {
-    align-self: center;
-    padding: 3px;
-    height: 2.5rem;
-    width: 300px;
-    margin: 10px 0px 20px 0px;
-    background-color: #edf2fb;
+.cardCadastro label {
+    margin-top: 1.5rem;
+}
+
+.cardCadastro input {
+    background-color: transparent;
     border: 2px solid #000633;
     border-top: 2px;
     border-left: 2px;
     border-right: 2px;
+    height: 2rem;
+    font-size: 1rem;
     outline: none;
-    font-family: 'Roboto';
-    font-weight: light;
+}
+
+#selectPorte {
+    margin-top: 2.2rem;
+}
+
+.spanAviso {
+    font-size: .7rem;
+    margin-top: 3px;
 }
 
 .containerLogin .inputLogin {
@@ -230,9 +182,11 @@ form {
     cursor: pointer;
     transition: .3s;
     font-family: 'Roboto Mono';
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-.DivLateralPt2 .container .buttonCad {
+.DivLateralPt2 .container #buttonCad {
     padding: 10px;
     background-color: #000633;
     color: #b4bec9;
@@ -247,7 +201,13 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 3rem;
     margin-bottom: 1rem;
+}
+
+.acessoLogin {
+    margin-top: .5rem;
+    margin-left: 14.5rem;
 }
 
 .containerLogin button {
@@ -344,7 +304,6 @@ select {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .cadastroDir {
@@ -352,14 +311,6 @@ select {
     height: 100%;
     display: flex;
     flex-direction: column;
-}
-
-.endCard {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
 }
 
 @media only screen and (max-width: 1110px) {
@@ -457,11 +408,6 @@ select {
 
     .formLogin button {
         margin-top: 2rem;
-    }
-
-    .formControl {
-        display: flex;
-        justify-content: center;
     }
 
     .cardCadastro label {

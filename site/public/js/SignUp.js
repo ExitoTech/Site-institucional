@@ -13,16 +13,12 @@ function validarNomeEmpresa() {
     var nomeEmpresa = inputNomeDaEmpresa.value;
 
     if (nomeEmpresa.length >= 3) {
-        inputNomeDaEmpresa.style.color = "#80b918";
-        inputNomeDaEmpresa.style.borderLeft = "none";
-        inputNomeDaEmpresa.style.borderTop = "none";
-        inputNomeDaEmpresa.style.borderRight = "none";
+        spanEmpresa.innerHTML = "O nome está dentro dos padrões";
+        spanEmpresa.style.color = "#80b918";
     }
     else {
-        inputNomeDaEmpresa.style.color = "#d90429";
-        inputNomeDaEmpresa.style.borderLeft = "none";
-        inputNomeDaEmpresa.style.borderTop = "none";
-        inputNomeDaEmpresa.style.borderRight = "none";
+        spanEmpresa.innerHTML = "O nome deve conter ao menos 3 caracteres";
+        spanEmpresa.style.color = "#d90429";
     }
 }
 
@@ -34,6 +30,12 @@ function verificarCep() {
         inputCep.style.borderLeft = "none";
         inputCep.style.borderTop = "none";
         inputCep.style.borderRight = "none";
+        spanCep.innerHTML = "O CEP está dentro do padrão";
+        spanCep.style.color = "#80b918";
+        spanLogradouro.innerHTML = "OK";
+        spanLogradouro.style.color = "#80b918";
+        spanUf.innerHTML = "OK";
+        spanUf.style.color = "#80b918";
     }
 
     else {
@@ -42,6 +44,8 @@ function verificarCep() {
         inputCep.style.borderLeft = "none";
         inputCep.style.borderTop = "none";
         inputCep.style.borderRight = "none";
+        spanCep.innerHTML = "O CEP deve conter 8 dígitos";
+        spanCep.style.color = "#d90429";
     }
 }
 
@@ -53,6 +57,8 @@ function verificarCnpj() {
         inputCnpj.style.borderLeft = "none";
         inputCnpj.style.borderTop = "none";
         inputCnpj.style.borderRight = "none";
+        spanCnpj.innerHTML = "O CNPJ está dentro do padrão";
+        spanCnpj.style.color = "#80b918";
     }
     else {
         inputCnpj.style.color = "#d90429";
@@ -60,6 +66,8 @@ function verificarCnpj() {
         inputCnpj.style.borderLeft = "none";
         inputCnpj.style.borderTop = "none";
         inputCnpj.style.borderRight = "none";
+        spanCnpj.innerHTML = "O CNPJ deve conter 14 dígitos";
+        spanCnpj.style.color = "#d90429";
     }
 }
 
