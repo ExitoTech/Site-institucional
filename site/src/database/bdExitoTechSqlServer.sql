@@ -11,7 +11,7 @@
 
 
 CREATE TABLE funcionario(
-  idFuncionario INT NOT NULL identity(1,1000),
+  idFuncionario INT NOT NULL identity(1000,1),
   nomeFuncionario VARCHAR(60) NULL,
   CPF CHAR(11) NULL,
   email VARCHAR(155) NULL,
@@ -28,7 +28,7 @@ CREATE TABLE funcionario(
 
 
 CREATE TABLE setor (
-  idSetor INT NOT NULL identity(1,10000),
+  idSetor INT NOT NULL identity(10000,1),
   nomeSetor VARCHAR(25) NULL,
   descSetor VARCHAR(65) NULL,
   fk_Empresa INT NOT NULL,
@@ -39,20 +39,22 @@ CREATE TABLE setor (
 
 
 CREATE TABLE maquina (
-  idMaquina INT identity(1,20000),
-  nomeMaquina VARCHAR(15),
-  fk_setor INT null,
+  idMaquina INT identity(20000,1),
+  PRIMARY KEY (idMaquina),
+  nomeMaquina VARCHAR(30),
+  sistemaOperacional VARCHAR(30),
+  arquiteturaSO VARCHAR(30),
   processador VARCHAR(30),
   memoriaRam VARCHAR(30),
   memoriaMassa VARCHAR(30),
-  PRIMARY KEY (idMaquina),
+  fk_setor INT null,
   FOREIGN KEY (fk_setor)
   REFERENCES setor (idSetor)
   );
 
 
 CREATE TABLE capturas (
- idCaptura INT NOT NULL identity(1,120000),
+ idCaptura INT NOT NULL identity(120000,1),
   usoCPU DECIMAL(3,2) NULL,
   usoRam DECIMAL(3,2) NULL,
   dataHora DATETIME default current_timestamp ,
@@ -63,7 +65,7 @@ CREATE TABLE capturas (
   );
   
   create table atendimentoMaquina(
-  idAtendimento int primary key identity(1,40000),
+  idAtendimento int primary key identity(40000,1),
   tituloIncidente varchar (30),
   descAtendimento varchar(255),
   horaAtendimento datetime default current_timestamp,

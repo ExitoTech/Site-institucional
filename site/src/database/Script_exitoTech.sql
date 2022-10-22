@@ -44,6 +44,8 @@ CREATE TABLE setor (
 CREATE TABLE maquina (
   idMaquina INT auto_increment,
   nomeMaquina VARCHAR(15),
+  sistemaOperacional VARCHAR(30),
+  arquiteturaSO VARCHAR(30),
   fk_setor INT null,
   processador VARCHAR(30),
   memoriaRam VARCHAR(30),
