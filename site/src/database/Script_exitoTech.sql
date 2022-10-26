@@ -19,7 +19,7 @@ CREATE TABLE funcionario(
   CPF CHAR(11) NULL,
   email VARCHAR(155) NULL,
   senha VARCHAR(25) NULL,
-  ativo TINYINT NULL,
+  ativo Boolean NULL,
   telefoneFuncionario CHAR(11) NULL,
   cep VARCHAR(40) NULL,
   fk_Empresa INT NOT NULL,
@@ -43,11 +43,11 @@ CREATE TABLE setor (
 
 CREATE TABLE maquina (
   idMaquina INT auto_increment,
-  nomeMaquina VARCHAR(15),
+  nomeMaquina VARCHAR(30),
   sistemaOperacional VARCHAR(30),
   arquiteturaSO VARCHAR(30),
   fk_setor INT null,
-  processador VARCHAR(30),
+  processador VARCHAR(50),
   memoriaRam VARCHAR(30),
   memoriaMassa VARCHAR(30),
   PRIMARY KEY (idMaquina),
@@ -81,9 +81,9 @@ CREATE TABLE capturas (
   );
   
   
-INSERT INTO empresa (nomeEmpresa,cnpj,porteempresa,logradouro,complemento,uf,estado,cep) VALUES ('Amazon','123.123.122-12','médio','Rua Basilio no escuro','518','SP','São Paulo','04822920');
-INSERT INTO maquina(nomeMaquina,processador,memoriaRam,memoriaMassa) Values("VinyProgamador","i7 10th gen","16GB","512GB");
-INSERT INTO capturas(fk_maquina,usoCPU,usoRam) Values(20000,22.5,22.4);
+INSERT INTO empresa (nomeEmpresa,cnpj,porteempresa,logradouro,uf,cep) VALUES ('Amazon','123.123.122-12','médio','Rua Basilio no escuro','SP','04822920');
+INSERT INTO funcionario(  nomeFuncionario , CPF,email ,senha ,ativo ,telefoneFuncionario ,cep ,fk_Empresa ,isADM ) values("Vagner","2020","a@a.com","a","1","11999999","0020202","1",true);
+INSERT INTO maquina(nomeMaquina,fk_setor,sistemaOperacional,arquiteturaSO,processador,memoriaRam,memoriaMassa) VALUES (null,null,null,null,null,null,null);
 
 select * from empresa;
 select * from funcionario;
