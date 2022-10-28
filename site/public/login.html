@@ -36,10 +36,12 @@
 
                     <label for="inputEmail" class="labelLogin">Email</label>
                     <input type="text" placeholder="exemplo@gamil.com" required id="inputEmail" class="inputLogin" onkeyup="validEmail()">
-                    
+                    <span id="spanEmailLogin" class="spanAviso"></span>
+
                     <label for="inputSenha" class="labelLogin">Senha</label>
                     <input id="inputSenha" type="password" placeholder="********" required class="inputLogin" onkeyup="validSenha()">
-                    
+                    <span id="spanSenhaLogin" class="spanAviso"></span>
+
                     <button onclick="validar()" type="button">
                         Entrar
                     </button>

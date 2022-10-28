@@ -11,15 +11,13 @@ function validarNome() {
     var Nome = inputNome.value;
 
     if (Nome.length >= 3) {
-        inputNome.style.color = "#80b918";
         inputNome.style.borderLeft = "none";
         inputNome.style.borderTop = "none";
         inputNome.style.borderRight = "none";
-        spanNome.innerHTML = "O nome está dentro do padrão"
+        spanNome.innerHTML = "Ok"
         spanNome.style.color = "#80b918"
     }
     else {
-        inputNome.style.color = "#d90429";
         inputNome.style.borderLeft = "none";
         inputNome.style.borderTop = "none";
         inputNome.style.borderRight = "none";
@@ -32,17 +30,14 @@ function validarEmail() {
     var Email = inputEmail.value
 
     if (Email.length > 5 && Email.indexOf('@') > -1 && Email.indexOf(".") > -1) {
-        inputEmail.style.color = "#80b918";
         inputEmail.style.borderLeft = "none";
         inputEmail.style.borderTop = "none";
         inputEmail.style.borderRight = "none";
-        spanEmail.innerHTML = "O email está dentro do padrão";
+        spanEmail.innerHTML = "Ok";
         spanEmail.style.color = "#80b918";
     }
 
     else {
-        inputEmail.style.color = "#d90429";
-        inputEmail.style.border = "2px solid #000633";
         inputEmail.style.borderLeft = "none";
         inputEmail.style.borderTop = "none";
         inputEmail.style.borderRight = "none";
@@ -55,16 +50,13 @@ function validarCpf() {
     var Cpf = inputCpf.value
 
     if (Cpf.length == 14) {
-        inputCpf.style.color = "#80b918";
         inputCpf.style.borderLeft = "none";
         inputCpf.style.borderTop = "none";
         inputCpf.style.borderRight = "none";
-        spanCpf.innerHTML = "O CPF está dentro do padrão";
+        spanCpf.innerHTML = "Ok";
         spanCpf.style.color = "#80b918";
     }
     else {
-        inputCpf.style.color = "#d90429";
-        inputCpf.style.border = "2px solid #000633";
         inputCpf.style.borderLeft = "none";
         inputCpf.style.borderTop = "none";
         inputCpf.style.borderRight = "none";
@@ -77,16 +69,13 @@ function validarCep() {
     var cep = inputCep.value;
 
     if(cep.length === 9) {
-        inputCep.style.color = "#80b918";
         inputCep.style.borderLeft = "none";
         inputCep.style.borderTop = "none";
         inputCep.style.borderRight = "none";
-        spanCep.innerHTML = "O CEP está dentro do padrão";
+        spanCep.innerHTML = "Ok";
         spanCep.style.color = "#80b918";
     }
     else {
-        inputCep.style.color = "#d90429";
-        inputCep.style.border = "2px solid #000633";
         inputCep.style.borderLeft = "none";
         inputCep.style.borderTop = "none";
         inputCep.style.borderRight = "none";
@@ -100,17 +89,14 @@ function validarTelefone() {
 
     buttonCad.style.marginTop = "2rem"
 
-    if (Telefone.length === 13) {
-        inputTelefone.style.color = "#80b918";
+    if (Telefone.length === 15) {
         inputTelefone.style.borderLeft = "none";
         inputTelefone.style.borderTop = "none";
         inputTelefone.style.borderRight = "none";
-        spanTelefone.innerHTML = "O telefone está dentro do padrão";
+        spanTelefone.innerHTML = "Ok";
         spanTelefone.style.color = "#80b918";
     }
     else {
-        inputTelefone.style.color = "#d90429";
-        inputTelefone.style.border = "2px solid #000633";
         inputTelefone.style.borderLeft = "none";
         inputTelefone.style.borderTop = "none";
         inputTelefone.style.borderRight = "none";
@@ -151,24 +137,20 @@ function validarSenha() {
     var testeSenha = inputSenha.value
 
     if (testeSenha.length >= 8) {
-        inputSenha.style.border = "2px solid #80b918";
         inputSenha.style.borderLeft = "none";
         inputSenha.style.borderTop = "none";
         inputSenha.style.borderRight = "none";
-        spanSenha.innerHTML = "A senha está dentro do padrão";
+        spanSenha.innerHTML = "Ok";
         spanSenha.style.color = "#80b918";
     }
     else if (testeSenha == '') {
-        inputSenha.style.border = "2px solid #d90429";
         inputSenha.style.borderLeft = "none";
         inputSenha.style.borderTop = "none";
         inputSenha.style.borderRight = "none";
         spanSenha.innerHTML = "Este campo não pode ficar vazio";
         spanSenha.style.color = "#d90429";
     }
-
     else {
-        inputSenha.style.border = "2px solid #d90429";
         inputSenha.style.borderLeft = "none";
         inputSenha.style.borderTop = "none";
         inputSenha.style.borderRight = "none";
@@ -184,24 +166,20 @@ function validarConfirmarSenha() {
 
 
     if (testeConfirmarSenha == testeSenha) {
-        inputConfirmarSenha.style.border = "2px solid #80b918";
         inputConfirmarSenha.style.borderLeft = "none";
         inputConfirmarSenha.style.borderTop = "none";
         inputConfirmarSenha.style.borderRight = "none";
-        spanConfirmarSenha.innerHTML = "As senhas conferem";
+        spanConfirmarSenha.innerHTML = "Ok";
         spanConfirmarSenha.style.color = "#80b918";
     }
     else if (testeConfirmarSenha == '') {
-        inputConfirmarSenha.style.border = "2px solid #d90429";
         inputConfirmarSenha.style.borderLeft = "none";
         inputConfirmarSenha.style.borderTop = "none";
         inputConfirmarSenha.style.borderRight = "none";
         spanConfirmarSenha.innerHTML = "Este campo não pode ficar vazio";
         spanConfirmarSenha.style.color = "#d90429";
     }
-
     else {
-        inputConfirmarSenha.style.border = "2px solid #d90429";
         inputConfirmarSenha.style.borderLeft = "none";
         inputConfirmarSenha.style.borderTop = "none";
         inputConfirmarSenha.style.borderRight = "none";
@@ -216,21 +194,21 @@ function nextSignUp() {
 
     var errosValidação = 0
 
-    var inputRepetirSenha = document.getElementById("inputConfirmarSenha")
-    var inputSenha = document.getElementById("inputSenha")
-    var inputEmail = document.getElementById("inputEmail")
+    var inputRepetirSenha = document.getElementById("inputConfirmarSenha").value
+    var inputSenha = document.getElementById("inputSenha").value
+    var inputEmail = document.getElementById("inputEmail").value
 
-    if (inputRepetirSenha.style.borderBottom != "2px solid green") {
-
-        errosValidação++
-
-    }
-    else if (inputSenha.style.borderBottom != "2px solid green") {
+    if (inputRepetirSenha != inputSenha) {
 
         errosValidação++
 
     }
-    else if (inputEmail.style.color != "rgb(128, 185, 24)") {
+    else if (inputSenha < 8) {
+
+        errosValidação++
+
+    }
+    else if (inputEmail.length < 5 && !inputEmail.indexOf('@') > -1 && !inputEmail.indexOf(".") > -1) {
 
         errosValidação++
     }

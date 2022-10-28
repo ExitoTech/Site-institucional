@@ -78,6 +78,28 @@ function sairDivA(){
     textoLink.innerHTML= 'ExitoTech'
 }
 
+function validEmail(){
+    var email = document.getElementById('inputEmail');
+    if (email.value.length > 5 && email.value.indexOf('@') > -1 && email.value.indexOf(".") > -1) {
+        spanEmailLogin.innerHTML = "Ok";
+        spanEmailLogin.style.color = "#80b918";
+    } else {
+        spanEmailLogin.innerHTML = "O email deve conter @";
+        spanEmailLogin.style.color = "#d90429";
+    }
+}
+
+function validSenha(){
+    var senha = document.getElementById('inputSenha');
+    if(senha.value.length >= 8){
+        spanSenhaLogin.innerHTML = "Ok";
+        spanSenhaLogin.style.color = "#80b918";
+    }else{
+        spanSenhaLogin.innerHTML = "A senha deve conter no mínimo 8 dígitos";
+        spanSenhaLogin.style.color = "#d90429";
+    }
+}
+
 function validarSessao() {
 
     var email = sessionStorage.EMAIL_USUARIO;

@@ -13,7 +13,7 @@ function validarNomeEmpresa() {
     var nomeEmpresa = inputNomeDaEmpresa.value;
 
     if (nomeEmpresa.length >= 3) {
-        spanEmpresa.innerHTML = "O nome está dentro dos padrões";
+        spanEmpresa.innerHTML = "Ok";
         spanEmpresa.style.color = "#80b918";
     }
     else {
@@ -26,11 +26,10 @@ function verificarCep() {
     var Cep = inputCep.value
 
     if (Cep.length == 9) {
-        inputCep.style.color = "#80b918";
         inputCep.style.borderLeft = "none";
         inputCep.style.borderTop = "none";
         inputCep.style.borderRight = "none";
-        spanCep.innerHTML = "O CEP está dentro do padrão";
+        spanCep.innerHTML = "Ok";
         spanCep.style.color = "#80b918";
         spanLogradouro.innerHTML = "OK";
         spanLogradouro.style.color = "#80b918";
@@ -39,8 +38,6 @@ function verificarCep() {
     }
 
     else {
-        inputCep.style.color = "#d90429";
-        inputCep.style.border = "2px solid #000633";
         inputCep.style.borderLeft = "none";
         inputCep.style.borderTop = "none";
         inputCep.style.borderRight = "none";
@@ -53,16 +50,13 @@ function verificarCnpj() {
     var cnpj = inputCnpj.value
 
     if (cnpj.length == 18) {
-        inputCnpj.style.color = "#80b918";
         inputCnpj.style.borderLeft = "none";
         inputCnpj.style.borderTop = "none";
         inputCnpj.style.borderRight = "none";
-        spanCnpj.innerHTML = "O CNPJ está dentro do padrão";
+        spanCnpj.innerHTML = "Ok";
         spanCnpj.style.color = "#80b918";
     }
     else {
-        inputCnpj.style.color = "#d90429";
-        inputCnpj.style.border = "2px solid #000633";
         inputCnpj.style.borderLeft = "none";
         inputCnpj.style.borderTop = "none";
         inputCnpj.style.borderRight = "none";
@@ -76,9 +70,8 @@ function validarPorte(){
     var porteEmpresa = document.getElementById('selectPorte').value;
 
     if(porteEmpresa == 1 || porteEmpresa == 2 || porteEmpresa == 3){
-        porteStyle.style.color = "#80b918"
-    } else {
-        porteStyle.style.color = "#d90429"
+        spanPorte.style.color = "#80b918"
+        spanPorte.innerHTML = "Ok"
     }
 
    if(porteEmpresa == 1){
@@ -104,20 +97,20 @@ function nextSignUp() {
 
     var errosValidação = 0
 
-    if(inputNomeDaEmpresa.style.color != "rgb(128, 185, 24)"){
+    if(inputNomeDaEmpresa.value < 3){
 
         errosValidação++
     }
-    else if(inputCep.style.color != "rgb(128, 185, 24)"){
+    else if(inputCep.value < 9){
 
         errosValidação++
 
     }
-    else if( selectPorte.style.color != "green"){
+    else if( selectPorte.value != 1 && selectPorte.value != 2 && selectPorte.value != 3){
 
         errosValidação++
     }
-    else if(inputCnpj.style.color != "rgb(128, 185, 24)"){
+    else if(inputCnpj.value < 18){
 
         errosValidação++
 

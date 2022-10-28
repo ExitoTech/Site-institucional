@@ -5,9 +5,11 @@ var cep = document.getElementById('inputCep');
 telefone.addEventListener('keypress', ()=>{
     let inputlength = telefone.value.length;
 
-    if(inputlength === 2){
-        telefone.value += " ";
-    }else if(inputlength === 8){
+    if(inputlength === 0){
+        telefone.value += "("
+    }else if(inputlength === 3){
+        telefone.value += ") "
+    }else if(inputlength === 10){
         telefone.value += "-";
     }
 });
