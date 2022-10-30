@@ -197,7 +197,13 @@ function cadastrarEmpresa(req,res) {
 function cadastrarMaquina(req, res) {
     // Faça as validações dos valores {
     // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js       
-    usuarioModel.cadastrarMaquina().then(
+    var setor = req.body.setorServer;
+
+    if(setor == undefined){
+        res.status(400).send("Seu setor está como undefined!");
+    }else{
+    usuarioModel.cadastrarMaquina(setor)
+    .then(
         function (resultado) {
             res.json(resultado);
         }
@@ -211,6 +217,38 @@ function cadastrarMaquina(req, res) {
             res.status(500).json(erro.sqlMessage);
         }
     );
+    }
+
+}
+
+function cadastrarSetor(req, res) {
+    // Faça as validações dos valores {
+    // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js       
+    var setor = req.body.setorServer;
+    var fk_empresa = req.body.fk_empresaServer;
+
+    if(setor == undefined){
+        res.status(400).send("Seu setor está como undefined!");
+    }else if(fk_empresa == undefined){
+        res.status(400).send("Sua fk_Empresa está como undefined!")
+    }else{
+
+    usuarioModel.cadastrarSetor(setor,fk_empresa)
+    .then(
+        function (resultado) {
+            res.json(resultado);
+        }
+    ).catch(
+        function (erro) {
+            console.log(erro);
+            console.log(
+                "\nHouve um erro ao realizar o cadastro! Erro: ",
+                erro.sqlMessage
+            );
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+    }
 
 }
 function cadastrarFuncionario(req, res) {
@@ -262,14 +300,97 @@ function cadastrarFuncionario(req, res) {
 }
 
 
+function getSetor(req, res) {
+
+    var setor = req.body.setorServer
+    var fk_empresa = req.body.fk_empresaServer
+
+    if(setor == undefined){
+        res.status(400).send("Seu setor está como undefined!");
+    }else if(fk_empresa == undefined){
+        res.status(400).send("Sua fk_Empresa está como undefined!")
+    }else{
+        usuarioModel.getSetor(setor,fk_empresa)
+        .then(
+            function (resultado) {
+                console.log(`\nResultados encontrados: ${resultado.length}`);
+                console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                    res.json(resultado);
+                
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao pegar o ID Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+    }
+}
+
+function getFkSetor(req, res) {
+
+    var setor = req.body.setorServer
+    var fk_empresa = req.body.fk_empresaServer
+
+    if(setor == undefined){
+        res.status(400).send("Seu setor está como undefined!");
+    }else if(fk_empresa == undefined){
+        res.status(400).send("Sua fk_Empresa está como undefined!")
+    }else{
+        usuarioModel.getFkSetor(setor,fk_empresa)
+        .then(
+            function (resultado) {
+                console.log(`\nResultados encontrados: ${resultado.length}`);
+                console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                    res.json(resultado);
+                
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao pegar o ID Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+    }
+}
+
+function getAllSetor(req, res) {
+
+    usuarioModel.getAllSetor()
+        .then(
+            function (resultado) {
+                console.log(`\nResultados encontrados: ${resultado.length}`);
+                console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                    res.json(resultado);
+                
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao pegar o ID Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+
 
 
 module.exports = {
     entrar,
     cadastrarUsuarioADM,
     cadastrarEmpresa,
+    cadastrarSetor,
     getLastEmpresaId,
     getLastMaquinaId,
+    getFkSetor,
+    getSetor,
+    getAllSetor,
     listar,
     testar,
     cadastrarMaquina,

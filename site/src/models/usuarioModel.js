@@ -91,17 +91,29 @@ function cadastrarUsuarioADM(nomeUsuario,email,senha,cpf,cepUsuario,telefoneUsua
     return database.executar(instrucao);
 }
 
-function cadastrarMaquina(){
+function cadastrarMaquina(fk_setor){
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():");
     
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO maquina(nomeMaquina,fk_setor,sistemaOperacional,arquiteturaSO,processador,memoriaRam,memoriaMassa) VALUES (null,null,null,null,null,null,null);
+        INSERT INTO maquina(nomeMaquina,fk_setor,sistemaOperacional,arquiteturaSO,processador,memoriaRam,memoriaMassa) VALUES (null,${fk_setor},null,null,null,null,null);
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 
+}
+
+function cadastrarSetor(setor, fk_empresa){
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():");
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    var instrucao = `
+        INSERT INTO setor(nomeSetor,fk_empresa) VALUES ('setor ${setor}', ${fk_empresa});
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
 }
 
 function cadastrarFuncionario(nome,cpf,email,senha,telefone,cep,fk_empresa) {
@@ -126,12 +138,54 @@ function cadastrarFuncionario(nome,cpf,email,senha,telefone,cep,fk_empresa) {
     return database.executar(instrucao);
 }
 
+function getSetor(setor,fk_empresa) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ")
+
+        var instrucao = `
+        Select * from setor where nomeSetor = "setor ${setor}" and fk_empresa = ${fk_empresa};`;
+    
+        console.log("Executando a instrução SQL: \n" + instrucao);
+        return database.executar(instrucao);
+    
+
+}
+
+function getFkSetor(setor,fk_empresa) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ")
+
+        var instrucao = `
+        Select idSetor from setor where nomeSetor = "setor ${setor}" and fk_empresa = ${fk_empresa};`;
+    
+        console.log("Executando a instrução SQL: \n" + instrucao);
+        return database.executar(instrucao);
+    
+
+}
+
+function getAllSetor() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ")
+    
+
+        var instrucao = `
+        Select * from setor;`;
+    
+        console.log("Executando a instrução SQL: \n" + instrucao);
+        return database.executar(instrucao);
+    
+
+}
+
+
 module.exports = {
     entrar,
     cadastrarEmpresa,
     cadastrarUsuarioADM,
+    cadastrarSetor,
     getLastEmpresaId,
     getLastMaquinaId,
+    getFkSetor,
+    getSetor,
+    getAllSetor,
     listar,
     cadastrarMaquina,
     cadastrarFuncionario

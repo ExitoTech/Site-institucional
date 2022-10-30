@@ -295,7 +295,7 @@ function cadastreUsuario(idempresa) {
             emailServer: document.getElementById("inputEmail").value,
             senhaServer: document.getElementById("inputSenha").value,
             cpfUsuarioServer: document.getElementById("inputCpf").value,
-            cepUsuarioServer: document.getElementById("inputCEP").value,
+            cepUsuarioServer: document.getElementById("inputCep").value,
             telefoneUsuarioServer: document.getElementById("inputTelefone").value,
             fk_empresaServer: idempresa,
         })

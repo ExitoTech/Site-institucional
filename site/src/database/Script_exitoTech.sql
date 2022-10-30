@@ -3,12 +3,12 @@ USE exitoTech;
 
 CREATE TABLE empresa(
   idEmpresa INT NOT NULL auto_increment,
-  nomeEmpresa VARCHAR(75) NULL,
+  nomeEmpresa VARCHAR(55) NULL,
   cnpj CHAR(18) NULL,
-  porteEmpresa VARCHAR(50) NULL,
+  porteEmpresa VARCHAR(20) NULL,
   logradouro VARCHAR(65) NULL,
   UF CHAR(2) NULL,
-  CEP CHAR(8) NULL,
+  CEP CHAR(9) NULL,
   PRIMARY KEY (idEmpresa)
   );
 
@@ -16,12 +16,12 @@ CREATE TABLE empresa(
 CREATE TABLE funcionario(
   idFuncionario INT NOT NULL auto_increment,
   nomeFuncionario VARCHAR(60) NULL,
-  CPF CHAR(11) NULL,
-  email VARCHAR(155) NULL,
+  CPF CHAR(14) NULL,
+  email VARCHAR(55) NULL,
   senha VARCHAR(25) NULL,
   ativo Boolean NULL,
-  telefoneFuncionario CHAR(11) NULL,
-  cep VARCHAR(40) NULL,
+  telefoneFuncionario CHAR(15) NULL,
+  cep VARCHAR(9) NULL,
   fk_Empresa INT NOT NULL,
   isADM Boolean NULL,
   PRIMARY KEY (idFuncionario),
@@ -32,8 +32,7 @@ CREATE TABLE funcionario(
 
 CREATE TABLE setor (
   idSetor INT NOT NULL auto_increment,
-  nomeSetor VARCHAR(25) NULL,
-  descSetor VARCHAR(65) NULL,
+  nomeSetor VARCHAR(7) NULL,
   fk_Empresa INT NOT NULL,
   PRIMARY KEY (idSetor, fk_empresa),
   FOREIGN KEY (fk_empresa)
@@ -90,5 +89,3 @@ select * from funcionario;
 select * from capturas;
 
 
-
-drop database exitotech;
