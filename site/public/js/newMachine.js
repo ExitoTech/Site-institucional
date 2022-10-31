@@ -149,38 +149,6 @@ function getSetor(setor,fk_Empresa){
 
 }
 
-function getAllSetors(){
-    fetch("/usuarios/getAllSetor", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-        }),
-    })
-        .then(function (resposta) {
-            if (resposta.ok) {
-
-                resposta.json().then((json) => {
-                    
-                    console.log(json);
-                    console.log(JSON.stringify(json) + 'exibindo json stringfy');
-                });
-                
-            } else {
-                console.log("Houve um erro ao tentar o select!");
-
-                resposta.text().then((texto) => {
-                    console.error(texto);
-                });
-            }
-        })
-        .catch(function (erro) {
-            console.log(erro);
-        });
-
-}
-
 function fetchMaquina(setor){
     fetch("/usuarios/cadastrarMaquina", {
         method: "POST",

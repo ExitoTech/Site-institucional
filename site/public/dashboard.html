@@ -10,13 +10,14 @@
   <link rel="shortcut icon" href="./img/logo_transparent.png" type="image/x-icon">
   <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
   <script src="js/signIn.js"></script>
+  <script src="js/dashboard.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="shortcut icon" href="img/logo_transparent.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
 </head>
 
-<body onload="validarSessao(), exit()">
+<body onload="validarSessao(), exit(),getAllSetors()">
   <main>
     <div class="navBar">
       <div class="logoNavBar">
@@ -165,10 +166,7 @@
               <div class="infoMonitorConfigAll">
                 <div class="configSetor1">
                   <p class="tituloInfo">Ubuntu 22.04 LTS</p>
-                  <select name="setor" class="selectSetor">
-                    <option value="valor1" class="tituloInfo Setor" selected>Setor 1</option>
-                    <option value="valor2" class="tituloInfo Setor">Setor 2</option>
-                    <option value="valor3" class="tituloInfo Setor">Setor 3</option>
+                  <select name="setor" class="selectSetor" onchange="getMachinePerSector()">
                   </select>
                   
                 </div>
@@ -185,9 +183,6 @@
                   </div>
 
                     <select name="setor" class="selectSetor">
-                      <option value="valor1" class="tituloInfo Setor" selected>Maquina 1</option>
-                      <option value="valor2" class="tituloInfo Setor">Maquina 2</option>
-                      <option value="valor3" class="tituloInfo Setor">Maquina 3</option>
                     </select>
 
                 </div>

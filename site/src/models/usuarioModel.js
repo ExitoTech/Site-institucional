@@ -167,7 +167,7 @@ function getAllSetor() {
     
 
         var instrucao = `
-        Select * from setor;`;
+        select nomeSetor from setor  order by nomeSetor asc; `;
     
         console.log("Executando a instrução SQL: \n" + instrucao);
         return database.executar(instrucao);

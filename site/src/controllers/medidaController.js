@@ -41,8 +41,39 @@ function buscarMedidasEmTempoReal(req, res) {
     });
 }
 
+function getMachinePerSector(req, res) {
+
+    var fk_empresa = req.body.fkEmpresaServer
+    var setor = req.body.setorServer
+
+    if(setor == undefined){
+        res.status(400).send("Seu setor está como undefined!");
+    }else if(fk_empresa == undefined){
+        res.status(400).send("Sua fk_Empresa está como undefined!")
+    }else{
+        medidaModel.getMachinePerSector(setor,fk_empresa)
+        .then(
+            function (resultado) {
+                console.log(`\nResultados encontrados: ${resultado.length}`);
+                console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                    res.json(resultado);
+                
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao pegar o ID Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+    }
+}
+
+
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+    buscarMedidasEmTempoReal,
+    getMachinePerSector
 
 }
