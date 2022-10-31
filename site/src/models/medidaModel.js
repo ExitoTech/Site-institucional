@@ -65,7 +65,7 @@ function getMachinePerSector(setor,fk_empresa){
 
     instrucaoSql = `select idMaquina from setor as s 
     join maquina as m on
-    m.fk_setor = s.idSetor where fk_empresa = ${fk_empresa} and nomeSetor= 'setor${setor}' order by idMaquina`;
+    m.fk_setor = s.idSetor where fk_empresa = ${fk_empresa} and nomeSetor = 'setor${setor}' order by idMaquina`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
