@@ -1,11 +1,11 @@
  CREATE TABLE empresa(
   idEmpresa INT NOT NULL identity(1,1),
-  nomeEmpresa VARCHAR(75) NULL,
+  nomeEmpresa VARCHAR(55) NULL,
   cnpj CHAR(18) NULL,
-  porteEmpresa VARCHAR(50) NULL,
+  porteEmpresa VARCHAR(20) NULL,
   logradouro VARCHAR(65) NULL,
   UF CHAR(2) NULL,
-  CEP CHAR(8) NULL,
+  CEP CHAR(9) NULL,
   PRIMARY KEY (idEmpresa)
   );
 
@@ -13,12 +13,12 @@
 CREATE TABLE funcionario(
   idFuncionario INT NOT NULL identity(1000,1),
   nomeFuncionario VARCHAR(60) NULL,
-  CPF CHAR(11) NULL,
-  email VARCHAR(155) NULL,
+  CPF CHAR(14) NULL,
+  email VARCHAR(55) NULL,
   senha VARCHAR(25) NULL,
   ativo TINYINT NULL,
-  telefoneFuncionario CHAR(11) NULL,
-  cep VARCHAR(40) NULL,
+  telefoneFuncionario CHAR(15) NULL,
+  cep VARCHAR(9) NULL,
   fk_Empresa INT NOT NULL,
   isADM TINYINT NULL,
   PRIMARY KEY (idFuncionario),
@@ -29,8 +29,7 @@ CREATE TABLE funcionario(
 
 CREATE TABLE setor (
   idSetor INT NOT NULL identity(10000,1),
-  nomeSetor VARCHAR(25) NULL,
-  descSetor VARCHAR(65) NULL,
+  nomeSetor VARCHAR(7) NULL,
   fk_Empresa INT NOT NULL,
   PRIMARY KEY (idSetor),
   FOREIGN KEY (fk_empresa)
@@ -44,7 +43,7 @@ CREATE TABLE maquina (
   nomeMaquina VARCHAR(30),
   sistemaOperacional VARCHAR(30),
   arquiteturaSO VARCHAR(30),
-  processador VARCHAR(30),
+  processador VARCHAR(50),
   memoriaRam VARCHAR(30),
   memoriaMassa VARCHAR(30),
   fk_setor INT null,
@@ -67,7 +66,6 @@ CREATE TABLE capturas (
   create table atendimentoMaquina(
   idAtendimento int primary key identity(40000,1),
   tituloIncidente varchar (30),
-  descAtendimento varchar(255),
   horaAtendimento datetime default current_timestamp,
   fk_maquina int,
   foreign key(fk_maquina) references maquina(idMaquina),

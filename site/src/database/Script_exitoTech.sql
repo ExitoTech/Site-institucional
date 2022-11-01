@@ -69,7 +69,6 @@ CREATE TABLE capturas (
   create table atendimentoMaquina(
   idAtendimento int primary key auto_increment,
   tituloIncidente varchar (30),
-  descAtendimento varchar(255),
   horaAtendimento datetime,
   fk_maquina int,
   foreign key(fk_maquina) references maquina(idMaquina),
