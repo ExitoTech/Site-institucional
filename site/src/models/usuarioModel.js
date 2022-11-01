@@ -142,7 +142,7 @@ function getSetor(setor,fk_empresa) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ")
 
         var instrucao = `
-        Select * from setor where nomeSetor = "setor ${setor}" and fk_empresa = ${fk_empresa};`;
+        Select * from setor where nomeSetor = 'setor ${setor}' and fk_empresa = ${fk_empresa};`;
     
         console.log("Executando a instrução SQL: \n" + instrucao);
         return database.executar(instrucao);
@@ -154,7 +154,7 @@ function getFkSetor(setor,fk_empresa) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ")
 
         var instrucao = `
-        Select idSetor from setor where nomeSetor = "setor ${setor}" and fk_empresa = ${fk_empresa};`;
+        Select idSetor from setor where nomeSetor = 'setor ${setor}' and fk_empresa = ${fk_empresa};`;
     
         console.log("Executando a instrução SQL: \n" + instrucao);
         return database.executar(instrucao);

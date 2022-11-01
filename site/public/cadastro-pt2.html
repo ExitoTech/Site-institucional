@@ -37,11 +37,11 @@
                     <div class="cardCadastro">
                         <div class="cadastroEsq">
                                 <label for="inputNome">Nome</label>
-                                <input placeholder="Nome" type="text" onkeyup="validarNome()" id="inputNome" required>
+                                <input placeholder="Nome" type="text" onkeyup="validarNome()" id="inputNome" maxlength="60" required>
                                 <span id="spanNome" class="spanAviso"></span>
 
                                 <label for="inputEmail">Email</label>
-                                <input placeholder="exemplo@gmail.com" onkeyup="validarEmail()" id="inputEmail" type="text" required>
+                                <input placeholder="exemplo@gmail.com" onkeyup="validarEmail()" id="inputEmail" type="text" maxlength="55" required>
                                 <span id="spanEmail" class="spanAviso"></span>
 
                                 <label for="inputCpf">CPF</label>
@@ -59,12 +59,12 @@
                                 <span id="spanTelefone" class="spanAviso"></span>
 
                                 <label for="inputSenha">Senha</label>
-                                <input placeholder="********" onkeyup="validarSenha()" id="inputSenha" type="password" required>
+                                <input placeholder="********" onkeyup="validarSenha()" id="inputSenha" type="password" maxlength="25" required>
                                 <button class="safePassword" type="button" onclick="GerarSenhaSegura()">?</button>
                                 <span id="spanSenha" class="spanAviso"></span>
 
                                 <label for="inputConfirmarSenha">Confirmar senha</label>
-                                <input placeholder="********" onkeyup="validarConfirmarSenha()" id="inputConfirmarSenha" type="password" required>
+                                <input placeholder="********" onkeyup="validarConfirmarSenha()" id="inputConfirmarSenha" type="password" maxlength="25" required>
                                 <span id="spanConfirmarSenha" class="spanAviso"></span>
                             <button id="buttonCad" type="button" onclick="nextSignUp()">
                                 Enviar

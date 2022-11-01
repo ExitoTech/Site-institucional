@@ -54,8 +54,8 @@ CREATE TABLE maquina (
 
 CREATE TABLE capturas (
  idCaptura INT NOT NULL identity(120000,1),
-  usoCPU DECIMAL(3,2) NULL,
-  usoRam DECIMAL(3,2) NULL,
+  usoCPU INT NULL,
+  usoRam INT NULL,
   dataHora DATETIME default current_timestamp ,
   PRIMARY KEY (idCaptura),
   fk_maquina INT NOT NULL,
