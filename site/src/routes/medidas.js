@@ -15,6 +15,10 @@ router.post("/getMachinePerSector", function (req, res) {
     medidaController.getMachinePerSector(req, res);
 })
 
+router.post("/getHardInfo", function (req, res) {
+    medidaController.getHardInfo(req, res);
+})
+
 
 
 module.exports = router;

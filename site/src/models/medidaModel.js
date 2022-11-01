@@ -72,10 +72,20 @@ function getMachinePerSector(setor,fk_empresa){
 
 }
 
+function getHardInfo(maquina){
+
+    instrucaoSql = `select * from maquina where idMaquina = ${maquina}`;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+
+}
+
 
 module.exports = {
     buscarUltimasMedidas,
     buscarMedidasEmTempoReal,
-    getMachinePerSector
+    getMachinePerSector,
+    getHardInfo
 
 }
