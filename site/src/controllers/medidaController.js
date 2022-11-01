@@ -70,10 +70,37 @@ function getMachinePerSector(req, res) {
     }
 }
 
+function getHardInfo(req, res) {
+
+    var maquina = req.body.maquinaServer
+
+    if(maquina == undefined){
+        res.status(400).send("Seu maquina está como undefined!");
+    }else{
+        medidaModel.getHardInfo(maquina)
+        .then(
+            function (resultado) {
+                console.log(`\nResultados encontrados: ${resultado.length}`);
+                console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                    res.json(resultado);
+                
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao pegar o ID Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+    }
+}
+
 
 module.exports = {
     buscarUltimasMedidas,
     buscarMedidasEmTempoReal,
-    getMachinePerSector
+    getMachinePerSector,
+    getHardInfo
 
 }

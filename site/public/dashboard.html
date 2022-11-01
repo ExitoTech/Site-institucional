@@ -165,7 +165,7 @@
 
               <div class="infoMonitorConfigAll">
                 <div class="configSetor1">
-                  <p class="tituloInfo">Ubuntu 22.04 LTS</p>
+                  <p class="tituloInfo" id="sistemaOperacional">Ubuntu 22.04 LTS</p>
                   <select name="setor" class="selectSetor" onchange="getMachinePerSector()">
                   </select>
                   
@@ -173,16 +173,16 @@
                 <div class="line"></div>
                 <div class="configMachine2">
                   <div class="one">
-                    <p><b>Processador</b>: <span>AMD Ryzen 7</span></p>
-                    <p><b>Largura: </b><span>64bits</span></p>
+                    <p><b>Processador</b>: <span id="processador">AMD Ryzen 7</span></p>
+                    <p><b>Largura: </b><span id="arquitetura">64bits</span></p>
                   </div>
 
                   <div class="two">
-                    <p><b>Memória RAM: </b><span>8.0GB</span></p>
-                    <p><b>Disco: </b><span>512GB</span></p>
+                    <p><b>Memória RAM: </b><span id="memoriaRam">8.0GB</span></p>
+                    <p><b>Disco: </b><span id="memoriaMassa">512GB</span></p>
                   </div>
 
-                    <select name="setor" class="selectSetor">
+                    <select name="setor" class="selectSetor" onchange="capturaDeHardware()">
                     </select>
 
                 </div>

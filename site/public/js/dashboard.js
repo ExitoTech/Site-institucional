@@ -60,8 +60,9 @@ function getMachinePerSector(){
                     console.log(json);
                     console.log(JSON.stringify(json) + 'exibindo json stringfy');
                     for(i = 0;i< json.length;i++){
-                        document.getElementsByClassName('selectSetor')[1].innerHTML += "<option value='" + i + "'" + "class='tituloInfo Setor' selected>id " + json[i].idMaquina + "</option>"
+                        document.getElementsByClassName('selectSetor')[1].innerHTML += "<option value='" + json[i].idMaquina  + "'" + "class='tituloInfo Setor' selected>id " + json[i].idMaquina + "</option>"
                     }
+                    capturaDeHardware()
                 });
                 
             } else {
@@ -76,4 +77,48 @@ function getMachinePerSector(){
             console.log(erro);
         });
 
+}
+
+function capturaDeDados(){
+
+}
+
+function capturaDeHardware(){
+    fetch("/medidas/getHardInfo", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            maquinaServer: document.getElementsByClassName('selectSetor')[1].value
+        }),
+    })
+        .then(function (resposta) {
+            if (resposta.ok) {
+
+                resposta.json().then((json) => {
+                    
+                    console.log(json);
+                    console.log(JSON.stringify(json) + 'exibindo json stringfy');
+
+                    document.getElementById('memoriaRam').innerHTML = json[0].memoriaRam
+                    document.getElementById('memoriaMassa').innerHTML = json[0].memoriaMassa
+                    document.getElementById('processador').innerHTML = json[0].processador
+                    document.getElementById('arquitetura').innerHTML = json[0].arquiteturaSO
+                    document.getElementById('sistemaOperacional').innerHTML = json[0].sistemaOperacional
+
+             
+                });
+                
+            } else {
+                console.log("Houve um erro ao tentar o select!");
+
+                resposta.text().then((texto) => {
+                    console.error(texto);
+                });
+            }
+        })
+        .catch(function (erro) {
+            console.log(erro);
+        });
 }
