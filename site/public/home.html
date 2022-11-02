@@ -134,24 +134,24 @@
                                                     <span id="spanNome" class="spanAviso"></span>
 
                                                     <label for="cpfCadastro">CPF</label>
-                                                    <input type="text" placeholder="000.000.000-00" id="cpfCadastro" maxlength="14">
+                                                    <input type="text" placeholder="000.000.000-00" id="cpfCadastro" maxlength="14" onkeyup="validarCpf()">
                                                     <span id="spanCpf" class="spanAviso"></span>
 
                                                     <label for="emailCadastro">Email</label>
-                                                    <input type="text" placeholder="exemplo@gmail.com" id="emailCadastro" maxlength="55">
+                                                    <input type="text" placeholder="exemplo@gmail.com" id="emailCadastro" maxlength="55" onkeyup="validarEmail()">
                                                     <span id="spanEmail" class="spanAviso"></span>
                                                 </div>
                                                 <div class="division2">
                                                     <label for="senhaCadastro">Senha</label>
-                                                    <input type="password" placeholder="********" id="senhaCadastro" maxlength="25">
+                                                    <input type="password" placeholder="********" id="senhaCadastro" maxlength="25" onkeyup="validarSenha()">
                                                     <span id="spanSenha" class="spanAviso"></span>
 
                                                     <label for="telefoneCadastro">Telefone</label>
-                                                    <input type="text" placeholder="99 99999-9999" id="telefoneCadastro" maxlength="15">
+                                                    <input type="text" placeholder="99 99999-9999" id="telefoneCadastro" maxlength="15" onkeyup="validarTelefone()">
                                                     <span id="spanTelefone" class="spanAviso"></span>
 
                                                     <label for="cepCadastro">CEP</label>
-                                                    <input type="text" placeholder="XX. XXX. XXX/0001-XX" id="cepCadastro" maxlength="9">
+                                                    <input type="text" placeholder="00000-00" id="cepCadastro" maxlength="9" onkeyup="validarCep()">
                                                     <span id="spanCep" class="spanAviso"></span>
                                                 </div>
                                             </div>
@@ -232,3 +232,4 @@
 </body>
 
 </html>
+<script src="js/mascNewFunc.js"></script>
