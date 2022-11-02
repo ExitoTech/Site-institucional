@@ -61,7 +61,16 @@ function enviarCadFunc(){
    else{
     alert("Não pode ter nenhum campo vazio!")
    }
+}
 
+function validarNome(){
+    var nome = document.getElementById('nomeCadastro');
 
-
+    if(nome.value.length >= 3){
+        spanNome.innerHTML = "Ok";
+        spanNome.style.color = "#80b918";
+    }else{
+        spanNome.innerHTML = "Nome inválido";
+        spanCpf.style.color = "#d90429";
+    }
 }

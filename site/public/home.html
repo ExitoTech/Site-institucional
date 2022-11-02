@@ -12,11 +12,11 @@
     <script src="js/signIn.js"></script>
     <script src="js/signUpPt2.js"></script>
     <script src="js/download.js"></script>
-    <script src="js/abrirCadastroFuncionario.js"></script>
+    <script src="js/cadastroFuncionario.js"></script>
     <script src="js/newMachine.js"></script>
 </head>
 
-<body onload="validarSessao(), exit()">
+<body>
     <main>
         <div class="navBar">
             <div class="logoNavBar">
@@ -129,16 +129,30 @@
                                         <div class="confirmacaoSenhaNewUser">
                                             <div class="inputsNewUser">
                                                 <div class="division1">
-                                                    <input type="text" placeholder="NOME" id="nomeCadastro">
-                                                    <!--input type="text" placeholder="CARGO"-->
-                                                    <input type="text" placeholder="CPF" id="cpfCadastro" maxlength="11">
-                                                    <input type="text" placeholder="E-MAIL" id="emailCadastro">
+                                                    <label for="nomeCadastro">Nome</label>
+                                                    <input type="text" placeholder="Nome" id="nomeCadastro" maxlength="60" onkeyup="validarNome()">
+                                                    <span id="spanNome" class="spanAviso"></span>
+
+                                                    <label for="cpfCadastro">CPF</label>
+                                                    <input type="text" placeholder="000.000.000-00" id="cpfCadastro" maxlength="14">
+                                                    <span id="spanCpf" class="spanAviso"></span>
+
+                                                    <label for="emailCadastro">Email</label>
+                                                    <input type="text" placeholder="exemplo@gmail.com" id="emailCadastro" maxlength="55">
+                                                    <span id="spanEmail" class="spanAviso"></span>
                                                 </div>
                                                 <div class="division2">
-                                                    <input type="password" placeholder="SENHA" id="senhaCadastro">
-                                                    <input type="text" placeholder="TELEFONE" id="telefoneCadastro" maxlength="11">
-                                                    <!-- input type="text" placeholder="RG"-->
-                                                    <input type="text" placeholder="CEP" id="cepCadastro">
+                                                    <label for="senhaCadastro">Senha</label>
+                                                    <input type="password" placeholder="********" id="senhaCadastro" maxlength="25">
+                                                    <span id="spanSenha" class="spanAviso"></span>
+
+                                                    <label for="telefoneCadastro">Telefone</label>
+                                                    <input type="text" placeholder="99 99999-9999" id="telefoneCadastro" maxlength="15">
+                                                    <span id="spanTelefone" class="spanAviso"></span>
+
+                                                    <label for="cepCadastro">CEP</label>
+                                                    <input type="text" placeholder="XX. XXX. XXX/0001-XX" id="cepCadastro" maxlength="9">
+                                                    <span id="spanCep" class="spanAviso"></span>
                                                 </div>
                                             </div>
                                         </div>
