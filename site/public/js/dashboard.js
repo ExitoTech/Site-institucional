@@ -63,6 +63,7 @@ function getMachinePerSector(){
                         document.getElementsByClassName('selectSetor')[1].innerHTML += "<option value='" + json[i].idMaquina  + "'" + "class='tituloInfo Setor' selected>id " + json[i].idMaquina + "</option>"
                     }
                     capturaDeHardware()
+                    capturaDeDados(document.getElementsByClassName('selectSetor')[1].value)
                 });
                 
             } else {
@@ -79,8 +80,27 @@ function getMachinePerSector(){
 
 }
 
-function capturaDeDados(){
+function capturaDeDados(idMaquina){
 
+    if (proximaAtualizacao != undefined) {
+        clearTimeout(proximaAtualizacao);
+    }
+
+    fetch(`/medidas/ultimas/${idMaquina}`, { cache: 'no-store' }).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (resposta) {
+                console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                resposta.reverse();
+
+                plotarGrafico(resposta, document.getElementsByClassName('selectSetor')[1].value);
+            });
+        } else {
+            console.error('Nenhum dado encontrado ou erro na API');
+        }
+    })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
 }
 
 function capturaDeHardware(){
