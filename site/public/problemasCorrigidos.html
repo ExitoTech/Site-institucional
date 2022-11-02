@@ -11,8 +11,6 @@
 </head>
 
 <body>
-
-    <body >
         <main>
             <div class="navBar">
                 <div class="logoNavBar">
@@ -69,14 +67,14 @@
                                 <p>Inserir correção realizada</p>
                             </div>
 
-                            <input class="mainInput" type="text" placeholder="Problema Encontrado">
-                            <select class="mainSelect" name="" id="" aria-placeholder="">
+                            <input class="mainInput" id="textProblem" type="text" placeholder="Problema Encontrado">
+                            <select class="mainSelect" name="" id="nomeAutorCorrecao" aria-placeholder="">
                                 <option value="">Selecionar Autor</option>
-                                <option value="">Mauro Silva</option>
-                                <option value="">Cleber Pinheiro</option>
-                                <option value="">Ananias Pereira</option>
-                                <option value="">Cristiano Joaquim</option>
-                                <option value="">Vincius A Nunes</option>
+                                <option value="mauro">Mauro Silva</option>
+                                <option value="cleber">Cleber Pinheiro</option>
+                                <option value="ananias">Ananias Pereira</option>
+                                <option value="cristiano">Cristiano Joaquim</option>
+                                <option value="vinicius">Vincius A Nunes</option>
                             </select>
 
 
@@ -181,13 +179,93 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </main>
             </aside>
         </main>
-
     </body>
-
 </html>
+<script>
+    
+    function sendCorretion(){
+        var problemaCorrigidoVar = textProblem.value;
+        var nomeAutorVar = nomeAutorCorrecao.value;
+
+        if(problemaCorrigidoVar == "" || nomeAutorVar == ""){
+            alert("campos vazios");
+        }
+        
+        fetch("/problemasCorrigidos/sendCorretion", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                problemaCorrigidoServer: problemaCorrigidoVar,
+                nomeAutorServer: nomeAutorVar,
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                alert("Problema cadastrado!")
+                
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+        return false;
+    }
+
+
+    function cadastrar() {
+        aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var problemaCorrigidoVar = textProblem.value;
+        var nomeAutorVar = nomeAutorCorrecao.value;
+
+        if(problemaCorrigidoVar == "" || nomeAutorVar == ""){
+            alert("campos vazios");
+        }
+
+        // Enviando o valor da nova input
+        fetch("/problemasCorrigidos/problemasCorrigidoCadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                problemaCorrigidoServer: problemaCorrigidoVar,
+                nomeAutorServer: nomeAutorVar,
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                alert("Problema reportado com sucesso!");
+                
+            } else {
+                alert("Houve um erro ao tentar reportar problema");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+    }
+
+
+</script>
