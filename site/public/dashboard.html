@@ -17,7 +17,7 @@
 
 </head>
 
-<body onload="validarSessao(), exit(),getAllSetors()">
+<body><!--onload="validarSessao(), exit(),getAllSetors()"-->
   <main>
     <div class="navBar">
       <div class="logoNavBar">
@@ -73,77 +73,40 @@
             <canvas id="myChart" height="100%"></canvas>
           </div>
           <div class="allMonitor">
-            <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <p class="tituloStatusMaquina"><b>Maquina</b></p>
-                  <div class="porMetric">
-                    <div class="infoPorMetric">
-                      <div class="contentPorMetric">
-                        <div class="porMetric1">
-                          <p class="numStatus">76%</p>
-                          <p class="infoPecaStatus">CPU</p>
-                        </div>
-                        <img class="arrow" src="../public/img/icons/upArrow.png" alt="">
-                      </div>
-                      
-
-                      <div class="contentPorMetric">
-                        <div class="porMetric1">
-                          <p class="numStatus">88%</p>
-                          <p class="infoPecaStatus">RAM</p>
-                        </div>
-                        <img class="arrow" src="../public/img/icons/upArrow.png" alt="">
-                      </div>
-                    </div>
-
-                  </div>
-                  <div class="textoStatusMaquina">
-                    <img class="imgStatusMaquina" src="./img/icons/check.png" alt="">
-                    <p>Maquina operando</p>
-                  </div>
-                  <div class="textoStatusMaquina">
-                    <img class="imgStatusMaquina"" src=" ./img/icons/check.png" alt="">
-
-                    <p>CPU operando</p>
-                  </div>
+            <div class="contentMonitor">
+              <div class="infoMaquina">
+                <div class="tituloNomeMaquina">
+                  <img src="./img/icons/maquinaLight.png" alt="">
+                  <p><b>Ubuntu 22.04 LTS</b></p>
                 </div>
-                <div class="swiper-slide">
-                  <p class="tituloStatusMaquina"><b>Maquina</b></p>
-                  <div class="porMetric">
-                    <div class="infoPorMetric">
-                      <div class="contentPorMetric">
-                        <div class="porMetric1">
-                          <p class="numStatus">66%</p>
-                          <p class="infoPecaStatus">CPU</p>
-                        </div>
-                        <img class="arrow" src="../public/img/icons/upArrow.png" alt="">
+                <div class="detalhesMaquina">
+                  <div class="boxDetalhes">
+                    <div class="colunas">
+                      <div class="coluna1">
+                        <p><b>Processador</b>: <span id="processador">AMD Ryzen 7</span></p>
+                        <p><b>Largura: </b><span id="arquitetura">64 Bits</span></p>
                       </div>
-                      <div class="contentPorMetric">
-                        <div class="porMetric1">
-                          <p class="numStatus">94%</p>
-                          <p class="infoPecaStatus">RAM</p>
-                        </div>
-                        <img class="arrow" src="../public/img/icons/upArrow.png" alt="">
+                      <div class="coluna2">
+                        <p><b>Disco</b>: <span id="processador">512 GB</span></p>
+                        <p><b>Memória</b>:<span id="arquitetura">1 TB</span></p>
                       </div>
                     </div>
-                  </div>
-                  <div class="textoStatusMaquina">
-                    <img class="imgStatusMaquina" src="./img/icons/check.png" alt="">
-                    <p>Maquina operando</p>
-                  </div>
-                  <div class="textoStatusMaquina">
-                    <img class="imgStatusMaquina" src="./img/icons/check.png" alt="">
-
-                    <p>CPU operando</p>
+                    <div class="line"></div>
+                    <div class="opcaoMaquina">
+                      <div class="opcaoNumMaquina">
+                        <p><b>Maquina</b></p>
+                        <select name="setor" class="selectSetor" onchange="getMachinePerSector()">
+                        </select>
+                      </div>
+                      <div class="opcaoNumSetor">
+                        <p><b>Setor</b></p> 
+                        <select name="setor" class="selectSetor" onchange="capturaDeHardware()">
+                        </select>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-
-              <div class="swiper-button-next" style="color: #b1cef9; top:95px; --swiper-navigation-size: 16px"></div>
-
-              <div class="swiper-button-prev" style="color: #b1cef9; top:95px; --swiper-navigation-size: 16px"></div>
-
             </div>
 
           </div>
@@ -151,69 +114,63 @@
         </div>
 
         <div class="infoMonitor">
-
-          <div>
-            <p class="tituloInformacaoMaquina">Informações da maquina</p>
-          </div>
-          <div class="infoMonitorDown">
-            <div class="imgMachine">
-              <img src="./img/icons/maquina.png" alt="">
-
-            </div>
-
-            <div class="infoMonitorConfig">
-
-              <div class="infoMonitorConfigAll">
-                <div class="configSetor1">
-                  <p class="tituloInfo" id="sistemaOperacional">Ubuntu 22.04 LTS</p>
-                  <select name="setor" class="selectSetor" onchange="getMachinePerSector()">
-                  </select>
-                  
+          <div class="contentInfoMonitor">
+            <div class="informacaoHardware">
+              <div class="dadoCapturado">
+                <div class="dado">
+                  <p class="num">76%</p>
+                  <p class="peca">CPU</p>
                 </div>
-                <div class="line"></div>
-                <div class="configMachine2">
-                  <div class="one">
-                    <p><b>Processador</b>: <span id="processador">AMD Ryzen 7</span></p>
-                    <p><b>Largura: </b><span id="arquitetura">64bits</span></p>
-                  </div>
-
-                  <div class="two">
-                    <p><b>Memória RAM: </b><span id="memoriaRam">8.0GB</span></p>
-                    <p><b>Disco: </b><span id="memoriaMassa">512GB</span></p>
-                  </div>
-
-                    <select name="setor" class="selectSetor" onchange="capturaDeHardware()">
-                    </select>
-
-                </div>
-
+                <div class="status verde"></div>
               </div>
-
+              <div class="lineVertical"></div>
+              <div class="dadoCapturado">
+                <div class="dado">
+                  <p class="num">76%</p>
+                  <p class="peca">RAM</p>
+                </div>
+                <div class="status verde"></div>
+              </div>
+              <div class="lineVertical"></div>
+              <div class="dadoCapturado">
+                <div class="dado">
+                  <p class="num">76%</p>
+                  <p class="peca">SWAP</p>
+                </div>
+                <div class="status vermelho"></div>
+              </div>
+              <div class="lineVertical"></div>
+              <div class="dadoCapturado">
+                <div class="dado">
+                  <p class="num">76%</p>
+                  <p class="peca">DISCO</p>
+                </div>
+                <div class="status amarelo"></div>
+              </div>
             </div>
-
+            <div class="kpi">
+              <div class="indicacao tudoOk">
+                <div class="status verde"></div>
+                <p>Tudo ok!</p>
+              </div>
+              <div class="indicacao perigo">
+                <div class="status vermelho"></div>
+                <p>Alerta</p>
+              </div>
+              <div class="indicacao alerta">
+                <div class="status amarelo"></div>
+                <p>Perigo</p>
+              </div>
+            </div>
           </div>
+          
         </div>
       </div>
       </div>
 
     </aside>
   </main>
-  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
   <script>
-
-    var swiper = new Swiper(".mySwiper", {
-      pagination: {
-        el: ".swiper-pagination",
-        type: "progressbar",
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-
-    });
-
     const data = {
       labels: ['FEV 15',
         'FEV 16',
