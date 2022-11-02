@@ -142,16 +142,74 @@ aside {
   box-shadow: #00063317 0px 4px 4px 0px, #00063317 0px 2px 16px 0px;
 }
 
-.swiper-slide {
-  height: 10px;
-  width: 10px;
-  border-radius: 14px;
-  background-color: #fff;
-  color: #000;
+.contentMonitor{
   display: flex;
+  align-items: center;
+  width: 95%;
+  margin: auto;
+}
+
+.infoMaquina{
+
+}
+
+.tituloNomeMaquina{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+.tituloNomeMaquina img{
+  width: 30%;
+}
+
+.boxDetalhes{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   flex-direction: column;
+  width:100%;
+  font-size: 12px;
+}
+
+.colunas{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width:100%;
+
+}
+
+.coluna1{
+  text-align: start;
+}
+
+.coluna2{
+  text-align: end;
+}
+
+.opcaoMaquina{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 18px;
+}
+
+.opcaoNumMaquina{
+  display: flex;
   justify-content: space-around;
-  padding: 5px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.opcaoNumSetor{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .graphMonitor {
@@ -188,6 +246,90 @@ aside {
   box-shadow: #00063317 0px 4px 4px 0px, #00063317 0px 2px 16px 0px;
 
 }
+
+/*NOVO ESTILO INFO MONITOR - NÃO APAGAR*/
+
+.contentInfoMonitor{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.informacaoHardware{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.lineVertical{
+  border-radius: 20px;
+    border-right: 0.5px solid #b4bec9;
+    opacity: 40%;
+    height: 25%;
+}
+
+.dadoCapturado{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+}
+
+.dado{
+  text-align: center;
+  margin-right: 10px;
+}
+
+.num{
+  font-size:24px;
+  margin-bottom: 0;
+  font-weight: bold;
+  text-align: center;
+}
+
+.peca{
+  font-size:11px;
+  text-align: center;
+}
+.status{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: flex;
+  margin-right: 5px;
+}
+
+.status.verde{
+  background-color: #40C84E ;
+}
+
+.status.amarelo{
+  background-color: #C8A240;
+}
+
+.status.vermelho{
+  background-color: #C84040;
+}
+
+.kpi{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height:17%;
+  align-items: center;
+}
+
+.indicacao{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left:4%;
+  margin-top: 3%;
+  font-size: 13px;
+  
+}
+
+/*---------------------------------------*/ 
 
 .porMetric{
   display: flex;
@@ -246,8 +388,7 @@ aside {
 
 .line{
   border-bottom: 0.7px solid #b4bec9;
-  width: 95%;
-  margin-left:auto;
+  width: 100%;
 }
 
 .infoMonitorDown .infoMonitorConfigAll .configMachine2 {
