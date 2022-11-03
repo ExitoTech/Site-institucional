@@ -118,7 +118,7 @@ form {
 }
 
 .cardCadastro label {
-    margin-top: 3rem;
+    margin-top: 1.5rem;
 }
 
 .cardCadastro input {
@@ -133,7 +133,7 @@ form {
 }
 
 #selectPorte {
-    margin-top: 3.7rem;
+    margin-top: 2.1rem;
 }
 
 .spanAviso {
@@ -182,7 +182,7 @@ form {
     cursor: pointer;
     transition: .3s;
     font-family: 'Roboto Mono';
-    margin-top: 1.5rem;
+    margin-top: 3.5rem;
     margin-bottom: 1rem;
 }
 
@@ -205,8 +205,6 @@ form {
     margin-bottom: 1rem;
     margin-left: 1.5rem;
 }
-
-
 
 .acessoLogin {
     margin-top: 1rem;
@@ -307,6 +305,7 @@ select {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    margin-top: 2.5rem;
 }
 
 .cadastroEsq {

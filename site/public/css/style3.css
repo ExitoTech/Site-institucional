@@ -424,16 +424,13 @@ circle:nth-child(2){
 #confirmacaoContentNewUser{
     background-color: #fff;
     color: #000;
-
     width: 40vw;
-    height: 45vh;
+    height: 60vh;
     border-radius: 14px;
-
     position: fixed;
     top: 30%;
     left: 30%;
     z-index: 9999;
-
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -483,22 +480,34 @@ circle:nth-child(2){
 
 .division1{
     width: 45%;
+    display: flex;
+    flex-direction: column;
 }
 
 .division2{
     width: 45%;
+    display: flex;
+    flex-direction: column;
 }
 .inputsNewUser input{
     border: 1px solid #3627d9;
     margin: 5px;
     width:97.5%;
     height: 30px;
-    text-align: center;
+    padding: 5px;
     outline: none;
+    border-radius: 3px;
 }
 
+.inputsNewUser label {
+    margin-left: 6px;
+}
 
-
+.spanAviso {
+    font-size: .89rem;
+    margin-left: 6px;
+    margin-bottom: 15px;
+}
 
 #confirmacaoNewMachine{
     display: none;

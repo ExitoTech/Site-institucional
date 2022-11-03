@@ -7,8 +7,6 @@ function sairDivA(){
     textoLink.innerHTML= 'ExitoTech'
 }
 
-var porte = ""
-
 function validarNomeEmpresa() {
     var nomeEmpresa = inputNomeDaEmpresa.value;
 
@@ -66,30 +64,21 @@ function verificarCnpj() {
 }
 
 function validarPorte(){
-    var porteStyle = document.getElementById('selectPorte');
     var porteEmpresa = document.getElementById('selectPorte').value;
 
     if(porteEmpresa == 1 || porteEmpresa == 2 || porteEmpresa == 3){
         spanPorte.style.color = "#80b918"
         spanPorte.innerHTML = "Ok"
     }
-
    if(porteEmpresa == 1){
-
     porte = "Grande Porte"
    }
    else if(porteEmpresa == 2){
-
     porte =  "Médio Porte"
-
    }
    else{
-
     porte = "Pequeno Porte"
-     
    }
-    
-
 }
 
 

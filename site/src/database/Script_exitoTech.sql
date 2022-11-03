@@ -69,6 +69,7 @@ CREATE TABLE capturas (
   create table atendimentoMaquina(
   idAtendimento int primary key auto_increment,
   tituloIncidente varchar (30),
+  nomeAutor varchar(100),
   horaAtendimento datetime,
   fk_maquina int,
   foreign key(fk_maquina) references maquina(idMaquina),
@@ -77,6 +78,7 @@ CREATE TABLE capturas (
   fk_setor int,
   foreign key(fk_setor) references setor(idSetor)
   );
+  
   
   
 INSERT INTO empresa (nomeEmpresa,cnpj,porteempresa,logradouro,uf,cep) VALUES ('Amazon','123.123.122-12','médio','Rua Basilio no escuro','SP','04822920');
