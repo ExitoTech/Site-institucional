@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - ExitoTech</title>
-    <link rel="stylesheet" href="css/style3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="img/logo_transparent.png" type="image/x-icon">
     <script src="js/signIn.js"></script>
@@ -14,9 +13,12 @@
     <script src="js/download.js"></script>
     <script src="js/abrirCadastroFuncionario.js"></script>
     <script src="js/newMachine.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="css/style3.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 </head>
 
-<body onload="validarSessao(), exit()">
+<body>
     <main>
         <div class="navBar">
             <div class="logoNavBar">
@@ -64,27 +66,73 @@
             </div>
             <div class="contentAside">
                 <div class="xpto">
-                    <div class="test01">
-                        <div>
-                            <div class="opcoesMenu">
+                    <div class="options">
+                        <!-- Flickity HTML init -->
+                        <div class="carousel" data-flickity='{ "groupCells": true, "pageDots": false, "wrapAround": true }'>
+                            
+                            
+                            
+                            <div class="carousel-cell">
                                 <div class="menuContent">
                                     <p onclick="newMachineUser()" class="tituloBotao">+ Nova Maquina</p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="ngcBranco">
-                            <div class="imagensDivItem">
-                                <h2>Avisos</h2>
-                                <img src="img/happy.png" alt="">
-                                <p class="informacao">Sem avisos por enquanto!</p>
+
+
+
+                            <div class="carousel-cell">
+                                
+                                <div class="menuContent">
+                                    <p onclick="abrirCadFunc()" class="tituloBotao">+ Adicionar Usuario</p>
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="carousel-cell"> 
+                                
+                                <div class="menuContent" onclick="abrirDownload()">
+                                    <a href="../src/jar/exitoTech-jar-1.0-SNAPSHOT-jar-with-dependencies.jar"
+                                        download></a>
+                                    <img src="./img/icons/download.png" id="iconDownload">
+
+                                    <div id="progressoDownload">
+                                        <svg>
+                                            <circle cx="4" cy="4" r="5"></circle>
+                                            <circle cx="4" cy="4" r="5" id="circleProgress"></circle>
+                                        </svg>
+                                    </div>
+
+                                    <p class="tituloBotao">Download</p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="carousel-cell">
+                                <div class="menuContent">
+                                    <p onclick="" class="tituloBotao">Pesquisar Máquina</p>
+                                </div>
+                                
+                            </div>
+                            <div class="carousel-cell">
+                                <div class="menuContent">
+                                    <p onclick="" class="tituloBotao">Editar funcionário</p>
+                                </div>
                             </div>
                         </div>
+
+
+
                     </div>
-                    
+
+                  
 
 
 
 
+                    <!--Confirmar nova máquina-->
                     <div id="confirmacaoNewMachine">
                         <div id="confirmacaoContentNewMachine">
                             <div class="tituloConfirmacaoNewMachine">
@@ -94,9 +142,11 @@
                                 <p>Autenticação obrigatória para realizar cadastar uma nova máquina</p>
                             </div>
                             <div class="confirmacaoSenhaNewMachine">
-                                <input style="border: 1px solid #3627D9;" type="password" name="senha" placeholder="Senha"
-                                    id="inputConfirmacao">
-                                    <input id="inputSetor" style="border: 1px solid #3627D9; margin-left: 30px;text-align: center;" type="number" min="1" max="8"  placeholder="Setor">
+                                <input style="border: 1px solid #3627D9;" type="password" name="senha"
+                                    placeholder="Senha" id="inputConfirmacao">
+                                <input id="inputSetor"
+                                    style="border: 1px solid #3627D9; margin-left: 30px;text-align: center;"
+                                    type="number" min="1" max="8" placeholder="Setor">
                             </div>
 
                             <div class="confirmacaoBotaoNewMachine">
@@ -106,109 +156,101 @@
                         </div>
                     </div>
 
+                    <!--Confirmar adicionar usuario-->
+                    <div id="confirmacaoNewUser">
+                        <div id="confirmacaoContentNewUser">
+                            <div class="tituloConfirmacaoNewUser">
+                                <p>Cadastro Usuario</p>
+                            </div>
 
-
-
-
-
-
-                    <div class="test02">
-                        <div style="flex-direction: row;">
-                            <div class="boxMenu">
-                                <div class="opcoesMenu direito">
-                                    <div class="menuContent">
-                                        <p onclick="abrirCadFunc()" class="tituloBotao">+ Adicionar Usuario</p>
+                            <div class="confirmacaoSenhaNewUser">
+                                <div class="inputsNewUser">
+                                    <div class="division1">
+                                        <input type="text" placeholder="NOME" id="nomeCadastro">
+                                        <!--input type="text" placeholder="CARGO"-->
+                                        <input type="text" placeholder="CPF" id="cpfCadastro"
+                                            maxlength="11">
+                                        <input type="text" placeholder="E-MAIL" id="emailCadastro">
+                                    </div>
+                                    <div class="division2">
+                                        <input type="password" placeholder="SENHA" id="senhaCadastro">
+                                        <input type="text" placeholder="TELEFONE" id="telefoneCadastro"
+                                            maxlength="11">
+                                        <!-- input type="text" placeholder="RG"-->
+                                        <input type="text" placeholder="CEP" id="cepCadastro">
                                     </div>
                                 </div>
-                                <div id="confirmacaoNewUser">
-                                    <div id="confirmacaoContentNewUser">
-                                        <div class="tituloConfirmacaoNewUser">
-                                            <p>Cadastro Usuario</p>
-                                        </div>
+                            </div>
 
-                                        <div class="confirmacaoSenhaNewUser">
-                                            <div class="inputsNewUser">
-                                                <div class="division1">
-                                                    <input type="text" placeholder="NOME" id="nomeCadastro">
-                                                    <!--input type="text" placeholder="CARGO"-->
-                                                    <input type="text" placeholder="CPF" id="cpfCadastro" maxlength="11">
-                                                    <input type="text" placeholder="E-MAIL" id="emailCadastro">
-                                                </div>
-                                                <div class="division2">
-                                                    <input type="password" placeholder="SENHA" id="senhaCadastro">
-                                                    <input type="text" placeholder="TELEFONE" id="telefoneCadastro" maxlength="11">
-                                                    <!-- input type="text" placeholder="RG"-->
-                                                    <input type="text" placeholder="CEP" id="cepCadastro">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="confirmacaoBotaoNewUser">
-                                            <button onclick="enviarCadFunc()">Confirmar</button>
-                                            <button onclick="fecharCadFunc()">Cancelar</button>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="opcoesMenu direito">
-                                    <div class="menuContent" onclick="abrirDownload()">
-                                        <a href="../src/jar/exitoTech-jar-1.0-SNAPSHOT-jar-with-dependencies.jar" download></a>
-                                        <img src="./img/icons/download.png" id="iconDownload">
-
-                                        <div id="progressoDownload">
-                                            <svg>
-                                                <circle cx="4" cy="4" r="5"></circle>
-                                                <circle cx="4" cy="4" r="5" id="circleProgress"></circle>
-                                            </svg>
-                                        </div>
-
-                                        <p class="tituloBotao">Download</p>
-                                    </div>
-                                    <div id="confirmacaoDownload">
-                                        <div id="confirmacaoContent">
-                                            <div class="tituloConfirmacao">
-                                                <p>Autenticação necessária</p>
-                                            </div>
-                                            <div class="infoConfirmacao">
-                                                <p>Autenticação obrigatória para realizar download do JAR</p>
-                                            </div>
-                                            <div class="confirmacaoSenha">
-                                                <input type="password" name="senha" placeholder="Senha"
-                                                    id="inputSenhaBaixar">
-                                            </div>
-
-                                            <div class="confirmacaoBotao">
-                                                <button onclick="iniciarDownload()">Confirmar</button>
-                                                <button onclick="fecharDownload()">Cancelar</button>
-                                            </div>
-                                            <a id="baixar" href="jar/exitoTech-jar-1.0-SNAPSHOT-jar-with-dependencies.jar" style="visibility: hidden;"
-                                                onclick="this.click()" download="exitoTech.jar" type="application/java-archive">Baixar TXT</a>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="confirmacaoBotaoNewUser">
+                                <button onclick="enviarCadFunc()">Confirmar</button>
+                                <button onclick="fecharCadFunc()">Cancelar</button>
                             </div>
 
                         </div>
-                        <div class="ngcBranco2">
-                            <div class="div01">
-                                <p class="fontLastActivity">Últimas atividades</p>
-                                <p><i class="fa fa-chevron-down" aria-hidden="true"></i></p>
+                    </div>
+
+                    <!--Confirmar download-->
+                    <div id="confirmacaoDownload">
+                        <div id="confirmacaoContent">
+                            <div class="tituloConfirmacao">
+                                <p>Autenticação necessária</p>
                             </div>
-                            <div class="div01 info">
-                                <i class="fa fa-desktop" aria-hidden="true"></i>
-                                <p class="informacao">Uma máquina acaba de se conectar</p>
-                                <p>12:34 PM</p>
-                                <p></p>
+                            <div class="infoConfirmacao">
+                                <p>Autenticação obrigatória para realizar download do JAR</p>
                             </div>
-                            <div class="line"></div>
-                            <div class="div01 info">
-                                <i class="fa fa-desktop" aria-hidden="true"></i>
-                                <p class="informacao">Uma máquina acaba de se conectar</p>
-                                <p>12:34 PM</p>
-                                <p></p>
+                            <div class="confirmacaoSenha">
+                                <input type="password" name="senha" placeholder="Senha"
+                                    id="inputSenhaBaixar">
                             </div>
-                            <div class="line"></div>
+
+                            <div class="confirmacaoBotao">
+                                <button onclick="iniciarDownload()">Confirmar</button>
+                                <button onclick="fecharDownload()">Cancelar</button>
+                            </div>
+                            <a id="baixar"
+                                href="jar/exitoTech-jar-1.0-SNAPSHOT-jar-with-dependencies.jar"
+                                style="visibility: hidden;" onclick="this.click()"
+                                download="exitoTech.jar" type="application/java-archive">Baixar TXT</a>
                         </div>
+                    </div>
+
+
+
+
+
+
+                    
+                        <div class="boxBranca">
+                            <div class="ngcBranco">
+                                <div class="imagensDivItem">
+                                    <h2>Avisos</h2>
+                                    <img src="img/happy.png" alt="">
+                                    <p class="informacao">Sem avisos por enquanto!</p>
+                                </div>
+                            </div>
+                            <div class="ngcBranco2">
+                                <div class="div01">
+                                    <p class="fontLastActivity">Últimas atividades</p>
+                                    <p><i class="fa fa-chevron-down" aria-hidden="true"></i></p>
+                                </div>
+                                <div class="div01 info">
+                                    <i class="fa fa-desktop" aria-hidden="true"></i>
+                                    <p class="informacao">Uma máquina acaba de se conectar</p>
+                                    <p>12:34 PM</p>
+                                    <p></p>
+                                </div>
+                                <div class="line"></div>
+                                <div class="div01 info">
+                                    <i class="fa fa-desktop" aria-hidden="true"></i>
+                                    <p class="informacao">Uma máquina acaba de se conectar</p>
+                                    <p>12:34 PM</p>
+                                    <p></p>
+                                </div>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>

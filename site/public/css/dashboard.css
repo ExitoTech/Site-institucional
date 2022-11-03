@@ -149,10 +149,6 @@ aside {
   margin: auto;
 }
 
-.infoMaquina{
-
-}
-
 .tituloNomeMaquina{
   display: flex;
   justify-content: space-between;

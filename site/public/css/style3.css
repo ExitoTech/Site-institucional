@@ -127,16 +127,17 @@ aside {
     width: 90%;
     height: 80%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     margin: auto;
 }
 
 .xpto{
     width:100%;
+    height: 90%;
     display: flex;
     justify-content: space-between;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .test01{
@@ -311,9 +312,15 @@ circle:nth-child(2){
     cursor: pointer;
 }
 
+.boxBranca{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .ngcBranco{
-    width: 100%;
-    height: 60%;
+    width: 30%;
+    height: 100%;
     background-color: #fff;
     border-radius: 14px;
     box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
@@ -323,8 +330,8 @@ circle:nth-child(2){
 }
 .ngcBranco2{
     flex-direction: column;
-    width: 100%;
-    height: 60%;
+    width: 60%;
+    height: 100%;
     background-color: #fff;
     border-radius: 14px;
     box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
@@ -554,3 +561,65 @@ circle:nth-child(2){
     margin-top: -15px;
 }
 
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: sans-serif;
+  }
+  
+
+  /*SLide buttons*/
+
+/* big buttons, no circle */
+
+
+.flickity-prev-next-button {
+  width: 25px;
+  height: 25px;
+  background:transparent;
+}
+/* arrow color */
+.flickity-prev-next-button .arrow {
+  fill: #3627d9;
+  
+}
+.flickity-prev-next-button.no-svg {
+  color: white;
+  
+}
+.flickity-prev-next-button:hover {
+  color: rgb(255, 255, 255);
+}
+/* hide disabled button */
+.flickity-prev-next-button:disabled {
+  display: none;
+}
+
+  .carousel {
+    background: #c1d3fe;    
+  }
+  
+  .carousel-cell {
+    width: 30%;
+    height: 13vh;
+    margin-right: 130px;
+    background: #000633;
+    border-radius: 10px;
+    display: flex;
+    color: white;
+    justify-content: center;
+  }
+  
+  /* cell number */
+  .carousel-cell:before {
+    display: block;
+    text-align: center;
+    font-size: 34px;
+    
+  }
+
+  
+/**/
