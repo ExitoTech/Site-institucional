@@ -34,7 +34,7 @@ function sendNewMachine(){
 }
 
 function getFK_maquina(){
-    fetch("/usuarios/getLastMaquinaId", {
+    fetch("/setorMaquina/getLastMaquinaId", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -68,7 +68,7 @@ function getFK_maquina(){
 
 }
 function getFkSetor(setor,fk_empresa){
-    fetch("/usuarios/getFkSetor", {
+    fetch("/setorMaquina/getFkSetor", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -105,7 +105,7 @@ function getFkSetor(setor,fk_empresa){
 }
 
 function getSetor(setor,fk_Empresa){
-    fetch("/usuarios/getSetor", {
+    fetch("/setorMaquina/getSetor", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -150,7 +150,7 @@ function getSetor(setor,fk_Empresa){
 }
 
 function fetchMaquina(setor){
-    fetch("/usuarios/cadastrarMaquina", {
+    fetch("/setorMaquina/cadastrarMaquina", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -176,7 +176,7 @@ function fetchMaquina(setor){
 }
 
 function fetchSetor(setor,fk_empresa){
-    fetch("/usuarios/cadastrarSetor", {
+    fetch("/setorMaquina/cadastrarSetor", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

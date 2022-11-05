@@ -11,14 +11,4 @@ router.get("/tempo-real/:idMaquina", function (req, res) {
     medidaController.buscarMedidasEmTempoReal(req, res);
 })
 
-router.post("/getMachinePerSector", function (req, res) {
-    medidaController.getMachinePerSector(req, res);
-})
-
-router.post("/getHardInfo", function (req, res) {
-    medidaController.getHardInfo(req, res);
-})
-
-
-
 module.exports = router;

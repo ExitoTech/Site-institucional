@@ -1,5 +1,5 @@
 function getAllSetors(){
-    fetch("/usuarios/getAllSetor", {
+    fetch("/setorMaquina/getAllSetor", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -18,7 +18,7 @@ function getAllSetors(){
 
                     for(i = 0;i< json.length;i++){
 
-                        document.getElementsByClassName('selectSetor')[0].innerHTML += "<option value='" + json[i].nomeSetor.split('setor')[1] + "'" + "class='tituloInfo Setor' selected>" + json[i].nomeSetor + "</option>"
+                        document.getElementsByClassName('selectSetor')[1].innerHTML += "<option value='" + json[i].nomeSetor.split('setor')[1] + "'" + "class='tituloInfo Setor' selected>" + json[i].nomeSetor.split('setor')[1] + "</option>"
 
                     }
                     getMachinePerSector()
@@ -40,30 +40,30 @@ function getAllSetors(){
 
 
 function getMachinePerSector(){
-    fetch("/medidas/getMachinePerSector", {
+    fetch("/setorMaquina/getMachinePerSector", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
             fkEmpresaServer: sessionStorage.FK_EMPRESA,
-            setorServer: document.getElementsByClassName('selectSetor')[0].value
+            setorServer: document.getElementsByClassName('selectSetor')[1].value
         }),
     })
         .then(function (resposta) {
             if (resposta.ok) {
 
-                document.getElementsByClassName('selectSetor')[1].innerHTML = ""
+                document.getElementsByClassName('selectSetor')[0].innerHTML = ""
 
                 resposta.json().then((json) => {
                     
                     console.log(json);
                     console.log(JSON.stringify(json) + 'exibindo json stringfy');
                     for(i = 0;i< json.length;i++){
-                        document.getElementsByClassName('selectSetor')[1].innerHTML += "<option value='" + json[i].idMaquina  + "'" + "class='tituloInfo Setor' selected>id " + json[i].idMaquina + "</option>"
+                        document.getElementsByClassName('selectSetor')[0].innerHTML += "<option value='" + json[i].idMaquina  + "'" + "class='tituloInfo Setor' selected>" + json[i].idMaquina + "</option>"
                     }
                     capturaDeHardware()
-                    capturaDeDados(document.getElementsByClassName('selectSetor')[1].value)
+                    capturaDeDados(document.getElementsByClassName('selectSetor')[0].value)
                 });
                 
             } else {
@@ -92,7 +92,7 @@ function capturaDeDados(idMaquina){
                 console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
                 resposta.reverse();
 
-                plotarGrafico(resposta, document.getElementsByClassName('selectSetor')[1].value);
+                plotarGrafico(resposta, document.getElementsByClassName('selectSetor')[0].value);
             });
         } else {
             console.error('Nenhum dado encontrado ou erro na API');
@@ -104,13 +104,13 @@ function capturaDeDados(idMaquina){
 }
 
 function capturaDeHardware(){
-    fetch("/medidas/getHardInfo", {
+    fetch("/setorMaquina/getHardInfo", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            maquinaServer: document.getElementsByClassName('selectSetor')[1].value
+            maquinaServer: document.getElementsByClassName('selectSetor')[0].value
         }),
     })
         .then(function (resposta) {
