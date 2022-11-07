@@ -1,6 +1,7 @@
 CREATE DATABASE exitoTech;
 USE exitoTech;
 
+
 CREATE TABLE empresa(
   idEmpresa INT NOT NULL auto_increment,
   nomeEmpresa VARCHAR(55) NULL,
@@ -38,12 +39,16 @@ CREATE TABLE setor (
   FOREIGN KEY (fk_empresa)
   REFERENCES empresa (idEmpresa)
   )auto_increment = 10000;
-
+  
+  
+  
+  
 
 CREATE TABLE maquina (
   idMaquina INT auto_increment,
   nomeMaquina VARCHAR(30),
   sistemaOperacional VARCHAR(30),
+  statusMaquina varchar(15),
   arquiteturaSO VARCHAR(30),
   fk_setor INT null,
   processador VARCHAR(50),
@@ -53,6 +58,8 @@ CREATE TABLE maquina (
   FOREIGN KEY (fk_setor)
   REFERENCES setor (idSetor)
   )auto_increment = 20000;
+  
+  select * from maquina where fk_setor = null;
 
 
 CREATE TABLE capturas (
@@ -88,5 +95,6 @@ INSERT INTO maquina(nomeMaquina,fk_setor,sistemaOperacional,arquiteturaSO,proces
 select * from empresa;
 select * from funcionario;
 select * from capturas;
-
+select * from maquina;
+select * from setor;
 
