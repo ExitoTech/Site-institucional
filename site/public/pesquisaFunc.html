@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="img/logo_transparent.png" type="image/x-icon">
     <link rel="stylesheet" href="css/pesquisaFunc.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -53,20 +54,50 @@
                 <p>Exit</p>
             </div>
         </div>
-        <div class="searchMain">
-            <div class="searchDiv">
-                <input type="text"><button><i style="color: #f5f5f5;" class="fa fa-search" aria-hidden="true"></i></button>
+        <div class="backTitle">
+            <div class="voltar">
+                <img src="./img/icons/leftArrow.png" style="height: 15px; margin-right: 2%" alt="">
+                <div class="titulo">
+                    <p>Buscar Máquina</p>
+                </div>
             </div>
-           <center>
-            <div class="mainFuncionarios">
-                <div class="funcionarios"></div>
-                <div class="funcionarios"></div>
-
+            <div class="mainSearchFunc"> 
+                <div class="subMainSearchFunc">
+                    <div class="divInputSearch">
+                        <div class="submit-line">
+                            <input type="text" />
+                            <button class="submit-lente" type="submit">
+                              <i class="fa fa-search"></i>
+                            </button>
+                          </div>
+                    </div>
+                    
+                    <div class="divMainSearch">
+                        <div class="divInfoInputs">
+                            <div id="divInfoInpus01">
+                               <span>Sistema operacional:<span class="infoSpan">Ubuntu</span></span>
+                               <span>Número da maquina:<span class="infoSpan">0112</span></span>
+                               <span>CPF vinculado:<span class="infoSpan">545-078-865-18</span></span>
+                            </div>
+                            <div id="divInfoInpus02">
+                                <span>localização/CEP:<span class="infoSpan">08410-270</span></span>
+                                <span>Setor:<span class="infoSpan">8</span></span>
+                                <span>Horas Trabalhadas neste mês:<span class="infoSpan">4</span></span>
+                            </div>
+                        </div>
+                        <div class="infoSoMachine">
+                            <div>
+                                <img src="img/ubuntu-logo.png" alt="">
+                            </div>
+                            <span>Funcionario Atual: </span>
+                            <p>Vinicius A Nunes</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-           </center>
         </div>
-        
     </main>
+
 </body>
 
 </html>

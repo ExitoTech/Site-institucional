@@ -4,11 +4,13 @@
     box-sizing: border-box;
     list-style: none;
     border: none;
+    font-family: 'Roboto mono';
 }
 
 body {
     margin: 0;
     padding: 0;
+    background-color: #c1d3fe;
 }
 
 /* Código novo navbar*/
@@ -95,56 +97,198 @@ a {
 }
 
 .opcaoNavBar.agora {
-    background-color: rgba(255, 255, 255, 0.469);
+    background-color: #ffffff78;
     height: 100%;
     width: 100%;
     border-radius: 4px;
 }
 
-.searchMain {
-    width: 100vw;
-    height: 100vh;
+.titulo{
+    font-family: 'Roboto Mono';
+    font-size: 32px;
+    font-weight:500;
+    color: #000633;
+    margin: 0;
 }
 
-.searchMain .searchDiv{
+.backTitle{
     width: 100%;
     height: 80px;
+}
+.titulo{
+    font-family: 'Roboto Mono';
+    font-size: 32px;
+    font-weight:500;
+    color: #000633;
+    margin: 0;
+}
+
+.voltar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 5%;
+}
+
+.mainSearchFunc{
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    width: 90%;
+    height: 80vh;
+    background-color: #c1d3fe;
+
+}
+
+.subMainSearchFunc{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.divInputSearch{
+    width: 100%;
+    height: 9.5vh;
+}
+.divInputSearch i{
+    font-size: 25px;
+}
+
+.divInputSearch input{
+    width: 100%;
+    height: 70px;
+    border-radius: 25px;
+    box-shadow: 0 3px 6px #00000029, 0 1px 2px #0000003b;
+    font-weight: 400;
+}
+
+.divInfoFunc{
+    width: 100%;
+    height: 70vh;
+}
+
+.submit-lente {
+    position:absolute;
+    top:0; right:0;
+    z-index:10;
+    border:none;
+    background:transparent;
+    outline:none;
+    height: 100%;
+    width: 5%;
+  }
+  
+  .submit-line {
+    position: relative;
+    width: 100%;
+  }
+  
+  .submit-line input {
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: center;
+  }
+
+  .divMainSearch{
+    display: flex;
+    width: 79vw;
+    height: 70vh;
+    border-radius: 35px;
+    background-color: #000633;
+    margin-top: 15px;
+    box-shadow: 0 3px 6px #00000029, 0 1px 2px #0000003b;
+    background-color: #fff;
+    overflow: hidden;
+  }
+
+  .divInfoInputs{
+    display: flex;
+    width: 85%;
+    height: 100%;
+  }
+
+  .divInfoInputs #divInfoInpus01{
     display: flex;
     align-items: center;
     justify-content: center;
-}
+    flex-direction: column;
+    width: 50%;
+  }
 
-.searchMain input{
-    width: 75%;
-    height: 30px;
-    margin-right: 15px;
-    border-radius: 10px;
-    background-color: #d2d8df;
+  .divInfoInputs #divInfoInpus01 span{
+    margin: 40px;
+    width: 80%;
+    border: 2px solid #B4BEC9;
+    border-left: 1px solid transparent;
+    border-top: 1px solid transparent;
+    border-right: 1px solid transparent;
     outline: none;
-    text-align: center;
-}
+  }
+  .divInfoInputs #divInfoInpus01 span .infoSpan{
+    margin-left: 5px;
+    font-weight: bolder;
+  }
 
-.searchMain button{
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
+  .divInfoInputs #divInfoInpus02{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .divInfoInputs #divInfoInpus02 span{
+    margin: 40px;
+    width: 75%;
+    border: 2px solid #B4BEC9;
+    border-left: 1px solid transparent;
+    border-top: 1px solid transparent;
+    border-right: 1px solid transparent;
+    outline: none;
+  }
+
+  .divInfoInputs #divInfoInpus02 span .infoSpan{
+    margin-left: 5px;
+    font-weight: bolder;
+  }
+
+  .infoSoMachine{
+    float: right;
+    width: 25%;
+    height: 100%;
     background-color: #000633;
-    cursor: pointer;
-}
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
 
-.mainFuncionarios{
-    height: 550px;
-    width: 1030px;
-    overflow-y: scroll;
+  .infoSoMachine div{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 50px;
+    background-color: #7d819e;
     justify-content: center;
     align-items: center;
-    margin: auto;
-}
+    display: flex;
+  }
 
-.funcionarios{
-    background-color: #000633;
-    margin-top: 30px;
-    width: 980px;
-    height: 300px;
-    border-radius: 5px;
-}
+  .infoSoMachine div img{
+    width: 95px;
+    height: 95px;  
+    border-radius: 50%;
+  }
+
+  .infoSoMachine span{
+    color: #fff;
+  }
+
+  .infoSoMachine p{
+    color: #fff;
+    font-weight: bolder;
+  }
+  

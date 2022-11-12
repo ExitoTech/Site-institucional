@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +16,6 @@
     <link rel="stylesheet" href="css/style3.css">
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 </head>
-
 <body>
     <main>
         <div class="navBar">
@@ -68,63 +66,45 @@
                 <div class="xpto">
                     <div class="options">
                         <!-- Flickity HTML init -->
-                        <div class="carousel" data-flickity='{ "groupCells": true, "pageDots": false, "wrapAround": true }'>
-                            
-                            
-                            
+                        <div class="carousel" data-flickity='{ "groupCells": true, "pageDots": false, "wrapAround": true }'>                                                                                  
                             <div class="carousel-cell">
                                 <div class="menuContent">
                                     <p onclick="newMachineUser()" class="tituloBotao">+ Nova Maquina</p>
                                 </div>
                             </div>
-
-
-
                             <div class="carousel-cell">
                                 
                                 <div class="menuContent">
                                     <p onclick="abrirCadFunc()" class="tituloBotao">+ Adicionar Usuario</p>
                                 </div>
-
                             </div>
-
-
-
-                            <div class="carousel-cell"> 
-                                
+                            <div class="carousel-cell">                               
                                 <div class="menuContent" onclick="abrirDownload()">
                                     <a href="../src/jar/exitoTech-jar-1.0-SNAPSHOT-jar-with-dependencies.jar"
                                         download></a>
                                     <img src="./img/icons/download.png" id="iconDownload">
-
                                     <div id="progressoDownload">
                                         <svg>
                                             <circle cx="4" cy="4" r="5"></circle>
                                             <circle cx="4" cy="4" r="5" id="circleProgress"></circle>
                                         </svg>
                                     </div>
-
                                     <p class="tituloBotao">Download</p>
                                 </div>
-
                             </div>
-
-
                             <div class="carousel-cell">
                                 <div class="menuContent">
                                     <a href="pesquisaFunc.html">
                                         <p onclick="" class="tituloBotao">Pesquisar Máquina</p>
                                     </a>
-                                </div>
-                                
+                                </div>                            
                             </div>
                             <div class="carousel-cell">
                                 <div class="menuContent">
                                     <a href="problemasCorrigidos.html">
                                         <p onclick="" class="tituloBotao">+ Nova Ocorrencia</p>
                                     </a>
-                                </div>
-                                
+                                </div>                                
                             </div>
                             <div class="carousel-cell">
                                 <div class="menuContent">
@@ -132,16 +112,7 @@
                                 </div>
                             </div>
                         </div>
-
-
-
-                    </div>
-
-                  
-
-
-
-
+                    </div>            
                     <!--Confirmar nova máquina-->
                     <div id="confirmacaoNewMachine">
                         <div id="confirmacaoContentNewMachine">
@@ -158,21 +129,18 @@
                                     style="border: 1px solid #3627D9; margin-left: 30px;text-align: center;"
                                     type="number" min="1" max="8" placeholder="Setor">
                             </div>
-
                             <div class="confirmacaoBotaoNewMachine">
                                 <button onclick="sendNewMachine()">Confirmar</button>
                                 <button onclick="fecharNewMachine()">Cancelar</button>
                             </div>
                         </div>
                     </div>
-
                     <!--Confirmar adicionar usuario-->
                     <div id="confirmacaoNewUser">
                         <div id="confirmacaoContentNewUser">
                             <div class="tituloConfirmacaoNewUser">
                                 <p>Cadastro Usuario</p>
                             </div>
-
                             <div class="confirmacaoSenhaNewUser">
                                 <div class="inputsNewUser">
                                     <div class="division1">
@@ -191,15 +159,12 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="confirmacaoBotaoNewUser">
                                 <button onclick="enviarCadFunc()">Confirmar</button>
                                 <button onclick="fecharCadFunc()">Cancelar</button>
                             </div>
-
                         </div>
                     </div>
-
                     <!--Confirmar download-->
                     <div id="confirmacaoDownload">
                         <div id="confirmacaoContent">
@@ -213,7 +178,6 @@
                                 <input type="password" name="senha" placeholder="Senha"
                                     id="inputSenhaBaixar">
                             </div>
-
                             <div class="confirmacaoBotao">
                                 <button onclick="iniciarDownload()">Confirmar</button>
                                 <button onclick="fecharDownload()">Cancelar</button>
@@ -223,14 +187,7 @@
                                 style="visibility: hidden;" onclick="this.click()"
                                 download="exitoTech.jar" type="application/java-archive">Baixar TXT</a>
                         </div>
-                    </div>
-
-
-
-
-
-
-                    
+                    </div>                    
                         <div class="boxBranca">
                             <div class="ngcBranco">
                                 <div class="imagensDivItem">
@@ -260,14 +217,11 @@
                                 <div class="line"></div>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </aside>
     </main>
 </body>
-
 </html>
 <script src="js/mascNewFunc.js"></script>
