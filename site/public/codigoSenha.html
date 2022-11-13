@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Senha - ExitoTech</title>
+    <link rel="stylesheet" href="css/recuperarSenha.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="content">
+        <div class="voltar">
+            <img src="./img/icons/leftArrow.png" style="height: 15px; margin-right: 2%" alt="">
+            <div class="titulo">
+                <p>Código de recuperação</p>
+            </div>
+        </div>
+        <div class="form">
+            <p>
+                Digite o código enviado no seu e-mail!
+            </p>
+            <input type="text" id="inputCodigo"><br>
+            <button type="button" onclick="verificarCodigo()">Proximo</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function verificarCodigo() {
+    fetch("/usuarios/verificarCodigo", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            codigoServer: document.getElementById('inputCodigo').value,
+        }),
+    })
+        .then(function (resposta) {
+            if (resposta.ok) {
+                alert('Código verificado! Você já será redirecionado para alterar sua senha!')
+                window.location.href="http://localhost:3333/novaSenha.html"
+                resposta.json().then((json) => {
+                    console.log(json);
+                    console.log(JSON.stringify(json) + 'exibindo json stringfy');
+                });
+
+            } else {
+                console.log("Houve um erro ao tentar o select!");
+                resposta.text().then((texto) => {
+                    console.error(texto);
+                });
+            }
+        })
+        .catch(function (erro) {
+            console.log(erro);
+        });
+}
+
+</script>

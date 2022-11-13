@@ -27,6 +27,15 @@ function verificar(email){
     return database.executar(instrucao);
 }
 
+function verificarCodigo(codigo){
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function verificar código: ", codigo)
+    var instrucao = `
+        SELECT * FROM funcionario WHERE codigoRecuperacao = '${codigo}';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 function registrarCodigo(codigo, email){
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function registrarCodigo", codigo, email)
     var instrucao = `
@@ -123,5 +132,6 @@ module.exports = {
     listar,
     cadastrarFuncionario,
     verificar,
+    verificarCodigo,
     registrarCodigo,
 };

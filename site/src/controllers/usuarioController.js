@@ -87,6 +87,34 @@ function registrarCodigo(req, res) {
 
 }
 
+function verificarCodigo(req, res) {
+    var codigo = req.body.codigoServer;
+
+    usuarioModel.verificarCodigo(codigo)
+        .then(
+            function (resultado) {
+                console.log(`\nResultados encontrados: ${resultado.length}`);
+                console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                if (resultado.length == 1) {
+                    console.log(resultado);
+                    res.json(resultado[0]);
+                } else if (resultado.length == 0) {
+                    res.status(403).send("Código inválido");
+                } else {
+                    res.status(403).send("Erro!");
+                }
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+
+
+}
 
 function entrar(req, res) {
     var email = req.body.emailServer;
@@ -274,5 +302,6 @@ module.exports = {
     testar,
     cadastrarFuncionario,
     verificar,
-    registrarCodigo
+    verificarCodigo,
+    registrarCodigo,
 }

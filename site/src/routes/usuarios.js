@@ -42,4 +42,8 @@ router.post("/registrarCodigo", function (req, res) {
     usuarioController.registrarCodigo(req, res);
 });
 
+router.post("/verificarCodigo", function (req, res) {
+    usuarioController.verificarCodigo(req, res);
+});
+
 module.exports = router;
