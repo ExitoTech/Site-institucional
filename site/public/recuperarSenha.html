@@ -48,6 +48,8 @@
                     console.log(JSON.stringify(json) + 'exibindo json stringfy');
                 });
 
+                
+
             } else {
                 console.log("Houve um erro ao tentar o select!");
                 resposta.text().then((texto) => {
@@ -80,6 +82,8 @@ function sendMail() {
           
             
         } else {
+            email = inputEmail.value
+
             var mensagem = `Olá esse é um email de alteração de senha<br>
         
         Por favor acesse: #link<br>
@@ -91,7 +95,7 @@ function sendMail() {
                 Host: "smtp.elasticemail.com",
                 Username: "exitoteste111@outlook.com",
                 Password: "F722F9BAF426B98D04EDCF6CBC13BD133979",
-                To: "charleskukauski@gmail.com",
+                To: email,
                 From: "exitoteste111@outlook.com",
                 Subject: "Alterar senha",
                 Body: mensagem,

@@ -1,3 +1,5 @@
+var validado = 0;
+
 function voltar(){
     window.location.href = "http://localhost:3333/codigoSenha.html"
 }
@@ -40,7 +42,7 @@ function cadastrarNovaSenha(){
     validarSenha();
     validarConfirmarSenha();
 
-
+    if(validado==2){
         fetch("/usuarios/novaSenha", {
             method: "POST",
             headers: {
@@ -72,6 +74,9 @@ function cadastrarNovaSenha(){
                 console.log(erro);
             });
 
+    }else{
+        alert('É necessário que as senhas estejam iguais')
+    }     
 
 
 }
@@ -87,6 +92,9 @@ function validarSenha() {
         inputSenha.style.borderRight = "none";
         spanSenha.innerHTML = "Ok";
         spanSenha.style.color = "#80b918";
+
+        validado ++;
+        
     }
     else if (novaSenha == '') {
         inputSenha.style.borderLeft = "none";
@@ -116,6 +124,7 @@ function validarConfirmarSenha() {
         inputConfirmarSenha.style.borderRight = "none";
         spanConfirmarSenha.innerHTML = "Ok";
         spanConfirmarSenha.style.color = "#80b918";
+        validado++;
     }
     else if (ConfirmarNovaSenha == '') {
         inputConfirmarSenha.style.borderLeft = "none";
