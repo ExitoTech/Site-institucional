@@ -18,6 +18,24 @@ function entrar(email, senha) {
     return database.executar(instrucao);
 }
 
+function verificar(email){
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function verificar: ", email)
+    var instrucao = `
+        SELECT * FROM funcionario WHERE Email = '${email}';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function registrarCodigo(codigo, email){
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function registrarCodigo", codigo, email)
+    var instrucao = `
+        UPDATE funcionario SET codigoRecuperacao = '${codigo}' where email = '${email}';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 
 
 function getLastEmpresaId() {
@@ -103,5 +121,7 @@ module.exports = {
     cadastrarUsuarioADM,
     getLastEmpresaId,
     listar,
-    cadastrarFuncionario
+    cadastrarFuncionario,
+    verificar,
+    registrarCodigo,
 };

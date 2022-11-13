@@ -20,9 +20,99 @@
             <p>
                 Enviaremos um email para sua conta com as instruções para correção do problema!
             </p>
-            <input type="text"><br>
-            <button type="button">Proximo</button>
+            <input type="text" id="inputEmail"><br>
+            <button type="button" onclick="verificar()">Enviar</button>
         </div>
     </div>
 </body>
 </html>
+<script src="./js/recuperarSenha.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<script>
+    function verificar() {
+    fetch("/usuarios/verificar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            emailServer: document.getElementById('inputEmail').value,
+        }),
+    })
+        .then(function (resposta) {
+            if (resposta.ok) {
+                sendMail();
+                resposta.json().then((json) => {
+                    console.log(json);
+                    console.log(JSON.stringify(json) + 'exibindo json stringfy');
+                });
+
+            } else {
+                console.log("Houve um erro ao tentar o select!");
+                resposta.text().then((texto) => {
+                    console.error(texto);
+                });
+            }
+        })
+        .catch(function (erro) {
+            console.log(erro);
+        });
+}
+
+function sendMail() {
+    var codigo = Math.random().toString(6).slice(-6)
+
+    fetch("/usuarios/registrarCodigo", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            codigoServer: codigo,
+            emailServer: document.getElementById('inputEmail').value,
+        })
+    }).then(function (resposta) {
+
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          
+            
+        } else {
+            var mensagem = `Olá esse é um email de alteração de senha<br>
+        
+        Por favor acesse: #link<br>
+        Insira seu código de acesso: ${codigo}<br>
+        
+        Caso não tenha solicitado alteração da senha, por favor desconsidere!`
+
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "exitoteste111@outlook.com",
+                Password: "F722F9BAF426B98D04EDCF6CBC13BD133979",
+                To: "charleskukauski@gmail.com",
+                From: "exitoteste111@outlook.com",
+                Subject: "Alterar senha",
+                Body: mensagem,
+            }).then(
+                message => alert("Por favor verifique sua caixa de spam!")
+            ); 
+          
+            resposta.json().then((json) => {
+                    console.log(json);
+                    console.log(JSON.stringify(json) + 'exibindo json stringfy');
+                });
+        }
+    }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    });
+
+
+    
+}
+
+function shootMail(codigo){
+    
+}
+</script>

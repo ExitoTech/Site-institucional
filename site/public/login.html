@@ -20,7 +20,7 @@
 <body>
     <div class="group">
         <div class="DivA2">
-            <div class="DivAContent" >
+            <div class="DivAContent">
                 <a href="./index.html" class="loginLink" onmouseenter="entrarDivA()" onmouseout="sairDivA()">
                     <img src="img/logo_transparent.png" alt="" onmouseenter="entrarDivA()" onmouseout="sairDivA()">
                     <p id="textoLink">
@@ -31,16 +31,19 @@
         </div>
         <div class="DivLateralLogin">
             <form class="formLogin">
-                <div class="containerLogin">    
+                <div class="containerLogin">
                     <h1 id="h1Login">Login</h1>
 
                     <label for="inputEmail" class="labelLogin">Email</label>
-                    <input type="text" placeholder="exemplo@gamil.com" required id="inputEmail" class="inputLogin" onkeyup="validEmail()">
+                    <input type="text" placeholder="exemplo@gamil.com" required id="inputEmail" class="inputLogin"
+                        onkeyup="validEmail()">
                     <span id="spanEmailLogin" class="spanAviso"></span>
 
                     <label for="inputSenha" class="labelLogin">Senha</label>
-                    <input id="inputSenha" type="password" placeholder="********" required class="inputLogin" onkeyup="validSenha()">
+                    <input id="inputSenha" type="password" placeholder="********" required class="inputLogin"
+                        onkeyup="validSenha()">
                     <span id="spanSenhaLogin" class="spanAviso"></span>
+                    <a href="./recuperarSenha.html" style="color: #3627d9; margin-top: 2px;"><u>Esqueci minha senha</u></a>
 
                     <button onclick="validar()" type="button">
                         Entrar
@@ -54,3 +57,4 @@
 
 </html>
 <script src="js/signIn.js"></script>
+

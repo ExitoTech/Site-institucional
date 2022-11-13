@@ -24,6 +24,70 @@ function listar(req, res) {
         );
 }
 
+
+function verificar(req, res) {
+    var email = req.body.emailServer;
+
+    if (email == undefined) {
+        res.status(400).send("Seu email está undefined!");
+    }
+
+    usuarioModel.verificar(email)
+        .then(
+            function (resultado) {
+                console.log(`\nResultados encontrados: ${resultado.length}`);
+                console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                if (resultado.length == 1) {
+                    console.log(resultado);
+                    res.json(resultado[0]);
+                } else if (resultado.length == 0) {
+                    res.status(403).send("Email inválido");
+                } else {
+                    res.status(403).send("Mais de um usuário com o mesmo login e senha!");
+                }
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+
+}
+
+function registrarCodigo(req, res) {
+    var codigo = req.body.codigoServer;
+    var email = req.body.emailServer;
+
+    usuarioModel.registrarCodigo(codigo, email)
+        .then(
+            function (resultado) {
+                console.log(`\nResultados encontrados: ${resultado.length}`);
+                console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                if (resultado.length == 1) {
+                    console.log(resultado);
+                    res.json(resultado[0]);
+                } else if (resultado.length == 0) {
+                    res.status(403).send("Código inválido");
+                } else {
+                    res.status(403).send("Erro no ao inserir o código!");
+                }
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+
+
+}
+
+
 function entrar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
@@ -107,7 +171,7 @@ function cadastrarUsuarioADM(req, res) {
 
 }
 
-function cadastrarEmpresa(req,res) {
+function cadastrarEmpresa(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
 
     var nomeEmpresa = req.body.nomeEmpresaServer;
@@ -208,5 +272,7 @@ module.exports = {
     cadastrarEmpresa,
     listar,
     testar,
-    cadastrarFuncionario
+    cadastrarFuncionario,
+    verificar,
+    registrarCodigo
 }
