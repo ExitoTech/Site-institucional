@@ -11,7 +11,7 @@
 <body>
     <div class="content">
         <div class="voltar">
-            <img src="./img/icons/leftArrow.png" style="height: 15px; margin-right: 2%" alt="">
+            <img src="./img/icons/leftArrow.png" style="height: 15px; margin-right: 2%" alt="" onclick="voltar()">
             <div class="titulo">
                 <p>Cadastrar Nova Senha</p>
             </div>
@@ -20,10 +20,13 @@
             <div class="imgUser">
                 <img src="img/fotoPerfil/perfil.png" alt="">
             </div>
-            <input style="width: 30%" type="text" placeholder="Nova Senha"><br>
-            <input style="width: 30%" type="text" placeholder="Confirmar Nova Senha"><br>
-            <button class="btnNovaSenha" type="button">Finalizar</button>
+            <input style="width: 30%" type="password" placeholder="Nova Senha" id="inputSenha"><br>
+            <span id="spanSenha" class="spanAviso"></span>
+            <input style="width: 30%" type="password" placeholder="Confirmar Nova Senha" id="inputConfirmarSenha"><br>
+            <span id="spanConfirmarSenha" class="spanAviso"></span>
+            <button class="btnNovaSenha" type="button" onclick="cadastrarNovaSenha()">Finalizar</button>
         </div>
     </div>
 </body>
 </html>
+<script src="./js/novaSenha.js"></script>

@@ -46,4 +46,8 @@ router.post("/verificarCodigo", function (req, res) {
     usuarioController.verificarCodigo(req, res);
 });
 
+router.post("/novaSenha", function (req, res) {
+    usuarioController.novaSenha(req, res);
+});
+
 module.exports = router;

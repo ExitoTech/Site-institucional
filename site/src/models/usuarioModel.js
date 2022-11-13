@@ -36,6 +36,18 @@ function verificarCodigo(codigo){
     return database.executar(instrucao);
 }
 
+
+function novaSenha(senha, codigo){
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function registrarCodigo", senha, codigo)
+    var instrucao = `
+        UPDATE funcionario SET senha = '${senha}' where codigoRecuperacao = '${codigo}';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+
+
 function registrarCodigo(codigo, email){
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function registrarCodigo", codigo, email)
     var instrucao = `
@@ -134,4 +146,5 @@ module.exports = {
     verificar,
     verificarCodigo,
     registrarCodigo,
+    novaSenha,
 };
