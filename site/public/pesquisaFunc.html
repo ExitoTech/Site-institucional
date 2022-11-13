@@ -61,28 +61,28 @@
                     <p>Buscar Máquina</p>
                 </div>
             </div>
-            <div class="mainSearchFunc"> 
+            <div class="mainSearchFunc">
                 <div class="subMainSearchFunc">
                     <div class="divInputSearch">
                         <div class="submit-line">
-                            <input type="text" />
-                            <button class="submit-lente" type="submit">
-                              <i class="fa fa-search"></i>
+                            <input id="numMaquina" type="text" />
+                            <button onclick="pesquisarMaquina()" class="submit-lente" type="submit">
+                                <i class="fa fa-search"></i>
                             </button>
-                          </div>
+                        </div>
                     </div>
-                    
                     <div class="divMainSearch">
                         <div class="divInfoInputs">
                             <div id="divInfoInpus01">
-                               <span>Sistema operacional:<span class="infoSpan">Ubuntu</span></span>
-                               <span>Número da maquina:<span class="infoSpan">0112</span></span>
-                               <span>CPF vinculado:<span class="infoSpan">545-078-865-18</span></span>
+                                <span>Sistema operacional:<span id="sistemaOperacionalText"
+                                        class="infoSpan">...</span></span>
+                                <span>Número da maquina:<span id="numeroMaquinaText" class="infoSpan">...</span></span>
+                                <span>Arquitetura:<span class="infoSpan">...</span></span>
                             </div>
                             <div id="divInfoInpus02">
-                                <span>localização/CEP:<span class="infoSpan">08410-270</span></span>
-                                <span>Setor:<span class="infoSpan">8</span></span>
-                                <span>Horas Trabalhadas neste mês:<span class="infoSpan">4</span></span>
+                                <span>localização/CEP:<span class="infoSpan">...</span></span>
+                                <span>Setor:<span class="infoSpan">...</span></span>
+                                <span>Horas Trabalhadas neste mês:<span class="infoSpan">...</span></span>
                             </div>
                         </div>
                         <div class="infoSoMachine">
@@ -90,14 +90,60 @@
                                 <img src="img/ubuntu-logo.png" alt="">
                             </div>
                             <span>Funcionario Atual: </span>
-                            <p>Vinicius A Nunes</p>
+                            <p>...</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-
 </body>
 
 </html>
+<script>
+    function pesquisarMaquina() {
+        var numeroMaquinaVar = numMaquina.value;
+
+        if (numeroMaquinaVar == "") {
+            alert("Campo de pesquisa vazio..")
+        }
+        else {
+            // Enviando o valor da nova input
+            fetch("/pesquisaMaquina/pesquisaMaquina", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    numeroMaquinaServer: numeroMaquinaVar,
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    alert("Pesquisa realizada com sucesso!")
+                    resposta.json().then((json) => {
+
+                        console.log(json);
+                        console.log(JSON.stringify(json) + 'exibindo json stringfy');
+                        console.log(json[0].idMaquina);
+
+                        sistemaOperacionalText.innerHTML = `${json[0].sistemaOperacional}`
+                        numeroMaquinaText.innerHTML = `${json[0].idMaquina}`
+
+                    });
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+            return false;
+        }
+
+
+    }
+</script>
