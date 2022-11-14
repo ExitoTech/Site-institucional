@@ -135,3 +135,243 @@ function nextSignUp() {
         }, "2500")
     }
 }
+
+function exibirPopUp(){
+    ppSlack.style.display = "block"
+}
+
+function fecharPopUp(){
+    ppSlack.style.display = "none"
+    contador = 0;
+    avancar();
+}
+
+var contador = 0;
+
+function avancar(){
+    if(contador < 18){
+        contador++
+    }
+
+    switch(contador){
+        case 1:
+            s1.innerHTML = "<img src='./img/slide-slack/slide1.jpg'>"
+            explicacao.innerHTML = "Clique em 'Create an App' para criar o bot que enviará as mensagens. Para acessar esta tela, clique <a href='https://api.slack.com/'>aqui.</a>"
+            console.log(contador);
+            break;
+        case 2:
+            s2.innerHTML = "<img src='./img/slide-slack/slide2.jpg'>"
+            s1.innerHTML = ""
+            explicacao.innerHTML = "Clique em 'sign in to your Slack account' para criar uma conta, ou logar em uma já existente."
+            console.log(contador);
+            break;
+        case 3: 
+            s3.innerHTML = "<img src='./img/slide-slack/slide3.jpg'>"
+            s2.innerHTML = ""
+            explicacao.innerHTML = "Clique em 'Criar um workspace' caso não tenha um. Se já tiver um workspace, pode pular os próximos 5 slides."
+            console.log(contador);
+            break;
+        case 4:
+            s4.innerHTML = "<img src='./img/slide-slack/slide4.jpg'>"
+            s3.innerHTML = ""
+            explicacao.innerHTML = "Clique em 'Criar um workspace'."
+            console.log(contador);
+            break;
+        case 5:
+            s5.innerHTML = "<img src='./img/slide-slack/slide5.jpg'>"
+            s4.innerHTML = ""
+            explicacao.innerHTML = "Aqui você irá escolher o nome do seu workspace, pode ser o nome da empresa."
+            console.log(contador);
+            break;
+        case 6:
+            s6.innerHTML = "<img src='./img/slide-slack/slide6.jpg'>"
+            s5.innerHTML = ""
+            explicacao.innerHTML = "Aqui você pode adicionar integrantes ao seu worspace, basta inserir o email deles. Caso não queira adicionar ninguém agora, você pode ignorar esta etapa. Você poderá adicionar integrantes posteriormente."
+            console.log(contador);
+            break;
+        case 7:
+            s7.innerHTML = "<img src='./img/slide-slack/slide7.jpg'>"
+            s6.innerHTML = ""
+            explicacao.innerHTML = "Aqui você irá escolher o nome do canal para onde deveremos mandar os alertas."
+            console.log(contador);
+            break;
+        case 8:
+            s8.innerHTML = "<img src='./img/slide-slack/slide8.jpg'>"
+            s7.innerHTML = ""
+            explicacao.innerHTML = "Quando chegar nesta tela, volte para a tela inicial do Slack. Você pode fazer isso clicando <a href='https://api.slack.com/apps?new_app=1'>aqui.</a>"
+            console.log(contador);
+            break;
+        case 9:
+            s9.innerHTML = "<img src='./img/slide-slack/slide9.jpg'>"
+            s8.innerHTML = ""
+            explicacao.innerHTML = "Clique em 'Create an App' para criar o Bot."
+            console.log(contador);
+            break;
+        case 10:
+            s10.innerHTML = "<img src='./img/slide-slack/slide10.jpg'>"
+            s9.innerHTML = ""
+            explicacao.innerHTML = "Aqui você pode clicar nesta primeira opção."
+            console.log(contador);
+            break;
+        case 11:
+            s11.innerHTML = "<img src='./img/slide-slack/slide11.jpg'>"
+            s10.innerHTML = ""
+            explicacao.innerHTML = "Aqui, no primeiro campo você deve colocar o nome que quer dar ao Bot, e logo em seguida, no campo abaixo, você deve especificar em qual workspace o Bot deverá ser adicionado."
+            console.log(contador);
+            break;
+        case 12:
+            s12.innerHTML = "<img src='./img/slide-slack/slide12.jpg'>"
+            s11.innerHTML = ""
+            explicacao.innerHTML = "Clique em 'Incoming Webhooks'."
+            console.log(contador);
+            break;
+        case 13:
+            s13.innerHTML = "<img src='./img/slide-slack/slide13.jpg'>"
+            s12.innerHTML = ""
+            explicacao.innerHTML = "Ative a chave, para que seja possível criar um webhook (webhook é o link que usaremos para enviar as mensagens de alerta)."
+            console.log(contador);
+            break;
+        case 14:
+            s14.innerHTML = "<img src='./img/slide-slack/slide14.jpg'>"
+            s13.innerHTML = ""
+            explicacao.innerHTML = "Clique em 'Add New Webhook to Workspace'."
+            console.log(contador);
+            break;
+        case 15:
+            s15.innerHTML = "<img src='./img/slide-slack/slide15.jpg'>"
+            s14.innerHTML = ""
+            explicacao.innerHTML = "Aqui você irá selecionar o canal para o qual deveremos enviar os alertas. Clique em 'Pesquisar um canal...' para encontrar o canal que você criou."
+            console.log(contador);
+            break;
+        case 16: 
+            s16.innerHTML = "<img src='./img/slide-slack/slide16.jpg'>"
+            s15.innerHTML = ""
+            explicacao.innerHTML = "Selecione o canal desejado."
+            console.log(contador);
+            break;
+        case 17:
+            s17.innerHTML = "<img src='./img/slide-slack/slide17.jpg'>"
+            s16.innerHTML = ""
+            explicacao.innerHTML = "Clique em 'Permitir' para permitir que o Bot seja adicionado ao canal."
+            console.log(contador);
+            break;
+        case 18:
+            s18.innerHTML = "<img src='./img/slide-slack/slide18.jpg'>"
+            s17.innerHTML = ""
+            explicacao.innerHTML = "Clique em 'copy' e cole o webhook no campo informado na nossa página de cadastro."
+            break;
+    }
+    console.log(contador)
+}
+
+function retroceder(){
+    if(contador <= 18 && contador > 1){
+        contador--
+    }
+    switch(contador){
+        case 1:
+            s1.innerHTML = "<img src='./img/slide-slack/slide1.jpg'>"
+            s2.innerHTML = ""
+            explicacao.innerHTML = "Clique em 'Create an App' para criar o bot que enviará as mensagens. Para acessar esta tela, clique <a href='https://api.slack.com/'>aqui.</a>"
+            console.log(contador);
+            break;
+        case 2:
+            s2.innerHTML = "<img src='./img/slide-slack/slide2.jpg'>"
+            s3.innerHTML = ""
+            explicacao.innerHTML = "Clique em 'sign in to your Slack account' para criar uma conta, ou logar em uma já existente."
+            console.log(contador);
+            break;
+        case 3: 
+            s3.innerHTML = "<img src='./img/slide-slack/slide3.jpg'>"
+            s4.innerHTML = ""
+            explicacao.innerHTML = "Clique em 'Criar um workspace' caso não tenha um. Se já tiver um workspace, pode pular os próximos 5 slides."
+            console.log(contador);
+            break;
+        case 4:
+            s4.innerHTML = "<img src='./img/slide-slack/slide4.jpg'>"
+            s5.innerHTML = ""
+            explicacao.innerHTML = "Clique em 'Criar um workspace'."
+            console.log(contador);
+            break;
+        case 5:
+            s5.innerHTML = "<img src='./img/slide-slack/slide5.jpg'>"
+            s6.innerHTML = ""
+            explicacao.innerHTML = "Aqui você irá escolher o nome do seu workspace, pode ser o nome da empresa."
+            console.log(contador);
+            break;
+        case 6:
+            s6.innerHTML = "<img src='./img/slide-slack/slide6.jpg'>"
+            s7.innerHTML = ""
+            explicacao.innerHTML = "Aqui você pode adicionar integrantes ao seu worspace, basta inserir o email deles. Caso não queira adicionar ninguém agora, você pode ignorar esta etapa. Você poderá adicionar integrantes posteriormente."
+            console.log(contador);
+            break;
+        case 7:
+            s7.innerHTML = "<img src='./img/slide-slack/slide7.jpg'>"
+            s8.innerHTML = ""
+            explicacao.innerHTML = "Aqui você irá escolher o nome do canal para onde deveremos mandar os alertas."
+            cosole.log(contador);
+            break;
+        case 8:
+            s8.innerHTML = "<img src='./img/slide-slack/slide8.jpg'>"
+            s9.innerHTML = ""
+            explicacao.innerHTML = "Quando chegar nesta tela, volte para a tela inicial do Slack. Você pode fazer isso clicando <a href='https://api.slack.com/apps?new_app=1'>aqui.</a>"
+            console.log(contador);
+            break;
+        case 9:
+            s9.innerHTML = "<img src='./img/slide-slack/slide9.jpg'>"
+            s10.innerHTML = ""
+            explicacao.innerHTML = "Clique em 'Create an App' para criar o Bot."
+            console.log(contador);
+            break;
+        case 10:
+            s10.innerHTML = "<img src='./img/slide-slack/slide10.jpg'>"
+            s11.innerHTML = ""
+            explicacao.innerHTML = "Aqui você pode clicar nesta primeira opção."
+            console.log(contador);
+            break;
+        case 11:
+            s11.innerHTML = "<img src='./img/slide-slack/slide11.jpg'>"
+            s12.innerHTML = ""
+            explicacao.innerHTML = "Aqui, no primeiro campo você deve colocar o nome que quer dar ao Bot, e logo em seguida, no campo abaixo, você deve especificar em qual workspace o Bot deverá ser adicionado."
+            console.log(contador);
+            break;
+        case 12:
+            s12.innerHTML = "<img src='./img/slide-slack/slide12.jpg'>"
+            s13.innerHTML = ""
+            explicacao.innerHTML = "Clique em 'Incoming Webhooks'."
+            console.log(contador);
+            break;
+        case 13:
+            s13.innerHTML = "<img src='./img/slide-slack/slide13.jpg'>"
+            s14.innerHTML = ""
+            explicacao.innerHTML = "Ative a chave, para que seja possível criar um webhook (webhook é o link que usaremos para enviar as mensagens de alerta)."
+            console.log(contador);
+            break;
+        case 14:
+            s14.innerHTML = "<img src='./img/slide-slack/slide14.jpg'>"
+            s15.innerHTML = ""
+            explicacao.innerHTML = "Clique em 'Add New Webhook to Workspace'."
+            console.log(contador);
+            break;
+        case 15:
+            s15.innerHTML = "<img src='./img/slide-slack/slide15.jpg'>"
+            s16.innerHTML = ""
+            explicacao.innerHTML = "Aqui você irá selecionar o canal para o qual deveremos enviar os alertas. Clique em 'Pesquisar um canal...' para encontrar o canal que você criou."
+            console.log(contador);
+            break;
+        case 16: 
+            s16.innerHTML = "<img src='./img/slide-slack/slide16.jpg'>"
+            s17.innerHTML = ""
+            explicacao.innerHTML = "Selecione o canal desejado."
+            console.log(contador);
+            break;
+        case 17:
+            s17.innerHTML = "<img src='./img/slide-slack/slide17.jpg'>"
+            s18.innerHTML = ""
+            explicacao.innerHTML = "Clique em 'Permitir' para permitir que o Bot seja adicionado ao canal."
+            console.log(contador);
+            break;
+        case 18:
+            s18.innerHTML = "<img src='./img/slide-slack/slide18.jpg'>"
+    }
+}
