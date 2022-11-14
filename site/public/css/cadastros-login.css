@@ -169,13 +169,14 @@ form {
     position: fixed;
     border-radius: 10px;
     display: none;
+    box-shadow: 0 3px 6px #00000029, 0 1px 2px #0000003b;
 }
 
 #close {
     background-color: transparent;
     border: 0;
     font-size: 2rem;
-    margin-left: 70.2rem;
+    margin-left: 97.5%;
     color: red;
     cursor: pointer;
 }
@@ -352,20 +353,22 @@ form {
 }
 
 .container .safePassword {
-    width: 25px;
-    height: 25px;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: bold;
-    background-color: transparent;
-    border: 1.5px solid #6c757d;
-    color: #6c757d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border: 1.5px solid #000;
+    padding-left: 4.5px;
+    padding-right: 4.5px;
+    font-size: .8rem;
+    border-radius: 50%;
+    cursor: pointer;
     position: absolute;
-    margin-top: 10.5rem;
-    margin-left: 12.5rem;
+    margin-top: -2px;
+    margin-left: 6px;
+    transition: .3s;
+}
+
+.container .safePassword:hover {
+    background-color: #023e8a;
+    color: #fff;
+    border: 1.5px solid transparent;
 }
 
 .DivLateral .container p {

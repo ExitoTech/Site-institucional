@@ -122,6 +122,7 @@ function nextSignUp() {
         sessionStorage.setItem("PORTE_EMPRESA", porte)
         sessionStorage.setItem("RUA_EMPRESA",document.getElementById("inputLogradouro").value) 
         sessionStorage.setItem("UF", document.getElementById("inputUf").value) 
+        sessionStorage.setItem("WEB_HOOK", document.getElementById("inputHook").value)
   
     }
     else {

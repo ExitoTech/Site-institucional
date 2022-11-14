@@ -266,6 +266,7 @@ function cadastreEmpresa() {
             porteEmpresaServer: sessionStorage.PORTE_EMPRESA,
             ruaEmpresaServer: sessionStorage.RUA_EMPRESA,
             ufEmpresaServer: sessionStorage.UF,
+            webHookServer: sessionStorage.WEB_HOOK,
         })
     }).then(function (resposta) {
 

@@ -238,6 +238,7 @@ function cadastrarEmpresa(req, res) {
     var porte = req.body.porteEmpresaServer;
     var logradouro = req.body.ruaEmpresaServer;
     var uf = req.body.ufEmpresaServer;
+    var webHook = req.body.webHookServer;
 
     // Faça as validações dos valores
     if (nomeEmpresa == undefined) {
@@ -252,11 +253,11 @@ function cadastrarEmpresa(req, res) {
         res.status(400).send("Seu logradouro está undefined!");
     } else if (uf == undefined) {
         res.status(400).send("Seu UF está undefined!");
-    } else {
+    } else{
 
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrarEmpresa(nomeEmpresa, cepEmpresa, cnpj, porte, logradouro, uf)
+        usuarioModel.cadastrarEmpresa(nomeEmpresa, cepEmpresa, cnpj, porte, logradouro, uf, webHook)
             .then(
                 function (resultado) {
                     res.json(resultado);

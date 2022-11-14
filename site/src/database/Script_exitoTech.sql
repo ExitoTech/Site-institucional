@@ -1,15 +1,15 @@
 CREATE DATABASE exitoTech;
 USE exitoTech;
 
-
 CREATE TABLE empresa(
   idEmpresa INT NOT NULL auto_increment,
-  nomeEmpresa VARCHAR(55) NULL,
+  nomeEmpresa VARCHAR(75) NULL,
   cnpj CHAR(18) NULL,
-  porteEmpresa VARCHAR(20) NULL,
+  porteEmpresa VARCHAR(50) NULL,
   logradouro VARCHAR(65) NULL,
   UF CHAR(2) NULL,
-  CEP CHAR(9) NULL,
+  CEP CHAR(8) NULL,
+  webHook VARCHAR(200),
   PRIMARY KEY (idEmpresa)
   );
 
@@ -17,12 +17,12 @@ CREATE TABLE empresa(
 CREATE TABLE funcionario(
   idFuncionario INT NOT NULL auto_increment,
   nomeFuncionario VARCHAR(60) NULL,
-  CPF CHAR(14) NULL,
-  email VARCHAR(55) NULL,
+  CPF CHAR(11) NULL,
+  email VARCHAR(155) NULL,
   senha VARCHAR(25) NULL,
-  ativo Boolean NULL,
-  telefoneFuncionario CHAR(15) NULL,
-  cep VARCHAR(9) NULL,
+  ativo TINYINT NULL,
+  telefoneFuncionario CHAR(11) NULL,
+  cep VARCHAR(40) NULL,
   fk_Empresa INT NOT NULL,
   isADM Boolean NULL,
   PRIMARY KEY (idFuncionario),
@@ -33,33 +33,26 @@ CREATE TABLE funcionario(
 
 CREATE TABLE setor (
   idSetor INT NOT NULL auto_increment,
-  nomeSetor VARCHAR(7) NULL,
+  nomeSetor VARCHAR(25) NULL,
+  descSetor VARCHAR(65) NULL,
   fk_Empresa INT NOT NULL,
   PRIMARY KEY (idSetor, fk_empresa),
   FOREIGN KEY (fk_empresa)
   REFERENCES empresa (idEmpresa)
   )auto_increment = 10000;
-  
-  
-  
-  
+
 
 CREATE TABLE maquina (
   idMaquina INT auto_increment,
-  nomeMaquina VARCHAR(30),
-  sistemaOperacional VARCHAR(30),
-  statusMaquina varchar(15),
-  arquiteturaSO VARCHAR(30),
+  nomeMaquina VARCHAR(15),
   fk_setor INT null,
-  processador VARCHAR(50),
+  processador VARCHAR(30),
   memoriaRam VARCHAR(30),
   memoriaMassa VARCHAR(30),
   PRIMARY KEY (idMaquina),
   FOREIGN KEY (fk_setor)
   REFERENCES setor (idSetor)
   )auto_increment = 20000;
-  
-  select * from maquina where fk_setor = null;
 
 
 CREATE TABLE capturas (
@@ -76,8 +69,8 @@ CREATE TABLE capturas (
   create table atendimentoMaquina(
   idAtendimento int primary key auto_increment,
   tituloIncidente varchar (30),
-  nomeAutor varchar(100),
-  horaAtendimento datetime,
+  descAtendimento varchar(255),
+  horaAtendimento datetime default current_timestamp,
   fk_maquina int,
   foreign key(fk_maquina) references maquina(idMaquina),
   fk_funcionario int,
@@ -87,14 +80,16 @@ CREATE TABLE capturas (
   );
   
   
-  
-INSERT INTO empresa (nomeEmpresa,cnpj,porteempresa,logradouro,uf,cep) VALUES ('Amazon','123.123.122-12','médio','Rua Basilio no escuro','SP','04822920');
-INSERT INTO funcionario(  nomeFuncionario , CPF,email ,senha ,ativo ,telefoneFuncionario ,cep ,fk_Empresa ,isADM ) values("Vagner","2020","a@a.com","a","1","11999999","0020202","1",true);
-INSERT INTO maquina(nomeMaquina,fk_setor,sistemaOperacional,arquiteturaSO,processador,memoriaRam,memoriaMassa) VALUES (null,null,null,null,null,null,null);
+INSERT INTO empresa (nomeEmpresa,cnpj,porteempresa,logradouro,uf,cep) VALUES ('Amazon','123.123.122-12','mÃ©dio','Rua Basilio no escuro','SP','04822920');
+INSERT INTO maquina(nomeMaquina,processador,memoriaRam,memoriaMassa) Values("VinyProgamador","i7 10th gen","16GB","512GB");
+INSERT INTO capturas(fk_maquina,usoCPU,usoRam) Values(20000,22.5,22.4);
 
 select * from empresa;
+select * from maquina;
 select * from funcionario;
 select * from capturas;
-select * from maquina;
-select * from setor;
 
+delete from funcionario where idFuncionario = 1001;
+
+SELECT idMaquina FROM maquina ORDER BY idMaquina DESC LIMIT 1;
+Select idempresa from empresa order by idEmpresa desc Limit 1;
