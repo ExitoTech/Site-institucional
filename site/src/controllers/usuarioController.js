@@ -321,6 +321,25 @@ function cadastrarFuncionario(req, res) {
             );
     }
 }
+function getLastEmpresaId(req, res) {
+
+    usuarioModel.getLastEmpresaId()
+        .then(
+            function (resultado) {
+                console.log(`\nResultados encontrados: ${resultado.length}`);
+                console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                    res.json(resultado[0]);
+
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao pegar o ID Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
 
 
 
@@ -329,6 +348,7 @@ module.exports = {
     entrar,
     cadastrarUsuarioADM,
     cadastrarEmpresa,
+    getLastEmpresaId,
     listar,
     testar,
     cadastrarFuncionario,

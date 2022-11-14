@@ -10,7 +10,7 @@ function buscarUltimasMedidas(idMaquina) {
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
 
-        instrucaoSql = `select usoCPU,usoRam,dataHora,DATE_FORMAT(momento,'%H:%i:%s') as data from capturas where fk_maquina = ${idMaquina} order by id desc limit 7`;
+        instrucaoSql = `select usoCPU,usoRam,dataHora,DATE_FORMAT(dataHora,'%H:%i:%s') as data from capturas where fk_maquina = ${idMaquina} order by idCaptura desc limit 7`;
 
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
@@ -30,7 +30,7 @@ function buscarMedidasEmTempoReal(idMaquina) {
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
 
-        instrucaoSql = `select usoCPU,usoRam,dataHora,DATE_FORMAT(momento,'%H:%i:%s') as data from capturas where fk_maquina = ${idMaquina} order by id desc limit 1`;
+        instrucaoSql = `select usoCPU,usoRam,dataHora,DATE_FORMAT(dataHora,'%H:%i:%s') as data from capturas where fk_maquina = ${idMaquina} order by idCaptura desc limit 1`;
         
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");

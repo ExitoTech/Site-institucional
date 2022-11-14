@@ -6,7 +6,7 @@ function cadastrarMaquina(fk_setor){
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO maquina(nomeMaquina,fk_setor,sistemaOperacional,arquiteturaSO,processador,memoriaRam,memoriaMassa) VALUES (null,${fk_setor},null,null,null,null,null);
+        INSERT INTO maquina(nomeMaquina,fk_setor,sistemaOperacional,statusmaquina,arquiteturaSO,processador,memoriaRam,memoriaMassa) VALUES (null,${fk_setor},null,'desativado',null,null,null,null);
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
