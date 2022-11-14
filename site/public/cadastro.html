@@ -66,8 +66,11 @@
                             <span id="spanPorte" class=""spanAviso></span>
                         </div>
                     </div>
-
-                    <label for="inputHook">WebHook do canal Slack <span id="duvida" onclick="exibirPopUp()">?</span></label>
+                    <div class="webhook">
+                        <label for="inputHook">WebHook do canal Slack</label>
+                        <span id="duvida" onclick="exibirPopUp()">?</span>
+                    </div>
+                    
                     <input placeholder="URL" type="text" id="inputHook"/>
                     <span id="spanHook" class="spanAviso"></span>
 
@@ -80,10 +83,8 @@
         </div>
 
         <div class="popUp" id="ppSlack">
-            <div class="testeBtn">
-                <!-- <button onclick="fecharPopUp()" id="close"><i class="fa-solid fa-xmark"></i></button> -->
-                <button onclick="fecharPopUp()">X</button>
-            </div>
+            
+                <button onclick="fecharPopUp()" id="close"><i class="fa-solid fa-xmark"></i></button>
 
             <div class="carrossel">
 

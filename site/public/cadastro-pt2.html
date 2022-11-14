@@ -16,6 +16,7 @@
     <script src="js/cepSrc.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/a36d5daf6c.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -58,7 +59,7 @@
                                 <input placeholder="99 999999999" onkeyup="validarTelefone()" id="inputTelefone" maxlength="15" type="text" required>
                                 <span id="spanTelefone" class="spanAviso"></span>
 
-                                <label for="inputSenha">Senha<span class="safePassword" onclick="GerarSenhaSegura()">?</span></label>
+                                <label for="inputSenha" class="senhaComInfo">Senha<span class="safePassword" onclick="GerarSenhaSegura()"><i class="fa-solid fa-circle-info"></i></span></label>
                                 <input placeholder="********" onkeyup="validarSenha()" id="inputSenha" type="password" maxlength="25" required>
                                 <span id="spanSenha" class="spanAviso"></span>
 

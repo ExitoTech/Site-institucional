@@ -128,13 +128,23 @@ form {
     margin-top: 1.5rem;
 }
 
+.webhook {
+    align-self: flex-start;
+    margin-top: 1.5rem;
+}
+
 #duvida {
-    border: 1.5px solid #000;
-    padding-left: 5.7px;
-    padding-right: 5.7px;
+    border: 1.5px solid transparent;
+    color: #fff;
+    font-size: .88rem;
+    padding-left: 5.1px;
+    padding-right: 5.1px;
     border-radius: 50%;
     cursor: pointer;
-    margin-left: 6px;
+    position: absolute;
+    margin-top: -2px;
+    margin-left: 5px;
+    background-color: #00b4d8;
 }
 
 #duvida:hover {
@@ -176,9 +186,10 @@ form {
     background-color: transparent;
     border: 0;
     font-size: 2rem;
-    margin-left: 97.5%;
     color: red;
     cursor: pointer;
+    float: right;
+    margin-right: 10px;
 }
 
 .carrossel {
@@ -280,7 +291,7 @@ form {
     cursor: pointer;
     transition: .3s;
     font-family: 'Roboto Mono';
-    margin-top: 3.5rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
 }
 
@@ -353,22 +364,26 @@ form {
 }
 
 .container .safePassword {
-    border: 1.5px solid #000;
-    padding-left: 4.5px;
-    padding-right: 4.5px;
-    font-size: .8rem;
-    border-radius: 50%;
+    background-color: transparent;
+    border: 0;
+    font-size: 1.1rem;
+    color: #00b4d8;
     cursor: pointer;
-    position: absolute;
-    margin-top: -2px;
-    margin-left: 6px;
     transition: .3s;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-top: -22px;
+    margin-left: 47px;
 }
 
 .container .safePassword:hover {
-    background-color: #023e8a;
-    color: #fff;
-    border: 1.5px solid transparent;
+    background-color: transparent;
+    color: #023e8a;
 }
 
 .DivLateral .container p {
@@ -405,7 +420,7 @@ select {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-top: 2.5rem;
+    margin-top: 1rem;
 }
 
 .cadastroEsq {
@@ -420,27 +435,6 @@ select {
     height: 100%;
     display: flex;
     flex-direction: column;
-}
-
-.testeBtn{
-    width: 25px;
-    height: 25px;
-    float: right;
-    margin-bottom: 10px;
-    text-align: center;
-    justify-content: center;
-    display: flex;
-}
-
-.testeBtn button{
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-    border: none;
-    margin: 5px 10px 0px 0px;
-    font-size: 25px;
-    color: #000f84;
-    background-color: #fff;
 }
 
 @media only screen and (max-width: 1110px) {
