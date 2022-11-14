@@ -422,6 +422,27 @@ select {
     flex-direction: column;
 }
 
+.testeBtn{
+    width: 25px;
+    height: 25px;
+    float: right;
+    margin-bottom: 10px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+.testeBtn button{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border: none;
+    margin: 5px 10px 0px 0px;
+    font-size: 25px;
+    color: #000f84;
+    background-color: #fff;
+}
+
 @media only screen and (max-width: 1110px) {
     .DivA {
         display: none;
