@@ -1,4 +1,4 @@
- CREATE TABLE empresa(
+CREATE TABLE empresa(
   idEmpresa INT NOT NULL identity(1,1),
   nomeEmpresa VARCHAR(55) NULL,
   cnpj CHAR(18) NULL,
@@ -6,6 +6,7 @@
   logradouro VARCHAR(65) NULL,
   UF CHAR(2) NULL,
   CEP CHAR(9) NULL,
+  webHook VARCHAR(200),
   PRIMARY KEY (idEmpresa)
   );
 
@@ -42,6 +43,7 @@ CREATE TABLE maquina (
   PRIMARY KEY (idMaquina),
   nomeMaquina VARCHAR(30),
   sistemaOperacional VARCHAR(30),
+  statusMaquina varchar(15),
   arquiteturaSO VARCHAR(30),
   processador VARCHAR(50),
   memoriaRam VARCHAR(30),

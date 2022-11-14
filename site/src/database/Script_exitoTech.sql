@@ -3,12 +3,12 @@ USE exitoTech;
 
 CREATE TABLE empresa(
   idEmpresa INT NOT NULL auto_increment,
-  nomeEmpresa VARCHAR(75) NULL,
+  nomeEmpresa VARCHAR(55) NULL,
   cnpj CHAR(18) NULL,
-  porteEmpresa VARCHAR(50) NULL,
+  porteEmpresa VARCHAR(20) NULL,
   logradouro VARCHAR(65) NULL,
   UF CHAR(2) NULL,
-  CEP CHAR(8) NULL,
+  CEP CHAR(9) NULL,
   webHook VARCHAR(200),
   PRIMARY KEY (idEmpresa)
   );
@@ -17,12 +17,12 @@ CREATE TABLE empresa(
 CREATE TABLE funcionario(
   idFuncionario INT NOT NULL auto_increment,
   nomeFuncionario VARCHAR(60) NULL,
-  CPF CHAR(11) NULL,
-  email VARCHAR(155) NULL,
+  CPF CHAR(14) NULL,
+  email VARCHAR(55) NULL,
   senha VARCHAR(25) NULL,
-  ativo TINYINT NULL,
-  telefoneFuncionario CHAR(11) NULL,
-  cep VARCHAR(40) NULL,
+  ativo Boolean NULL,
+  telefoneFuncionario CHAR(15) NULL,
+  cep VARCHAR(9) NULL,
   fk_Empresa INT NOT NULL,
   isADM Boolean NULL,
   PRIMARY KEY (idFuncionario),
@@ -33,8 +33,7 @@ CREATE TABLE funcionario(
 
 CREATE TABLE setor (
   idSetor INT NOT NULL auto_increment,
-  nomeSetor VARCHAR(25) NULL,
-  descSetor VARCHAR(65) NULL,
+  nomeSetor VARCHAR(7) NULL,
   fk_Empresa INT NOT NULL,
   PRIMARY KEY (idSetor, fk_empresa),
   FOREIGN KEY (fk_empresa)
@@ -44,9 +43,12 @@ CREATE TABLE setor (
 
 CREATE TABLE maquina (
   idMaquina INT auto_increment,
-  nomeMaquina VARCHAR(15),
+  nomeMaquina VARCHAR(30),
+  sistemaOperacional VARCHAR(30),
+  statusMaquina varchar(15),
+  arquiteturaSO VARCHAR(30),
   fk_setor INT null,
-  processador VARCHAR(30),
+  processador VARCHAR(50),
   memoriaRam VARCHAR(30),
   memoriaMassa VARCHAR(30),
   PRIMARY KEY (idMaquina),
@@ -70,7 +72,7 @@ CREATE TABLE capturas (
   idAtendimento int primary key auto_increment,
   tituloIncidente varchar (30),
   descAtendimento varchar(255),
-  horaAtendimento datetime default current_timestamp,
+  horaAtendimento datetime,
   fk_maquina int,
   foreign key(fk_maquina) references maquina(idMaquina),
   fk_funcionario int,
@@ -78,7 +80,6 @@ CREATE TABLE capturas (
   fk_setor int,
   foreign key(fk_setor) references setor(idSetor)
   );
-  
   
 INSERT INTO empresa (nomeEmpresa,cnpj,porteempresa,logradouro,uf,cep) VALUES ('Amazon','123.123.122-12','mÃ©dio','Rua Basilio no escuro','SP','04822920');
 INSERT INTO maquina(nomeMaquina,processador,memoriaRam,memoriaMassa) Values("VinyProgamador","i7 10th gen","16GB","512GB");
