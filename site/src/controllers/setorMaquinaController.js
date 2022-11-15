@@ -175,7 +175,9 @@ function getFkSetor(req, res) {
 
 function getAllSetor(req, res) {
 
-    setorMaquinaModel.getAllSetor()
+    var fk_empresa = req.body.fk_empresaServer
+
+    setorMaquinaModel.getAllSetor(fk_empresa)
         .then(
             function (resultado) {
                 console.log(`\nResultados encontrados: ${resultado.length}`);

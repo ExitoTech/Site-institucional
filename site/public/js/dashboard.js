@@ -5,6 +5,7 @@ function getAllSetors(){
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
+            fk_empresaServer: sessionStorage.FK_EMPRESA,
         }),
     })
         .then(function (resposta) {
@@ -142,3 +143,5 @@ function capturaDeHardware(){
             console.log(erro);
         });
 }
+
+
