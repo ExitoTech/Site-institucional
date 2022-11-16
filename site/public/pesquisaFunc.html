@@ -8,6 +8,7 @@
     <title>Pesquisa Funcionario - ExitoTech</title>
     <link rel="shortcut icon" href="img/logo_transparent.png" type="image/x-icon">
     <link rel="stylesheet" href="css/pesquisaFunc.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
@@ -77,11 +78,11 @@
                                 <span>Sistema operacional:<span id="sistemaOperacionalText"
                                         class="infoSpan">...</span></span>
                                 <span>Número da maquina:<span id="numeroMaquinaText" class="infoSpan">...</span></span>
-                                <span>Arquitetura:<span class="infoSpan">...</span></span>
+                                <span>Arquitetura:<span class="infoSpan" id="arquiteturaSoText">...</span></span>
                             </div>
                             <div id="divInfoInpus02">
                                 <span>localização/CEP:<span class="infoSpan">...</span></span>
-                                <span>Setor:<span class="infoSpan">...</span></span>
+                                <span>Setor:<span class="infoSpan" id="setorMaquinaText">...</span></span>
                                 <span>Horas Trabalhadas neste mês:<span class="infoSpan">...</span></span>
                             </div>
                         </div>
@@ -124,7 +125,12 @@
                 console.log("resposta: ", resposta);
 
                 if (resposta.ok) {
-                    alert("Pesquisa realizada com sucesso!")
+                    Swal.fire({
+                        title: `Pesquisando..`,
+                        toast: true,
+                        showConfirmButton: false,
+                        timer: 1000
+                    })
                     resposta.json().then((json) => {
 
                         console.log(json);
@@ -133,6 +139,8 @@
 
                         sistemaOperacionalText.innerHTML = `${json[0].sistemaOperacional}`
                         numeroMaquinaText.innerHTML = `${json[0].idMaquina}`
+                        arquiteturaSoText.innerHTML = `x${json[0].arquiteturaSO}`
+                        setorMaquinaText.innerHTML = `${json[0].idSetor}`
 
                     });
                 } else {
