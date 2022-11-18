@@ -17,23 +17,30 @@ function fecharNewMachine() {
 }
 
 
-function sendNewMachine(){
+function sendNewMachine() {
 
-     var senha = document.getElementById("inputConfirmacao").value
-     var setor = document.getElementById('inputSetor').value
-     var fk_empresa = sessionStorage.FK_EMPRESA
-    
-    if (sessionStorage.SENHA_USUARIO == senha){
+    var senha = document.getElementById("inputConfirmacao").value
+    var setor = document.getElementById('inputSetor').value
+    var fk_empresa = sessionStorage.FK_EMPRESA
 
-        getSetor(setor,fk_empresa)
+    if (sessionStorage.SENHA_USUARIO == senha) {
+
+        getSetor(setor, fk_empresa)
     }
-    else{
-
-        alert("Senha incorreta")
+    else {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'error',
+            title: 'Senha errada!',
+            toast: true,
+            showConfirmButton: false,
+            timer: 3500
+          })
+          fecharNewMachine()
     }
 }
 
-function getFK_maquina(){
+function getFK_maquina() {
     fetch("/setorMaquina/getLastMaquinaId", {
         method: "POST",
         headers: {
@@ -49,11 +56,16 @@ function getFK_maquina(){
                 resposta.json().then((json) => {
                     console.log(json);
                     console.log(JSON.stringify(json) + 'exibindo json stringfy');
-                    alert("seu id é " + json.idMaquina)
-                    fecharNewMachine()
-
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'sucess',
+                        title: '<h5>Maquina Cadastrada com Sucesso!</h5> seu id é '+ json.idMaquina,
+                        showConfirmButton: false,
+                        timer: 2500
+                      })
+                      fecharNewMachine()
                 });
-                
+
             } else {
                 console.log("Houve um erro ao tentar o select!");
 
@@ -67,7 +79,7 @@ function getFK_maquina(){
         });
 
 }
-function getFkSetor(setor,fk_empresa){
+function getFkSetor(setor, fk_empresa) {
     fetch("/setorMaquina/getFkSetor", {
         method: "POST",
         headers: {
@@ -89,7 +101,7 @@ function getFkSetor(setor,fk_empresa){
                     console.log(json[0].idSetor)
                     fetchMaquina(json[0].idSetor)
                 });
-                
+
             } else {
                 console.log("Houve um erro ao tentar o select!");
 
@@ -104,7 +116,7 @@ function getFkSetor(setor,fk_empresa){
 
 }
 
-function getSetor(setor,fk_Empresa){
+function getSetor(setor, fk_Empresa) {
     fetch("/setorMaquina/getSetor", {
         method: "POST",
         headers: {
@@ -122,18 +134,18 @@ function getSetor(setor,fk_Empresa){
 
                 resposta.json().then((json) => {
 
-                    if(json.length == 1){
+                    if (json.length == 1) {
                         console.log(json);
                         console.log(JSON.stringify(json) + 'exibindo json stringfy');
                         fetchMaquina(json[0].idSetor)
                     }
-                    else{
+                    else {
                         console.log(json);
                         console.log(JSON.stringify(json) + 'exibindo json stringfy');
-                        fetchSetor(setor,fk_Empresa)
+                        fetchSetor(setor, fk_Empresa)
                     }
                 });
-                
+
             } else {
                 console.log("Houve um erro ao tentar o select!");
 
@@ -149,7 +161,7 @@ function getSetor(setor,fk_Empresa){
 
 }
 
-function fetchMaquina(setor){
+function fetchMaquina(setor) {
     fetch("/setorMaquina/cadastrarMaquina", {
         method: "POST",
         headers: {
@@ -158,24 +170,24 @@ function fetchMaquina(setor){
         body: JSON.stringify({
             // crie um atributo que recebe o valor recuperado aqui
             // Agora vá para o arquivo routes/usuario.js
-              
-           setorServer: setor
-          })
-        }).then(function (resposta) {
-            console.log("resposta: ", resposta);
 
-            if (resposta.ok) {
-                alert("Maquina Cadastrada com sucesso!")
-                getFK_maquina()
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-        });
+            setorServer: setor
+        })
+    }).then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+            
+            getFK_maquina()
+        } else {
+            throw ("Houve um erro ao tentar realizar o cadastro!");
+        }
+    }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    });
 }
 
-function fetchSetor(setor,fk_empresa){
+function fetchSetor(setor, fk_empresa) {
     fetch("/setorMaquina/cadastrarSetor", {
         method: "POST",
         headers: {
@@ -184,21 +196,21 @@ function fetchSetor(setor,fk_empresa){
         body: JSON.stringify({
             // crie um atributo que recebe o valor recuperado aqui
             // Agora vá para o arquivo routes/usuario.js
-              
-           setorServer: setor,
-           fk_empresaServer: fk_empresa
-          })
-        }).then(function (resposta) {
-            console.log("resposta: ", resposta);
-            if (resposta.ok) {
 
-                getFkSetor(setor,fk_empresa)
+            setorServer: setor,
+            fk_empresaServer: fk_empresa
+        })
+    }).then(function (resposta) {
+        console.log("resposta: ", resposta);
+        if (resposta.ok) {
 
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-        });
+            getFkSetor(setor, fk_empresa)
+
+        } else {
+            throw ("Houve um erro ao tentar realizar o cadastro!");
+        }
+    }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    });
 
 }
