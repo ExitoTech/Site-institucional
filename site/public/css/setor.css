@@ -297,15 +297,13 @@ select::-ms-expand {
     overflow-y: auto;
 }
 
-.caixasAgrupadas {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    margin-bottom: 6%;
-    margin-top: 1%;
-}
+#caixasAgrupadas {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 100px 300px;
+    grid-gap: 100px;
+    padding: 10px;
+  }
 
 .caixinhas {
     width: 13vw;

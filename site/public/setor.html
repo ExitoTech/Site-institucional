@@ -12,7 +12,7 @@
     <script src="js/signIn.js"></script>
 </head>
 
-<body onload="validarSessao(), exit()">
+<body onload="validarSessao(), buscarMaquinas(), exit()">
     <main>
         <div class="navBar">
             <div class="logoNavBar">
@@ -104,72 +104,58 @@
 
                 <div class="caixaInferior">
 
-                    <div class="caixasAgrupadas">
-                        <div class="caixinhas">
-                            <p><b>Maquina 1</b></p>
-                            <div class="box">
-                                <p>Trabalhando</p>
-                                <p>Sem problemas</p>
-                            </div>
-                        </div>
-                        <div class="caixinhas">
-                            <p><b>Maquina 2</b></p>
-                            <div class="box">
-                                <p>Trabalhando</p>
-                                <p>Sem problemas</p>
-                            </div>
-                        </div>
-                        <div class="caixinhas">
-                            <p><b>Maquina 3</b></p>
-                            <div class="box">
-                                <p>Trabalhando</p>
-                                <p>Sem problemas</p>
-                            </div>
-                        </div>
-                        <div class="caixinhas">
-                            <p><b>Maquina 4</b></p>
-                            <div class="box">
-                                <p>Trabalhando</p>
-                                <p>Sem problemas</p>
-                            </div>
-                        </div>
+                    <div id="caixasAgrupadas">
+                        
                     </div>
-                    <div class="caixasAgrupadas">
-                        <div class="caixinhas">
-                            <p>Maquina 5</p>
-                            <div class="box">
-                                <p>Trabalhando</p>
-                                <p>Sem problemas</p>
-                            </div>
-                        </div>
-                        <div class="caixinhas">
-                            <p><b>Maquina 6</b></p>
-                            <div class="box">
-                                <p>Trabalhando</p>
-                                <p>Sem problemas</p>
-                            </div>
-                        </div>
-                        <div class="caixinhas">
-                            <p><b>Maquina 7</b></p>
-                            <div class="box">
-                                <p>Trabalhando</p>
-                                <p>Sem problemas</p>
-                            </div>
-                        </div>
-                        <div class="caixinhas">
-                            <p><b>Maquina 8</b></p>
-                            <div class="box">
-                                <p>Trabalhando</p>
-                                <p>Sem problemas</p>
-                            </div>
-                        </div>
-                    </div>
+                        
                 </div>
-
-
             </div>
         </aside>
     </main>
 </body>
 
 </html>
+<script>
+    function buscarMaquinas() {
+    fetch("/pesquisaMaquina/statusMaquina", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+        }),
+    })
+        .then(function (resposta) {
+            if (resposta.ok) {
+                resposta.json().then((json) => {
+                    console.log(json);
+                    console.log(JSON.stringify(json) + 'exibindo json stringfy');
+
+                    for (i = 0; i < json.length; i++) {
+                            document.getElementById('caixasAgrupadas').innerHTML +=`
+                                <div class="caixinhas">
+                                    <p><b>Maquina ${json[i].idMaquina}</b></p>
+                                    <div class="box">
+                                        <p>Trabalhando</p>
+                                        <p>Sem problemas</p>
+                                    </div>
+                                </div>
+                                `
+                    };
+
+                });
+
+            } else {
+                console.log("Houve um erro ao tentar o select!");
+                alert('Código inválido')
+                resposta.text().then((texto) => {
+                    console.error(texto);
+                });
+            }
+        })
+        .catch(function (erro) {
+            console.log(erro);
+        });
+}
+
+</script>

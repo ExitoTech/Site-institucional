@@ -8,6 +8,10 @@ router.post("/pesquisaMaquina", function (req, res) {
     pesquisaMaquinaController.pesquisaMaquina(req, res);
 })
 
+router.post("/statusMaquina", function (req, res) {
+    pesquisaMaquinaController.statusMaquina(req, res);
+})
+
 
 
 module.exports = router;

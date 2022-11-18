@@ -36,7 +36,34 @@ function pesquisaMaquina(req, res) {
     }
 }
 
+function statusMaquina(req, res) {
+    console.log("ENTRAMOS NA usuarioController");
+
+    if (undefined) {
+        res.status(400).send("Seu numero de pesquisa está está undefined!");
+    } else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        pesquisaMaquinaModel.statusMaquina()
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o pesquisa! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     testar,
-    pesquisaMaquina
+    pesquisaMaquina,
+    statusMaquina,
 }
