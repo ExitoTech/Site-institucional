@@ -266,7 +266,7 @@ a {
     flex-direction: column;
   }
 
-  .infoSoMachine div{
+  .infoSoMachine .img{
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -275,7 +275,19 @@ a {
     justify-content: center;
     align-items: center;
     display: flex;
+    flex-direction: column;
   }
+
+.infoSoAlign{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.infoSoAlign span{
+  margin-top: -45px;
+}
 
   .infoSoMachine div img{
     width: 95px;
@@ -285,6 +297,7 @@ a {
 
   .infoSoMachine span{
     color: #fff;
+    font-size: 11px;
   }
 
   .infoSoMachine p{
@@ -292,3 +305,10 @@ a {
     font-weight: bolder;
   }
   
+  .spanChartPie{
+    margin-top: 110px;
+  }
+
+  .pChartPie{
+    font-size: 10px;
+  }

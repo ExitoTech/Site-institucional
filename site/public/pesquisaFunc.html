@@ -9,6 +9,8 @@
     <link rel="shortcut icon" href="img/logo_transparent.png" type="image/x-icon">
     <link rel="stylesheet" href="css/pesquisaFunc.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="shortcut icon" href="./img/logo_transparent.png" type="image/x-icon">
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
@@ -81,17 +83,24 @@
                                 <span>Arquitetura:<span class="infoSpan" id="arquiteturaSoText">...</span></span>
                             </div>
                             <div id="divInfoInpus02">
-                                <span>localização/CEP:<span class="infoSpan">...</span></span>
+                                <span>localização/CEP:<span id="localizacaoText" class="infoSpan">...</span></span>
                                 <span>Setor:<span class="infoSpan" id="setorMaquinaText">...</span></span>
                                 <span>Horas Trabalhadas neste mês:<span class="infoSpan">...</span></span>
                             </div>
                         </div>
                         <div class="infoSoMachine">
-                            <div>
-                                <img src="img/ubuntu-logo.png" alt="">
+                            <div class="infoSoAlign">
+                                <div class="img">
+                                    <img src="img/ubuntu-logo.png" alt="">
+                                </div>
+                                <span class="spanSo">
+                                    Logo do Sistema Operacional
+                                </span>
                             </div>
-                            <span>Funcionario Atual: </span>
-                            <p>...</p>
+
+                            <span class="spanChartPie">Horas trabalhadas X Pausas</span>
+                            <p class="pChartPie">Dado mensal</p>
+                            <canvas id="myChart" style="width:100%;max-width:250px"></canvas>
                         </div>
                     </div>
                 </div>
@@ -139,8 +148,9 @@
 
                         sistemaOperacionalText.innerHTML = `${json[0].sistemaOperacional}`
                         numeroMaquinaText.innerHTML = `${json[0].idMaquina}`
-                        arquiteturaSoText.innerHTML = `x${json[0].arquiteturaSO}`
-                        setorMaquinaText.innerHTML = `${json[0].idSetor}`
+                        arquiteturaSoText.innerHTML = `${json[0].arquiteturaSO}`
+                        setorMaquinaText.innerHTML = `${json[0].nomeSetor.split('setor')[1]}`
+                        localizacaoText.innerHTML = `${json[0].CEP}`
 
                     });
                 } else {
@@ -154,4 +164,28 @@
 
 
     }
+
+
+    var xValues = ["Italy", "France"];
+    var yValues = [20, 80];
+    var barColors = [
+        "#b91d47",
+        "#00aba9"
+    ];
+
+    new Chart("myChart", {
+        type: "doughnut",
+        data: {
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        },
+        options: {
+            title: {
+                display: false,
+                text: "World Wide Wine Production 2018"
+            }
+        }
+    });
 </script>
