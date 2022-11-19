@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="img/logo_transparent.png" type="image/x-icon">
     <script src="js/signIn.js"></script>
+    <script src="js/dashboard.js"></script>
 </head>
 
-<body onload="validarSessao(), buscarMaquinas(), exit()">
+<body onload="validarSessao(), buscarMaquinas(), getAllSetors(), exit()">
     <main>
         <div class="navBar">
             <div class="logoNavBar">
@@ -73,10 +74,11 @@
                                 <h2 class="subtitulo">Sequencia de maquinas: <span class="informação"></span></h2>
                             </div>
                             <div class="selection">
-                                <select id="setores">
-                                    <option value="">Setor 1</option>
-                                    <option value="">Setor 2</option>
-                                    <option value="">Setor 3</option>
+                                <p><b>Setor</b></p>
+                                <select name="setor" class="selectSetor" id="selectMaquina">
+                                </select>
+                                <select name="setor" class="selectSetor"
+                                    onchange="getMachinePerSector(), buscarMaquinas()" id="selectSetor">
                                 </select>
                             </div>
                         </div>
@@ -92,8 +94,8 @@
                                 <img src="../public/img/icons/check.png" alt="">
                                 <h2><span>3</span> Maquinas em pause</h2>
                             </div>
-                            
-                            
+
+
                         </div>
                     </div>
                 </div>
@@ -105,9 +107,9 @@
                 <div class="caixaInferior">
 
                     <div id="caixasAgrupadas">
-                        
+
                     </div>
-                        
+
                 </div>
             </div>
         </aside>
@@ -117,45 +119,48 @@
 </html>
 <script>
     function buscarMaquinas() {
-    fetch("/pesquisaMaquina/statusMaquina", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-        }),
-    })
-        .then(function (resposta) {
-            if (resposta.ok) {
-                resposta.json().then((json) => {
-                    console.log(json);
-                    console.log(JSON.stringify(json) + 'exibindo json stringfy');
+        caixasAgrupadas.innerHTML = "";
+        fetch("/pesquisaMaquina/statusMaquina", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                fkEmpresaServer: sessionStorage.FK_EMPRESA,
+                setorServer: parseInt(document.getElementById('selectSetor').value)
+            }),
+        })
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    resposta.json().then((json) => {
+                        console.log(json);
+                        console.log(JSON.stringify(json) + 'exibindo json stringfy');
 
-                    for (i = 0; i < json.length; i++) {
-                            document.getElementById('caixasAgrupadas').innerHTML +=`
+                        for (i = 0; i < json.length; i++) {
+                            document.getElementById('caixasAgrupadas').innerHTML += `
                                 <div class="caixinhas">
                                     <p><b>Maquina ${json[i].idMaquina}</b></p>
                                     <div class="box">
-                                        <p>Trabalhando</p>
+                                        <p>${json[i].statusMaquina}</p>
                                         <p>Sem problemas</p>
                                     </div>
                                 </div>
                                 `
-                    };
+                        };
 
-                });
+                    });
 
-            } else {
-                console.log("Houve um erro ao tentar o select!");
-                alert('Código inválido')
-                resposta.text().then((texto) => {
-                    console.error(texto);
-                });
-            }
-        })
-        .catch(function (erro) {
-            console.log(erro);
-        });
-}
+                } else {
+                    console.log("Houve um erro ao tentar o select!");
+                    alert('Código inválido')
+                    resposta.text().then((texto) => {
+                        console.error(texto);
+                    });
+                }
+            })
+            .catch(function (erro) {
+                console.log(erro);
+            });
+    }
 
 </script>

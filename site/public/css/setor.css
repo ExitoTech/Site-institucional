@@ -189,7 +189,7 @@ aside .titulo {
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-    width: 60%;
+    width: 45%;
 }
 
 .line{
@@ -206,10 +206,25 @@ aside .titulo {
 }
 
 .selection {
-    width: 12%;
+    width: 20%;
     margin-top: -2%;
     color: #000633;
     font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+#selectMaquina{
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    z-index: 9999;
+}
+
+#selectSetor{
+    width: 40%;
 }
 
 *,

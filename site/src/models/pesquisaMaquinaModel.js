@@ -12,10 +12,15 @@ function pesquisaMaquina(numeroMaquina) {
 }
 
 
-function statusMaquina() {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ")
+function statusMaquina(fk_empresa, setor) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function pesquisar(): ")
     var instrucao = `
-    SELECT * FROM maquina;
+    select * from maquina
+    join setor
+    on fk_setor = idSetor
+    join empresa
+    on fk_empresa = idEmpresa
+    where idSetor = ${setor} and idEmpresa= '${fk_empresa}';;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
