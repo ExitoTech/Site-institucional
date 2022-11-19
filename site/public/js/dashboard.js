@@ -19,7 +19,7 @@ function getAllSetors(){
 
                     for(i = 0;i< json.length;i++){
 
-                        document.getElementsByClassName('selectSetor')[1].innerHTML += "<option value='" + json[i].nomeSetor.split('setor')[1] + "'" + "class='tituloInfo Setor' selected>" + json[i].nomeSetor.split('setor')[1] + "</option>"
+                        document.getElementsByClassName('selectSetor')[1].innerHTML += "<option value='" + json[i].nomeSetor.split('setor')[1] + "'" + "class='tituloInfo Setor'>" + json[i].nomeSetor.split('setor')[1] + "</option>"
 
                     }
                     getMachinePerSector()
@@ -61,7 +61,7 @@ function getMachinePerSector(){
                     console.log(json);
                     console.log(JSON.stringify(json) + 'exibindo json stringfy');
                     for(i = 0;i< json.length;i++){
-                        document.getElementsByClassName('selectSetor')[0].innerHTML += "<option value='" + json[i].idMaquina  + "'" + "class='tituloInfo Setor' selected>" + json[i].idMaquina + "</option>"
+                        document.getElementsByClassName('selectSetor')[0].innerHTML += "<option value='" + json[i].idMaquina  + "'" + "class='tituloInfo Setor'>" + json[i].idMaquina + "</option>"
                     }
                     capturaDeHardware()
                     capturaDeDados(document.getElementsByClassName('selectSetor')[0].value)

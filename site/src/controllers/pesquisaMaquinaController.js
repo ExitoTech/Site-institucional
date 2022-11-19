@@ -39,12 +39,15 @@ function pesquisaMaquina(req, res) {
 function statusMaquina(req, res) {
     console.log("ENTRAMOS NA usuarioController");
 
+    var fk_empresa = req.body.fkEmpresaServer;
+    var setor = req.body.setorServer
+
     if (undefined) {
         res.status(400).send("Seu numero de pesquisa está está undefined!");
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        pesquisaMaquinaModel.statusMaquina()
+        pesquisaMaquinaModel.statusMaquina(fk_empresa, setor)
             .then(
                 function (resultado) {
                     res.json(resultado);
