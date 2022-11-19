@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajustes Usuário - ExitoTech</title>
     <link rel="stylesheet" href="./css/ajustesUsuario.css">
+    <script src="js/abrirAjusteUser.js"></script>
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body onload="exit()">
+<body>
     <div class="content">
         <div class="voltar">
             <img src="./img/icons/leftArrow.png" style="height: 15px; margin-right: 2%" alt="">
@@ -24,8 +25,13 @@
                 <img src="" alt="">
                 <center>
                     <div class="imgUser"></div>
-                    <div class="opcaoAlterar">
-                        <p>Alterar foto de perfil <i style="font-size: 20px;cursor: pointer;" class="fa fa-pencil" aria-hidden="true"></i></p>
+                    <div onclick="abrirModal()" class="opcaoAlterar">
+                        <p>Alterar foto de perfil <i style="font-size: 20px;cursor: pointer;" class="fa fa-pencil"
+                                aria-hidden="true"></i></p>
+                    </div>
+                    <div>
+                        <input id="idInpuFile" class="inputFile" type="file">
+                        <button onclick="cadastrarImagem()">enviar</button>
                     </div>
                     <div class="inputsButton">
                         <input type="text" placeholder="Nome.."><button>Alterar</button>
@@ -44,11 +50,11 @@
                     </div>
                     <div class="inputsButton">
                         <input type="text" placeholder="Numero"><button>Alterar</button>
-                    </div>                    
+                    </div>
                     <div class="inputsButton">
                         <input type="text" placeholder="Bairro"><button>Alterar</button>
-                    </div>                    
-                        <button class="btnSave">Salvar</button>
+                    </div>
+                    <button class="btnSave">Salvar</button>
                 </center>
             </div>
         </header>
@@ -56,3 +62,43 @@
 </body>
 
 </html>
+
+<script>
+    function cadastrarImagem() {
+        var imagemFuncVar = idInpuFile.value;
+
+        if (imagemFuncVar == "") {
+            alert("campo de imagem está vazio..")
+        }
+        else {
+            // Enviando o valor da nova input
+            fetch("/ajustesUsuario/cadastrarImagem", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    imagemFuncServer: imagemFuncVar,
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    
+                    alert("Imagem cadastrada com sucesso!")
+
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+            return false;
+        }
+
+
+    }
+</script>

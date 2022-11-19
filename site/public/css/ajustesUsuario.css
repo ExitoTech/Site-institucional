@@ -87,5 +87,8 @@ input{
 
 }
 
-
-
+.inputFile{
+    background-color: transparent;
+    margin-left: 180px;
+    display: none;
+}
