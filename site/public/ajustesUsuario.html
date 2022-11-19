@@ -12,52 +12,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
+<body onload="buscarImagem()">
     <div class="content">
         <div class="voltar">
             <img src="./img/icons/leftArrow.png" style="height: 15px; margin-right: 2%" alt="">
             <div class="titulo">
-                <p>Ajustes de usuário</p>
+                <p>Nova Foto de Perfil</p>
             </div>
         </div>
-        <header>
-            <div class="alterarFotoUsuario">
-                <img src="" alt="">
-                <center>
-                    <div class="imgUser"></div>
-                    <div onclick="abrirModal()" class="opcaoAlterar">
-                        <p>Alterar foto de perfil <i style="font-size: 20px;cursor: pointer;" class="fa fa-pencil"
-                                aria-hidden="true"></i></p>
-                    </div>
-                    <div>
-                        <input id="idInpuFile" class="inputFile" type="file">
-                        <button onclick="cadastrarImagem()">enviar</button>
-                    </div>
-                    <div class="inputsButton">
-                        <input type="text" placeholder="Nome.."><button>Alterar</button>
-                    </div>
-                    <div class="inputsButton">
-                        <input type="text" placeholder="Sobrenome.."><button>Alterar</button>
-                    </div>
-                    <div class="inputsButton">
-                        <input type="text" placeholder="Telefone.."><button>Alterar</button>
-                    </div>
-                    <div class="inputsButton">
-                        <input type="text" placeholder="Email.."><button>Alterar</button>
-                    </div>
-                    <div class="inputsButton">
-                        <input type="text" placeholder="Enderço"><button>Alterar</button>
-                    </div>
-                    <div class="inputsButton">
-                        <input type="text" placeholder="Numero"><button>Alterar</button>
-                    </div>
-                    <div class="inputsButton">
-                        <input type="text" placeholder="Bairro"><button>Alterar</button>
-                    </div>
-                    <button class="btnSave">Salvar</button>
-                </center>
-            </div>
-        </header>
+    </div>
+
+
+    <div class="alterarFotoUsuario">
+        <img src="" alt="">
+        <div id="imgTrocar" class="imgUser">
+            <img src="" alt="">
+        </div>
+        <div onclick="abrirModal()" class="opcaoAlterar">
+            <p>Alterar foto de perfil <i style="font-size: 20px;cursor: pointer;" class="fa fa-pencil"
+                    aria-hidden="true"></i></p>
+        </div>
+        <div>
+            <input id="idInpuFile" class="inputFile" type="file">
+            <button onclick="cadastrarImagem()">enviar</button>
+        </div>
     </div>
 </body>
 
@@ -87,7 +65,7 @@
                 console.log("resposta: ", resposta);
 
                 if (resposta.ok) {
-                    
+
                     alert("Imagem cadastrada com sucesso!")
 
                 } else {
@@ -98,7 +76,45 @@
             });
             return false;
         }
+    }
 
 
+
+    function buscarImagem() {
+        // Enviando o valor da nova input
+        fetch("/buscarImagem/buscarImagem", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                alert("Achamos sua imagem de perfil!")
+                resposta.json().then((json) => {
+
+                    console.log(json);
+                    console.log(JSON.stringify(json) + 'exibindo json stringfy');
+                    console.log(json[0].fotoPerfil);
+
+                    divImgUser = document.getElementById('imgTrocar')
+
+                    divImgUser.innerHTML = `<img src="${fotoPerfil}" alt="">`
+
+                });
+
+            } else {
+                throw ("Houve um erro ao tentar buscar imagem de perfil");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+        return false;
     }
 </script>

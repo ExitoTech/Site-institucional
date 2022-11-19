@@ -8,7 +8,7 @@ function cadastrarImagem(imagem) {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO funcionario (fotoPerfil) VALUES ('${imagem}') where idFuncionario = 1000;
+        UPDATE funcionario SET fotoPerfil = '${imagem}' WHERE idFuncionario = 1000
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
