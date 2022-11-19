@@ -23,9 +23,20 @@ function sendNewMachine() {
     var setor = document.getElementById('inputSetor').value
     var fk_empresa = sessionStorage.FK_EMPRESA
 
-    if (sessionStorage.SENHA_USUARIO == senha) {
+    if (sessionStorage.SENHA_USUARIO == senha && setor != "") {
 
         getSetor(setor, fk_empresa)
+    }
+    else if(setor == ""){
+        Swal.fire({
+            position: 'top-end',
+            icon: 'error',
+            title: 'O campo setor está vazio!!',
+            toast: true,
+            showConfirmButton: false,
+            timer: 3500
+          })
+          fecharNewMachine()
     }
     else {
         Swal.fire({

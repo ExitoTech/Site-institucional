@@ -76,3 +76,14 @@ CREATE TABLE capturas (
   fk_setor int,
   foreign key(fk_setor) references setor(idSetor)
   );
+  
+  create table bancoDeHora(
+  idRegistroDiaTrabalhado int primary key identity(100000,1),
+  dataRegistro date,
+  horasTrabalhadas time,
+  tempoPausa time,
+  fk_maquina int,
+  foreign key (fk_maquina)
+  references maquina (idMaquina)
+  );
+  
