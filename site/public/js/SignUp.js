@@ -157,7 +157,7 @@ function avancar(){
     switch(contador){
         case 1:
             s1.innerHTML = "<img src='./img/slide-slack/slide1.jpg'>"
-            explicacao.innerHTML = "Clique em 'Create an App' para criar o bot que enviará as mensagens. Para acessar esta tela, clique <a href='https://api.slack.com/'>aqui.</a>"
+            explicacao.innerHTML = "Clique em 'Create an App' para criar o bot que enviará as mensagens. Para acessar esta tela, clique <a href='https://api.slack.com/' target='_blank'>aqui.</a>"
             console.log(contador);
             break;
         case 2:
@@ -199,7 +199,7 @@ function avancar(){
         case 8:
             s8.innerHTML = "<img src='./img/slide-slack/slide8.jpg'>"
             s7.innerHTML = ""
-            explicacao.innerHTML = "Quando chegar nesta tela, volte para a tela inicial do Slack. Você pode fazer isso clicando <a href='https://api.slack.com/apps?new_app=1'>aqui.</a>"
+            explicacao.innerHTML = "Quando chegar nesta tela, volte para a tela inicial do Slack. Você pode fazer isso clicando <a href='https://api.slack.com/apps?new_app=1' target='_blank'>aqui.</a>"
             console.log(contador);
             break;
         case 9:
@@ -273,7 +273,7 @@ function retroceder(){
         case 1:
             s1.innerHTML = "<img src='./img/slide-slack/slide1.jpg'>"
             s2.innerHTML = ""
-            explicacao.innerHTML = "Clique em 'Create an App' para criar o bot que enviará as mensagens. Para acessar esta tela, clique <a href='https://api.slack.com/'>aqui.</a>"
+            explicacao.innerHTML = "Clique em 'Create an App' para criar o bot que enviará as mensagens. Para acessar esta tela, clique <a href='https://api.slack.com/' target='_blank'>aqui.</a>"
             console.log(contador);
             break;
         case 2:
@@ -315,7 +315,7 @@ function retroceder(){
         case 8:
             s8.innerHTML = "<img src='./img/slide-slack/slide8.jpg'>"
             s9.innerHTML = ""
-            explicacao.innerHTML = "Quando chegar nesta tela, volte para a tela inicial do Slack. Você pode fazer isso clicando <a href='https://api.slack.com/apps?new_app=1'>aqui.</a>"
+            explicacao.innerHTML = "Quando chegar nesta tela, volte para a tela inicial do Slack. Você pode fazer isso clicando <a href='https://api.slack.com/apps?new_app=1' target='_blank'>aqui.</a>"
             console.log(contador);
             break;
         case 9:

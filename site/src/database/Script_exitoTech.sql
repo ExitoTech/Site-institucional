@@ -70,7 +70,7 @@ CREATE TABLE capturas (
   REFERENCES maquina (idMaquina)
   )auto_increment = 40000;
   
-  create table atendimentoMaquina(
+  CREATE TABLE atendimentoMaquina(
   idAtendimento int primary key auto_increment,
   tituloIncidente varchar (30),
   descAtendimento varchar(255),
@@ -83,7 +83,7 @@ CREATE TABLE capturas (
   foreign key(fk_setor) references setor(idSetor)
   );
   
-  create table bancoDeHora(
+  CREATE TABLE bancoDeHora(
   idRegistroDiaTrabalhado int primary key auto_increment,
   dataRegistro date,
   horasTrabalhadas time,
@@ -93,16 +93,29 @@ CREATE TABLE capturas (
   references maquina (idMaquina)
   )auto_increment = 100000;
   
+  CREATE TABLE aviso(
+  idAviso int primary key auto_increment,
+  fk_captura int not null
+  )auto_increment = 10000;
+  
 INSERT INTO empresa (nomeEmpresa,cnpj,porteempresa,logradouro,uf,cep) VALUES ('Amazon','123.123.122-12','mÃ©dio','Rua Basilio no escuro','SP','04822920');
 INSERT INTO maquina(nomeMaquina,processador,memoriaRam,memoriaMassa) Values("VinyProgamador","i7 10th gen","16GB","512GB");
 INSERT INTO capturas(fk_maquina,usoCPU,usoRam) Values(20000,22.5,22.4);
 
-select * from empresa;
-select * from maquina;
-select * from funcionario;
-select * from capturas;
+SELECT * FROM empresa;
+SELECT * FROM maquina;
+SELECT * FROM funcionario;
+SELECT * FROM capturas;
 
-delete from funcionario where idFuncionario = 1001;
+DELETE FROM funcionario WHERE idFuncionario = 1001;
 
 SELECT idMaquina FROM maquina ORDER BY idMaquina DESC LIMIT 1;
 Select idempresa from empresa order by idEmpresa desc Limit 1;
+
+INSERT INTO aviso (fk_captura) VALUE (40000);
+SELECT * FROM aviso;
+
+SELECT idAviso, usoCpu, usoRam, dataHora 
+FROM aviso AS avi
+RIGHT JOIN capturas AS cap
+ON avi.fk_captura = cap.idCaptura; 
