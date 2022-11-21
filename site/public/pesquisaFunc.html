@@ -144,13 +144,23 @@
 
                         console.log(json);
                         console.log(JSON.stringify(json) + 'exibindo json stringfy');
-                        console.log(json[0].idMaquina);
 
-                        sistemaOperacionalText.innerHTML = `${json[0].sistemaOperacional}`
-                        numeroMaquinaText.innerHTML = `${json[0].idMaquina}`
-                        arquiteturaSoText.innerHTML = `${json[0].arquiteturaSO}`
-                        setorMaquinaText.innerHTML = `${json[0].nomeSetor.split('setor')[1]}`
-                        localizacaoText.innerHTML = `${json[0].CEP}`
+
+                        if (json.length == 0) {
+                            Swal.fire({
+                                title: `Nenhuma máquina com está identificação encontrada..`,
+                                toast: true,
+                                showConfirmButton: false,
+                                timer: 1000
+                            })
+                        }
+                        else {
+                            sistemaOperacionalText.innerHTML = `${json[0].sistemaOperacional}`
+                            numeroMaquinaText.innerHTML = `${json[0].idMaquina}`
+                            arquiteturaSoText.innerHTML = `${json[0].arquiteturaSO}`
+                            setorMaquinaText.innerHTML = `${json[0].nomeSetor.split('setor')[1]}`
+                            localizacaoText.innerHTML = `${json[0].CEP}`
+                        }
 
                     });
                 } else {

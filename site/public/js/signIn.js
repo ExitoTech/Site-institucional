@@ -46,7 +46,8 @@ function entrar() {
                     sessionStorage.NOME_USUARIO = json.nomeFuncionario;
                     sessionStorage.SENHA_USUARIO = json.senha;
                     sessionStorage.FK_EMPRESA = json.fk_Empresa;
-                    /* sessionStorage.ID_USUARIO = json.id_usuario; */
+                    sessionStorage.IMG_USER = json.fotoPerfil;
+                    sessionStorage.ID_USUARIO = json.idFuncionario;
                     Swal.fire({
                         title: `Entrando..`,
                         toast: true,

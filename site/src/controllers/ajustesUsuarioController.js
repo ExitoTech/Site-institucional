@@ -6,9 +6,10 @@ var sessoes = [];
 function cadastrarImagem(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var imagem = req.body.imagemFuncServer;
+    var email = req.body.emailServer
 
     // Faça as validações dos valores
-    if (imagem == undefined) {
+    if (imagem == undefined || email == undefined) {
         res.status(400).send("Sua imagem está undefined!");
     }
     else {

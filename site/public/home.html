@@ -16,16 +16,17 @@
     <link rel="stylesheet" href="css/style3.css">
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/carregarFotoPerfil.js"></script>
 
 </head>
-<body onload="validarSessao(), exit()">
+<body onload="validarSessao(), exit(), mostrarImgUser()">
     <main>
         <div class="navBar">
             <div class="logoNavBar">
                 <img src="./img/logo_transparent.png" alt="" class="logoNavBar">
             </div>
             <div class="navBarContent">
-                <div class="fotoPerfil">
+                <div id="divImgPerfil" class="fotoPerfil">
                     <img src="./img/fotoPerfil/perfil.png" alt="">
                 </div>
                 <div class="contentOpcoes">
@@ -229,3 +230,4 @@
 </body>
 </html>
 <script src="js/mascNewFunc.js"></script>
+

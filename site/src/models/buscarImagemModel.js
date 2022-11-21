@@ -6,7 +6,7 @@ function buscarImagem() {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-    select fotoPerfil from funcionario where idFuncionario = 1000;
+    select fotoPerfil from funcionario where idFuncionario = 1002;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

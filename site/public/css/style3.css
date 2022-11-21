@@ -55,10 +55,20 @@ button{
 
 .fotoPerfil {
     margin-bottom: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #c1d3fe;
+    width: 74px;
+    height: 73px;
+    border-radius: 50%;
 }
 
 .fotoPerfil img {
-    width: 74px;
+    display: flex;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
 }
 
 .contentOpcoes {
