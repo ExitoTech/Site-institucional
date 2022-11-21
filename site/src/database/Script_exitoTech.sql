@@ -23,7 +23,7 @@ CREATE TABLE funcionario(
   ativo Boolean NULL,
   telefoneFuncionario CHAR(15) NULL,
   cep VARCHAR(9) NULL,
-  fotoPerfil MEDIUMBLOB,
+  fotoPerfil LONGTEXT,
   qrCode boolean,
   fk_Empresa INT NOT NULL,
   isADM Boolean NULL,
