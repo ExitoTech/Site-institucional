@@ -86,4 +86,14 @@ CREATE TABLE capturas (
   foreign key (fk_maquina)
   references maquina (idMaquina)
   );
+
+  CREATE TABLE aviso(
+  idAviso int primary key identity(10000, 1),
+  mediaCpu int not null,
+  mediaRam int not null,
+  dataHora DATETIME default current_timestamp,
+  fk_maquina int,
+  foreign key(fk_maquina)
+  references maquina(idMaquina)
+  );
   

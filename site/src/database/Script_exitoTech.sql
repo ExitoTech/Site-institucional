@@ -95,7 +95,12 @@ CREATE TABLE capturas (
   
   CREATE TABLE aviso(
   idAviso int primary key auto_increment,
-  fk_captura int not null
+  mediaCpu int not null,
+  mediaRam int not null,
+  dataHora DATETIME default current_timestamp,
+  fk_maquina int,
+  foreign key(fk_maquina)
+  references maquina(idMaquina)
   )auto_increment = 10000;
   
 INSERT INTO empresa (nomeEmpresa,cnpj,porteempresa,logradouro,uf,cep) VALUES ('Amazon','123.123.122-12','mÃ©dio','Rua Basilio no escuro','SP','04822920');
@@ -118,4 +123,10 @@ SELECT * FROM aviso;
 SELECT idAviso, usoCpu, usoRam, dataHora 
 FROM aviso AS avi
 RIGHT JOIN capturas AS cap
-ON avi.fk_captura = cap.idCaptura; 
+ON avi.fk_captura = cap.idCaptura;
+
+/**
+ *
+ * @author lucas
+ */
+
