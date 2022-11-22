@@ -1,5 +1,5 @@
-process.env.AMBIENTE_PROCESSO = "desenvolvimento"; 
-// process.env.AMBIENTE_PROCESSO = "producao";
+//process.env.AMBIENTE_PROCESSO = "desenvolvimento"; 
+process.env.AMBIENTE_PROCESSO = "producao";
 
 var express = require("express");
 var cors = require("cors");
@@ -15,6 +15,8 @@ var setorMaquinaRouter = require("./src/routes/setorMaquina");
 var pesquisaMaquinaRouter = require("./src/routes/pesquisaMaquina");
 var ajustesUsuarioRouter = require("./src/routes/ajustesUsuario");
 var buscarImagemRouter = require("./src/routes/buscarImagem");
+var avisoRouter = require("./src/routes/aviso");
+
 
 
 
@@ -31,7 +33,7 @@ app.use("/setorMaquina", setorMaquinaRouter);
 app.use("/pesquisaMaquina", pesquisaMaquinaRouter);
 app.use("/ajustesUsuario", ajustesUsuarioRouter);
 app.use("/buscarImagem", buscarImagemRouter);
-
+app.use("/aviso", avisoRouter);
 
 
 app.listen(PORTA, function () {

@@ -101,7 +101,7 @@ CREATE TABLE capturas (
   fk_maquina int,
   foreign key(fk_maquina)
   references maquina(idMaquina)
-  )auto_increment = 10000;
+  )auto_increment = 10000; 
   
 INSERT INTO empresa (nomeEmpresa,cnpj,porteempresa,logradouro,uf,cep) VALUES ('Amazon','123.123.122-12','mÃ©dio','Rua Basilio no escuro','SP','04822920');
 INSERT INTO maquina(nomeMaquina,processador,memoriaRam,memoriaMassa) Values("VinyProgamador","i7 10th gen","16GB","512GB");
