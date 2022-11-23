@@ -3,12 +3,16 @@ var router = express.Router();
 
 var avisoController = require("../controllers/avisoController");
 
-router.get("/trazer/", function (req, res) {
-    avisoController.trazer(req, res);
+router.get("/trazerRam/", function (req, res) {
+    avisoController.trazerRam(req, res);
 });
 
-router.post("/autenticar", function (req, res) {
-    avisoController.entrar(req, res);
+router.get("/trazerCpu/", function (req, res) {
+    avisoController.trazerCpu(req, res);
+});
+
+router.get("/trazerMaquina/", function (req, res) {
+    avisoController.trazerMaquina(req, res);
 });
 
 module.exports = router;
