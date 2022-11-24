@@ -232,3 +232,42 @@
 </html>
 <script src="js/mascNewFunc.js"></script>
 
+<script>
+    function buscarAtualizacao() {
+        caixasAgrupadas.innerHTML = "";
+        fetch("/verificarCaptura/atualizarMaquina", {
+            method: "POST",
+            headers: {
+
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // fkEmpresaServer: sessionStorage.FK_EMPRESA,
+                // setorServer: parseInt(document.getElementById('selectSetor').value)
+            }),
+        })
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    resposta.json().then((json) => {
+                        console.log(json);
+                        console.log(JSON.stringify(json) + 'exibindo json stringfy');
+
+                        
+
+                    });
+
+                } else {
+                    console.log("Houve um erro ao tentar o select!");
+                    alert('Código inválido')
+                    resposta.text().then((texto) => {
+                        console.error(texto);
+                    });
+                }
+            })
+            .catch(function (erro) {
+                console.log(erro);
+            });
+    }
+
+</script>
