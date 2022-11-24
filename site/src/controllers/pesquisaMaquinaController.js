@@ -27,7 +27,7 @@ function pesquisaMaquina(req, res) {
                 function (erro) {
                     console.log(erro);
                     console.log(
-                        "\nHouve um erro ao realizar o pesquisa! Erro: ",
+                        "\nHouve um erro ao realizar a pesquisa! Erro: ",
                         erro.sqlMessage
                     );
                     res.status(500).json(erro.sqlMessage);

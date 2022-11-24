@@ -9,7 +9,18 @@ function trazerRam() {
         `;
     }else if(process.env.AMBIENTE_PROCESSO == "producao"){
         instrucao= `
-        SELECT avg(mediaRam) FROM aviso WHERE idAviso in (SELECT TOP 5 idAviso FROM aviso ORDER BY idAviso DESC);
+        SELECT avg(usoRam) 
+        FROM capturas as ca
+        join maquina as ma
+        on ca.fk_maquina = ma.idMaquina
+        join setor as se
+        on ma.fk_setor = se.idSetor
+        join empresa as em
+        on se.fk_Empresa = em.idEmpresa
+        WHERE ca.idCaptura 
+        in (SELECT TOP 5 idCaptura FROM capturas WHERE fk_maquina = 20001
+        ORDER BY idCaptura DESC)
+        and em.idEmpresa = 1;
         `
     }else{
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
@@ -42,28 +53,30 @@ function trazerCpu() {
     console.log("Chegamos no model!");
 }
 
-function trazerMaquina() {
+function trazerMaquina(fk_empresa) {
     var instrucao;
 
     if(process.env.AMBIENTE_PROCESSO == "desenvolvimento"){
         instrucao = `
-        select fk_maquina as maquina
-        from aviso as av
-        join maquina as ma
-        on av.fk_maquina = ma.idMaquina
-        left join setor as se
+        select idMaquina as maquina
+        from maquina as ma
+        join setor as se 
         on ma.fk_setor = se.idSetor
-        order by idAviso desc limit 1;
+        join empresa as em
+        on se.fk_Empresa = em.idEmpresa
+        where em.idEmpresa =  
+        group by ma.idMaquina
         `;
     }else if(process.env.AMBIENTE_PROCESSO == "producao"){
         instrucao= `
-        select top 1 fk_maquina as maquina
-        from aviso as av
-        join maquina as ma
-        on av.fk_maquina = ma.idMaquina
-        join setor as se
+        select idMaquina as maquina
+        from maquina as ma
+        join setor as se 
         on ma.fk_setor = se.idSetor
-        order by idAviso desc;
+        join empresa as em
+        on se.fk_Empresa = em.idEmpresa
+        where em.idEmpresa = ${fk_empresa}
+        group by ma.idMaquina
         `
     }else{
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");

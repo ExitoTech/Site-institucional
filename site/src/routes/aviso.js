@@ -11,7 +11,7 @@ router.get("/trazerCpu/", function (req, res) {
     avisoController.trazerCpu(req, res);
 });
 
-router.get("/trazerMaquina/", function (req, res) {
+router.post("/trazerMaquina/", function (req, res) {
     avisoController.trazerMaquina(req, res);
 });
 
