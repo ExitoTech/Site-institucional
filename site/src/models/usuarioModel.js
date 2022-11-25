@@ -107,7 +107,7 @@ function cadastrarUsuarioADM(nomeUsuario,email,senha,cpf,cepUsuario,telefoneUsua
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-    Insert into Funcionario (nomeFuncionario,cpf,email,senha,ativo,telefoneFuncionario,cep,fk_empresa,isADM) VALUES ('${nomeUsuario}','${cpf}','${email}','${senha}', ${isTrue} ,'${telefoneUsuario}', '${cepUsuario}','${fk_empresa}',${isTrue});
+    Insert into Funcionario (nomeFuncionario,cpf,email,senha,ativo,telefoneFuncionario,cep,fk_empresa,isADM,visualizarCpu,visualizarDisco,visualizarRam) VALUES ('${nomeUsuario}','${cpf}','${email}','${senha}', ${isTrue} ,'${telefoneUsuario}', '${cepUsuario}','${fk_empresa}',${isTrue},${isTrue},${isTrue},${isTrue});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -130,7 +130,7 @@ function cadastrarFuncionario(nome,cpf,email,senha,telefone,cep,fk_empresa) {
     }
 
     var instrucao = `
-        INSERT INTO funcionario (nomeFuncionario,cpf,email,senha,ativo,telefoneFuncionario,cep,fk_empresa,isADM) VALUES ('${nome}','${cpf}','${email}','${senha}', ${isTrue} ,'${telefone}', '${cep}','${fk_empresa}',${isFalse});`
+        INSERT INTO funcionario (nomeFuncionario,cpf,email,senha,ativo,telefoneFuncionario,cep,fk_empresa,isADM,visualizarCpu,visualizarDisco,visualizarRam) VALUES ('${nome}','${cpf}','${email}','${senha}', ${isTrue} ,'${telefone}', '${cep}','${fk_empresa}',${isFalse},${isTrue},${isTrue},${isTrue});`
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }

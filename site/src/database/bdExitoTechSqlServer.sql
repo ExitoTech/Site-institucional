@@ -22,6 +22,9 @@ CREATE TABLE funcionario(
   cep VARCHAR(9) NULL,
   fk_Empresa INT NOT NULL,
   isADM TINYINT NULL,
+  visualizarCpu TINYINT NULL,
+  visualizarDisco TINYINT NULL,
+  visualizarRam TINYINT NULL,
   PRIMARY KEY (idFuncionario),
   FOREIGN KEY (fk_empresa)
   REFERENCES empresa(idEmpresa)
