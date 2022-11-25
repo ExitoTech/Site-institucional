@@ -57,55 +57,59 @@
                 <p>Exit</p>
             </div>
         </div>
-        <div class="backTitle">
-            <div class="voltar">
-                <img src="./img/icons/leftArrow.png" style="height: 15px; margin-right: 2%" alt="">
-                <div class="titulo">
-                    <p>Buscar Máquina</p>
-                </div>
-            </div>
-            <div class="mainSearchFunc">
-                <div class="subMainSearchFunc">
-                    <div class="divInputSearch">
-                        <div class="submit-line">
-                            <input id="numMaquina" type="text" />
-                            <button onclick="pesquisarMaquina()" class="submit-lente" type="submit">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </div>
+        <div class="aside">
+            <div class="backTitle">
+                <div class="voltar">
+                    <a href="./home.html"><img src="./img/icons/leftArrow.png" style="height: 15px; margin-right: 2%" alt=""></a>
+                    
+                    <div class="titulo">
+                        <p>Pesquisar Máquina</p>
                     </div>
-                    <div class="divMainSearch">
-                        <div class="divInfoInputs">
-                            <div id="divInfoInpus01">
-                                <span>Sistema operacional:<span id="sistemaOperacionalText"
-                                        class="infoSpan">...</span></span>
-                                <span>Número da maquina:<span id="numeroMaquinaText" class="infoSpan">...</span></span>
-                                <span>Arquitetura:<span class="infoSpan" id="arquiteturaSoText">...</span></span>
-                            </div>
-                            <div id="divInfoInpus02">
-                                <span>localização/CEP:<span id="localizacaoText" class="infoSpan">...</span></span>
-                                <span>Setor:<span class="infoSpan" id="setorMaquinaText">...</span></span>
-                                <span>Horas Trabalhadas neste mês:<span class="infoSpan">...</span></span>
+                </div>
+                <div class="mainSearchFunc">
+                    <div class="subMainSearchFunc">
+                        <div class="divInputSearch">
+                            <div class="submit-line">
+                                <input id="numMaquina" type="text" placeholder="Digite o ID numérico da máquina..." />
+                                <button onclick="pesquisarMaquina()" class="submit-lente" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
                             </div>
                         </div>
-                        <div class="infoSoMachine">
-                            <div class="infoSoAlign">
-                                <div class="img">
-                                    <img src="img/ubuntu-logo.png" alt="">
+                        <div class="divMainSearch">
+                            <div class="divInfoInputs">
+                                <div id="divInfoInpus01">
+                                    <span class="infoMaquina">Sistema operacional:
+                                        <span id="sistemaOperacionalText" class="infoSpan">...</span></span>
+                                    <span class="infoMaquina">Número da maquina:<span id="numeroMaquinaText" class="infoSpan">...</span></span>
+                                    <span class="infoMaquina">Arquitetura:<span class="infoSpan" id="arquiteturaSoText">...</span></span>
                                 </div>
-                                <span class="spanSo">
-                                    Logo do Sistema Operacional
-                                </span>
+                                <div id="divInfoInpus02">
+                                    <span class="infoMaquina">localização/CEP:<span id="localizacaoText" class="infoSpan">...</span></span>
+                                    <span class="infoMaquina">Setor:<span class="infoSpan" id="setorMaquinaText">...</span></span>
+                                    <span class="infoMaquina">Horas Trabalhadas neste mês:<span class="infoSpan">...</span></span>
+                                </div>
                             </div>
-
-                            <span class="spanChartPie">Horas trabalhadas X Pausas</span>
-                            <p class="pChartPie">Dado mensal</p>
-                            <canvas id="myChart" style="width:100%;max-width:250px"></canvas>
+                            <div class="infoSoMachine">
+                                <div class="infoSoAlign">
+                                    <div class="img">
+                                        <img src="img/ubuntu-logo.png" alt="">
+                                    </div>
+                                    <span class="spanSo">
+                                        Logo do Sistema Operacional
+                                    </span>
+                                </div>
+    
+                                <span class="spanChartPie">Horas trabalhadas X Pausas</span>
+                                <p class="pChartPie">Dado mensal</p>
+                                <canvas id="myChart" style="width:100%;max-width:250px"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+     </div>
+        
     </main>
 </body>
 
