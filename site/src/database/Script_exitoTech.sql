@@ -27,6 +27,9 @@ CREATE TABLE funcionario(
   qrCode boolean,
   fk_Empresa INT NOT NULL,
   isADM Boolean NULL,
+  visualizarCpu Boolean NULL,
+  visualizarDisco Boolean NULL,
+  visualizarRam Boolean NULL,
   PRIMARY KEY (idFuncionario),
   FOREIGN KEY (fk_empresa)
   REFERENCES empresa(idEmpresa)
