@@ -20,7 +20,7 @@
     <script src="js/carregarFotoPerfil.js"></script>
 
 </head>
-<body onload="validarSessao(), exit(), mostrarImgUser(), validar()">
+<body onload="validarSessao(), exit(), mostrarImgUser(),BuscarMaquinasAtivas()">
     <main>
         <div class="navBar">
             <div class="logoNavBar">
@@ -233,28 +233,60 @@
 <script src="js/mascNewFunc.js"></script>
 
 <script>
-    function buscarAtualizacao() {
-        caixasAgrupadas.innerHTML = "";
-        fetch("/verificarCaptura/atualizarMaquina", {
+
+function BuscarMaquinasAtivas(){
+        fetch("/at/buscarMaquinasAtivas", {
             method: "POST",
             headers: {
-
                 "Accept": "application/json",
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                // fkEmpresaServer: sessionStorage.FK_EMPRESA,
-                // setorServer: parseInt(document.getElementById('selectSetor').value)
             }),
         })
             .then(function (resposta) {
                 if (resposta.ok) {
                     resposta.json().then((json) => {
                         console.log(json);
-                        console.log(JSON.stringify(json) + 'exibindo json stringfy');
+                        console.log(JSON.stringify(json) + 'exibindo json stringfy'); 
 
-                        
+                   for(i = 0;i < json.length;i++){
+                        buscarAtualizacao(json[i].idMaquina)
+                    }      
 
+                    });
+
+                } else {
+                    console.log("Houve um erro ao tentar o select!");
+                    alert('Código inválido')
+                    resposta.text().then((texto) => {
+                        console.error(texto);
+                    });
+                }
+            })
+            .catch(function (erro) {
+                console.log(erro);
+            });
+    }
+
+
+
+    function buscarAtualizacao(Maquina) {
+        fetch("/at/verificarCaptura", {
+            method: "POST",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                 fkMaquina: Maquina,
+            }),
+        })
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    resposta.json().then((json) => {
+                        console.log(json);
+                        console.log(JSON.stringify(json) + 'exibindo json stringfy');                        
                     });
 
                 } else {

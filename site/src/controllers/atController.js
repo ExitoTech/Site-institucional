@@ -1,17 +1,9 @@
 var atModel = require('../models/atModel')
 
-function atualizarMaquina(req, res) {
+function buscarMaquinasAtivas(req, res) {
   // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-  var statusMaquina = req.params.statusMaquina
-  var idMaquina = req.params.idMaquina
-
-  // Faça as validações dos valores
-  if (idMaquina == undefined) {
-    res.status(400).send('atualizacao está undefined!')
-  } else {
     // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-    atModel
-      .atualizarMaquina(statusMaquina, idMaquina)
+    atModel.buscarMaquinasAtivas()
       .then(function (resultado) {
         res.json(resultado)
       })
@@ -23,13 +15,13 @@ function atualizarMaquina(req, res) {
         )
         res.status(500).json(erro.sqlMessage)
       })
-  }
+  
 }
 
 function verificarCaptura(req, res) {
   // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-
-  var idMaquina = req.params.idMaquina
+      
+  var idMaquina = req.body.fkMaquina
 
   // Faça as validações dos valores
   if (idMaquina == undefined) {
@@ -53,6 +45,6 @@ function verificarCaptura(req, res) {
 }
 
 module.exports = {
-  atualizarMaquina,
-  verificarCaptura
+  verificarCaptura,
+  buscarMaquinasAtivas
 }
