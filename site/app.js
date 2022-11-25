@@ -16,6 +16,8 @@ var pesquisaMaquinaRouter = require("./src/routes/pesquisaMaquina");
 var ajustesUsuarioRouter = require("./src/routes/ajustesUsuario");
 var buscarImagemRouter = require("./src/routes/buscarImagem");
 var avisoRouter = require("./src/routes/aviso");
+var mostrarCorrecoesRouter = require("./src/routes/mostrarCorrecoes");
+
 
 
 
@@ -34,6 +36,7 @@ app.use("/pesquisaMaquina", pesquisaMaquinaRouter);
 app.use("/ajustesUsuario", ajustesUsuarioRouter);
 app.use("/buscarImagem", buscarImagemRouter);
 app.use("/aviso", avisoRouter);
+app.use("/mostrarCorrecoes",mostrarCorrecoesRouter);
 
 
 app.listen(PORTA, function () {

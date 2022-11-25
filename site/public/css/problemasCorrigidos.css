@@ -151,16 +151,19 @@ main .infoProblemas{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     font-family: monospace;
+    overflow-y: auto;
+}
 
+.infoProblemas h2{
+    margin-bottom: -8px;
 }
 
 .infoProblemas .mainMachines{
     background-color: #000633;
     width: 95%;
     height: 90%;
-    overflow: hidden;
-    overflow-y: scroll;
     flex-direction: column;
 }
 
