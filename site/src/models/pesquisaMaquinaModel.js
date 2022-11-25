@@ -20,7 +20,7 @@ function statusMaquina(fk_empresa, setor) {
     on fk_setor = idSetor
     join empresa
     on fk_empresa = idEmpresa
-    where idSetor = ${setor} and idEmpresa= '${fk_empresa}';;
+    where nomeSetor = 'setor ${setor}' and idEmpresa= '${fk_empresa}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

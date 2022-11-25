@@ -13,7 +13,7 @@
     <script src="js/dashboard.js"></script>
 </head>
 
-<body onload="validarSessao(), buscarMaquinas(), getAllSetors(), exit()">
+<body onload="validarSessao(),  buscarMaquinas(), getAllSetors(),  exit()">
     <main>
         <div class="navBar">
             <div class="logoNavBar">
@@ -78,7 +78,8 @@
                                 <select name="setor" class="selectSetor" id="selectMaquina">
                                 </select>
                                 <select name="setor" class="selectSetor"
-                                    onchange="getMachinePerSector(), buscarMaquinas()" id="selectSetor">
+                                    onchange=" buscarMaquinas()" id="selectSetor">
+                                    <option value="" selected>Selecionar ...</option>
                                 </select>
                             </div>
                         </div>
@@ -133,10 +134,10 @@
             .then(function (resposta) {
                 if (resposta.ok) {
                     resposta.json().then((json) => {
-                        console.log(json);
-                        console.log(JSON.stringify(json) + 'exibindo json stringfy');
+                        console.log(json)
+                        console.log(JSON.stringify(json) + 'exibindo json stringfy')
 
-                        for (i = 0; i < json.length; i++) {
+                        for (var i = 0; i < json.length; i++) {
                             document.getElementById('caixasAgrupadas').innerHTML += `
                                 <div class="caixinhas">
                                     <p><b>Maquina ${json[i].idMaquina}</b></p>
