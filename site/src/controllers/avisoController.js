@@ -1,11 +1,12 @@
 var avisoModel = require("../models/avisoModel");
 
 function trazerRam(req, res) {
-    const limite_linhas = 1;
+    var maquina = req.body.maquinaServer
+    var empresa = req.body.fk_empresaServer
 
-    console.log(`Recuperando os últimos ${limite_linhas} avisos`);
+    console.log(`Recuperando os últimos  avisos`);
 
-    avisoModel.trazerRam(limite_linhas).then(function (resultado) {
+    avisoModel.trazerRam(empresa, maquina).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -19,11 +20,12 @@ function trazerRam(req, res) {
 }
 
 function trazerCpu(req, res) {
-    const limite_linhas = 1;
+    var maquina = req.body.maquinaServer
+    var empresa = req.body.fk_empresaServer
 
-    console.log(`Recuperando os últimos ${limite_linhas} avisos`);
+    console.log(`Recuperando os últimos avisos`);
 
-    avisoModel.trazerCpu(limite_linhas).then(function (resultado) {
+    avisoModel.trazerCpu(empresa, maquina).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {

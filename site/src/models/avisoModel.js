@@ -1,6 +1,6 @@
 var database = require("../database/config")
 
-function trazerRam() {
+function trazerRam(empresa, maquina) {
     var instrucao;
 
     if(process.env.AMBIENTE_PROCESSO == "desenvolvimento"){
@@ -18,9 +18,9 @@ function trazerRam() {
         join empresa as em
         on se.fk_Empresa = em.idEmpresa
         WHERE ca.idCaptura 
-        in (SELECT TOP 5 idCaptura FROM capturas WHERE fk_maquina = 20001
+        in (SELECT TOP 5 idCaptura FROM capturas WHERE fk_maquina = ${maquina}
         ORDER BY idCaptura DESC)
-        and em.idEmpresa = 1;
+        and em.idEmpresa = ${empresa};
         `
     }else{
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
@@ -32,7 +32,7 @@ function trazerRam() {
     console.log("Chegamos no model!");
 }
 
-function trazerCpu() {
+function trazerCpu(empresa, maquina) {
     var instrucao;
 
     if(process.env.AMBIENTE_PROCESSO == "desenvolvimento"){
@@ -41,7 +41,18 @@ function trazerCpu() {
         `;
     }else if(process.env.AMBIENTE_PROCESSO == "producao"){
         instrucao= `
-        SELECT avg(mediaCpu) FROM aviso WHERE idAviso in (SELECT TOP 5 idAviso FROM aviso ORDER BY idAviso DESC);
+        SELECT avg(usoCpu) 
+        FROM capturas as ca
+        join maquina as ma
+        on ca.fk_maquina = ma.idMaquina
+        join setor as se
+        on ma.fk_setor = se.idSetor
+        join empresa as em
+        on se.fk_Empresa = em.idEmpresa
+        WHERE ca.idCaptura 
+        in (SELECT TOP 5 idCaptura FROM capturas WHERE fk_maquina = ${maquina}
+        ORDER BY idCaptura DESC)
+        and em.idEmpresa = ${empresa};
         `
     }else{
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");

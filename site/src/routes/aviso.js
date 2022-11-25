@@ -3,11 +3,11 @@ var router = express.Router();
 
 var avisoController = require("../controllers/avisoController");
 
-router.get("/trazerRam/", function (req, res) {
+router.post("/trazerRam/", function (req, res) {
     avisoController.trazerRam(req, res);
 });
 
-router.get("/trazerCpu/", function (req, res) {
+router.post("/trazerCpu/", function (req, res) {
     avisoController.trazerCpu(req, res);
 });
 
