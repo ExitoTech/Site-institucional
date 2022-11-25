@@ -5,7 +5,7 @@ function mostrarCorrecoes() {
 
 
     var instrucao = `
-        SELECT tituloIncidente,nomeAutor,horaAtendimento FROM atendimentoMaquina;
+        SELECT tituloIncidente,nomeAutor,horaAtendimento,idMaquina FROM atendimentoMaquina;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
