@@ -116,6 +116,36 @@ function verificarCodigo(req, res) {
 
 }
 
+function mudarRam(req, res) {
+    var verRam = req.body.verRamServer;
+    var codigo = req.body.codigoServer
+
+    usuarioModel.mudarRam(verRam, codigo)
+        .then(
+            function (resultado) {
+                console.log(`\nResultados encontrados: ${resultado.length}`);
+                console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                if (resultado.length == 1) {
+                    console.log(resultado);
+                    res.json(resultado[0]);
+                } else if (resultado.length == 0) {
+                    res.status(403).send("Erro ao atualizar a Ram");
+                } else {
+                    res.status(403).send("Erro!");
+                }
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+
+
+}
+
 function novaSenha(req, res) {
     var senha = req.body.senhaServer;
     var codigo = req.body.codigoServer
@@ -356,4 +386,5 @@ module.exports = {
     verificarCodigo,
     registrarCodigo,
     novaSenha,
+    mudarRam,
 }

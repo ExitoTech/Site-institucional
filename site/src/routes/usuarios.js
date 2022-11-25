@@ -50,4 +50,8 @@ router.post("/novaSenha", function (req, res) {
     usuarioController.novaSenha(req, res);
 });
 
+router.post("/mudarRam", function (req, res) {
+    usuarioController.mudarRam(req, res);
+});
+
 module.exports = router;

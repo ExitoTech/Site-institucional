@@ -46,6 +46,32 @@ function novaSenha(senha, codigo){
     return database.executar(instrucao);
 }
 
+function mudarRam(verRam, codigo){
+
+    if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
+        if(verRam == 1){
+            verRam = true
+        }else{
+            verRam = false
+        }
+    }
+    else{
+        if(verRam == true){
+            verRam = 1
+        }else{
+            verRam = 0
+        }
+    }
+
+    
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function registrarCodigo", senha, codigo)
+    var instrucao = `
+        UPDATE funcionario SET visualizarRam = '${verRam}' where codigoRecuperacao = '${codigo}';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 
 
 function registrarCodigo(codigo, email){
@@ -147,4 +173,5 @@ module.exports = {
     verificarCodigo,
     registrarCodigo,
     novaSenha,
+    mudarRam,
 };
