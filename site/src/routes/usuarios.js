@@ -54,4 +54,12 @@ router.post("/mudarRam", function (req, res) {
     usuarioController.mudarRam(req, res);
 });
 
+router.post("/mudarCpu", function (req, res) {
+    usuarioController.mudarCpu(req, res);
+});
+
+router.post("/mudarDisco", function (req, res) {
+    usuarioController.mudarDisco(req, res);
+});
+
 module.exports = router;

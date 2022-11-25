@@ -45,14 +45,65 @@ function novaSenha(senha, codigo){
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
+function mudarCpu(verCpu, idFuncionario){
 
-function mudarRam(verRam, codigo){
+    if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
+        if(verCpu == 1){
+            verCpu = 1
+        }else{
+            verCpu = 0
+        }
+    }
+    else{
+        if(verCpu == true){
+            verCpu = 1
+        }else{
+            verCpu = 0
+        }
+    }
+
+    
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function registrarCodigo", verCpu, idFuncionario)
+    var instrucao = `
+        UPDATE funcionario SET visualizarCpu = '${verCpu}' where idFuncionario = '${idFuncionario}';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function mudarDisco(verDisco, idFuncionario){
+
+    if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
+        if(verDisco == 1){
+            verDisco = 1
+        }else{
+            verDisco = 0
+        }
+    }
+    else{
+        if(verDisco == true){
+            verDisco = 1
+        }else{
+            verDisco = 0
+        }
+    }
+
+    
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function registrarCodigo", verDisco, idFuncionario)
+    var instrucao = `
+        UPDATE funcionario SET visualizarDisco = ${verDisco} where idFuncionario = ${idFuncionario};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function mudarRam(verRam, idFuncionario){
 
     if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         if(verRam == 1){
-            verRam = true
+            verRam = 1
         }else{
-            verRam = false
+            verRam = 0
         }
     }
     else{
@@ -64,9 +115,9 @@ function mudarRam(verRam, codigo){
     }
 
     
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function registrarCodigo", senha, codigo)
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function registrarCodigo", verRam, idFuncionario)
     var instrucao = `
-        UPDATE funcionario SET visualizarRam = '${verRam}' where codigoRecuperacao = '${codigo}';
+        UPDATE funcionario SET visualizarRam = '${verRam}' where idFuncionario = '${idFuncionario}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -173,5 +224,7 @@ module.exports = {
     verificarCodigo,
     registrarCodigo,
     novaSenha,
+    mudarCpu,
+    mudarDisco,
     mudarRam,
 };

@@ -48,6 +48,9 @@ function entrar() {
                     sessionStorage.FK_EMPRESA = json.fk_Empresa;
                     sessionStorage.IMG_USER = json.fotoPerfil;
                     sessionStorage.ID_USUARIO = json.idFuncionario;
+                    sessionStorage.VISUALIZAR_RAM = json.visualizarRam
+                    sessionStorage.VISUALIZAR_DISCO = json.visualizarDisco
+                    sessionStorage.VISUALIZAR_CPU = json.visualizarCpu
                     Swal.fire({
                         title: `Entrando..`,
                         toast: true,
