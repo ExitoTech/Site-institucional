@@ -116,6 +116,7 @@ aside {
 }
 
 aside .titulo {
+    font-family: 'Roboto Mono';
     width: 470px;
     height: 100px;
     display: flex;
@@ -123,7 +124,7 @@ aside .titulo {
     justify-content: flex-start;
     align-items: center;
     font-size: 1.5rem;
-    font-weight: 100;
+    font-weight: 500;
 
 }
 
@@ -171,16 +172,25 @@ aside .titulo {
     flex-direction: column;
 }
 
+.tituloInformacaoMaquina {
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    font-family: 'RobotoMono', monospace;
+}
+
 .infos {
     width: auto;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    font-family: 'Roboto Mono', monospace;
 }
 
 .maquina {
-    width: 14%;
+    width: 18%;
     height: auto;
 }
 
@@ -189,7 +199,16 @@ aside .titulo {
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-    width: 45%;
+    width: 65%;
+}
+
+.totMaquinas{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
 }
 
 .line{
@@ -206,10 +225,8 @@ aside .titulo {
 }
 
 .selection {
-    width: 20%;
-    margin-top: -2%;
+    width: 100%;
     color: #000633;
-    font-weight: bold;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -224,7 +241,8 @@ aside .titulo {
 }
 
 #selectSetor{
-    width: 40%;
+    width: 35%;
+    font-weight: bold;
 }
 
 *,
@@ -270,31 +288,38 @@ select::-ms-expand {
 .estado {
     width: 80%;
     height: 80%;
-    margin-top: -2%;
-    margin-left: 4%;
+    margin-top: -6%;
+    margin-left: 5%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    font-size: 13.5px;
+    color: #fff;
+    font-family: 'Roboto Mono';
 }
 
-.funcionando{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-}
-
-.pausado{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
+.estado p{
+    margin: 0;
 }
 
 .estado img{
     height: 15px;
     margin-right: 10px;
 }
+
+.home.ativado.desativado{
+    display: flex;
+    flex-direction: row;
+    align-items: center;    
+    
+}
+
+.caixaMenor h2 {
+    font-size: 1rem;
+    color: #f5f5f5;
+    ;
+}
+
 
 .caixaMenor h2 {
     font-size: 1rem;

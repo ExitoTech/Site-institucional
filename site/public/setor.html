@@ -63,40 +63,49 @@
             <div class="mommy">
                 <div class="caixaSuperior">
                     <div class="caixaMaior">
-                        <h1>Informações do Setor</h1>
+                        <p class="tituloInformacaoMaquina">Informações da maquina</p>
 
                         <div class="infos">
                             <img class="maquina" src="img/icons/maquina.png">
                             <div class="infoMonitor">
-                                <h2 class="subtitulo">Numero de Maquinas: <span class="informação"></span></h2>
+                                <div class="totMaquinas">
+                                    <p class="subtitulo">Total de Maquinas: </p> 
+                                    <b><span id="totalMaquinas"></span></b>
+                                </div>
+                                
                                 <div class="line"></div>
-                                <h2 class="subtitulo">Sala: <span class="informação"></span></h2>
-                                <h2 class="subtitulo">Sequencia de maquinas: <span class="informação"></span></h2>
+                                <div class="selection">
+                                    <p>Setor</p>
+                                    <select name="setor" class="selectSetor" id="selectMaquina">
+                                    </select>
+                                    <select name="setor" class="selectSetor"
+                                        onchange=" buscarMaquinas()" id="selectSetor">
+                                        <option value="" selected>Selecionar ...</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="selection">
-                                <p><b>Setor</b></p>
-                                <select name="setor" class="selectSetor" id="selectMaquina">
-                                </select>
-                                <select name="setor" class="selectSetor"
-                                    onchange=" buscarMaquinas()" id="selectSetor">
-                                    <option value="" selected>Selecionar ...</option>
-                                </select>
-                            </div>
+                            
                         </div>
                     </div>
                     <div class="caixaMenor">
-                        <h1 style="margin-top: 20px;">Relatório</h1>
+                        <p class="tituloInformacaoMaquina" style="color: #fff">Informações da maquina</p>
                         <div class="estado">
-                            <div class="funcionando">
+                            <div class="home">
                                 <img src="../public/img/icons/check.png" alt="">
-                                <h2><span>3</span> Maquinas funcionando</h2>
+                                <p><span id="home"></span> Máquinas estão na home do JAR.</p>
+                            </div>
+                            <div class="ativado">
+                                <img src="../public/img/icons/check.png" alt="">
+                                <p><span id="ativado"></span> Máquinas ativadas.</p>
                             </div>
                             <div class="pausado">
                                 <img src="../public/img/icons/check.png" alt="">
-                                <h2><span>3</span> Maquinas em pause</h2>
+                                <p><span id="pause"></span> Máquinas pausadas.</p>
                             </div>
-
-
+                            <div class="desativado">
+                                <img src="../public/img/icons/check.png" alt="">
+                                <p><span id="desativado"></span> Máquinas desativadas.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -136,7 +145,34 @@
                     resposta.json().then((json) => {
                         console.log(json)
                         console.log(JSON.stringify(json) + 'exibindo json stringfy')
+                        //Informações do setor
+                        document.getElementById('totalMaquinas').innerHTML = json.length;
+                        
+                        //Relatório
+                        var ativado = 0;
+                        var desativado = 0;
+                        var home = 0;
+                        var pausado = 0;
+                        var home = 0;
 
+                        for (i = 0; i < json.length; i++){
+                            if(json[i].statusMaquina == "ativado"){
+                                ativado++;
+                            }else if(json[i].statusMaquina == "desativado"){
+                                desativado++;
+                            }else if(json[i].statusMaquina == "pausado"){
+                                pausado++;
+                            }else if(json[i].statusMaquina == "inicio"){
+                                home++
+                            }
+                        }
+
+                        document.getElementById('home').innerHTML = home;
+                        document.getElementById('ativado').innerHTML = ativado;
+                        document.getElementById('desativado').innerHTML = desativado;
+                        document.getElementById('pause').innerHTML = pausado;
+                        document.getElementById('home').innerHTML = home;
+                        //Parque de máquinas
                         for (var i = 0; i < json.length; i++) {
                             document.getElementById('caixasAgrupadas').innerHTML += `
                                 <div class="caixinhas">
