@@ -332,7 +332,7 @@ circle:nth-child(2){
     height: 100%;
     background-color: #fff;
     border-radius: 14px;
-    /* box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%); */
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -367,11 +367,13 @@ circle:nth-child(2){
     color: #7F868C;
 }
 
+
 #txtAviso1, #txtAviso2 {
-    font-size: 1.4rem;
-    color:#000;
-    margin-left: 25px;
+    font-size: 0.9rem;
+    color:#7F868C;
+    text-align: center;
 }
+
 
 .line{
     width: 100%;
@@ -401,7 +403,7 @@ circle:nth-child(2){
     justify-content: space-around;
     flex-direction: column;
     width: 100%;
-    height: 50%;
+    height: 100%;
     align-items: center;
 }
 
@@ -411,10 +413,7 @@ circle:nth-child(2){
     font-size: 35px;
     margin-top: 10px;
 }
-.imagensDivItem img{
-    width: 110px;
-    margin-bottom: 35px;
-}
+
 
 .imagensDivItem p{
     width: 90%;

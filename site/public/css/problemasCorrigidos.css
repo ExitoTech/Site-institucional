@@ -156,6 +156,28 @@ main .infoProblemas{
     overflow-y: auto;
 }
 
+
+.voltar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+}
+
+
+.ocorrencia{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 25%;
+}
+.ocorrencia img{
+    margin-right: 5%;
+}
+
 .infoProblemas h2{
     margin-bottom: -8px;
 }
