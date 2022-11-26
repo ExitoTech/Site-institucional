@@ -171,11 +171,14 @@ a {
 .divInputSearch input{
     width: 100%;
     height: 50px;
-    border-radius: 20px;
+    border-radius: 14px;
     box-shadow: 0 3px 6px #00000029, 0 1px 2px #0000003b;
     font-weight: 400;
 }
-
+#numMaquina{
+  text-align:start;
+  padding-left: 5%;
+}
 .divInfoFunc{
     width: 100%;
     height: 70vh;
@@ -187,6 +190,7 @@ a {
     z-index:10;
     border:none;
     background:transparent;
+    color: #000633;
     outline:none;
     height: 100%;
     width: 5%;
@@ -208,7 +212,7 @@ a {
     display: flex;
     width: 79vw;
     height: 70vh;
-    border-radius: 35px;
+    border-radius: 14px;
     background-color: #000633;
     margin-top: 15px;
     box-shadow: 0 3px 6px #00000029, 0 1px 2px #0000003b;
@@ -218,7 +222,7 @@ a {
 
   .divInfoInputs{
     display: flex;
-    width: 85%;
+    width: 90%;
     height: 100%;
   }
 
@@ -227,13 +231,14 @@ a {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
+    margin: auto;
   }
 
   .divInfoInputs #divInfoInpus01 span{
-    margin: 40px;
-    width: 80%;
-    border: 1px solid #B4BEC9;
+    margin: 3%;
+    width: 90%;
+    font-family: 'Roboto';
     padding: 4px;
     border-left: 1px solid transparent;
     border-top: 1px solid transparent;
@@ -241,36 +246,22 @@ a {
     outline: none;
   }
 
+  .line{
+    width: 100%;
+    height: 0.7px;
+    background-color: #b4bec9;
+    opacity:40%;
+    border-radius: 14px;
+}
+
   .infoMaquina{
     font-size: 15px;
   }
+
   .divInfoInputs #divInfoInpus01 span .infoSpan{
     margin-left: 5px;
-    font-weight: bolder;
   }
 
-  .divInfoInputs #divInfoInpus02{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 50%;
-  }
-
-  .divInfoInputs #divInfoInpus02 span{
-    margin: 40px;
-    width: 75%;
-    border: 1px solid #B4BEC9;
-    border-left: 1px solid transparent;
-    border-top: 1px solid transparent;
-    border-right: 1px solid transparent;
-    outline: none;
-  }
-
-  .divInfoInputs #divInfoInpus02 span .infoSpan{
-    margin-left: 5px;
-    font-weight: bolder;
-  }
 
   .infoSoMachine{
     float: right;
@@ -288,7 +279,6 @@ a {
     height: 100px;
     border-radius: 50%;
     margin: 50px;
-    background-color: #7d819e;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -307,9 +297,10 @@ a {
 }
 
   .infoSoMachine div img{
-    width: 95px;
-    height: 95px;  
+    width: 140%;
+    height: 140%;  
     border-radius: 50%;
+    opacity:80%;
   }
 
   .infoSoMachine span{
@@ -327,12 +318,11 @@ a {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 2px solid red;
     text-align: center;
     justify-content: center;
     display: flex;
     flex-direction: column;
-    background-color: #a5a7a931;
+    background-color: #3627d94b;
     margin: auto;
   }
 

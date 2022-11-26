@@ -106,7 +106,7 @@ a{
 
 aside {
   border-width: 2px;
-  width:87.5vw;
+  width: 100%;
   height: 100vh;
   background-color: #c1d3fe;
   float: left;
@@ -139,7 +139,6 @@ aside {
   flex-direction: column;
   justify-content: space-around;
   padding: 10px;
-  box-shadow: #00063317 0px 4px 4px 0px, #00063317 0px 2px 16px 0px;
 }
 
 .contentMonitor{
@@ -200,12 +199,16 @@ aside {
   justify-content: space-around;
   flex-direction: row;
   align-items: center;
+  font-family: 'Roboto Mono';
+  font-size; 14px;
 }
 
 .opcaoNumSetor{
   display: flex;
   flex-direction: row;
   align-items: center;
+  
+  font-family: 'Roboto Mono';
 }
 
 .graphMonitor {
@@ -214,7 +217,6 @@ aside {
   width: 63%;
   background-color: #000633;
   border-radius: 14px;
-  box-shadow: #00063344 0px 4px 4px 0px, #00063344 0px 2px 16px 0px;
 
 }
 
@@ -238,8 +240,6 @@ aside {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-
-  box-shadow: #00063317 0px 4px 4px 0px, #00063317 0px 2px 16px 0px;
 
 }
 
@@ -383,8 +383,11 @@ aside {
 }
 
 .line{
-  border-bottom: 0.7px solid #b4bec9;
   width: 100%;
+  height: 0.7px;
+  background-color: #b4bec9;
+  opacity:40%;
+  border-radius: 14px;
 }
 
 .infoMonitorDown .infoMonitorConfigAll .configMachine2 {
@@ -405,7 +408,8 @@ aside {
   font-size: 15px;
   outline: none;
   border:none;
-  height:80%;
+  
+  font-family: 'Roboto Mono';
 }
 
 

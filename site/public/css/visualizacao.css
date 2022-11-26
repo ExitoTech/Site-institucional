@@ -279,7 +279,6 @@ a {
 .toggle:checked+label:before {
     content: "";
     left: calc(100% - 22px);
-    box-shadow: 0 4px 4px rgb(0 0 00 / 10%);
 }
 
 .toggle {
