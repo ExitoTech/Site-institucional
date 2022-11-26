@@ -322,10 +322,21 @@ a {
     font-weight: bolder;
   }
   
-  .spanChartPie{
-    margin-top: 110px;
+  .kipTime{
+    margin-top: 100px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid red;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #a5a7a931;
+    margin: auto;
   }
 
-  .pChartPie{
+  .kipTime p{
     font-size: 10px;
+    font-weight: 400;
   }
