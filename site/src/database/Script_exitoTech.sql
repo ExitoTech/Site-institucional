@@ -128,8 +128,3 @@ FROM aviso AS avi
 RIGHT JOIN capturas AS cap
 ON avi.fk_captura = cap.idCaptura;
 
-/**
- *
- * @author lucas
- */
-

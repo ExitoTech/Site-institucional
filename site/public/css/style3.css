@@ -58,7 +58,6 @@ button{
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #c1d3fe;
     width: 74px;
     height: 73px;
     border-radius: 50%;
