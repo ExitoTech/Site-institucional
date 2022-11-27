@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,15 +18,20 @@
     <link rel="stylesheet" href="css/style3.css">
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/carregarFotoPerfil.js"></script>
 
 </head>
-<body onload="validarSessao(), exit(),BuscarMaquinasAtivas(), validar()">
+
+<body onload="validarSessao(), exit(), mostrarImgUser(),BuscarMaquinasAtivas(), buscarAtualizacao()">
     <main>
         <div class="navBar">
             <div class="logoNavBar">
                 <img src="./img/logo_transparent.png" alt="" class="logoNavBar">
             </div>
             <div class="navBarContent">
+                <div id="divImgPerfil" class="fotoPerfil">
+                    <img src="./img/fotoPerfil/perfil.png" alt="">
+                </div>
                 <div class="contentOpcoes">
                     <a href="./home.html">
                         <div class="opcaoNavBar agora">
@@ -66,19 +72,20 @@
                 <div class="xpto">
                     <div class="options">
                         <!-- Flickity HTML init -->
-                        <div class="carousel" data-flickity='{ "groupCells": true, "pageDots": false, "wrapAround": true }'>                                                                                  
+                        <div class="carousel"
+                            data-flickity='{ "groupCells": true, "pageDots": false, "wrapAround": true }'>
                             <div class="carousel-cell">
                                 <div class="menuContent">
                                     <p onclick="newMachineUser()" class="tituloBotao">+ Nova Maquina</p>
                                 </div>
                             </div>
                             <div class="carousel-cell">
-                                
+
                                 <div class="menuContent">
-                                    <p onclick="abrirCadFunc()" class="tituloBotao">Adicionar Usuario</p>
+                                    <p onclick="abrirCadFunc()" class="tituloBotao">+ Adicionar Usuario</p>
                                 </div>
                             </div>
-                            <div class="carousel-cell">                               
+                            <div class="carousel-cell">
                                 <div class="menuContent" onclick="abrirDownload()">
                                     <a href="../src/jar/exitoTech-jar-1.0-SNAPSHOT-jar-with-dependencies.jar"
                                         download></a>
@@ -97,17 +104,24 @@
                                     <a href="pesquisaFunc.html">
                                         <p onclick="" class="tituloBotao">Pesquisar Máquina</p>
                                     </a>
-                                </div>                            
+                                </div>
+                            </div>
+                            <div class="carousel-cell">
+                                <div class="menuContent">
+                                    <a href="ajustesUsuario.html">
+                                        <p onclick="" class="tituloBotao">Editar Imagem de Perfil</p>
+                                    </a>
+                                </div>
                             </div>
                             <div class="carousel-cell">
                                 <div class="menuContent">
                                     <a href="problemasCorrigidos.html">
-                                        <p onclick="" class="tituloBotao">Ocorrências</p>
+                                        <p onclick="" class="tituloBotao">+ Nova Ocorrencia</p>
                                     </a>
-                                </div>                                
+                                </div>
                             </div>
                         </div>
-                    </div>            
+                    </div>
                     <!--Confirmar nova máquina-->
                     <div id="confirmacaoNewMachine">
                         <div id="confirmacaoContentNewMachine">
@@ -139,24 +153,16 @@
                             <div class="confirmacaoSenhaNewUser">
                                 <div class="inputsNewUser">
                                     <div class="division1">
-                                        <input type="text" placeholder="NOME" id="nomeCadastro" onkeyup="validarNome()">
-                                        <span id="spanNome" class="spanAviso"></span>
+                                        <input type="text" placeholder="NOME" id="nomeCadastro">
                                         <!--input type="text" placeholder="CARGO"-->
-                                        <input type="text" placeholder="CPF" id="cpfCadastro"
-                                            maxlength="14" onkeyup="validarCpf()">
-                                            <span id="spanCpf" class="spanAviso"></span>
-                                        <input type="text" placeholder="E-MAIL" id="emailCadastro" onkeyup="validarEmail()">
-                                        <span id="spanEmail" class="spanAviso"></span>
+                                        <input type="text" placeholder="CPF" id="cpfCadastro" maxlength="11">
+                                        <input type="text" placeholder="E-MAIL" id="emailCadastro">
                                     </div>
                                     <div class="division2">
-                                        <input type="password" placeholder="SENHA" id="senhaCadastro" onkeyup="validarSenha()">
-                                        <span id="spanSenha" class="spanAviso"></span>
-                                        <input type="text" placeholder="TELEFONE" id="telefoneCadastro"
-                                            maxlength="15" onkeyup="validarTelefone()">
-                                            <span id="spanTelefone" class="spanAviso"></span>
+                                        <input type="password" placeholder="SENHA" id="senhaCadastro">
+                                        <input type="text" placeholder="TELEFONE" id="telefoneCadastro" maxlength="11">
                                         <!-- input type="text" placeholder="RG"-->
-                                        <input type="text" placeholder="CEP" id="cepCadastro" maxlength="9" onkeyup="validarCep()">
-                                        <span id="spanCep" class="spanAviso"></span>
+                                        <input type="text" placeholder="CEP" id="cepCadastro">
                                     </div>
                                 </div>
                             </div>
@@ -176,61 +182,55 @@
                                 <p>Autenticação obrigatória para realizar download do JAR</p>
                             </div>
                             <div class="confirmacaoSenha">
-                                <input type="password" name="senha" placeholder="Senha"
-                                    id="inputSenhaBaixar">
+                                <input type="password" name="senha" placeholder="Senha" id="inputSenhaBaixar">
                             </div>
                             <div class="confirmacaoBotao">
                                 <button onclick="iniciarDownload()">Confirmar</button>
                                 <button onclick="fecharDownload()">Cancelar</button>
                             </div>
-                            <a id="baixar"
-                                href="jar/exitoTech-jar-1.0-SNAPSHOT-jar-with-dependencies.jar"
-                                style="visibility: hidden;" onclick="this.click()"
-                                download="exitoTech.jar" type="application/java-archive">Baixar TXT</a>
+                            <a id="baixar" href="jar/exitoTech-jar-1.0-SNAPSHOT-jar-with-dependencies.jar"
+                                style="visibility: hidden;" onclick="this.click()" download="exitoTech.jar"
+                                type="application/java-archive">Baixar TXT</a>
                         </div>
-                    </div>                    
-                        <div class="boxBranca">
-                            <div class="ngcBranco" id="alertas">
-                                <div class="imagensDivItem">
-                                    <h2><span id="emojiAlerta1"></span> Avisos <span id="emojiAlerta2"></span></h2>
-                                    <div id="aviso">
-                                    
-                                    </div>
-                                </div>
+                    </div>
+                    <div class="boxBranca">
+                        <div class="ngcBranco" id="alertas">
+                            <div class="imagensDivItem">
+                                <h2><span id="emojiAlerta1"></span> Avisos <span id="emojiAlerta2"></span></h2>
+                                <p id="txtAviso1"><span style='font-size: 1.7rem'>Está tudo certo com suas máquinas!
+                                        &#128521;</span></p>
+                                <p id="txtAviso2"></p>
                             </div>
-                            <div class="ngcBranco2">
-                                <div class="div01">
-                                    <p class="fontLastActivity">Últimas atividades</p>
-                                    <p><i class="fa fa-chevron-down" aria-hidden="true"></i></p>
-                                </div>
-                                <div class="div01 info">
-                                    <i class="fa fa-desktop" aria-hidden="true"></i>
-                                    <p class="informacao">Uma máquina acaba de se conectar</p>
-                                    <p>12:34 PM</p>
-                                    <p></p>
-                                </div>
+                        </div>
+                        <div class="ngcBranco2">
+                            <div class="div01">
+                                <p class="fontLastActivity" style="margin-left: 5px;">Últimas atividades</p>
                                 <div class="line"></div>
-                                <div class="div01 info">
-                                    <i class="fa fa-desktop" aria-hidden="true"></i>
-                                    <p class="informacao">Uma máquina acaba de se conectar</p>
-                                    <p>12:34 PM</p>
-                                    <p></p>
-                                </div>
                                 <div class="line"></div>
+                                <!-- <p><i class="fa fa-chevron-down" aria-hidden="true"></i></p> -->
                             </div>
+                            <div id="attDiv" class="div01 info">
+                                <!-- <p class="informacao">Ativado Desativado</p> -->
+
+                            </div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+
                         </div>
                     </div>
                 </div>
             </div>
+            </div>
         </aside>
     </main>
 </body>
+
 </html>
 <script src="js/mascNewFunc.js"></script>
 
 <script>
 
-function BuscarMaquinasAtivas(){
+    function BuscarMaquinasAtivas() {
         fetch("/at/buscarMaquinasAtivas", {
             method: "POST",
             headers: {
@@ -244,11 +244,11 @@ function BuscarMaquinasAtivas(){
                 if (resposta.ok) {
                     resposta.json().then((json) => {
                         console.log(json);
-                        console.log(JSON.stringify(json) + 'exibindo json stringfy'); 
+                        console.log(JSON.stringify(json) + 'exibindo json stringfy');
 
-                   for(i = 0;i < json.length;i++){
-                        buscarAtualizacao(json[i].idMaquina)
-                    }      
+                        for (i = 0; i < json.length; i++) {
+                            buscarAtualizacao(json[i].idMaquina)
+                        }
 
                     });
 
@@ -267,7 +267,8 @@ function BuscarMaquinasAtivas(){
 
 
 
-    function buscarAtualizacao(Maquina) {
+    function buscarAtualizacao(idMaquina) {
+
         fetch("/at/verificarCaptura", {
             method: "POST",
             headers: {
@@ -275,22 +276,48 @@ function BuscarMaquinasAtivas(){
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                 fkMaquina: Maquina,
+                fkMaquina: idMaquina,
             }),
         })
             .then(function (resposta) {
                 if (resposta.ok) {
                     resposta.json().then((json) => {
                         console.log(json);
-                        console.log(JSON.stringify(json) + 'exibindo json stringfy');                        
+                        console.log(JSON.stringify(json) + 'exibindo json stringfy');
+
+                        for (var i = 0; i < json.length; i++) {
+                            document.getElementById('attDiv').innerHTML += `
+
+
+                            <div id="attDiv" class="div01 info">
+                                
+                                <div class="statusAtivo">
+                                    </div>
+                                <i class="fa fa-desktop" aria-hidden="true"></i>
+                            
+
+                             <p class="informacao">Máquina de número ${idMaquina} acaba de se conectar</p>
+                             <p id="dataHora">${json[i].dataHora}</p>
+                             <br><br>
+                    
+                            </div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            
+                             `
+                        };
+
+                        // <div class="div01 info">
+                        //     <i class="fa fa-desktop" aria-hidden="true"></i>
+                        //     <p class="informacao">Uma máquina acaba de se conectar</p>
+                        //     <p id="dataHora">12:34 PM</p>
+                        //     <p></p>
+                        // </div>
                     });
 
                 } else {
                     console.log("Houve um erro ao tentar o select!");
-                    alert('Código inválido')
-                    resposta.text().then((texto) => {
-                        console.error(texto);
-                    });
+
                 }
             })
             .catch(function (erro) {

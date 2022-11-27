@@ -14,7 +14,9 @@ function verificarCaptura(idMaquina) {
 
   } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
 
-      instrucaoSql = `SELECT dataHora, DATE_FORMAT(dataHora,'%H:%i:%s') as "Data e Horário",idCaptura as 'Capturas' FROM capturas WHERE fk_maquina = ${idMaquina} ORDER BY idCaptura DESC LIMIT 1`;
+      instrucaoSql = `
+      SELECT DATE_FORMAT(dataHora,'%H:%i:%s') as 'dataHora', idCaptura as 'Capturas' FROM capturas WHERE fk_maquina = ${idMaquina} ORDER BY idCaptura DESC LIMIT 1 
+     `;
 
   } else {
       console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
@@ -37,6 +39,7 @@ function  buscarMaquinasAtivas() {
   console.log('Executando a instrução SQL: \n' + instrucao)
   return database.executar(instrucao)
 }
+
 
 
 module.exports = {
