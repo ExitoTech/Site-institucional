@@ -75,7 +75,7 @@ function trazerCpu(){
 
   setTimeout(function (){
     exibirAviso()
-  }, 100)
+  }, 150)
 }
 
 function trazerMaquina(){
@@ -132,23 +132,4 @@ function exibirAviso(){
       }
     }
   }
-    /* if(integerRam >= 1){
-      txtAviso1.innerHTML = `A máquina  apresentou uso elevado da memória RAM.
-      <br><br><span style="font-weight: bold;">Uso da memória RAM: <span style="color: red;">${integerRam}%</span></span>`
-
-      emojiAlerta1.innerHTML = "&#x26A0;&#xFE0F;"
-      emojiAlerta2.innerHTML = "&#x26A0;&#xFE0F;"
-      
-      alertas.style.boxShadow = "1px 3px 30px red"
-    }
-
-    if(integerCpu >= 75){
-      txtAviso2.innerHTML = `A máquina  apresentou uso elevado da CPU.
-      <br><br><span style="font-weight: bold;">Uso da CPU: <span style="color: red;">${integerCpu}%</span></span>`
-
-      emojiAlerta1.innerHTML = "&#x26A0;&#xFE0F;"
-      emojiAlerta2.innerHTML = "&#x26A0;&#xFE0F;"
-
-      alertas.style.boxShadow = "1px 3px 30px red"
-    } */
 }

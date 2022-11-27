@@ -197,19 +197,27 @@ function nextSignUp() {
     var inputRepetirSenha = document.getElementById("inputConfirmarSenha").value
     var inputSenha = document.getElementById("inputSenha").value
     var inputEmail = document.getElementById("inputEmail").value
+    var inputNome = document.getElementById('inputNome').value
+    var inputCpf = document.getElementById('inputCpf').value
+    var inputCep = document.getElementById('inputCep').value
+    var inputTelefone = document.getElementById('inputTelefone').value;
+
 
     if (inputRepetirSenha != inputSenha) {
-
         errosValidação++
-
     }
     else if (inputSenha < 8) {
-
         errosValidação++
-
     }
     else if (inputEmail.length < 5 && !inputEmail.indexOf('@') > -1 && !inputEmail.indexOf(".") > -1) {
-
+        errosValidação++
+    }else if (inputNome < 3){
+        errosValidação++
+    }else if (inputCpf < 14){
+        errosValidação++
+    }else if (inputCep < 9){
+        errosValidação++
+    }else if (inputTelefone < 15){
         errosValidação++
     }
 
@@ -236,9 +244,6 @@ function nextSignUp() {
             title: '<h3>Dados Invalidos</h3> <br> Verifique se tudo está digitado corretamente.',
             showConfirmButton: false
         })
-        setTimeout(() => {
-            window.location.assign("cadastro-pt2.html");
-        }, "2500")
     }
 }
 function GerarSenhaSegura() {

@@ -24,7 +24,7 @@ function enviarCadFunc(){
    var telefone = document.getElementById("telefoneCadastro").value
    var cep = document.getElementById("cepCadastro").value
 
-   if(nome != "" & cpf != "" & email != "" & senha != "" & telefone != "" & cep != ""){
+   if(nome != "" && cpf != "" && email != "" && senha != "" && telefone != "" && cep != ""){
     fetch("/usuarios/cadastrarFuncionario", {
         method: "POST",
         headers: {
