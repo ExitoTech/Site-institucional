@@ -193,9 +193,19 @@
           fill: false,
           borderColor: '#3627d9',
           tension: 0.4
+        },
+        {
+          label: 'usoDisco',
+          backgroundColor: [
+            '#FFA500'
+
+          ],
+
+          data: [],
+          fill: false,
+          borderColor: '#FFA500',
+          tension: 0.4
         }
-
-
       ]
     }
 
@@ -203,10 +213,17 @@
     for (i = 0; i < resposta.length; i++) {
       var registro = resposta[i];
       data.labels.push(registro.data);
+      if(sessionStorage.VISUALIZAR_CPU == 1){
       data.datasets[0].data.push(registro.usoCPU);
-      data.datasets[1].data.push(registro.usoRam);
-
     }
+    if(sessionStorage.VISUALIZAR_RAM == 1){
+      data.datasets[1].data.push(registro.usoRam);
+    }
+    if(sessionStorage.VISUALIZAR_DISCO == 1){
+      data.datasets[2].data.push(registro.usoDisco);
+    }
+  }
+  
 
     const config = {
       type: 'line',
@@ -233,20 +250,27 @@
           data.labels.shift(); // apagar o primeiro 
           data.labels.push(novoRegistro[0].data); // incluir um novo momento
 
-
-          data.datasets[0].data.shift();  // apagar o primeiro de cpu                                            
-          data.datasets[0].data.push((novoRegistro[0].usoCPU)); // incluir uma nova medida de cpu
+          if(sessionStorage.VISUALIZAR_CPU == 1){
+           data.datasets[0].data.shift();  // apagar o primeiro de cpu                                            
+           data.datasets[0].data.push((novoRegistro[0].usoCPU)); // incluir uma nova medida de cpu
+            }
 
           document.getElementById('usoCPU').innerHTML = novoRegistro[0].usoCPU + "%"
 
-
-
+          if(sessionStorage.VISUALIZAR_RAM == 1){
           data.datasets[1].data.shift();  // apagar o primeiro de usoRam                                                   
           data.datasets[1].data.push((novoRegistro[0].usoRam)) // incluir uma nova medida de usoRam
-
+          }
           document.getElementById('usoRam').innerHTML = novoRegistro[0].usoRam + "%"
 
+
+          if(sessionStorage.VISUALIZAR_DISCO == 1){
+          data.datasets[2].data.shift();  // apagar o primeiro de usoRam                                                   
+          data.datasets[2].data.push((novoRegistro[0].usoDisco)) // incluir uma nova medida de usoRam
+          }
+
           document.getElementById('usoDisco').innerHTML = novoRegistro[0].usoDisco + "%"
+         
 
           alertas(novoRegistro[0].usoCPU, novoRegistro[0].usoRam)
           myChart.update();
