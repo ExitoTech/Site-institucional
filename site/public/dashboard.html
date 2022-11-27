@@ -81,7 +81,7 @@
                     <div class="colunas">
                       <div class="coluna1">
                         <p><b>Processador</b>: <span id="processador">AMD Ryzen 7</span></p>
-                        <p><b>Largura: </b><span id="arquitetura">64 Bits</span></p>
+                        <p><b>Arquitetura: </b><span id="arquitetura">64 Bits</span></p>
                       </div>
                       <div class="coluna2">
                         <p><b>Disco</b>: <span id="memoriaMassa">512 GB</span></p>
@@ -131,16 +131,8 @@
               <div class="lineVertical"></div>
               <div class="dadoCapturado">
                 <div class="dado">
-                  <p class="num">0%</p>
-                  <p class="peca">SWAP</p>
-                </div>
-                <div class="status vermelho"></div>
-              </div>
-              <div class="lineVertical"></div>
-              <div class="dadoCapturado">
-                <div class="dado">
-                  <p class="num">0%</p>
-                  <p class="peca">DISCO</p>
+                  <p class="num" id="usoDisco">0%</p>
+                  <p class="peca">ESPAÇO EM USO DO DISCO</p>
                 </div>
                 <div class="status amarelo"></div>
               </div>
@@ -253,6 +245,8 @@
           data.datasets[1].data.push((novoRegistro[0].usoRam)) // incluir uma nova medida de usoRam
 
           document.getElementById('usoRam').innerHTML = novoRegistro[0].usoRam + "%"
+
+          document.getElementById('usoDisco').innerHTML = novoRegistro[0].usoDisco + "%"
 
           alertas(novoRegistro[0].usoCPU, novoRegistro[0].usoRam)
           myChart.update();

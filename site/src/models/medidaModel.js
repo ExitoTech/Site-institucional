@@ -6,11 +6,11 @@ function buscarUltimasMedidas(idMaquina) {
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
         
-        instrucaoSql = `select top 7 usoCPU,usoRam, dataHora ,CONVERT(varchar,dataHora,108) as data from capturas where fk_maquina = ${idMaquina} order by idCaptura desc`;
+        instrucaoSql = `select top 7 usoCPU,usoRam,usoDisco dataHora ,CONVERT(varchar,dataHora,108) as data from capturas where fk_maquina = ${idMaquina} order by idCaptura desc`;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
 
-        instrucaoSql = `select usoCPU,usoRam,dataHora,DATE_FORMAT(dataHora,'%H:%i:%s') as data from capturas where fk_maquina = ${idMaquina} order by idCaptura desc limit 7`;
+        instrucaoSql = `select usoCPU,usoRam,usoDisco,dataHora,DATE_FORMAT(dataHora,'%H:%i:%s') as data from capturas where fk_maquina = ${idMaquina} order by idCaptura desc limit 7`;
 
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
@@ -25,11 +25,11 @@ function buscarMedidasEmTempoReal(idMaquina) {
     instrucaoSql = ''
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
-        instrucaoSql = `select top 1 usoCPU,usoRam, dataHora ,CONVERT(varchar,dataHora,108) as data from capturas where fk_maquina = ${idMaquina} order by idCaptura desc`;
+        instrucaoSql = `select top 1 usoCPU,usoRam,usoDisco dataHora ,CONVERT(varchar,dataHora,108) as data from capturas where fk_maquina = ${idMaquina} order by idCaptura desc`;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
 
-        instrucaoSql = `select usoCPU,usoRam,dataHora,DATE_FORMAT(dataHora,'%H:%i:%s') as data from capturas where fk_maquina = ${idMaquina} order by idCaptura desc limit 1`;
+        instrucaoSql = `select usoCPU,usoRam,usoDisco,dataHora,DATE_FORMAT(dataHora,'%H:%i:%s') as data from capturas where fk_maquina = ${idMaquina} order by idCaptura desc limit 1`;
         
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
