@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/problemasCorrigidos.css">
     <script src="js/openNewCorrection.js"></script>
     <link rel="shortcut icon" href="./img/logo_transparent.png" type="image/x-icon">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
@@ -53,19 +54,20 @@
         </div>
         <aside>
             <div class="titulo">
-                <div class="voltar">                   
+                <div class="voltar">
                     <div class="ocorrencia">
-                        <a href="./home.html"><img src="./img/icons/leftArrow.png" style="height: 15px; margin-right: 2%" alt=""></a>
+                        <a href="./home.html"><img src="./img/icons/leftArrow.png"
+                                style="height: 15px; margin-right: 2%" alt=""></a>
                         <p>Ocorrências</p>
-                    </div> 
+                    </div>
                     <div>
                         <p onclick="newCorrection()" class="plusIcon">+</p>
-                    </div>    
-                    
-    
-                    
+                    </div>
+
+
+
                 </div>
-                
+
 
 
                 <div id="confirmacaoCorretion">
@@ -76,18 +78,18 @@
 
                         <input class="mainInput" id="textProblem" type="text" placeholder="Problema Encontrado">
                         <select class="mainSelect" name="" id="nomeAutorCorrecao" aria-placeholder="">
-                                <option value="">Selecionar Autor</option>
-                                <option value="mauro">Mauro Silva</option>
-                                <option value="cleber">Cleber Pinheiro</option>
-                                <option value="ananias">Ananias Pereira</option>
-                                <option value="cristiano">Cristiano Joaquim</option>
-                                <option value="vinicius">Vincius A Nunes</option>
-                            </select>
-                            <input class="mainInput" id="idDaMaquina" type="text" placeholder="Identificação da máquina">
-                            <div class="confirmacaoBotaoCorretion">
-                                <button onclick="sendCorretion()">Inserir</button>
-                                <button onclick="fecharCorretion()">Cancelar</button>
-                            </div>
+                            <option value="">Selecionar Autor</option>
+                            <option value="mauro">Mauro Silva</option>
+                            <option value="cleber">Cleber Pinheiro</option>
+                            <option value="ananias">Ananias Pereira</option>
+                            <option value="cristiano">Cristiano Joaquim</option>
+                            <option value="vinicius">Vincius A Nunes</option>
+                        </select>
+                        <input class="mainInput" id="idDaMaquina" type="text" placeholder="Identificação da máquina">
+                        <div class="confirmacaoBotaoCorretion">
+                            <button onclick="sendCorretion()">Inserir</button>
+                            <button onclick="fecharCorretion()">Cancelar</button>
+                        </div>
                     </div>
                 </div>
 
@@ -130,7 +132,17 @@
 
             if (resposta.ok) {
 
-                alert("Problema cadastrado!")
+                Swal.fire({
+                    title: `Ocorrência cadastrada com sucesso!`,
+                    position: 'top-right',
+                    toast: false,
+                    showConfirmButton: false,
+                    timer: 1000
+                })
+                setTimeout(() => {
+                    window.location = "problemasCorrigidos.html";
+
+                }, '2000')
 
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
@@ -173,7 +185,7 @@
                                 <div class="infoMachines">
                                     <div class="divMainItens">
                                         <div class="infoItens">
-                                            <h2>Maquina ${json[i].idMaquina}</h2>
+                                            <h2>Maquina ${json[i].fk_maquina}</h2>
                                             <p>Setor:</p>
                                             <p>Problema encontrado: ${json[i].tituloIncidente}</p>
                                             <p>Autor da correção: ${json[i].nomeAutor}</p>
@@ -187,6 +199,8 @@
                 `
                     };
                 });
+
+
 
             } else {
                 alert("Houve um erro ao tentar buscar os problemas");

@@ -57,8 +57,9 @@
         <div class="aside">
             <div class="backTitle">
                 <div class="voltar">
-                    <a href="./home.html"><img src="./img/icons/leftArrow.png" style="height: 15px; margin-right: 2%" alt=""></a>
-                    
+                    <a href="./home.html"><img src="./img/icons/leftArrow.png" style="height: 15px; margin-right: 2%"
+                            alt=""></a>
+
                     <div class="titulo">
                         <p>Pesquisar Máquina</p>
                     </div>
@@ -77,34 +78,38 @@
                             <div class="divInfoInputs">
                                 <div id="divInfoInpus01">
                                     <span class="infoMaquina"><b>Sistema operacional:</b>
-                                    <span id="sistemaOperacionalText" class="infoSpan">...</span></span>
+                                        <span id="sistemaOperacionalText" class="infoSpan">...</span></span>
                                     <div class="line"></div>
-                                    <span class="infoMaquina"><b>Número da maquina:</b><span id="numeroMaquinaText" class="infoSpan">...</span></span>
+                                    <span class="infoMaquina"><b>Número da maquina:</b><span id="numeroMaquinaText"
+                                            class="infoSpan">...</span></span>
                                     <div class="line"></div>
-                                    <span class="infoMaquina"><b>Arquitetura:</b><span class="infoSpan" id="arquiteturaSoText">...</span></span>
+                                    <span class="infoMaquina"><b>Arquitetura:</b><span class="infoSpan"
+                                            id="arquiteturaSoText">...</span></span>
                                     <div class="line"></div>
-                                    <span class="infoMaquina"><b>CEP:</b><span id="localizacaoText" class="infoSpan">...</span></span>
+                                    <span class="infoMaquina"><b>CEP:</b><span id="localizacaoText"
+                                            class="infoSpan">...</span></span>
                                     <div class="line"></div>
-                                    <span class="infoMaquina"><b>Setor:</b><span class="infoSpan" id="setorMaquinaText">...</span></span>
+                                    <span class="infoMaquina"><b>Setor:</b><span class="infoSpan"
+                                            id="setorMaquinaText">...</span></span>
                                 </div>
                             </div>
                             <div class="infoSoMachine">
                                 <div class="infoSoAlign">
-                                    <div class="img">
-                                        <img src="img/ubuntu-logo.png" alt="">
+                                    <div class="img" id="imgSisOperacional">
+                                        <img style="border: 2px solid rgb(104, 116, 129);" src="img/default-os.jpg" alt="">
                                     </div>
                                 </div>
-    
-                                <span class="kipTime">
-                                    <p><b>Horas trabalhadas:</b> 25</p>
+
+                                <span class="kipTime" id="horasTrabalhadasDiv">
+                                    <p><b>Horas trabalhadas:</b> <span id="idHorasTrabalhadas">...</span></p>
                                 </span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-     </div>
-        
+        </div>
+
     </main>
 </body>
 
@@ -154,11 +159,64 @@
                             })
                         }
                         else {
+                            var horas = 0;
+                            var totalHorasTrabalhadas = 0;
+                            var minutos = 0;
+                            for(i = 0; i< json.length; i++){
+                                json[i].horasTrabalhadas
+                                horas += json[i].horasTrabalhadas.split(':')[0] * 60
+                                minutos += json[i].horasTrabalhadas.split(':')[1] * 1
+
+                            }
+
+                            console.log(horas)
+                            console.log(minutos)
+                            totalHorasTrabalhadas = (horas+minutos)/60;
+
                             sistemaOperacionalText.innerHTML = `${json[0].sistemaOperacional}`
                             numeroMaquinaText.innerHTML = `${json[0].idMaquina}`
                             arquiteturaSoText.innerHTML = `${json[0].arquiteturaSO}`
                             setorMaquinaText.innerHTML = `${json[0].nomeSetor.split('setor')[1]}`
                             localizacaoText.innerHTML = `${json[0].CEP}`
+                            idHorasTrabalhadas.innerHTML = `${totalHorasTrabalhadas.toFixed(2)}`
+ 
+
+                            if (json[0].sistemaOperacional == 'Windows') {
+                                imgSisOperacional.innerHTML = `
+                                <img src="img/win-logo.png" alt="">
+                                `
+                            }
+                            else {
+                                imgSisOperacional.innerHTML = `
+                                <img src="img/ubuntu-logo.png" alt="">
+                                `
+                            }
+
+                            if (json[0].horasTrabalhadas <= 176) {
+                                horasTrabalhadasDiv.innerHTML = `
+                                <span style="border:2px solid #eead2d;" class="kipTime" id="horasTrabalhadasDiv">
+                                        <p><b>Horas trabalhadas:</b> <span id="idHorasTrabalhadas">...</span></p>
+                                    </span>`
+                                    idHorasTrabalhadas.innerHTML = `${totalHorasTrabalhadas.toFixed(2)} Horas`
+
+
+                            }
+                            else if(json[0].horasTrabalhadas <=196) {
+                                horasTrabalhadasDiv.innerHTML = `
+                                <span style="border:2px solid green ;" class="kipTime" id="horasTrabalhadasDiv">
+                                        <p><b>Horas trabalhadas:</b> <span id="idHorasTrabalhadas">...</span></p>
+                                    </span>`
+                                    idHorasTrabalhadas.innerHTML = `${totalHorasTrabalhadas.toFixed(2)} Horas`
+
+                            }
+                            else{
+                                horasTrabalhadasDiv.innerHTML = `
+                                <span style="border:2px solid red;" class="kipTime" id="horasTrabalhadasDiv">
+                                        <p><b>Horas trabalhadas:</b> <span id="idHorasTrabalhadas">...</span></p>
+                                    </span>`
+                                    idHorasTrabalhadas.innerHTML = `${totalHorasTrabalhadas.toFixed(2)} Horas`
+
+                            }
                         }
 
                     });
@@ -170,31 +228,5 @@
             });
             return false;
         }
-
-
     }
-
-
-    var xValues = ["Italy", "France"];
-    var yValues = [20, 80];
-    var barColors = [
-        "#b91d47",
-        "#00aba9"
-    ];
-
-    new Chart("myChart", {
-        type: "doughnut",
-        data: {
-            datasets: [{
-                backgroundColor: barColors,
-                data: yValues
-            }]
-        },
-        options: {
-            title: {
-                display: false,
-                text: "World Wide Wine Production 2018"
-            }
-        }
-    });
 </script>

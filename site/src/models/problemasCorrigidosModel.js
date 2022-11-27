@@ -6,7 +6,7 @@ function sendCorretion(problemaCorrigido, autorMaquinaCorrigida, idMaquina) {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO atendimentoMaquina(tituloIncidente,nomeAutor,horaAtendimento,idMaquina) VALUES ('${problemaCorrigido}','${autorMaquinaCorrigida}', CURRENT_TIMESTAMP, '${idMaquina}');
+        INSERT INTO atendimentoMaquina(tituloIncidente,nomeAutor,horaAtendimento,fk_maquina) VALUES ('${problemaCorrigido}','${autorMaquinaCorrigida}', CURRENT_TIMESTAMP, '${idMaquina}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
