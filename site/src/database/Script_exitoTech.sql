@@ -67,6 +67,7 @@ CREATE TABLE capturas (
   idCaptura INT NOT NULL auto_increment,
   usoCPU DOUBLE NULL,
   usoRam Double NULL,
+  usoDisco Double Null,
   dataHora DATETIME default current_timestamp,
   PRIMARY KEY (idCaptura),
   FOREIGN KEY (fk_maquina)
