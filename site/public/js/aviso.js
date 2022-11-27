@@ -8,7 +8,7 @@ function validar(){
   setTimeout(function () {
     trazerRam(),
     trazerCpu()
-  }, 100);
+  }, 150);
 }
 
 function trazerRam(){
@@ -31,7 +31,7 @@ function trazerRam(){
               /* console.log(json);
               console.log(JSON.stringify(json)); */
 
-              rptRam.push(JSON.stringify(json))
+              rptRam.push(json)
             });
           } else {
               console.log("Houve um erro ao tentar o select!");
@@ -62,7 +62,7 @@ function trazerCpu(){
                       
               /* console.log(json);
               console.log(JSON.stringify(json)); */
-              rptCpu.push(JSON.stringify(json))
+              rptCpu.push(json)
             });
           } else {
               console.log("Houve um erro ao tentar o select!");
@@ -106,19 +106,33 @@ function trazerMaquina(){
 }
 
 function exibirAviso(){
-  console.log(rptRam[0] + " Teste")
-  console.log(rptCpu[0] + " Teste Cpu")
-  /* var stringRam = JSON.stringify(rptRam).replace('{"":', '').replace('}', '');
-  var integerRam = JSON.parse(stringRam)
+  if(rptRam != null){
+    for(let i = 0; i < rptRam.length; i++){
+      var integerRam = parseInt(JSON.stringify(rptRam[i]).replace('[{"":', '').replace('}]', '')); 
+      var integerCpu = parseInt(JSON.stringify(rptCpu[i]).replace('[{"":', '').replace('}]', ''));
+      
+      console.log("RAM: " + integerRam)
+      console.log("CPU: " + integerCpu)
+      if(integerRam > 70){
+        document.getElementById('aviso').innerHTML += `
+        <p>
+        A máquina  apresentou uso elevado da memória RAM.
+        <br><br><span style="font-weight: bold;">Uso da memória RAM: <span style="color: red;">${integerRam}%</span></span>
+        </p>
+        `
+      }
 
-  var stringCpu = JSON.stringify(rptCpu).replace('{"":', '').replace('}', '');
-  var integerCpu = parseInt(stringCpu);
-
-    for(let i = 0; i < rptMaquina.length; i++){
-      console.log(JSON.stringify(rptMaquina[i]).replace('{"maquina":', '').replace('}', ''))
+      if(integerCpu > 70){
+        document.getElementById('aviso').innerHTML += `
+        <p>
+        A máquina  apresentou uso elevado da memória RAM.
+        <br><br><span style="font-weight: bold;">Uso da CPU: <span style="color: red;">${integerCpu}%</span></span>
+        </p>
+        `
+      }
     }
-
-    if(integerRam >= 1){
+  }
+    /* if(integerRam >= 1){
       txtAviso1.innerHTML = `A máquina  apresentou uso elevado da memória RAM.
       <br><br><span style="font-weight: bold;">Uso da memória RAM: <span style="color: red;">${integerRam}%</span></span>`
 

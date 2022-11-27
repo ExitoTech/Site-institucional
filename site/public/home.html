@@ -19,7 +19,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
-<body onload="validarSessao(), exit(),BuscarMaquinasAtivas()">
+<body onload="validarSessao(), exit(),/* BuscarMaquinasAtivas() */ validar()">
     <main>
         <div class="navBar">
             <div class="logoNavBar">
@@ -187,8 +187,9 @@
                             <div class="ngcBranco" id="alertas">
                                 <div class="imagensDivItem">
                                     <h2><span id="emojiAlerta1"></span> Avisos <span id="emojiAlerta2"></span></h2>
-                                    <p id="txtAviso1"><span style='font-size: 1.2rem;'>Tudo certo com suas máquinas!</span></p>
-                                    <p id="txtAviso2"></p>
+                                    <div id="aviso">
+                                    
+                                    </div>
                                 </div>
                             </div>
                             <div class="ngcBranco2">
