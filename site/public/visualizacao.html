@@ -17,7 +17,7 @@
 <title>Visualização - ExitoTech</title>
 </head>
 
-<body onload="validarSessao(),exit()">
+<body onload="validarSessao(),exit(),getAllSetors()">
     <div class="main">
         <div class="navBar">
             <div class="logoNavBar">
@@ -80,12 +80,12 @@
                                 <div class="line"></div>
                                 <div class="informacao">
                                     <div class="informacaoEsquerda">
-                                        <p><b>Processador:</b> AMD Ryzen 7</p>
-                                        <p><b>Largura:</b> 64 BITS</p>
+                                        <p><b>Processador:</b> <span id="processador">AMD Ryzen 7</span></p>
+                                        <p><b>Arquitetura:</b><span id="arquitetura"> 64 BITS</span></p>
                                     </div>
                                     <div class="informacaoDireita">
-                                        <p><b>Memória Ram:</b> 8GB</p>
-                                        <p><b>Disco:</b> 512GB</p>
+                                        <p><b>Memória Ram:</b><span id="memoriaRam"> 8GB</span></p>
+                                        <p><b>Disco:</b><span id="memoriaMassa"> 512GB</span></p>
                                     </div>
                                 </div>
 
