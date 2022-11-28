@@ -10,7 +10,7 @@ function verificarCaptura(idMaquina) {
   instrucaoSql = ''
 
   if (process.env.AMBIENTE_PROCESSO == "producao") {
-      instrucaoSql = ``;
+      instrucaoSql = `SELECT top 1 convert(varchar,dataHora,108) as 'dataHora', idCaptura as 'Capturas' FROM capturas WHERE fk_maquina = ${idMaquina} ORDER BY idCaptura DESC`;
 
   } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
 
