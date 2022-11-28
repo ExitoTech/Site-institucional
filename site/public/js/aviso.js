@@ -7,6 +7,8 @@ var rptMaquina;
 function validar(){
   trazerMaquina()
 
+  console.log("Esotu no aviso")
+
   setTimeout(function () {
     trazerRam(),
     trazerCpu()
@@ -117,7 +119,7 @@ function exibirAviso(){
       var maquinaRamFormata = JSON.stringify(maquinaRam[i]).replace('{"maquina":', '').replace('}', '');
       var maquinaCpuFormata = JSON.stringify(maquinaCpu[i]).replace('{"maquina":', '').replace('}', '');
 
-      console.log("RAM: " + integerRam + " Máquina: " + maquinaRamFormata / 2)
+      console.log("RAM: " + integerRam + " Máquina: " + maquinaRamFormata)
       console.log("CPU: " + integerCpu + " Máquina: " + maquinaCpuFormata)
       if(integerRam > 70){
         console.log("teste ram")
