@@ -139,7 +139,7 @@ function exibirAviso(){
       if(integerCpu > 70){
         aviso.innerHTML += `
         <p>
-        A máquina <b>${maquinaCpuFormata}</b> apresentou uso elevado da memória RAM.
+        A máquina <b>${maquinaCpuFormata}</b> apresentou uso elevado da CPU.
         <br><br><span style="font-weight: bold;">Uso da CPU: <span style="color: red;">${integerCpu}%</span></span>
         </p>
         `

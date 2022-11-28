@@ -325,6 +325,7 @@ circle:nth-child(2){
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 65%;
 }
 
 .ngcBranco{
@@ -339,6 +340,7 @@ circle:nth-child(2){
 }
 .ngcBranco2{
     flex-direction: column;
+    justify-content: space-between;
     width: 60%;
     height: 100%;
     background-color: #fff;
@@ -347,30 +349,60 @@ circle:nth-child(2){
 }
 
 .div01{
-    width: 90%;
-    height: 20px;
+    width: 100%;
+    height: 10px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
-    margin: 35px;
+    margin-top: 50px;
 }
 
-.div01.info{
-    margin-top: 50px;
+.dado {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.statusAtivo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-top: -50px;
+}
+
+.fa {
+    margin-left: 20px;
+}
+
+#attDiv {
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 200px;
 }
 
 .tituloBotao{
     margin-left: 7px;
 }
+
+#dataHora {
+    font-size: 1.2rem;
+    margin-left: 150px;
+    color: #7F868C;
+}
+
 .informacao{
     color: #7F868C;
+    margin-left: 15px;
+    margin-right: 10px;
+    font-size: 1.2rem;
 }
 
 
 #aviso {
     width: 100%;
-    height: 180px;
+    height: 190px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -392,15 +424,18 @@ circle:nth-child(2){
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #00b4d8;
+    background: #9faccd;
     border-radius: 20px;
     border-radius: 20px;
 
   }
 
 #aviso p {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color:#7F868C;
+    margin-top: -2px;
+    border-bottom: 0.7px solid #ced4da;
+    padding-bottom: 20px;
 }
 
 

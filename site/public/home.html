@@ -192,17 +192,13 @@
                         </div>
                         <div class="ngcBranco2">
                             <div class="div01">
-                                <p class="fontLastActivity" style="margin-left: 5px;">Últimas atividades</p>
-                                <div class="line"></div>
-                                <div class="line"></div>
-                                <!-- <p><i class="fa fa-chevron-down" aria-hidden="true"></i></p> -->
+                                <p class="fontLastActivity" style="margin-left: 5px;">Últimas atividades
+                                </p>
                             </div>
+                            
                             <div id="attDiv" class="div01 info">
-                                <!-- <p class="informacao">Ativado Desativado</p> -->
 
                             </div>
-                            <div class="line"></div>
-                            <div class="line"></div>
 
                         </div>
                     </div>
@@ -277,22 +273,18 @@
                             document.getElementById('attDiv').innerHTML += `
 
 
-                            <div id="attDiv" class="div01 info">
-                                
+                            <div class="div01 info">
+                                <div class="dado">
                                 <div class="statusAtivo">
-                                    </div>
                                 <i class="fa fa-desktop" aria-hidden="true"></i>
-                            
-
-                             <p class="informacao">Máquina de número ${idMaquina} acaba de se conectar</p>
-                             <p id="dataHora">${json[i].dataHora}</p>
-                             <br><br>
-                    
+                                <p class="informacao">Máquina de número ${idMaquina} acaba de se conectar</p>
+                                <p id="dataHora">${json[i].dataHora}</p>
+                                <br><br>
+                                </div>
+                                <div class="line"></div>
+                                </div>
                             </div>
-                            <div class="line"></div>
-                            <div class="line"></div>
-                            
-                             `
+                            `
                         };
 
                         // <div class="div01 info">
