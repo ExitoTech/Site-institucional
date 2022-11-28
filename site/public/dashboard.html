@@ -233,9 +233,9 @@
 
     const myChart = new Chart(document.getElementById('myChart'), config)
 
-
+    if(idMaquina == document.getElementsByClassName('selectSetor')[0].value){
     setTimeout(() => atualizarGrafico(idMaquina, data, myChart), 3000);
-
+    }   
   }
 
   function atualizarGrafico(idMaquina, data, myChart) {

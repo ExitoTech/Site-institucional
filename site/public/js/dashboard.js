@@ -64,7 +64,6 @@ function getMachinePerSector(){
                         document.getElementsByClassName('selectSetor')[0].innerHTML += "<option value='" + json[i].idMaquina  + "'" + "class='tituloInfo Setor'>" + json[i].idMaquina + "</option>"
                     }
                     capturaDeHardware()
-                    capturaDeDados(document.getElementsByClassName('selectSetor')[0].value)
                 });
                 
             } else {
@@ -127,6 +126,8 @@ function capturaDeHardware(){
                     document.getElementById('processador').innerHTML = json[0].processador
                     document.getElementById('arquitetura').innerHTML = json[0].arquiteturaSO
                     document.getElementById('sistemaOperacional').innerHTML = json[0].sistemaOperacional
+
+                    capturaDeDados(document.getElementsByClassName('selectSetor')[0].value)
 
              
                 });
