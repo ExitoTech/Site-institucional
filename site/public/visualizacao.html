@@ -98,21 +98,26 @@
                         <div class="selecionar setor">
                             <p>Setor</p>
                             <div class="selection">
-                                <select id="setor">
+                                <!-- <select id="setor">
                                     <option value="">1</option>
                                     <option value="">2</option>
                                     <option value="">3</option>
+                                </select> -->
+                                <select name="setor" class="selectSetor" onchange="getMachinePerSector()">
                                 </select>
+                                
                             </div>
                         </div>
                         <div class="selecionar maquina">
                             <p>Machine</p>
                             <div class="selection">
-                                <select id="maquina">
+                                <select name="setor" class="selectSetor" onchange="capturaDeHardware()">
+                                </select>
+                                <!-- <select id="maquina">
                                     <option value="">1</option>
                                     <option value="">2</option>
                                     <option value="">3</option>
-                                </select>
+                                </select> -->
                             </div>
                         </div>
                         <!-- <div class="novaMaquina">
@@ -158,3 +163,4 @@
 
 </html>
 <script src="js/visualizacao.js"></script>
+<script src="js/dashboard.js"></script>
