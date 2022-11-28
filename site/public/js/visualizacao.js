@@ -1,3 +1,19 @@
+function valorInicial(){
+    var ram = sessionStorage.VISUALIZAR_RAM;
+    var cpu = sessionStorage.VISUALIZAR_CPU;
+    var disco = sessionStorage.VISUALIZAR_DISCO;
+
+    if(ram == '1'){
+        document.getElementById("toggle").checked = true
+    }
+    if(cpu == '1'){
+        document.getElementById("toggle2").checked = true
+    }
+    if(disco == '1'){
+        document.getElementById("toggle3").checked = true
+    }
+}
+
 function mudarRam() {
     var verRam = sessionStorage.VISUALIZAR_RAM
 
