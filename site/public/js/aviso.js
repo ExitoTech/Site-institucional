@@ -13,6 +13,9 @@ function validar(){
     trazerRam(),
     trazerCpu()
   }, 100);
+  setTimeout(function(){
+    validar()
+  }, 3000)
 }
 
 function trazerRam(){
@@ -111,6 +114,7 @@ function trazerMaquina(){
 }
 
 function exibirAviso(){
+  var aviso = document.getElementById('aviso');
   if(rptRam != null){
     for(let i = 0; i < rptRam.length; i++){
       var integerRam = parseInt(JSON.stringify(rptRam[i]).replace('[{"":', '').replace('}]', '')); 
@@ -122,8 +126,9 @@ function exibirAviso(){
       console.log("RAM: " + integerRam + " Máquina: " + maquinaRamFormata)
       console.log("CPU: " + integerCpu + " Máquina: " + maquinaCpuFormata)
       if(integerRam > 70){
+        aviso.innerHTML = "";
         console.log("teste ram")
-        document.getElementById('aviso').innerHTML += `
+        aviso.innerHTML += `
         <p>
         A máquina <b>${maquinaRamFormata}</b> apresentou uso elevado da memória RAM.
         <br><br><span style="font-weight: bold;">Uso da memória RAM: <span style="color: red;">${integerRam}%</span></span>
@@ -132,7 +137,7 @@ function exibirAviso(){
       }
 
       if(integerCpu > 70){
-        document.getElementById('aviso').innerHTML += `
+        aviso.innerHTML += `
         <p>
         A máquina <b>${maquinaCpuFormata}</b> apresentou uso elevado da memória RAM.
         <br><br><span style="font-weight: bold;">Uso da CPU: <span style="color: red;">${integerCpu}%</span></span>
