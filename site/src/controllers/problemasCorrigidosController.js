@@ -6,7 +6,9 @@ function sendCorretion(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var problemaCorrigido = req.body.problemaCorrigidoServer;
     var autorMaquinaCorrigida = req.body.nomeAutorServer;
-    var idMaquina = req.body.idMaquinaServer
+    var idMaquina = req.body.idMaquinaServer;
+    var funcionario = req.body.fk_funcionarioServer;
+    var setor = req.body.idSetorServer;
 
     // Faça as validações dos valores
     if (problemaCorrigido == undefined) {
@@ -18,7 +20,7 @@ function sendCorretion(req, res) {
     }else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        problemasCorrigidosModel.sendCorretion(problemaCorrigido, autorMaquinaCorrigida,idMaquina)
+        problemasCorrigidosModel.sendCorretion(problemaCorrigido, autorMaquinaCorrigida,idMaquina, funcionario, setor)
             .then(
                 function (resultado) {
                     res.json(resultado);

@@ -86,6 +86,7 @@
                             <option value="vinicius">Vincius A Nunes</option>
                         </select>
                         <input class="mainInput" id="idDaMaquina" type="text" placeholder="Identificação da máquina">
+                        <input type="text" placeholder="Setor da máquina" class="mainInput" id="idSetor">
                         <div class="confirmacaoBotaoCorretion">
                             <button onclick="sendCorretion()">Inserir</button>
                             <button onclick="fecharCorretion()">Cancelar</button>
@@ -109,6 +110,7 @@
         var problemaCorrigidoVar = textProblem.value;
         var nomeAutorVar = nomeAutorCorrecao.value;
         var idMaquinaVar = idDaMaquina.value;
+        var idSetorVar = idSetor.value;
 
         if (problemaCorrigidoVar == "" || nomeAutorVar == "" || idMaquinaVar == "") {
             alert("campos vazios");
@@ -125,6 +127,8 @@
                 problemaCorrigidoServer: problemaCorrigidoVar,
                 nomeAutorServer: nomeAutorVar,
                 idMaquinaServer: idMaquinaVar,
+                idSetorServer: idSetorVar,
+                fk_funcionarioServer: sessionStorage.ID_USUARIO,
             })
         }).then(function (resposta) {
 
@@ -162,7 +166,7 @@
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-
+                fk_empresaServer: sessionStorage.FK_EMPRESA,
             })
         }).then(function (resposta) {
 
@@ -186,7 +190,7 @@
                                     <div class="divMainItens">
                                         <div class="infoItens">
                                             <h2>Maquina ${json[i].fk_maquina}</h2>
-                                            <p>Setor:</p>
+                                            <p>Setor: ${json[i].fk_setor}</p>
                                             <p>Problema encontrado: ${json[i].tituloIncidente}</p>
                                             <p>Autor da correção: ${json[i].nomeAutor}</p>
                                             <p>Hora da correção: ${json[i].horaAtendimento}</p>

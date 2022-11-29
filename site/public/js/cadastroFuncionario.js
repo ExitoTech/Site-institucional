@@ -57,11 +57,20 @@ function enviarCadFunc(){
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
         });
-   }
-   else if(nome == "" || cpf == "" || email == "" || telefone == "" || senha == "" || cep == ""){
-    alert("Não pode ter nenhum campo vazio!")
-   }else{
-    alert("Houve um erro ao realizar cadastro, verifique se todos os campos estão preenchidos corretamente.")
+    }else{
+    Swal.fire({
+        position: 'top',
+        icon: 'error',
+        title: 'Houve um erro ao realizar cadastro, verifique se todos os campos estão preenchidos corretamente.',
+        toast: true,
+        showConfirmButton: false,
+        timer: 3500,
+      })
+      fecharCadFunc()
+
+      setTimeout(function(){
+        abrirCadFunc()
+      }, 3502)
    }
 }
 

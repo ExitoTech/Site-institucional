@@ -1,10 +1,9 @@
 var mostrarCorrecoesModel = require("../models/mostrarCorrecoesModel");
 
-var sessoes = [];
-
 function mostrarCorrecoes(req, res) {
+    var empresa = req.body.fk_empresaServer;
 
-    mostrarCorrecoesModel.mostrarCorrecoes()
+    mostrarCorrecoesModel.mostrarCorrecoes(empresa)
         .then(
             function (resultado) {
                 res.json(resultado);
