@@ -5,7 +5,16 @@ function trazerRam(empresa, maquina) {
 
     if(process.env.AMBIENTE_PROCESSO == "desenvolvimento"){
         instrucao = `
-        SELECT truncate(avg(mediaRam), 0) FROM aviso WHERE idAviso in (Select * from(SELECT idAviso FROM aviso ORDER BY idAviso DESC limit 5) as t1);
+        SELECT truncate(avg(usoRam),0) as mediaRam
+        FROM capturas as ca
+        join maquina as ma
+        on ca.fk_maquina = ma.idMaquina
+        left join setor as se
+        on ma.fk_setor = se.idSetor
+        left join empresa as em
+        on se.fk_Empresa = em.idEmpresa
+        WHERE idCaptura in 
+        (Select * from(SELECT idCaptura FROM capturas where fk_maquina = ${maquina} ORDER BY idCaptura DESC limit 5) as t1);
         `;
     }else if(process.env.AMBIENTE_PROCESSO == "producao"){
         instrucao= `
@@ -20,7 +29,8 @@ function trazerRam(empresa, maquina) {
         WHERE ca.idCaptura 
         in (SELECT TOP 5 idCaptura FROM capturas WHERE fk_maquina = ${maquina}
         ORDER BY idCaptura DESC)
-        and em.idEmpresa = ${empresa};
+        and em.idEmpresa = ${empresa}
+        and ma.statusMaquina = 'ativado';
         `
     }else{
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
@@ -37,7 +47,16 @@ function trazerCpu(empresa, maquina) {
 
     if(process.env.AMBIENTE_PROCESSO == "desenvolvimento"){
         instrucao = `
-        SELECT truncate(avg(mediaCpu), 0) FROM aviso WHERE idAviso in (Select * from(SELECT idAviso FROM aviso ORDER BY idAviso DESC limit 5) as t1);
+        SELECT truncate(avg(usoCpu),0) as mediaRam
+        FROM capturas as ca
+        join maquina as ma
+        on ca.fk_maquina = ma.idMaquina
+        left join setor as se
+        on ma.fk_setor = se.idSetor
+        left join empresa as em
+        on se.fk_Empresa = em.idEmpresa
+        WHERE idCaptura in 
+        (Select * from(SELECT idCaptura FROM capturas where fk_maquina = ${maquina} ORDER BY idCaptura DESC limit 5) as t1);
         `;
     }else if(process.env.AMBIENTE_PROCESSO == "producao"){
         instrucao= `
