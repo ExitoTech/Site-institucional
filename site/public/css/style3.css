@@ -399,6 +399,12 @@ circle:nth-child(2){
     font-size: 1.2rem;
 }
 
+.h2Aviso {
+    border-bottom: 0.7px solid #ced4da;
+    width: 90%;
+    text-align: center;
+    padding-bottom: 20px;
+}
 
 #aviso {
     width: 100%;
@@ -440,16 +446,20 @@ circle:nth-child(2){
 
 
 .line{
-    width: 100%;
+    width: 95%;
     height: 0.7px;
-    background-color: #b4bec9;
-    opacity:40%;
+    background-color: #ced4da;
     border-radius: 14px;
+    margin: 0 auto;
 }
 
 .fontLastActivity{
     font-size: 2rem;
     font-weight: bold;
+    border-bottom: 0.7px solid #ced4da;
+    padding-bottom: 20px;
+    width: 95%;
+    text-align: center;
 }
 
 .imagensDiv{

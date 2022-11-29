@@ -119,7 +119,7 @@
                                 <p>Autenticação necessária</p>
                             </div>
                             <div class="infoConfirmacaoNewMachine">
-                                <p>Autenticação obrigatória para realizar cadastar uma nova máquina</p>
+                                <p>Autenticação obrigatória para realizar o cadastro de uma nova máquina</p>
                             </div>
                             <div class="confirmacaoSenhaNewMachine">
                                 <input style="border: 1px solid #3627D9;" type="password" name="senha"
@@ -143,16 +143,25 @@
                             <div class="confirmacaoSenhaNewUser">
                                 <div class="inputsNewUser">
                                     <div class="division1">
-                                        <input type="text" placeholder="NOME" id="nomeCadastro">
-                                        <!--input type="text" placeholder="CARGO"-->
-                                        <input type="text" placeholder="CPF" id="cpfCadastro" maxlength="11">
-                                        <input type="text" placeholder="E-MAIL" id="emailCadastro">
+                                        <input type="text" placeholder="NOME" id="nomeCadastro" onkeyup="validarNome()">
+                                        <span id="spanNome" class="spanAviso"></span>
+
+                                        <input type="text" placeholder="CPF" id="cpfCadastro"
+                                        maxlength="14" onkeyup="validarCpf()">
+                                        <span id="spanCpf" class="spanAviso"></span>
+
+                                        <input type="text" placeholder="E-MAIL" id="emailCadastro" onkeyup="validarEmail()">
+                                        <span id="spanEmail" class="spanAviso"></span>
                                     </div>
                                     <div class="division2">
-                                        <input type="password" placeholder="SENHA" id="senhaCadastro">
-                                        <input type="text" placeholder="TELEFONE" id="telefoneCadastro" maxlength="11">
-                                        <!-- input type="text" placeholder="RG"-->
-                                        <input type="text" placeholder="CEP" id="cepCadastro">
+                                        <input type="password" placeholder="SENHA" id="senhaCadastro" onkeyup="validarSenha()">
+                                        <span id="spanSenha" class="spanAviso"></span>
+                                        <input type="text" placeholder="TELEFONE" id="telefoneCadastro"
+                                            maxlength="15" onkeyup="validarTelefone()">
+                                        <span id="spanTelefone" class="spanAviso"></span>
+                                        
+                                        <input type="text" placeholder="CEP" id="cepCadastro" maxlength="9" onkeyup="validarCep()">
+                                        <span id="spanCep" class="spanAviso"></span>
                                     </div>
                                 </div>
                             </div>
@@ -186,7 +195,7 @@
                     <div class="boxBranca">
                         <div class="ngcBranco" id="alertas">
                             <div class="imagensDivItem">
-                                <h2>Avisos</h2>
+                                <h2 class="h2Aviso">Avisos</h2>
                                 <div id="aviso"></div>
                             </div>
                         </div>

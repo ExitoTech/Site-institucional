@@ -24,7 +24,7 @@ function enviarCadFunc(){
    var telefone = document.getElementById("telefoneCadastro").value
    var cep = document.getElementById("cepCadastro").value
 
-   if(nome != "" && cpf != "" && email != "" && senha != "" && telefone != "" && cep != ""){
+   if(nome >= 3 &&  cpf == 14 && email.indexOf('@') > -1 && email > 5 && email.indexOf(".") > -1 && senha >= 8 && telefone == 15 && cep == 9){
     fetch("/usuarios/cadastrarFuncionario", {
         method: "POST",
         headers: {
@@ -58,8 +58,10 @@ function enviarCadFunc(){
             console.log(`#ERRO: ${resposta}`);
         });
    }
-   else{
+   else if(nome == "" || cpf == "" || email == "" || telefone == "" || senha == "" || cep == ""){
     alert("Não pode ter nenhum campo vazio!")
+   }else{
+    alert("Houve um erro ao realizar cadastro, verifique se todos os campos estão preenchidos corretamente.")
    }
 }
 

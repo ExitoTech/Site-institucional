@@ -30,7 +30,6 @@ function trazerRam(empresa, maquina) {
         in (SELECT TOP 5 idCaptura FROM capturas WHERE fk_maquina = ${maquina}
         ORDER BY idCaptura DESC)
         and em.idEmpresa = ${empresa}
-        and ma.statusMaquina = 'ativado';
         `
     }else{
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
