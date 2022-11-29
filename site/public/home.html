@@ -21,7 +21,7 @@
 
 </head>
 
-<body onload="validarSessao(), exit(),/*  mostrarImgUser(), */BuscarMaquinasAtivas(), validar()">
+<body onload="validarSessao(), exit(), BuscarMaquinasAtivas(), validar()">
     <main>
         <div class="navBar">
             <div class="logoNavBar">
@@ -159,7 +159,7 @@
                                         <input type="text" placeholder="TELEFONE" id="telefoneCadastro"
                                             maxlength="15" onkeyup="validarTelefone()">
                                         <span id="spanTelefone" class="spanAviso"></span>
-                                        
+
                                         <input type="text" placeholder="CEP" id="cepCadastro" maxlength="9" onkeyup="validarCep()">
                                         <span id="spanCep" class="spanAviso"></span>
                                     </div>
@@ -222,7 +222,6 @@
 <script src="js/mascNewFunc.js"></script>
 
 <script>
-
     function BuscarMaquinasAtivas() {
         fetch("/at/buscarMaquinasAtivas", {
             method: "POST",

@@ -147,7 +147,7 @@ function fecharPopUp(){
     avancar();
 }
 
-var contador = 0;
+var contador = -1;
 
 function avancar(){
     if(contador < 18){
@@ -155,6 +155,11 @@ function avancar(){
     }
 
     switch(contador){
+        case 0:
+            explicacao.innerHTML = "Slack é um aplicativo que tem como finalidade o envio e recebimento de mensagens. Dentro do Slack é possível criar canais, que funcionam como grupos, você pode por exemplo, criar grupos para cada área de sua empresa. <br><br> Nós da ExitoTech, temos uma função muito interessante! Nós utilizamos um bot para enviar alertas sobre o alto uso de CPU e memória RAM dos computadores de sua empresa. Caso se interesse por esse sistema de envio de alertas via mensagem, nos próximos slides você terá acesso a um passo a passo de como criar uma conta no Slack e como ter acesso ao 'WebHook', um link que usaremos para enviar os alertas."
+            explicacao.style.fontSize = "1.5rem"
+            explicacao.style.paddingTop = "2rem"
+            break;
         case 1:
             s1.innerHTML = "<img src='./img/slide-slack/slide1.jpg'>"
             explicacao.innerHTML = "Clique em 'Create an App' para criar o bot que enviará as mensagens. Para acessar esta tela, clique <a href='https://api.slack.com/' target='_blank'>aqui.</a>"
@@ -266,10 +271,16 @@ function avancar(){
 }
 
 function retroceder(){
-    if(contador <= 18 && contador > 1){
+    if(contador <= 18 && contador > 0){
         contador--
     }
     switch(contador){
+        case 0:
+            explicacao.innerHTML = "Slack é um aplicativo que tem como finalidade o envio e recebimento de mensagens. Dentro do Slack é possível criar canais, que funcionam como grupos, você pode por exemplo, criar grupos para cada área de sua empresa. <br><br> Nós da ExitoTech, temos uma função muito interessante! Nós utilizamos um bot para enviar alertas sobre o alto uso de CPU e memória RAM dos computadores de sua empresa. Caso se interesse por esse sistema de envio de alertas via mensagem, nos próximos slides você terá acesso a um passo a passo de como criar uma conta no Slack e como ter acesso ao 'WebHook', um link que usaremos para enviar os alertas."
+            explicacao.style.fontSize = "1.5rem"
+            explicacao.style.paddingTop = "2rem"
+            s1.innerHTML = ""
+            break;
         case 1:
             s1.innerHTML = "<img src='./img/slide-slack/slide1.jpg'>"
             s2.innerHTML = ""

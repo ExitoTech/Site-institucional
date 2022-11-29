@@ -35,7 +35,8 @@
             <form class="formPt2">
                 <div class="container">
                     <h1 id="h1Pt2">Cadastro funcionário</h1>
-                    <div class="cardCadastro">
+                    <div class="cardCadastro2">
+                        <div class="inputs">
                         <div class="cadastroEsq">
                             <label for="inputNome">Nome</label>
                             <input placeholder="Nome" type="text" onkeyup="validarNome()" id="inputNome" maxlength="60"
@@ -59,15 +60,6 @@
                                 type="text" required>
                             <span id="spanCep" class="spanAviso"></span>
 
-                            <label for="selectMfa">Verificação de duas etapas</label>
-                            <select name="" id="selectMfa" style="
-                            text-decoration: none; padding: 0; margin: 10px 0;">
-                                <option value="">Escolher</option>
-                                <option value="1">Ativado</option>
-                                <option value="0">Desativado</option>
-
-                            </select>
-                            <span id="spanCpf" class="spanAviso"></span>
                         </div>
 
                         <div class="cadastroDir">
@@ -86,14 +78,24 @@
                             <input placeholder="********" onkeyup="validarConfirmarSenha()" id="inputConfirmarSenha"
                                 type="password" maxlength="25" required>
                             <span id="spanConfirmarSenha" class="spanAviso"></span>
-                            <button id="buttonCad" type="button" onclick="nextSignUp()">
-                                Enviar
-                            </button>
 
+                            <select name="" id="selectMfa" onchange="validarMfa()">
+                                <option selected disabled hidden style="font-size: .9rem">Verificação de duas etapas</option>
+                                <option value="1">Ativado</option>
+                                <option value="0">Desativado</option>
+
+                            </select>
+                            <span id="spanMfa" class="spanAviso"></span>
+                            
                         </div>
-
+                        </div>
+                        <div class="buttonELink" id="lastDiv">
+                        <button id="buttonCad" type="button" onclick="nextSignUp()">
+                            Enviar
+                        </button>
+                        <p class="acessoLogin">Ja tem conta? Faça o <a href="login.html" class="linkLogin">login.</a></p>
+                        </div>
                     </div>
-                    <p class="acessoLogin">Ja tem conta? Faça o <a href="login.html" class="linkLogin">login.</a></p>
                 </div>
             </form>
         </div>
@@ -103,3 +105,10 @@
 </html>
 <script src="js/mascCadastro2.js"></script>
 <script src="js/signUpPt2.js"></script>
+<script>
+    document.addEventListener('keypress', function(e){
+       if(e.which == 13){
+          nextSignUp()
+       }
+    }, false);
+</script>

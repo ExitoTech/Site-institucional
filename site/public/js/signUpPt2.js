@@ -82,6 +82,7 @@ function validarCep() {
         spanCep.innerHTML = "O CEP deve conter 8 dígitos";
         spanCep.style.color = "#d90429";
     }
+    lastDiv.style.marginTop = "-1rem"
 }
 
 function validarTelefone() {
@@ -184,6 +185,17 @@ function validarConfirmarSenha() {
         inputConfirmarSenha.style.borderTop = "none";
         inputConfirmarSenha.style.borderRight = "none";
         spanConfirmarSenha.innerHTML = "As senhas devem ser iguais";
+        spanConfirmarSenha.style.color = "#d90429";
+    }
+}
+
+function validarMfa(){
+    var mfa = selectMfa.value;
+    if(mfa == 1 || mfa == 0){
+        spanMfa.innerHTML = "Ok"
+        spanMfa.style.color = "#80b918";
+    }else{
+        spanMfa.innerHTML = "Nenhuma opção selecionada."
         spanConfirmarSenha.style.color = "#d90429";
     }
 }

@@ -8,12 +8,13 @@
     <title>Ocorrências - ExitoTech</title>
     <link rel="stylesheet" href="css/problemasCorrigidos.css">
     <script src="js/openNewCorrection.js"></script>
+    <script src="js/signIn.js"></script>
     <link rel="shortcut icon" href="./img/logo_transparent.png" type="image/x-icon">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
-<body onload="mostrarCorrecoes()">
+<body onload="validarSessao(), mostrarCorrecoes(), exit()">
     <main>
         <div class="navBar">
             <div class="logoNavBar">

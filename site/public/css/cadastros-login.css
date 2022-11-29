@@ -115,9 +115,23 @@ form {
 
 .container #h1Pt2 {
     margin-top: 1.5rem;
-    font-size: 3rem;
+    font-size: 2.7rem;
     color: #000;
     font-family: 'Roboto Mono', monospace;
+}
+
+#selectMfa {
+    text-decoration: none; 
+    padding: 0; 
+    margin-top: 35px;
+    cursor: pointer;
+}
+
+.buttonELink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .containerLogin #h1Login {
@@ -142,7 +156,7 @@ form {
     border-radius: 50%;
     cursor: pointer;
     position: absolute;
-    margin-top: -2px;
+    margin-top: -.5px;
     margin-left: 5px;
     background-color: #00b4d8;
 }
@@ -310,14 +324,11 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-    margin-left: 1.5rem;
+    margin: 1rem auto 0 auto;
 }
 
 .acessoLogin {
-    margin-top: 1rem;
-    margin-left: 18.5rem;
+    margin: 1.5rem auto 0 auto;
 }
 
 .containerLogin button {
@@ -414,13 +425,27 @@ select {
     outline: none;
 }
 
+.container .cardCadastro2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+}
+
 .container .cardCadastro {
     display: flex;
-    width: 100%;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
     margin-top: 1rem;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .cadastroEsq {

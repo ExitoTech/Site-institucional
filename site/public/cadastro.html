@@ -67,7 +67,7 @@
                         </div>
                     </div>
                     <div class="webhook">
-                        <label for="inputHook">WebHook do canal Slack</label>
+                        <label for="inputHook">WebHook do canal Slack (opcional)</label>
                         <span id="duvida" onclick="exibirPopUp()">?</span>
                     </div>
                     
@@ -94,6 +94,7 @@
                 <div class="slides">
 
                     <span id="explicacao"></span>
+
                     <div class="slide" id="s1">
                     </div>
 
@@ -158,3 +159,10 @@
 </html>
 <script src="js/mascCadastro.js"></script>
 <script src="js/SignUp.js"></script>
+<script>
+    document.addEventListener('keypress', function(e){
+       if(e.which == 13){
+          nextSignUp()
+       }
+    }, false);
+</script>
