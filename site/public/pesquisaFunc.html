@@ -116,6 +116,12 @@
 
 </html>
 <script>
+    document.addEventListener('keypress', function(e){
+       if(e.which == 13){
+        pesquisarMaquina()
+       }
+    }, false);
+
     function pesquisarMaquina() {
         var numeroMaquinaVar = numMaquina.value;
 
