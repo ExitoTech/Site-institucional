@@ -316,6 +316,7 @@ function cadastreUsuario(idempresa) {
             cepUsuarioServer: document.getElementById("inputCep").value,
             telefoneUsuarioServer: document.getElementById("inputTelefone").value,
             fk_empresaServer: idempresa,
+            qrCodeServer: document.getElementById('selectMfa').value,
         })
     }).then(function (resposta) {
 

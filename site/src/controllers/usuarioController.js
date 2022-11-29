@@ -282,6 +282,7 @@ function cadastrarUsuarioADM(req, res) {
     var cepUsuario = req.body.cepUsuarioServer
     var telefoneUsuario = req.body.telefoneUsuarioServer
     var fk_empresa = req.body.fk_empresaServer
+    var qrCode = req.body.qrCodeServer;
 
 
     if (nomeUsuario == undefined) {
@@ -301,7 +302,7 @@ function cadastrarUsuarioADM(req, res) {
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrarUsuarioADM(nomeUsuario, email, senha, cpf, cepUsuario, telefoneUsuario, fk_empresa)
+        usuarioModel.cadastrarUsuarioADM(nomeUsuario, email, senha, cpf, cepUsuario, telefoneUsuario, fk_empresa, qrCode)
             .then(
                 function (resultado) {
                     res.json(resultado);

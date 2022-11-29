@@ -168,7 +168,7 @@ function cadastrarEmpresa(nomeEmpresa,cepEmpresa,cnpj,porte,logradouro,uf, webHo
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
-function cadastrarUsuarioADM(nomeUsuario,email,senha,cpf,cepUsuario,telefoneUsuario,fk_empresa) {
+function cadastrarUsuarioADM(nomeUsuario,email,senha,cpf,cepUsuario,telefoneUsuario,fk_empresa, qrCode) {
 
     if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         var isTrue = true
@@ -184,7 +184,7 @@ function cadastrarUsuarioADM(nomeUsuario,email,senha,cpf,cepUsuario,telefoneUsua
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-    Insert into Funcionario (nomeFuncionario,cpf,email,senha,ativo,telefoneFuncionario,cep,fk_empresa,isADM,visualizarCpu,visualizarDisco,visualizarRam) VALUES ('${nomeUsuario}','${cpf}','${email}','${senha}', ${isTrue} ,'${telefoneUsuario}', '${cepUsuario}','${fk_empresa}',${isTrue},${isTrue},${isTrue},${isTrue});
+    Insert into Funcionario (nomeFuncionario,cpf,email,senha,ativo,telefoneFuncionario,cep,fk_empresa,isADM,visualizarCpu,visualizarDisco,visualizarRam, qrCode) VALUES ('${nomeUsuario}','${cpf}','${email}','${senha}', ${isTrue} ,'${telefoneUsuario}', '${cepUsuario}','${fk_empresa}',${isTrue},${isTrue},${isTrue},${isTrue}, ${qrCode});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
